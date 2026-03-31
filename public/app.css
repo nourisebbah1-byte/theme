@@ -51743,7 +51743,7 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
     visibility: visible !important;
     opacity: 1 !important;
     height: auto !important;
-    min-height: 36px !important;
+    min-height: 42px !important;
     overflow: visible !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -51760,7 +51760,7 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
     visibility: visible !important;
     opacity: 1 !important;
     height: auto !important;
-    min-height: 36px !important;
+    min-height: 42px !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -51776,7 +51776,7 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
     font-size: 13px !important;
     font-weight: 600 !important;
     background-color: #034c8c !important;
-    padding: 8px 14px !important;
+    padding: 10px 16px !important;
     color: #ffffff !important;
     border: none !important;
     border-radius: 0 0 8px 8px !important;
@@ -51785,7 +51785,7 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
     visibility: visible !important;
     opacity: 1 !important;
     height: auto !important;
-    min-height: 36px !important;
+    min-height: 42px !important;
     max-height: none !important;
     align-items: center !important;
     justify-content: center !important;
@@ -51810,8 +51810,8 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
     font-weight: 600 !important;
     text-align: center !important;
     width: 100% !important;
-    min-height: 36px !important;
-    height: 36px !important;
+    min-height: 42px !important;
+    height: 42px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -52017,12 +52017,12 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
   width: 8px !important;
   height: 8px !important;
 }
-/* Wishlist Button - Top start of image (LTR: left; RTL: right), overlaying image */
+/* Wishlist Button - Top-left of image (physical corner; matches vertical RTL pattern), overlaying image */
 .s-block--latest-products .s-product-card-wishlist-btn {
   position: absolute !important;
   top: 8px !important;
-  inset-inline-start: 8px !important;
-  inset-inline-end: auto !important;
+  left: 8px !important;
+  right: auto !important;
   z-index: 20 !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -52523,7 +52523,7 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
     visibility: visible !important;
     opacity: 1 !important;
     height: auto !important;
-    min-height: 36px !important;
+    min-height: 42px !important;
     overflow: visible !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -52540,7 +52540,7 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
     opacity: 1 !important;
     width: 100% !important;
     height: auto !important;
-    min-height: 36px !important;
+    min-height: 42px !important;
   }
 }
 /* Out of Stock */
@@ -52696,7 +52696,7 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
     visibility: visible !important;
     opacity: 1 !important;
     height: auto !important;
-    min-height: 36px !important;
+    min-height: 42px !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -52710,9 +52710,9 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
     opacity: 1 !important;
     width: 100% !important;
     height: auto !important;
-    min-height: 36px !important;
+    min-height: 42px !important;
     margin: 0 !important;
-    padding: 8px 14px !important;
+    padding: 10px 16px !important;
     background-color: #034c8c !important;
     color: #ffffff !important;
     border: none !important;
@@ -52735,8 +52735,8 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
     font-size: 13px !important;
     font-weight: 600 !important;
     width: 100% !important;
-    min-height: 36px !important;
-    height: 36px !important;
+    min-height: 42px !important;
+    height: 42px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -58060,19 +58060,45 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
     }
 }
 
-/* Latest Products (mobile): pin wishlist to top-left; overrides centering from layout/animation */
+/* Latest Products — mobile only: wishlist top inline-start, shorter add-to-cart (scoped; wins by order + body) */
 @media (max-width: 768px) {
+  body .s-block--latest-products .s-product-card-image {
+    position: relative !important;
+  }
   body .s-block--latest-products .s-product-card-image .s-product-card-wishlist-btn,
   body .s-block--latest-products .s-product-card-image salla-button.s-product-card-wishlist-btn {
     position: absolute !important;
-    top: 8px !important;
-    left: 8px !important;
+    top: 10px !important;
+    left: 10px !important;
     right: auto !important;
     margin: 0 !important;
     transform: none !important;
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    max-width: 28px !important;
   }
   body .s-block--latest-products .s-product-card-image .s-product-card-wishlist-btn:hover,
   body .s-block--latest-products .s-product-card-image salla-button.s-product-card-wishlist-btn:hover {
     transform: scale(1.05) !important;
+  }
+  body .s-block--latest-products .s-product-card-wishlist-btn button,
+  body .s-block--latest-products .s-product-card-wishlist-btn.s-button-wrap {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    min-height: 28px !important;
+    max-width: 28px !important;
+  }
+  body .s-block--latest-products .s-product-card-entry .s-product-card-content-footer salla-add-product-button {
+    min-height: 0 !important;
+    padding: 6px 12px !important;
+  }
+  body .s-block--latest-products .s-product-card-entry .s-product-card-content-footer salla-add-product-button button,
+  body .s-block--latest-products .s-product-card-entry .s-product-card-content-footer salla-add-product-button .s-button,
+  body .s-block--latest-products .s-product-card-entry .s-product-card-content-footer salla-add-product-button salla-button button {
+    min-height: 32px !important;
+    height: auto !important;
+    max-height: none !important;
   }
 }
