@@ -27937,86 +27937,6 @@ input[type=radio].sr-only:checked ~ div.s-product-card-content-pie span {
     padding-top: 1.25rem;
     padding-bottom: 1.75rem;
 }
-
-@media (max-width: 768px) {
-  /* Override full-image overlay layout on mobile (prevents content overlapping the image). */
-  body custom-salla-product-card.s-product-card-entry.s-product-card-full-image,
-  body .s-product-card-entry.s-product-card-full-image {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: flex-start !important;
-    height: auto !important;
-    position: relative !important;
-    overflow: hidden !important;
-  }
-
-  body custom-salla-product-card.s-product-card-entry.s-product-card-full-image .s-product-card-image-full,
-  body .s-product-card-entry.s-product-card-full-image .s-product-card-image-full,
-  body custom-salla-product-card.s-product-card-entry.s-product-card-full-image img,
-  body .s-product-card-entry.s-product-card-full-image img {
-    width: 50% !important;
-    min-width: 50% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    position: static !important;
-    flex-shrink: 0 !important;
-    border-radius: 0 !important;
-  }
-
-  body custom-salla-product-card.s-product-card-entry.s-product-card-full-image .s-product-card-content,
-  body .s-product-card-entry.s-product-card-full-image .s-product-card-content {
-    width: 50% !important;
-    min-width: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    padding: 8px !important;
-    position: static !important;
-    top: unset !important;
-    right: unset !important;
-    bottom: unset !important;
-    left: unset !important;
-    transform: none !important;
-  }
-
-  body custom-salla-product-card.s-product-card-entry.s-product-card-full-image .s-product-card-content-title a,
-  body .s-product-card-entry.s-product-card-full-image .s-product-card-content-title a {
-    position: static !important;
-    font-size: 13px !important;
-    line-height: 1.3 !important;
-    white-space: normal !important;
-    overflow: visible !important;
-    margin-bottom: 6px !important;
-    word-break: break-word !important;
-  }
-
-  body custom-salla-product-card.s-product-card-entry.s-product-card-full-image .s-product-card-rating,
-  body .s-product-card-entry.s-product-card-full-image .s-product-card-rating {
-    position: static !important;
-    margin-bottom: 6px !important;
-  }
-
-  body custom-salla-product-card.s-product-card-entry.s-product-card-full-image .s-product-card-price,
-  body .s-product-card-entry.s-product-card-full-image .s-product-card-price,
-  body custom-salla-product-card.s-product-card-entry.s-product-card-full-image .s-product-card-sale-price h4,
-  body .s-product-card-entry.s-product-card-full-image .s-product-card-sale-price h4,
-  body custom-salla-product-card.s-product-card-entry.s-product-card-full-image .s-product-card-starting-price h4,
-  body .s-product-card-entry.s-product-card-full-image .s-product-card-starting-price h4 {
-    position: static !important;
-    font-size: 14px !important;
-    font-weight: 700 !important;
-    margin-bottom: 8px !important;
-  }
-
-  body custom-salla-product-card.s-product-card-entry.s-product-card-full-image .s-product-card-content-footer,
-  body .s-product-card-entry.s-product-card-full-image .s-product-card-content-footer,
-  body custom-salla-product-card.s-product-card-entry.s-product-card-full-image salla-add-product-button,
-  body .s-product-card-entry.s-product-card-full-image salla-add-product-button {
-    position: static !important;
-    width: 100% !important;
-    margin-top: auto !important;
-    max-width: 100% !important;
-  }
-}
 input[type=radio].sr-only div.s-product-card-full-image .s-product-card-content {
   transition: all 0.3s;
 }
@@ -57383,4 +57303,105 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
     .rtl\:xs\:left-5:where([dir="rtl"], [dir="rtl"] *){
         left: 1.25rem;
     }
+}
+
+@media (max-width: 768px) {
+  /* Make Latest Products cards behave like Deals cards on mobile (avoid overlay/absolute layout issues). */
+  body .s-block--latest-products salla-products-list .s-products-list {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  body .s-block--latest-products custom-salla-product-card.s-product-card-entry,
+  body .s-block--latest-products .s-product-card-entry {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    position: relative !important;
+    overflow: hidden !important;
+    height: auto !important;
+    min-height: unset !important;
+    gap: 0 !important;
+    padding: 0 !important;
+  }
+
+  body .s-block--latest-products custom-salla-product-card.s-product-card-entry .s-product-card-image,
+  body .s-block--latest-products .s-product-card-entry .s-product-card-image,
+  body .s-block--latest-products custom-salla-product-card.s-product-card-entry .s-product-card-image-full,
+  body .s-block--latest-products .s-product-card-entry .s-product-card-image-full {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+    height: auto !important;
+    padding: 12px !important;
+  }
+
+  body .s-block--latest-products custom-salla-product-card.s-product-card-entry img,
+  body .s-block--latest-products .s-product-card-entry img {
+    width: 100% !important;
+    height: auto !important;
+    position: static !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  body .s-block--latest-products custom-salla-product-card.s-product-card-entry .s-product-card-content,
+  body .s-block--latest-products .s-product-card-entry .s-product-card-content {
+    width: 100% !important;
+    position: static !important;
+    top: unset !important;
+    right: unset !important;
+    bottom: unset !important;
+    left: unset !important;
+    transform: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 8px 8px 8px !important;
+    min-width: 0 !important;
+  }
+
+  body .s-block--latest-products .s-product-card-entry .s-product-card-content-title a {
+    position: static !important;
+    font-size: 13px !important;
+    line-height: 1.3 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    word-break: break-word !important;
+    margin: 0 0 6px 0 !important;
+  }
+
+  body .s-block--latest-products .s-product-card-entry .s-product-card-rating {
+    position: static !important;
+    margin: 0 0 6px 0 !important;
+  }
+
+  body .s-block--latest-products .s-product-card-entry .s-product-card-price,
+  body .s-block--latest-products .s-product-card-entry .s-product-card-sale-price h4,
+  body .s-block--latest-products .s-product-card-entry .s-product-card-starting-price h4 {
+    position: static !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    margin: 0 0 8px 0 !important;
+  }
+
+  body .s-block--latest-products .s-product-card-entry .s-product-card-content-footer {
+    position: static !important;
+    width: 100% !important;
+    margin-top: auto !important;
+  }
+
+  /* Re-enable add-to-cart in Latest Products on mobile (previous CSS hides it). */
+  body .s-block--latest-products .s-product-card-entry .s-product-card-content salla-add-product-button,
+  body .s-block--latest-products .s-product-card-entry .s-product-card-content-footer salla-add-product-button {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    overflow: visible !important;
+    position: static !important;
+    width: 100% !important;
+    margin-top: auto !important;
+  }
 }
