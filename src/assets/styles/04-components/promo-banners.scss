@@ -1,0 +1,197 @@
+/* Promotional Banners */
+.promo-banners {
+  padding: 60px 0 !important;
+  
+  .container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+  }
+  
+  // Mobile: Reduce spacing from hero banner and add subtle glow
+  @media (max-width: 768px) {
+    padding-top: 20px !important; // Reduced from 60px to bring closer to hero
+    padding-bottom: 40px !important;
+    
+    // Subtle glow effect for premium feel
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.08), 0 0 60px rgba(0, 0, 0, 0.04) !important;
+    background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.02) 50%, transparent 100%) !important;
+    position: relative !important;
+    
+    &::before {
+      content: '' !important;
+      position: absolute !important;
+      top: -10px !important;
+      left: -10px !important;
+      right: -10px !important;
+      bottom: -10px !important;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, transparent 100%) !important;
+      border-radius: 20px !important;
+      z-index: -1 !important;
+      pointer-events: none !important;
+      filter: blur(20px) !important;
+      opacity: 0.6 !important;
+    }
+  }
+}
+
+.banner-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 20px !important;
+  
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.promo-banner {
+  position: relative !important;
+  padding: 40px !important;
+  border-radius: 10px !important;
+  min-height: 300px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  overflow: hidden !important;
+}
+
+.batteries-banner {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%) !important;
+}
+
+.tires-banner {
+  background: linear-gradient(135deg, #e0e0e0 0%, #b0b0b0 100%) !important;
+}
+
+.springs-banner {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8c00 100%) !important;
+}
+
+.banner-content {
+  position: relative !important;
+  z-index: 2 !important;
+  
+  h2 {
+    font-size: 32px !important;
+    font-weight: bold !important;
+    margin-bottom: 10px !important;
+    color: #000000 !important; // var(--black)
+  }
+  
+  p {
+    font-size: 16px !important;
+    margin-bottom: 20px !important;
+    color: #000000 !important; // var(--black)
+  }
+  
+  // Mobile: Make card text smaller
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 26px !important; // Reduced from 32px
+    }
+    
+    p {
+      font-size: 14px !important; // Reduced from 16px
+      margin-bottom: 15px !important;
+    }
+  }
+}
+
+.banner-badge {
+  display: inline-block !important;
+  padding: 5px 15px !important;
+  background-color: #333333 !important; // var(--dark-gray)
+  color: #ffffff !important; // var(--white)
+  border-radius: 20px !important;
+  font-size: 12px !important;
+  margin-bottom: 15px !important;
+  font-weight: 600 !important;
+  
+  &.green {
+    background-color: #28a745 !important; // var(--green)
+  }
+  
+  &.yellow {
+    background-color: #ffc107 !important; // var(--yellow)
+    color: #000000 !important; // var(--black)
+  }
+  
+  &.red {
+    background-color: #bf3617 !important; // var(--primary-red)
+  }
+  
+  &.orange {
+    background-color: #f29f05 !important; // var(--primary-orange)
+  }
+  
+  // Mobile: Make badges smaller and more elegant
+  @media (max-width: 768px) {
+    padding: 3px 10px !important; // Further reduced for elegance
+    font-size: 9px !important; // Smaller, more refined
+    margin-bottom: 10px !important;
+    border-radius: 12px !important; // Slightly smaller radius for refinement
+    font-weight: 500 !important; // Slightly lighter weight for elegance
+    letter-spacing: 0.3px !important; // Subtle letter spacing for premium feel
+  }
+}
+
+.banner-btn {
+  background-color: #ffffff !important; // var(--white)
+  color: #000000 !important; // var(--black)
+  border: 2px solid #000000 !important; // var(--black)
+  padding: 12px 25px !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  font-weight: bold !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  transition: all 0.3s !important;
+  text-decoration: none !important;
+  
+  &:hover {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+  }
+  
+  i {
+    font-size: 14px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+  }
+  
+  // Mobile: Make Shop Now buttons smaller and more elegant - override all inheritance
+  @media (max-width: 768px) {
+    padding: 6px 14px !important; // Further reduced for elegance
+    font-size: 11px !important; // Smaller, more refined
+    border-width: 1px !important; // Thinner border for elegance
+    border-radius: 4px !important; // Slightly smaller radius
+    gap: 5px !important; // Tighter gap
+    font-weight: 600 !important; // Slightly lighter than bold for refinement
+    letter-spacing: 0.2px !important; // Subtle letter spacing
+    
+    i {
+      font-size: 10px !important; // Smaller icon for proportion
+    }
+  }
+}
+
+.banner-image {
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  max-width: 200px !important;
+  z-index: 1 !important;
+  
+  img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+}

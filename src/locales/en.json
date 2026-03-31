@@ -1,0 +1,102 @@
+{
+  "blocks": {
+    "header": {
+      "cart": "Cart",
+      "contact_us": "Contact us from 8 AM - 10 PM / 6668 5555 8464",
+      "login": "Login",
+      "choose_category": "Choose Category",
+      "all_categories": "All Categories",
+      "featured_categories": "Featured Categories",
+      "pre_black_friday_sale": "Pre-Black Friday Sale: Up to 65% off | Use code \"BLACK\"",
+      "offer_ends_in": "Offer ends in"
+    },
+    "appBanner": {
+      "download_now": "download now"
+    },
+    "home": {
+      "choose_your_car": "Choose Your Car",
+      "brand": "Brand",
+      "model": "Model",
+      "year": "Year",
+      "engine": "Engine",
+      "trim": "Trim",
+      "search": "Search",
+      "or": "OR",
+      "search_by_vin": "Search by VIN",
+      "loading": "Loading...",
+      "no_categories": "No categories available",
+      "no_subcategories": "No subcategories",
+      "battery_starters": "Jump Starters",
+      "start_batteries_seconds": "Start batteries in seconds",
+      "shop_now": "Shop now",
+      "from_price": "From $49.99",
+      "best_brands": "Best Brands",
+      "batteries": "Batteries",
+      "stay_charged": "Stay charged!",
+      "buy_3_get_1_free": "Buy 3 Get 1 Free",
+      "tires_wheels": "Tires & Wheels",
+      "stay_safe_road": "Stay safe on the road!",
+      "big_discounts": "Big Discounts",
+      "buy_1_get_1": "Buy 1 Get 1",
+      "free": "Free",
+      "springs": "Springs",
+      "deals_of_week": "Deals of the Week!",
+      "brake_system": "Brake System",
+      "we_got_you_covered": "We Got You Covered",
+      "great_value_always": "Great Value. Always.",
+      "expert_service": "Expert Service",
+      "friendly_team_available": "Our friendly team is available all week.",
+      "amazing_value": "Amazing Value",
+      "brands_you_love": "The brands you prefer, at the prices you crave.",
+      "fast_free_shipping": "Fast & Free Shipping",
+      "shipping_fast_delivery": "Shipping is fast, delivery in 1-3 days.",
+      "irresistible_selection": "Irresistible Selection",
+      "everything_for_car": "Everything for your car, in one place.",
+      "newsletter_text": "What's inside: New arrivals, exclusive offers, truck news & more!",
+      "email_placeholder": "Email",
+      "featured_brands": "Best Brands",
+      "lamps_lights": "LAMPS AND LIGHTS",
+      "mega_sale": "MEGA SALE",
+      "models_2023_included": "2023 models included!",
+      "presale_chat": "Presale chat",
+      "lamps": "Lamps",
+      "air_filters": "AIR FILTERS",
+      "premium_quality": "Premium quality",
+      "air_filters_category": "Air Filters",
+      "up_to_40_off": "Up to 40% Off",
+      "ready_for_off_road": "READY FOR OFF ROAD",
+      "confidence_any_road": "Confidence on any road!",
+      "off_road_tire": "Off-Road Tire",
+      "engine_essentials": "ENGINE ESSENTIALS",
+      "maximize_maintain": "Maximize & Maintain",
+      "engine": "Engine",
+      "transmission_fluids": "TRANSMISSION FLUIDS",
+      "superior_quality_atf": "Superior Quality ATF",
+      "transmission_fluid": "Transmission Fluid",
+      "save_25_all_one": "Save 25%. All in One!",
+      "care_care_kit": "CARE CARE KIT",
+      "keep_clean_shine": "Keep things clean and shinela",
+      "fifteen_percent_off": "15% off"
+    },
+    "footer": {
+      "demo_store": "Demo Store"
+    }
+  },
+  "pages": {
+    "cart": {
+      "cart_options": "Cart Options"
+    },
+    "order": {
+      "can_edit_or_delete_your_review_within": "You can edit or delete your review within",
+      "edit_period_ended": "The period to edit the review has ended",
+      "delete_period_ended": "The period to delete the review has ended",
+      "days_since_added": "days since it was added",
+      "option_name": "Option name",
+      "option_content": "Content"
+    }
+  },
+  "common": {
+    "bank_offer_sub_title_multiple": "Pay for your purchases via one of the following bank cards and get the specified discount",
+    "bank_offer_sub_title_single": "Pay for your purchases via :bank_name bank card and get discount"
+  }
+}

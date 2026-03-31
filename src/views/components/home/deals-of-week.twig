@@ -1,0 +1,39 @@
+{#
+|| Variable              | Type      | Description                                                      |
+||-----------------------|-----------|------------------------------------------------------------------|
+|| position              | Int       | Sorting number start from zero                                   |
+#}
+
+<section class="deals-section">
+    <div class="container">
+        <div class="deals-header">
+            <h2>Deals of the week!</h2>
+            <div class="deals-countdown">
+                <span class="timer-box">09</span>
+                <span class="timer-separator">:</span>
+                <span class="timer-box">20</span>
+                <span class="timer-separator">:</span>
+                <span class="timer-box">54</span>
+                <span class="timer-separator">:</span>
+                <span class="timer-box">27</span>
+            </div>
+            <div class="deals-nav">
+                <button class="nav-arrow deals-prev" aria-label="Previous">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-arrow deals-next" aria-label="Next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="deals-products-wrapper">
+            <salla-products-slider
+                source="latest"
+                limit="12"
+                slider-id="deals-of-week-slider"
+                block-title=""
+            ></salla-products-slider>
+        </div>
+    </div>
+</section>

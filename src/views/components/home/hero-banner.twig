@@ -1,0 +1,56 @@
+{# Hero Banner with Vehicle Filter #}
+<section class="hero-section">
+    <div class="hero-slider">
+        <div class="hero-slide active">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>JUMP STARTERS</h2>
+                    <p>START BATTERIES IN SECONDS</p>
+                    <button class="shop-now-btn">Shop now <i class="sicon-sar"></i></button>
+                </div>
+                <div class="hero-image">
+                    <img src="{{ 'images/slider.png'|asset }}" alt="Hero Banner" onerror="this.src='{{ 'images/placeholder.png'|asset }}'">
+                    <div class="price-badge">FROM $49.99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {# Vehicle Filter - Fixed in Hero Banner #}
+    <div class="hero-vehicle-filter">
+        <div class="vehicle-filter-form">
+            <h5>Select your car</h5>
+            <div class="vehicle-filter-fields">
+                <select class="vehicle-select">
+                    <option>Make</option>
+                </select>
+                <select class="vehicle-select">
+                    <option>Model</option>
+                </select>
+                <select class="vehicle-select">
+                    <option>Year</option>
+                </select>
+                <select class="vehicle-select">
+                    <option>Engine</option>
+                </select>
+                <select class="vehicle-select">
+                    <option>Trim</option>
+                </select>
+                <button class="vehicle-search-btn">Search</button>
+            </div>
+            <div class="vehicle-filter-or">
+                <span>OR</span>
+            </div>
+            <div class="vehicle-filter-vin">
+                <input type="text" class="vin-input" placeholder="Search by VIN">
+                <button class="vin-search-btn">Search</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slider-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</section>

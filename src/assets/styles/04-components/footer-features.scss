@@ -1,0 +1,78 @@
+/* Footer Features Section - Above Footer - Match Frontend */
+.footer-features-section {
+  padding: 40px 0 !important;
+  background-color: #28a745 !important; // var(--green)
+  
+  .container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 15px !important;
+    
+    @media (min-width: 768px) {
+      padding: 0 20px !important;
+    }
+    
+    @media (min-width: 1024px) {
+      padding: 0 24px !important;
+    }
+  }
+}
+
+.footer-features {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 30px !important;
+  
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+.footer-feature {
+  text-align: center !important;
+  padding: 0 !important;
+  
+  i,
+  i.fas,
+  i[class*="fa-"] {
+    font-size: 40px !important;
+    color: #ffffff !important;
+    margin-bottom: 15px !important;
+    display: block !important;
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    
+    // Ensure Font Awesome icons are loaded
+    &::before {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+      display: inline-block !important;
+    }
+  }
+  
+  h3 {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    margin-bottom: 10px !important;
+  }
+  
+  p {
+    font-size: 14px !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+  }
+}

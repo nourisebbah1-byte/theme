@@ -1,0 +1,217 @@
+/* Additional Promotional Banners - Brake System Banner */
+.additional-banners {
+  padding: 60px 0 !important;
+  background-color: #ffffff !important;
+  overflow: visible !important; // Allow image to extend outside
+  
+  .container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 15px !important;
+    overflow: visible !important; // Allow image to extend outside
+    
+    @media (min-width: 768px) {
+      padding: 0 20px !important;
+    }
+    
+    @media (min-width: 1024px) {
+      padding: 0 24px !important;
+    }
+  }
+}
+
+.banner-grid-2 {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 20px !important;
+  overflow: visible !important; // Allow image to extend outside
+}
+
+.brake-banner {
+  position: relative !important;
+  padding: 40px !important;
+  border-radius: 10px !important;
+  min-height: 400px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  overflow: visible !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  
+  // Dark overlay only on RIGHT side for text readability (text is on right)
+  &::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 45% !important; // Darken right side for text
+    bottom: 0 !important;
+    background: linear-gradient(to left, rgba(26, 26, 26, 0.6) 0%, rgba(26, 26, 26, 0.2) 50%, transparent 100%) !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+    
+    @media (max-width: 768px) {
+      width: 100% !important;
+      background: linear-gradient(to left, rgba(26, 26, 26, 0.7) 0%, rgba(26, 26, 26, 0.4) 100%) !important;
+    }
+  }
+  
+  .banner-content {
+    position: relative !important;
+    z-index: 10 !important; // Higher z-index to appear above image
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    padding-left: 20px !important; // Text on RIGHT side
+    margin-left: auto !important; // Push content to right
+    order: 2 !important; // Force content to appear on right
+    
+    h2 {
+      color: #f29f05 !important; // var(--primary-orange)
+      font-size: 48px !important;
+      font-weight: bold !important;
+      margin-bottom: 10px !important;
+      line-height: 1.2 !important;
+      
+      @media (max-width: 768px) {
+        font-size: 36px !important;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 28px !important;
+      }
+    }
+    
+    p {
+      color: #ffffff !important; // var(--white)
+      font-size: 20px !important;
+      margin-bottom: 15px !important;
+      font-weight: 600 !important;
+      
+      @media (max-width: 768px) {
+        font-size: 18px !important;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 16px !important;
+      }
+    }
+    
+    .banner-subtitle {
+      color: #ffffff !important; // var(--white)
+      font-size: 16px !important;
+      margin-bottom: 20px !important;
+      font-weight: normal !important;
+    }
+  }
+  
+  .banner-badge {
+    display: inline-block !important;
+    padding: 5px 15px !important;
+    background-color: #bf3617 !important; // var(--primary-red)
+    color: #ffffff !important; // var(--white)
+    border-radius: 20px !important;
+    font-size: 12px !important;
+    margin-bottom: 15px !important;
+    font-weight: 600 !important;
+  }
+  
+  .banner-buttons {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin-top: 10px !important;
+  }
+  
+  .banner-btn {
+    background-color: #ffffff !important; // var(--white)
+    color: #000000 !important; // var(--black)
+    border: 2px solid #000000 !important; // var(--black)
+    padding: 12px 25px !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    font-weight: bold !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    transition: all 0.3s !important;
+    margin: 0 !important;
+    
+    &:hover {
+      background-color: #000000 !important;
+      color: #ffffff !important;
+    }
+    
+    i {
+      font-size: 14px !important;
+    }
+  }
+  
+  
+  .banner-image {
+    position: absolute !important;
+    left: -20px !important; // Image on LEFT side - FORCE it to left
+    right: auto !important; // Explicitly remove right positioning
+    bottom: -30px !important; // Position lower and extend outside
+    top: auto !important;
+    width: 50% !important;
+    max-width: 55% !important;
+    z-index: 1 !important; // Below text content
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: flex-start !important; // Align to left
+    padding: 0 !important;
+    order: 1 !important; // Force image to appear on left
+    
+    // Force left positioning with !important
+    &[style*="right"] {
+      right: auto !important;
+      left: -20px !important;
+    }
+    
+    img {
+      width: auto !important;
+      max-width: 100% !important;
+      max-height: 120% !important; // Allow image to be taller
+      height: auto !important;
+      display: block !important;
+      object-fit: contain !important;
+      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3)) !important; // Add shadow for 3D effect
+    }
+    
+    @media (max-width: 768px) {
+      position: relative !important;
+      right: auto !important;
+      bottom: auto !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 20px !important;
+      justify-content: center !important;
+      align-items: center !important;
+      
+      img {
+        max-height: 100% !important;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    min-height: 350px !important;
+    padding: 30px !important;
+    flex-direction: column !important;
+    
+    .banner-content {
+      max-width: 100% !important;
+      margin-bottom: 20px !important;
+    }
+    
+    .banner-image {
+      position: relative !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-top: 20px !important;
+    }
+  }
+}

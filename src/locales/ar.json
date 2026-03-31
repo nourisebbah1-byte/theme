@@ -1,0 +1,102 @@
+{
+  "blocks": {
+    "header": {
+      "cart": "السلة",
+      "contact_us": "اتصل بنا من 8 صباحاً - 10 مساءً / 6668 5555 8464",
+      "login": "تسجيل الدخول",
+      "choose_category": "اختر الفئة",
+      "all_categories": "جميع الفئات",
+      "featured_categories": "فئات مميزة",
+      "pre_black_friday_sale": "تخفيضات ما قبل الجمعة السوداء : خصم يصل إلى 65% | استخدم الكود \"BLACK\"",
+      "offer_ends_in": "تنتهي العروض خلال"
+    },
+    "appBanner": {
+      "download_now": "حمله الان"
+    },
+    "home": {
+      "choose_your_car": "اختر سيارتك",
+      "brand": "العلامة",
+      "model": "الموديل",
+      "year": "السنة",
+      "engine": "المحرك",
+      "trim": "الفئة",
+      "search": "بحث",
+      "or": "أو",
+      "search_by_vin": "البحث برقم الشاصي",
+      "loading": "جاري التحميل...",
+      "no_categories": "لا توجد فئات متاحة",
+      "no_subcategories": "لا توجد تصنيفات فرعية",
+      "battery_starters": "مشغلات البطاريات",
+      "start_batteries_seconds": "شغّل البطاريات في ثوانٍ",
+      "shop_now": "تسوق الآن",
+      "from_price": "من 49.99 دولار",
+      "best_brands": "أفضل العلامات التجارية",
+      "batteries": "البطاريات",
+      "stay_charged": "ابق مشحوناً!",
+      "buy_3_get_1_free": "اشتري 3 واحصل على 1 مجاناً",
+      "tires_wheels": "الإطارات والعجلات",
+      "stay_safe_road": "ابق آمناً على الطريق!",
+      "big_discounts": "تخفيضات كبيرة",
+      "buy_1_get_1": "اشتري 1 واحصل على 1",
+      "free": "مجاناً",
+      "springs": "الزنبركات",
+      "deals_of_week": "عروض الأسبوع!",
+      "brake_system": "نظام الفرامل",
+      "we_got_you_covered": "نحن نغطيك",
+      "great_value_always": "قيم رائعة. دائماً.",
+      "expert_service": "خدمة خبيرة",
+      "friendly_team_available": "فريقنا الودود متاح على مدار الأسبوع.",
+      "amazing_value": "قيمة مذهلة",
+      "brands_you_love": "العلامات التجارية التي تفضلها، بأسعار تناسبك.",
+      "fast_free_shipping": "شحن سريع ومجاني",
+      "shipping_fast_delivery": "الشحن يتم بسرعة، والتوصيل خلال 1-3 أيام.",
+      "irresistible_selection": "اختيار لا يُقاوم",
+      "everything_for_car": "كل ما تريده لسيارتك، في مكان واحد.",
+      "newsletter_text": "ما بداخلنا: وصولات جديدة، عروض حصرية، أخبار الشاحنات والمزيد!",
+      "email_placeholder": "البريد الإلكتروني",
+      "featured_brands": "أفضل العلامات التجارية",
+      "lamps_lights": "المصابيح والإضاءة",
+      "mega_sale": "تخفيضات ضخمة",
+      "models_2023_included": "نماذج 2023 متضمنة!",
+      "presale_chat": "محادثة ما قبل البيع",
+      "lamps": "المصابيح",
+      "air_filters": "مرشحات الهواء",
+      "premium_quality": "جودة عالية",
+      "air_filters_category": "مرشحات الهواء",
+      "up_to_40_off": "خصم يصل إلى 40%",
+      "ready_for_off_road": "جاهز للطرق الوعرة",
+      "confidence_any_road": "ثقة على أي طريق!",
+      "off_road_tire": "إطار الطرق الوعرة",
+      "engine_essentials": "أساسيات المحرك",
+      "maximize_maintain": "تعظيم والصيانة",
+      "engine": "المحرك",
+      "transmission_fluids": "سوائل ناقل الحركة",
+      "superior_quality_atf": "جودة فائقة ATF",
+      "transmission_fluid": "سائل ناقل الحركة",
+      "save_25_all_one": "وفر 25%. كل شيء في واحد!",
+      "care_care_kit": "طقم العناية",
+      "keep_clean_shine": "ابق نظيفاً ولامعاً",
+      "fifteen_percent_off": "خصم 15%"
+    },
+    "footer": {
+      "demo_store": "متجر تجريبي"
+    }
+  },
+  "pages": {
+    "cart": {
+      "cart_options": "خيارات السلة"
+    },
+    "order": {
+      "can_edit_or_delete_your_review_within": "يمكنك تعديل أو حذف تقييمك خلال",
+      "edit_period_ended": "تم انتهاء المدة المحددة لتعديل التقييم",
+      "delete_period_ended": "تم انتهاء المدة المحددة لحذف التقييم",
+      "days_since_added": "أيام من إضافته",
+      "option_name": "الخيار",
+      "option_content": "المحتوى"
+    }
+  },
+  "common": {
+    "bank_offer_sub_title_multiple": "ادفع قيمة مشترياتك عبر أحد البطاقات البنكة التالية واحصل على الخصم المحدد",
+    "bank_offer_sub_title_single": "ادفع قيمة مشترياتك عبر أحد بطاقات بنك :bank_name واحصل على خصم بنسبة "
+  }
+}

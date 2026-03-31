@@ -1,0 +1,202 @@
+{#
+| Variable         | Type    | Description                     |
+|------------------|---------|---------------------------------|
+| cart             | object  |                                 |
+| cart.items_count | int     |                                 |
+| cart.total       | string  | Formatted total ex: "١٠٠ ر.س"   |
+#}
+{% set important_links = theme.settings.get('important_links') %}
+<header class="store-header">
+  {# Top Banner - Two Section Design: Contact Info + Promotional Banner #}
+  {# Section 1: Contact Information #}
+  <div class="top-banner-contact">
+    <div class="container">
+      <div class="top-banner-contact-left">
+        <span><i class="fas fa-phone"></i> {{ trans('blocks.header.contact_us') }}</span>
+      </div>
+      <div class="top-banner-contact-right">
+        {# Currency/Language/Login - Icon only #}
+        <div class="header-buttons">
+          {% if store.settings.is_multilingual or store.settings.currencies_enabled %}
+              <button type="button" onclick="salla.event.dispatch('localization::open')" class="btn--rounded-gray basis-0">
+                  <span>{{ user.language.name }}</span>
+                  <span class="mx-1.5">|</span> <span>{{ currency.symbol }}</span>
+              </button>
+              <salla-localization-modal></salla-localization-modal>
+          {% endif %}
+        </div>
+        {# Login - Icon only #}
+        {% if user.type=='user' %}
+          <salla-user-menu avatar-only show-header></salla-user-menu>
+        {% else %}
+          <button class="header-btn login-btn-icon" aria-label="{{ trans('blocks.header.login') }}" onclick="salla.event.dispatch('login::open')">
+            <i class="sicon-user-circle login-icon"></i>
+          </button>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  
+  {# Section 2: Promotional Banner with Timer #}
+  <div class="top-banner-promo">
+    <div class="container">
+      <div class="top-banner-promo-content">
+        <span class="sale-text">{{ trans('blocks.header.pre_black_friday_sale') }}</span>
+        <span class="offer-expires">{{ trans('blocks.header.offer_ends_in') }}</span>
+        <div class="countdown-timer">
+          <span class="timer-box"><span id="days">09</span></span>
+          <span class="timer-separator">:</span>
+          <span class="timer-box"><span id="hours">19</span></span>
+          <span class="timer-separator">:</span>
+          <span class="timer-box"><span id="minutes">15</span></span>
+          <span class="timer-separator">:</span>
+          <span class="timer-box"><span id="seconds">29</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  {# Main Nav - Row 1: Logo | Search | Currency/Language/Login/Cart #}
+  <div id="mainnav" class="main-nav-container shadow-default bg-white flex items-center">
+      <div class="inner bg-inherit w-full">
+          <div class="container">
+              {# Row 1 #}
+              <div class="flex items-stretch justify-between relative main-nav-row-1">
+                  {# Logo - Left #}
+                  <div class="flex items-center">
+                      <a class="lg:hidden mburger mburger--collapse leading-none rtl:ml-4 ltr:mr-4" href="#mobile-menu" aria-label="Open-menu">
+                        <i class="sicon-menu text-primary text-2xl"></i>
+                      </a>
+                      <a class="navbar-brand" href="{{ store.url }}">
+                          {# MOBEX AUTO PARTS & ACCESSORIES Logo #}
+                          {% if is_page('index') %}
+                            <h1 class="mobex-logo">
+                              <span class="mobex-title">MOBEX</span>
+                              <span class="mobex-subtitle">AUTO PARTS & ACCESSORIES</span>
+                            </h1>
+                          {% else %}
+                            <h2 class="mobex-logo">
+                              <span class="mobex-title">MOBEX</span>
+                              <span class="mobex-subtitle">AUTO PARTS & ACCESSORIES</span>
+                            </h2>
+          {% endif %}
+                      </a>
+                  </div>
+                  
+                  {# Search bar - Center with category dropdown #}
+                  <div class="header-search flex-1" style="max-width: 600px; margin: 0 20px;">
+                    <div class="search-wrapper">
+                      <div class="search-category-wrapper">
+                        <select class="search-category">
+                          <option>{{ trans('blocks.header.choose_category') }}</option>
+                        </select>
+                      </div>
+                      <salla-search inline height="48"></salla-search>
+                      {# Red search button at the end #}
+                      <button type="button" class="search-submit-btn" onclick="document.querySelector('.s-search-input')?.closest('salla-search')?.querySelector('button[type=\"submit\"]')?.click() || document.querySelector('.s-search-input')?.form?.requestSubmit()">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                          <title>search</title>
+                          <path fill="#ffffff" d="M30.276 28.391l-7.576-7.576c1.644-2.053 2.633-4.652 2.633-7.481 0-6.616-5.384-12-12-12s-12 5.384-12 12 5.384 12 12 12c2.829 0 5.428-0.989 7.481-2.633l7.576 7.576c0.26 0.26 0.601 0.391 0.943 0.391s0.683-0.131 0.943-0.391c0.521-0.521 0.521-1.364 0-1.885zM13.333 22.667c-5.147 0-9.333-4.187-9.333-9.333s4.187-9.333 9.333-9.333 9.333 4.187 9.333 9.333-4.187 9.333-9.333 9.333z"></path>
+                        </svg>
+                      </button>
+                      {# Vehicle Filter Toggle Button (Mobile Only) #}
+                      <button type="button" class="vehicle-filter-toggle-btn" id="vehicle-filter-toggle-btn" aria-label="{{ trans('blocks.home.choose_your_car') }}">
+                        <i class="sicon-filter"></i>
+                      </button>
+                    </div>
+                  </div>
+                  
+                  {# Scopes | Branches | Cart - Right #}
+                  <div class="flex items-center justify-end gap-3 header-actions-wrapper">
+          {# Scopes | Branches #}
+          {% if store.scope %}
+              <button class="btn--rounded-gray"
+                      onclick="salla.event.dispatch('scopes::open', {'mode': 'default'})">
+                  <i class="sicon-location rtl:ml-1 ltr:mr-1"></i> {{ store.scope.name }}
+              </button>
+          {% endif %}
+
+                      {# Login/User Menu - Icon only in main nav (moved to top banner) #}
+                      {% if user.type=='user' %}
+                        <salla-user-menu avatar-only show-header></salla-user-menu>
+                      {% endif %}
+                      
+                      {# Cart - Main Header - Professional Design #}
+                      <salla-cart-summary class="cart-link-main ml-2 rtl:ml-[unset] rtl:mr-2">
+                        <i slot="icon" class="fas fa-shopping-cart"></i>
+                      </salla-cart-summary>
+                  </div>
+              </div>
+              
+          </div>
+      </div>
+  </div>
+  
+  {# Navigation Row 2: All Categories Button | Nav Links (all on same line) #}
+  <nav class="main-nav-row-2">
+      <div class="container">
+          <div class="flex items-center">
+              {# All Categories Button with Dropdown - Left #}
+              <div class="all-categories-dropdown">
+                  <button class="all-categories-btn" aria-label="{{ trans('blocks.header.all_categories') }}" id="all-categories-btn">
+                  <i class="sicon-menu rtl:ml-2 ltr:mr-2"></i>
+                      <span>{{ trans('blocks.header.all_categories') }}</span>
+                  <i class="sicon-sar rtl:mr-2 ltr:ml-2"></i>
+                  </button>
+                  <div class="all-categories-menu" id="all-categories-menu">
+                      <div class="categories-loading">{{ trans('blocks.home.loading') }}</div>
+                  </div>
+              </div>
+              
+              {# Navigation Menu - Center (same line as button) #}
+              <div class="flex-1 flex justify-center nav-menu-wrapper">
+                  <custom-main-menu></custom-main-menu>
+              </div>
+          </div>
+      </div>
+  </nav>
+  
+  {# Vehicle Filter Modal (Mobile Only) #}
+  <div class="vehicle-filter-modal" id="vehicle-filter-modal">
+    <div class="vehicle-filter-modal-content">
+      <div class="vehicle-filter-modal-header">
+        <h5>
+          <i class="sicon-filter"></i>
+          {{ trans('blocks.home.choose_your_car') }}
+        </h5>
+        <button type="button" class="vehicle-filter-close-btn" id="vehicle-filter-close-btn" aria-label="Close">
+          <i class="sicon-close"></i>
+        </button>
+      </div>
+      <div class="vehicle-filter-modal-body">
+        <div class="vehicle-filter-form">
+          <div class="vehicle-filter-fields">
+            <select class="vehicle-select" id="vehicle-filter-brand">
+              <option value="">{{ trans('blocks.home.brand') }}</option>
+            </select>
+            <select class="vehicle-select" id="vehicle-filter-model">
+              <option value="">{{ trans('blocks.home.model') }}</option>
+            </select>
+            <select class="vehicle-select" id="vehicle-filter-year">
+              <option value="">{{ trans('blocks.home.year') }}</option>
+            </select>
+            <select class="vehicle-select" id="vehicle-filter-engine">
+              <option value="">{{ trans('blocks.home.engine') }}</option>
+            </select>
+            <select class="vehicle-select" id="vehicle-filter-trim">
+              <option value="">{{ trans('blocks.home.trim') }}</option>
+            </select>
+            <button type="button" class="vehicle-search-btn" id="vehicle-filter-search-btn">{{ trans('blocks.home.search') }}</button>
+          </div>
+          <div class="vehicle-filter-or">
+            <span>{{ trans('blocks.home.or') }}</span>
+          </div>
+          <div class="vehicle-filter-vin">
+            <input type="text" class="vin-input" id="vehicle-filter-vin" placeholder="{{ trans('blocks.home.search_by_vin') }}">
+            <button class="vin-search-btn" id="vehicle-filter-vin-search-btn">{{ trans('blocks.home.search') }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

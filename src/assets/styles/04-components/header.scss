@@ -1,0 +1,1541 @@
+/* Remove white space between header and content */
+.main-nav-container,
+.main-nav,
+#mainnav,
+header,
+.store-header {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+main#main-content,
+#main-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Top Nav */
+.top-navbar {
+  @apply flex py-2 min-h-[48px];
+  background-color: #023a6b;
+  color: #ffffff;
+
+  @screen lg {
+    @apply py-1.5;
+  }
+
+  .topnav-has-bg & {
+    @apply bg-[color:var(--topnav-bg)];
+  }
+
+  .topnav-has-gradient & {
+    @apply bg-gradient-to-r from-[color:var(--topnav-gradient-from)] to-[color:var(--topnav-gradient-to)];
+  }
+
+  .topnav-has-text-color & {
+    @apply text-[color:var(--topnav-text-color)];
+  }
+
+  // Currency/Language Select styling - EXACT match to reference (select dropdowns)
+  .header-buttons {
+    .btn--rounded-gray {
+      background-color: transparent !important;
+      color: #ffffff !important;
+      border: none !important;
+      padding: 8px !important;
+      border-radius: 0 !important;
+      transition: all 0.3s;
+      cursor: pointer;
+      font-size: 14px;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      
+      &:hover {
+        background-color: rgba(255,255,255,0.1);
+      }
+    }
+  }
+  
+  // Style select elements to look like reference
+  select.currency-select,
+  select.language-select {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 8px !important;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  // Login button styling - EXACT match to reference (white border, icon + text)
+  .login-btn,
+  .header-btn.login-btn {
+    background-color: transparent !important;
+    border: 1px solid #ffffff !important;
+    color: #ffffff !important;
+    padding: 8px 15px !important;
+    border-radius: 3px !important;
+    transition: all 0.3s;
+    cursor: pointer;
+    display: flex !important;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: normal;
+    height: auto;
+    line-height: normal;
+    
+    &:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+    
+    .login-icon,
+    i {
+      font-size: 16px !important;
+      color: #ffffff !important;
+      display: inline-block !important;
+      width: 16px !important;
+      height: 16px !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+    
+    span {
+      color: #ffffff !important;
+      display: inline-block !important;
+    }
+  }
+
+  .s-search-input{
+    @apply bg-white/90 hover:bg-white border-none;
+    color: #111;
+  }
+
+  @media (max-width: 640px) {
+    .s-search-results{
+      @apply w-screen max-w-[100vw] rtl:-left-2.5 ltr:-right-2.5; 
+    }
+  } 
+
+  .topnav-is-dark & {
+    @apply bg-dark text-gray-300;
+
+    .btn--circle-gray,
+    .btn--rounded-gray,
+    .s-search-input{
+      @apply bg-gray-100/10 hover:bg-gray-100/[0.15]
+    }
+
+    .topnav-link-item{
+      @apply border-gray-300/10;
+    }
+
+    .s-search-input{
+      @apply text-white;
+    }
+  }
+
+  .search-btn{
+    @apply grow sm:grow-0 justify-start md:justify-center;
+  }
+  
+  // Hide search in top nav (moved to main nav)
+  .header-search {
+    display: none;
+  }
+}
+
+// contacs menu items - pages menu items
+.topnav-link-item{
+  @apply inline-block transition duration-300 px-4 rtl:last:pl-0 ltr:last:pr-0 py-px text-sm leading-none ltr:border-r rtl:border-l border-white/20 ltr:last:border-0 rtl:last:border-0 hover:opacity-80;
+  color: #ffffff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: #bf3617;
+  }
+
+  &.right-side{
+    @apply rtl:first:pr-0 ltr:first:pl-0
+  }
+}
+
+// Style salla-menu in top nav to match reference design
+.top-navbar salla-menu {
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0 8px;
+    display: inline-block;
+    transition: all 0.3s;
+    
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: #bf3617;
+    }
+  }
+  
+  li {
+    display: inline-block;
+    
+    &:not(:last-child)::after {
+      content: '';
+      display: inline-block;
+      width: 1px;
+      height: 12px;
+      background-color: rgba(255,255,255,0.3);
+      margin: 0 4px;
+      vertical-align: middle;
+    }
+  }
+}
+
+/* Main Nav */
+.main-nav-container {
+  @apply min-h-[68px] lg:min-h-[84px];
+  background-color: #034c8c;
+  padding: 15px 0 !important; // Reduced padding to remove white space
+  color: #ffffff;
+  
+  // Custom background Color
+  .has-bg &,
+  .has-bg & .sub-menu{
+    @apply bg-[color:var(--mainnav-bg)];
+  }
+
+  // Custom text color
+  .has-text-color & {
+    @apply text-[color:var(--mainnav-text-color)];
+  }
+
+  // Menu text color
+  a, button, span {
+    color: #ffffff;
+  }
+  
+  // Row 1 styling
+  .main-nav-row-1 {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  
+  // All Categories Button - Smaller height, on right
+  .all-categories-btn {
+    background-color: #f29f05;
+    color: #000000;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+    font-size: 14px;
+    text-decoration: none;
+    height: 36px;
+    white-space: nowrap;
+    
+    &:hover {
+      background-color: #e68f04;
+      color: #000000;
+    }
+    
+    i {
+      color: #000000;
+      font-size: 14px;
+    }
+  }
+  
+  // Main menu links styling - centered in row 2
+  .main-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: all 0.3s;
+      padding: 8px 15px;
+      
+      &:hover {
+        color: #ffffff;
+        text-decoration: underline;
+        text-decoration-color: #bf3617;
+      }
+    }
+  }
+  
+}
+
+.menu-item {
+  @apply flex items-center px-6 py-2.5 sm:text-sm text-gray-500 transition-colors duration-300 hover:bg-gray-200/30;
+
+  &.logout{
+    @apply text-red-400;
+  }
+
+  &.is-active{
+    @apply text-primary bg-gray-200/20;
+  }
+}
+
+/* Sticky Header */
+.main-nav-container {
+  &.animated {
+    .inner {
+      transition: top 0.5s, transform 0.5s, -webkit-transform 0.5s, opacity 0.4s;
+    }
+  }
+
+  &.fixed-pinned {
+    .inner {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      z-index: 29;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      transform: translate3d(0, -100%, 0);
+
+      @media (max-width: 1024px){
+        transform: none;
+        top: -70px;
+      }
+    }
+
+    .navbar-brand {
+      img {
+        max-height: 40px;
+      }
+
+      h4 {
+        line-height: 1;
+      }
+    }
+
+    .main-menu > li > a {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+
+  &.fixed-header {
+    .inner {
+      transform: translate3d(0, 0, 0);
+
+      @media (max-width: 1024px){
+        transform: none;
+        top: 0;
+      }
+    }
+  }
+}
+
+.navbar-brand {
+  @apply items-center flex my-2 lg:my-0;
+
+  img {
+    @apply w-auto max-h-12 max-w-[100px] xs:max-w-[170px];
+  }
+
+  // MOBEX AUTO PARTS & ACCESSORIES Logo Styling
+  .mobex-logo {
+    color: #ffffff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
+    
+    .mobex-title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #ffffff;
+      display: block;
+      letter-spacing: 1px;
+      
+      // Make first letter "M" orange like category button
+      &::first-letter {
+        color: #f29f05 !important;
+      }
+    }
+    
+    .mobex-subtitle {
+      font-size: 12px;
+      font-weight: normal;
+      color: #ffffff;
+      display: block;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+  }
+
+  h1, h2 {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+    display: flex;
+    align-items: baseline;
+
+    &::first-letter {
+      color: #f29f05;
+    }
+  }
+  
+  // If logo is text-based, style first 2 letters orange
+  &::first-letter,
+  h1::first-letter,
+  h2::first-letter {
+    color: #f29f05;
+  }
+  
+  // Style for MOBEX-like logo (first 2 chars orange, rest white)
+  &[data-logo-text]::before {
+    content: attr(data-logo-text);
+    color: #f29f05;
+  }
+}
+
+// Mainnav cart icon - match reference design
+.main-nav-container {
+  .header-btn {
+    @apply border-none outline-none transition-opacity hover:opacity-80;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    
+    &__icon {
+      @apply text-lg;
+      color: #ffffff;
+      font-size: 18px;
+      width: auto;
+      height: auto;
+      border: none;
+      background: transparent;
+      
+      &.icon {
+        @apply mr-[9px] rtl:ml-[9px] rtl:mr-[unset];
+      }
+    }
+  }
+  
+  // Login button removed from main nav (moved to top banner)
+  
+  // Cart summary styling - Main Header - Professional Design
+  salla-cart-summary.cart-link-main {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center !important;
+    margin-right: 15px !important;
+    position: relative !important;
+    min-width: auto !important;
+    min-height: auto !important;
+    padding: 8px 12px !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 5px !important;
+    transition: all 0.3s ease !important;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.15) !important;
+    }
+    
+    // Add cart icon directly via pseudo-element on the wrapper
+    &::before {
+      content: "\f07a" !important; // Font Awesome shopping cart icon
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+      font-size: 22px !important; // Nice size white cart icon
+      color: #ffffff !important;
+      display: inline-block !important;
+      width: 22px !important;
+      height: 22px !important;
+      line-height: 22px !important;
+      margin-left: 0 !important;
+      margin-right: 8px !important;
+      flex-shrink: 0 !important;
+    }
+    
+    .s-cart-summary-wrapper {
+      color: #ffffff !important;
+      text-decoration: none !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      font-size: 14px;
+      padding: 0 !important;
+      margin-left: 0 !important;
+    }
+    
+    // Hide default icon container if it exists
+    .s-cart-summary-icon {
+      display: none !important;
+    }
+    
+    // Hide any slot icons since we're using pseudo-element
+    i[slot="icon"],
+    [slot="icon"],
+    slot[name="icon"] {
+      display: none !important;
+    }
+    
+    // Red notification badge - positioned on top right of cart icon
+    .s-cart-summary-count {
+      position: absolute !important;
+      top: 2px !important;
+      right: 2px !important;
+      background-color: #bf3617 !important; // Red badge
+      color: #ffffff !important;
+      border-radius: 50% !important;
+      width: 18px !important;
+      height: 18px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 10px !important;
+      font-weight: bold !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      min-width: 18px !important;
+      border: 2px solid #034c8c !important; // Dark blue border
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+      z-index: 10 !important;
+    }
+    
+    // Cart total/price - show next to icon
+    .s-cart-summary-total {
+      color: #ffffff !important;
+      font-weight: 600 !important;
+      font-size: 14px !important;
+      margin-left: 0 !important;
+      white-space: nowrap !important;
+    }
+    
+    // Hide any unwanted text
+    .s-cart-summary-text {
+      display: none !important;
+    }
+  }
+}
+
+.header-buttons .sicon-sar {
+  width: 0.65rem;
+  display: inline-block;
+min-height: 1.4rem;
+}
+
+#mainnav .sicon-menu {
+  width: 1rem;
+  display: inline-block
+}
+
+custom-main-menu {
+  min-height: auto !important;
+  height: auto !important;
+}
+
+// Global cart summary - only apply to non-main-header carts
+salla-cart-summary:not(.cart-link-main) {
+  min-width: 73px;
+  min-height: 40px;
+}
+
+// Override for main header cart
+.header-actions-wrapper salla-cart-summary.cart-link-main {
+  min-width: auto !important;
+  min-height: auto !important;
+}
+salla-user-menu{
+  @apply shrink-0;
+}
+
+// cart summary - global styles (not for main header)
+salla-cart-summary:not(.cart-link-main) {
+  .s-cart-summary-total{
+    @apply text-white font-[600];
+  }
+
+  .s-cart-summary-count{
+    @apply -top-0.5 ltr:-left-1.5 rtl:-right-1.5 bg-red-800;
+  }
+}
+
+#nav-cart{
+  @apply flex items-center rtl:mr-4 ltr:ml-4 relative whitespace-nowrap;
+
+  .icon{
+    @apply rtl:ml-2 ltr:mr-2;
+  }
+
+  span{
+    @apply absolute top-1 rtl:-right-2 ltr:-left-2;
+  }
+}
+
+
+// Search
+.header-search{
+  .s-search-results{
+    @apply z-10;
+  }
+  
+  // Style search in main nav to match reference design
+  salla-search {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    
+    .s-search-input {
+      background-color: #ffffff;
+      border: none;
+      padding: 12px 15px;
+      flex: 1;
+      color: #111;
+      border-radius: 0;
+      
+      &::placeholder {
+        color: #999;
+      }
+    }
+    
+    // Search button styling (red button on right)
+    button[type="submit"],
+    .s-search-submit {
+      background-color: #bf3617;
+      color: #ffffff;
+      border: none;
+      padding: 12px 20px;
+      cursor: pointer;
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s;
+      
+      &:hover {
+        background-color: #a02d12;
+      }
+    }
+  }
+}
+
+// Main nav search bar styling - EXACT match to reference (MUCH LONGER, red button with visible search icon)
+.main-nav-container {
+  .header-search {
+    flex: 1;
+    max-width: 1000px;
+    min-width: 700px;
+    margin: 0 20px;
+    display: flex;
+    align-items: stretch;
+    height: 48px;
+    
+    .search-wrapper {
+      display: flex;
+      align-items: stretch;
+      width: 100%;
+      height: 48px;
+      background-color: #ffffff;
+      position: relative;
+    }
+    
+    // Custom search submit button at the end (after salla-search)
+    .search-submit-btn {
+      background-color: #bf3617 !important;
+      color: #ffffff !important;
+      border: none !important;
+      padding: 0 !important;
+      cursor: pointer;
+      border-radius: 0 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: background-color 0.3s;
+      width: 50px !important;
+      height: 48px !important;
+      flex-shrink: 0 !important;
+      margin-left: 0 !important;
+      
+      &:hover {
+        background-color: #a02d12 !important;
+      }
+      
+      svg {
+        width: 20px !important;
+        height: 20px !important;
+        display: block !important;
+      }
+    }
+    
+    // Category dropdown wrapper - for custom arrow positioning
+    .search-category-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-width: 150px;
+      height: 48px;
+      border-right: 1px solid #e0e0e0;
+      
+      // Custom dropdown arrow - properly positioned and vertically centered
+      &::after {
+        content: '';
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 6px solid #666;
+        pointer-events: none;
+        z-index: 1;
+      }
+    }
+    
+    // Category dropdown on left - EXACT match - Fixed chevron positioning
+    .search-category {
+      padding: 12px 35px 12px 15px !important; // Add right padding for custom arrow
+      border: none;
+      background-color: #ffffff;
+      border-radius: 0;
+      cursor: pointer;
+      font-size: 14px;
+      color: #111;
+      min-width: 150px;
+      width: 100%;
+      height: 48px;
+      border-right: none !important; // Border is on wrapper
+      appearance: none !important;
+      -webkit-appearance: none !important;
+      -moz-appearance: none !important;
+      display: flex;
+      align-items: center;
+      line-height: 1.5;
+      vertical-align: middle;
+      
+      // Remove ALL default arrow backgrounds and icons
+      background-image: none !important;
+      background-repeat: no-repeat !important;
+      background-position: right center !important;
+      
+      // Hide default browser arrow - ALL browsers
+      &::-ms-expand {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+      }
+      
+      // Firefox - hide dropdown arrow
+      &::-moz-appearance {
+        text-indent: 0.01px;
+        text-overflow: '';
+        -moz-appearance: none !important;
+      }
+      
+      // Chrome/Safari/Edge - hide dropdown arrow
+      &::-webkit-appearance {
+        -webkit-appearance: none !important;
+      }
+      
+      // Additional selectors to catch any default arrows
+      &::before,
+      &::after {
+        display: none !important;
+      }
+      
+      option {
+        padding: 8px;
+        line-height: 1.5;
+      }
+    }
+    
+    salla-search {
+      display: flex;
+      align-items: stretch;
+      flex: 1;
+      height: 48px;
+      min-width: 0; // Allow it to shrink
+      
+      .s-search-container {
+        display: flex !important;
+        width: 100%;
+        align-items: stretch;
+        border-radius: 0 !important;
+        background-color: transparent !important;
+        overflow: visible !important;
+        height: 48px;
+        box-shadow: none !important;
+        flex-direction: row !important; // Ensure horizontal layout
+        gap: 0 !important; // No gap between input and button
+        
+        // Ensure button is positioned after input
+        > * {
+          &:last-child {
+            order: 999 !important;
+          }
+        }
+      }
+      
+      // Hide ALL search icons at the beginning (inside input wrapper) - prevent duplication
+      .s-search-icon-wrap,
+      .s-search-icon,
+      .s-search-input-wrapper .s-search-icon-wrap,
+      .s-search-input-wrapper .s-search-icon,
+      span.s-search-icon-wrap,
+      span.s-search-icon {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+      }
+      
+      // Also hide any SVG icons inside the input wrapper
+      .s-search-input-wrapper svg {
+        display: none !important;
+        visibility: hidden !important;
+      }
+      
+      .s-search-input-wrapper {
+        display: flex !important;
+        flex: 1;
+        align-items: stretch;
+        background-color: #ffffff;
+        border: none;
+        position: relative;
+        overflow: visible !important;
+        order: 1 !important; // Input wrapper comes first
+      }
+      
+      .s-search-input {
+        flex: 1;
+        padding: 12px 15px !important;
+        border: none;
+        font-size: 14px;
+        background-color: #ffffff;
+        color: #111;
+        border-radius: 0;
+        height: 48px;
+        
+        &::placeholder {
+          color: #999;
+        }
+        
+        &:focus {
+          outline: none;
+        }
+      }
+      
+      // Hide ALL submit buttons inside salla-search to prevent duplication
+      // Only our custom button outside should show
+      .s-search-action,
+      button[type="submit"],
+      .s-search-submit,
+      [type="submit"],
+      button.s-search-submit {
+        display: none !important;
+        visibility: hidden !important;
+      }
+    }
+  }
+  
+  // Header actions wrapper - align login and cart on same line
+  .header-actions-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important; // Reduced gap to bring login and cart closer
+    margin-right: 0 !important; // Remove extra margin
+    padding-right: 0 !important;
+    
+    .login-btn,
+    salla-cart-summary.cart-link {
+      display: flex !important;
+      align-items: center !important;
+      height: auto;
+      margin: 0 !important;
+    }
+    
+    // Make cart right next to login
+    salla-cart-summary.cart-link {
+      margin-left: 8px !important;
+      margin-right: 0 !important;
+    }
+  }
+  
+  // Layout: logo left, search center, icons right
+  .container > div.flex.items-stretch {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    
+    > div:first-child {
+      flex-shrink: 0;
+    }
+    
+    > div:last-child {
+      flex-shrink: 0;
+    }
+  }
+  
+  // Ensure proper spacing and alignment
+  .flex.items-stretch {
+    align-items: center;
+  }
+  
+  // Responsive adjustments
+  @media (max-width: 1024px) {
+    .header-search {
+      max-width: 100%;
+      margin: 0 10px;
+    }
+    
+    .main-nav-row-2 {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .all-categories-btn {
+      font-size: 12px;
+      padding: 10px 15px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    // Prevent horizontal scroll globally on mobile
+    body,
+    html {
+      overflow-x: hidden !important;
+      max-width: 100vw !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    
+    // Prevent horizontal scroll - fix all containers
+    .main-nav-container {
+      padding: 0 !important;
+      margin: 0 !important;
+      width: 100% !important;
+      max-width: 100vw !important; // Use viewport width
+      overflow-x: hidden !important;
+      box-sizing: border-box !important;
+      
+      .inner {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+      }
+      
+      .container {
+        padding: 0 10px !important; // Reduced horizontal padding
+        margin: 0 auto !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+      }
+    }
+    
+    .main-nav-row-1 {
+      display: flex !important;
+      flex-direction: row !important; // Horizontal layout for first row
+      flex-wrap: wrap !important; // Allow search bar to wrap below
+      gap: 0 !important;
+      align-items: center !important;
+      justify-content: flex-start !important; // Align all items to the left
+      padding: 8px 15px !important; // Container padding
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      min-height: auto !important;
+      overflow-x: hidden !important;
+      margin: 0 !important;
+      position: relative !important;
+    }
+    
+    // Logo section - first item, aligned left
+    .main-nav-row-1 > div:first-child {
+      flex: 0 0 auto !important;
+      display: flex !important;
+      align-items: center !important;
+      order: 1 !important;
+      min-width: 0 !important;
+      overflow: hidden !important;
+      margin-right: 12px !important; // Gap after logo
+      
+      // Hide hamburger menu on mobile (not needed in this layout)
+      .mburger {
+        display: none !important;
+      }
+      
+      .navbar-brand {
+        margin: 0 !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        
+        .mobex-logo {
+          .mobex-title {
+            font-size: 20px !important; // Smaller on mobile
+            letter-spacing: 0.5px !important;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+          }
+          
+          .mobex-subtitle {
+            font-size: 9px !important; // Smaller on mobile
+            margin-top: 1px !important;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+          }
+        }
+      }
+    }
+    
+    // Header actions - contains Cart and Login, aligned left after logo
+    .main-nav-row-1 .header-actions-wrapper {
+      display: flex !important;
+      align-items: center !important;
+      gap: 12px !important; // Space between Cart and Login
+      flex: 0 0 auto !important;
+      order: 2 !important; // Second in row (after logo)
+      margin: 0 !important;
+      padding: 0 !important;
+      flex-shrink: 0 !important;
+      justify-content: flex-start !important; // Align items to the left
+      
+      // Hide scopes/branches button on mobile
+      .btn--rounded-gray {
+        display: none !important;
+      }
+      
+      // Show login/user menu on mobile (next to cart)
+      salla-user-menu {
+        display: flex !important; // Show login/user menu
+        flex-shrink: 0 !important;
+      }
+      
+      // Cart styling for mobile - aligned left after logo
+      salla-cart-summary.cart-link-main {
+        padding: 0 !important;
+        margin: 0 !important;
+        background-color: transparent !important;
+        position: relative !important;
+        width: auto !important;
+        height: auto !important;
+        display: flex !important;
+        align-items: center !important;
+        flex-shrink: 0 !important;
+        
+        &::before {
+          font-size: 22px !important;
+          width: 22px !important;
+          height: 22px !important;
+          line-height: 22px !important;
+          margin-right: 0 !important;
+          color: #ffffff !important;
+        }
+        
+        .s-cart-summary-count {
+          width: 18px !important;
+          height: 18px !important;
+          min-width: 18px !important;
+          font-size: 11px !important;
+          top: -4px !important;
+          right: -4px !important;
+          background-color: #f29f05 !important;
+          border: none !important;
+          box-shadow: none !important;
+        }
+        
+        .s-cart-summary-total {
+          display: none !important;
+        }
+      }
+    }
+    
+    // Search bar - below logo/cart/login row, full width
+    .main-nav-row-1 .header-search {
+      order: 3 !important; // Third item, wraps to new line
+      width: 100% !important; // Full width
+      max-width: 100% !important;
+      min-width: 0 !important;
+      margin: 10px 0 0 0 !important; // Top margin to separate from first row
+      padding: 0 !important;
+      box-sizing: border-box !important;
+      flex: 1 1 100% !important; // Take full width when wrapped
+      overflow: hidden !important;
+      
+      .search-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        align-items: stretch !important;
+        height: 40px !important; // Compact height
+        border-radius: 8px !important; // Elegant rounded corners
+        overflow: hidden !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; // Subtle shadow
+        box-sizing: border-box !important;
+        
+        // Hide category dropdown on mobile
+        .search-category-wrapper {
+          display: none !important;
+    }
+    
+        salla-search {
+          width: 100% !important;
+          flex: 1 !important;
+          height: 40px !important;
+          min-width: 0 !important;
+          max-width: 100% !important;
+          overflow: hidden !important;
+          
+          .s-search-input {
+            height: 40px !important;
+            padding: 10px 15px !important;
+            font-size: 14px !important;
+            border-radius: 8px 0 0 8px !important;
+            border: 1px solid #e0e0e0 !important;
+            border-right: none !important;
+            box-sizing: border-box !important;
+            width: 100% !important;
+            max-width: 100% !important;
+          }
+        }
+        
+        .search-submit-btn {
+          width: 45px !important;
+          height: 40px !important;
+          flex-shrink: 0 !important;
+          border-radius: 0 !important; // No border radius, filter button will have it
+          padding: 0 !important;
+          box-sizing: border-box !important;
+          
+          svg {
+            width: 18px !important;
+            height: 18px !important;
+          }
+        }
+        
+        // Filter icon button next to search button (mobile only)
+        .vehicle-filter-toggle-btn {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          width: 45px !important;
+          height: 40px !important;
+          background-color: #034c8c !important;
+          border: none !important;
+          border-radius: 0 8px 8px 0 !important; // Right side rounded
+          cursor: pointer !important;
+          flex-shrink: 0 !important;
+          padding: 0 !important;
+          margin-left: 0 !important;
+          transition: background-color 0.3s !important;
+          
+          &:hover {
+            background-color: #023a6b !important;
+          }
+          
+          i {
+            font-size: 20px !important;
+            color: #ffffff !important;
+          }
+        }
+      }
+    }
+    
+    // Hide All Categories section on mobile (completely hide the navigation row 2)
+    .main-nav-row-2 {
+      display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      overflow: hidden !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      opacity: 0 !important;
+    }
+    
+    // Also hide any dropdown menus from All Categories
+    .all-categories-dropdown,
+    .all-categories-menu,
+    .all-categories-btn,
+    .nav-menu-wrapper {
+      display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      overflow: hidden !important;
+      }
+      
+    // Hide custom main menu on mobile
+      custom-main-menu {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+}
+
+// Vehicle Filter Modal (Mobile Only)
+.vehicle-filter-modal {
+  display: none !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  z-index: 9999 !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  padding: 0 !important;
+  
+  &.active {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 15px !important;
+  }
+  
+  .vehicle-filter-modal-content {
+    background-color: #ffffff !important;
+    border-radius: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 85vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+    position: relative !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    
+    @media (max-width: 480px) {
+      max-height: 90vh !important;
+      border-radius: 12px !important;
+    }
+    
+    .vehicle-filter-modal-header {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 18px 20px !important;
+      border-bottom: 1px solid #e0e0e0 !important;
+      position: sticky !important;
+      top: 0 !important;
+      background-color: #ffffff !important;
+      z-index: 10 !important;
+      border-radius: 16px 16px 0 0 !important;
+      flex-shrink: 0 !important;
+      
+      @media (max-width: 480px) {
+        padding: 16px !important;
+        border-radius: 12px 12px 0 0 !important;
+      }
+      
+      h5 {
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        margin: 0 !important;
+        color: #111 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        
+        @media (max-width: 480px) {
+          font-size: 16px !important;
+          gap: 6px !important;
+        }
+        
+        i {
+          font-size: 20px !important;
+          color: #034c8c !important;
+          
+          @media (max-width: 480px) {
+            font-size: 18px !important;
+          }
+        }
+      }
+      
+      .vehicle-filter-close-btn {
+        background: none !important;
+        border: none !important;
+        font-size: 24px !important;
+        color: #666 !important;
+        cursor: pointer !important;
+        padding: 0 !important;
+        width: 36px !important;
+        height: 36px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 50% !important;
+        transition: background-color 0.3s !important;
+        flex-shrink: 0 !important;
+        
+        @media (max-width: 480px) {
+          width: 32px !important;
+          height: 32px !important;
+        }
+        
+        &:hover,
+        &:active {
+          background-color: #f5f5f5 !important;
+        }
+        
+        i {
+          font-size: 20px !important;
+          
+          @media (max-width: 480px) {
+            font-size: 18px !important;
+          }
+        }
+      }
+    }
+    
+    .vehicle-filter-modal-body {
+      padding: 20px !important;
+      flex: 1 !important;
+      overflow-y: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      
+      @media (max-width: 480px) {
+        padding: 16px !important;
+      }
+      
+      .vehicle-filter-form {
+        width: 100% !important;
+        
+        .vehicle-filter-fields {
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 14px !important;
+          margin-bottom: 18px !important;
+          width: 100% !important;
+          
+          @media (max-width: 480px) {
+            gap: 12px !important;
+            margin-bottom: 16px !important;
+          }
+        }
+        
+        .vehicle-select {
+          padding: 14px 16px !important;
+          border: 1px solid #e0e0e0 !important;
+          border-radius: 10px !important;
+          font-size: 15px !important;
+          background-color: #ffffff !important;
+          cursor: pointer !important;
+          height: 52px !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+          appearance: none !important;
+          -webkit-appearance: none !important;
+          -moz-appearance: none !important;
+          transition: all 0.3s !important;
+          
+          @media (max-width: 480px) {
+            padding: 12px 14px !important;
+            font-size: 14px !important;
+            height: 48px !important;
+            border-radius: 8px !important;
+          }
+          
+          &:focus {
+            border-color: #034c8c !important;
+            outline: none !important;
+            box-shadow: 0 0 0 3px rgba(3, 76, 140, 0.1) !important;
+          }
+        }
+        
+        .vehicle-search-btn {
+          padding: 14px 16px !important;
+          background-color: #f29f05 !important;
+          color: #000000 !important;
+          border: none !important;
+          border-radius: 10px !important;
+          cursor: pointer !important;
+          font-weight: 600 !important;
+          font-size: 16px !important;
+          height: 52px !important;
+          width: 100% !important;
+          transition: all 0.3s !important;
+          
+          @media (max-width: 480px) {
+            padding: 12px 14px !important;
+            font-size: 15px !important;
+            height: 48px !important;
+            border-radius: 8px !important;
+          }
+          
+          &:hover,
+          &:active {
+            background-color: #e68f04 !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 4px 8px rgba(242, 159, 5, 0.3) !important;
+          }
+        }
+        
+        .vehicle-filter-or {
+          text-align: center !important;
+          margin: 20px 0 !important;
+          position: relative !important;
+          
+          @media (max-width: 480px) {
+            margin: 16px 0 !important;
+          }
+          
+          &::before,
+          &::after {
+            content: '' !important;
+            position: absolute !important;
+            top: 50% !important;
+            width: 40% !important;
+            height: 1px !important;
+            background-color: #e0e0e0 !important;
+          }
+          
+          &::before {
+            left: 0 !important;
+          }
+          
+          &::after {
+            right: 0 !important;
+          }
+          
+          span {
+            background-color: #ffffff !important;
+            padding: 0 14px !important;
+            font-weight: 700 !important;
+            color: #666 !important;
+            position: relative !important;
+            z-index: 1 !important;
+            display: inline-block !important;
+            font-size: 14px !important;
+            
+            @media (max-width: 480px) {
+              font-size: 13px !important;
+              padding: 0 12px !important;
+            }
+          }
+        }
+        
+        .vehicle-filter-vin {
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 14px !important;
+          width: 100% !important;
+          
+          @media (max-width: 480px) {
+            gap: 12px !important;
+          }
+        }
+        
+        .vin-input {
+          padding: 14px 16px !important;
+          border: 1px solid #e0e0e0 !important;
+          border-radius: 10px !important;
+          font-size: 15px !important;
+          height: 52px !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+          transition: all 0.3s !important;
+          
+          @media (max-width: 480px) {
+            padding: 12px 14px !important;
+            font-size: 14px !important;
+            height: 48px !important;
+            border-radius: 8px !important;
+          }
+          
+          &:focus {
+            border-color: #034c8c !important;
+            outline: none !important;
+            box-shadow: 0 0 0 3px rgba(3, 76, 140, 0.1) !important;
+          }
+          
+          &::placeholder {
+            color: #999 !important;
+          }
+        }
+        
+        .vin-search-btn {
+          padding: 14px 16px !important;
+          background-color: #034c8c !important;
+          color: #ffffff !important;
+          border: none !important;
+          border-radius: 10px !important;
+          cursor: pointer !important;
+          font-weight: 600 !important;
+          font-size: 16px !important;
+          height: 52px !important;
+          width: 100% !important;
+          transition: all 0.3s !important;
+          
+          @media (max-width: 480px) {
+            padding: 12px 14px !important;
+            font-size: 15px !important;
+            height: 48px !important;
+            border-radius: 8px !important;
+          }
+          
+          &:hover,
+          &:active {
+            background-color: #023a6b !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 4px 8px rgba(3, 76, 140, 0.3) !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Desktop: Hide filter button and modal
+@media (min-width: 769px) {
+  .vehicle-filter-toggle-btn {
+    display: none !important;
+  }
+  
+  .vehicle-filter-modal {
+    display: none !important;
+  }
+}
+
+// Mobile: Ensure filter button is visible and clickable, modal works
+@media (max-width: 768px) {
+  .vehicle-filter-toggle-btn {
+    display: flex !important;
+    pointer-events: auto !important;
+    z-index: 100 !important;
+    position: relative !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  
+  .vehicle-filter-modal {
+    &.active {
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+  }
+}

@@ -1,0 +1,1091 @@
+/* Products List - Featured Products Style */
+
+/* Section Header */
+.s-block--latest-products {
+  padding: 60px 0 !important;
+  background-color: #ffffff !important;
+  
+  // Mobile: Reduce top padding to bring closer to Featured Categories
+  @media (max-width: 768px) {
+    padding-top: 20px !important; // Reduced from 60px
+    padding-bottom: 40px !important;
+    margin-top: 0 !important;
+  }
+  
+  .s-block__title {
+    text-align: center !important;
+    margin-bottom: 32px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    
+    // Mobile: Reduce title bottom margin
+    @media (max-width: 768px) {
+      margin-bottom: 20px !important;
+    }
+    
+    h2 {
+      font-size: 24px !important;
+      font-weight: 700 !important;
+      margin-bottom: 16px !important;
+      text-align: center !important;
+      color: #111 !important;
+      line-height: 24px !important;
+      width: 100% !important;
+      
+      // Mobile: Slightly smaller title
+      @media (max-width: 768px) {
+        font-size: 20px !important;
+        margin-bottom: 12px !important;
+      }
+    }
+  }
+}
+
+/* Products Grid - More columns for horizontal cards */
+.s-block--latest-products salla-products-list {
+  display: block !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  width: 100% !important;
+  
+  // Mobile: Ensure container allows full-width cards
+  @media (max-width: 768px) {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  @media (min-width: 768px) {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  
+  @media (min-width: 1024px) {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  
+  .s-products-list {
+    display: grid !important;
+    // Mobile-first: Start with 1 column
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+    
+    // Mobile: Ensure one card per line (explicit override)
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr !important; // One card per line
+      gap: 16px !important; // Comfortable spacing between cards
+      width: 100% !important; // Ensure full width
+    }
+    
+    // Tablet and up: 2 columns
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 16px !important;
+    }
+    
+    // Desktop: 3 columns
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 20px !important;
+    }
+    
+    // Large desktop: 4 columns
+    @media (min-width: 1280px) {
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 24px !important;
+    }
+  }
+  
+  // FORCE one card per line on mobile - target Salla's wrapper classes
+  .s-products-list-wrapper,
+  .s-products-list-vertical-cards {
+    @media (max-width: 768px) {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      grid-template-rows: auto !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      gap: 16px !important;
+      
+      // Force all children to be full width
+      > * {
+        width: 100% !important;
+        max-width: 100% !important;
+        grid-column: 1 / -1 !important;
+      }
+    }
+  }
+}
+
+// FORCE one card per line on mobile - AGGRESSIVE targeting of Salla classes
+.s-block--latest-products .s-products-list-wrapper,
+.s-block--latest-products .s-products-list-vertical-cards,
+.s-block--latest-products salla-products-list .s-products-list-wrapper,
+.s-block--latest-products salla-products-list .s-products-list-vertical-cards,
+.s-block--latest-products .s-products-list-wrapper .s-products-list,
+.s-block--latest-products .s-products-list-vertical-cards .s-products-list {
+  @media (max-width: 768px) {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 16px !important;
+    
+    // Force all children to be full width
+    > *,
+    .s-product-card-entry,
+    [class*="product-card"],
+    [class*="s-product-card"] {
+      width: 100% !important;
+      max-width: 100% !important;
+      grid-column: 1 / -1 !important;
+      flex-basis: 100% !important;
+      flex-grow: 1 !important;
+      flex-shrink: 0 !important;
+      min-width: 0 !important;
+    }
+  }
+}
+
+/* Product Card - Horizontal Layout */
+.s-block--latest-products .s-product-card-entry {
+  background-color: #fff !important;
+  border-radius: 6px !important;
+  border: 1px solid #e0e0e0 !important;
+  padding: 12px !important;
+  box-shadow: none !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  overflow: hidden !important;
+  height: auto !important;
+  min-height: 120px !important;
+  gap: 12px !important;
+  
+  // Mobile: Complete redesign - grid layout (image left, content right, button below)
+  @media (max-width: 768px) {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important; // Remove padding, add to inner elements
+    min-height: auto !important;
+    gap: 0 !important;
+    border-radius: 8px 8px 0 0 !important; // Rounded top only
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
+    flex-shrink: 0 !important;
+    flex-grow: 1 !important;
+    margin-bottom: 0 !important;
+    display: grid !important; // Grid layout for precise control
+    grid-template-columns: 35% 65% !important; // Image 35%, Content 65%
+    grid-template-rows: auto auto !important; // Content row + button row
+    align-items: stretch !important;
+    overflow: visible !important;
+    background-color: #fff !important;
+    border: 1px solid #e0e0e0 !important;
+    border-bottom: none !important; // Button will have border
+  }
+}
+
+// Mobile: Add to cart button below card - FORCE VISIBILITY
+.s-block--latest-products .s-product-card-entry {
+  @media (max-width: 768px) {
+    // Create wrapper for card + button
+    display: flex !important;
+    flex-direction: column !important;
+    position: relative !important;
+    
+    // Show button below card - AGGRESSIVE OVERRIDE
+    .s-product-card-content-footer,
+    .s-product-card-actions {
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      height: auto !important;
+      min-height: 42px !important;
+      overflow: visible !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      margin-top: 0 !important;
+      order: 2 !important; // Below card content
+      position: relative !important;
+      
+      salla-add-product-button,
+      salla-button {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        height: auto !important;
+        min-height: 42px !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
+  }
+}
+
+// Mobile: Style button below card - MAXIMUM VISIBILITY AND STYLING
+.s-block--latest-products .s-product-card-entry .s-product-card-content-footer salla-add-product-button,
+.s-block--latest-products .s-product-card-entry .s-product-card-actions salla-button,
+.s-block--latest-products .s-product-card-entry .s-product-card-content-footer salla-button,
+.s-block--latest-products .s-product-card-entry .s-product-card-content-footer salla-add-product-button salla-button {
+  @media (max-width: 768px) {
+    position: relative !important;
+    margin: 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    background-color: #034c8c !important;
+    padding: 10px 16px !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 0 0 8px 8px !important; // Rounded bottom only
+    cursor: pointer !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: 42px !important;
+    max-height: none !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 4px rgba(3, 76, 140, 0.2) !important;
+    overflow: visible !important;
+    z-index: 11 !important;
+    
+    button,
+    .s-button {
+      background-color: transparent !important;
+      color: #ffffff !important;
+      border: none !important;
+      padding: 0 !important;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      text-align: center !important;
+      width: 100% !important;
+      min-height: 42px !important;
+      height: 42px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 6px !important;
+    }
+    
+    &:hover,
+    &:hover button,
+    &:hover .s-button {
+      color: #ffffff !important;
+      background-color: #023a6b !important;
+      box-shadow: 0 3px 6px rgba(3, 76, 140, 0.3) !important;
+    }
+    
+    // Single arrow after text
+    &::after {
+      content: "→" !important;
+      display: inline-block !important;
+      font-size: 16px !important;
+      line-height: 1 !important;
+      color: #ffffff !important;
+      margin-left: 6px !important;
+      transition: transform 0.3s ease !important;
+      font-weight: normal !important;
+    }
+    
+    &:hover::after {
+      transform: translateX(2px) !important;
+    }
+  }
+}
+
+/* Product Badges - Repositioned for horizontal layout */
+.s-block--latest-products .s-product-card-entry .s-product-card-promotion-title {
+  position: absolute !important;
+  left: 8px !important;
+  top: 8px !important;
+  border-radius: 4px !important;
+  padding: 4px 6px !important;
+  z-index: 17 !important;
+  text-align: center !important;
+  color: #000 !important;
+  font-size: 10px !important;
+  min-width: 35px !important;
+  line-height: 10px !important;
+  font-weight: 700 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: fit-content !important;
+  background-color: #ffc107 !important;
+}
+
+/* Badge positioning for multiple badges */
+.s-block--latest-products .s-product-card-entry .s-product-card-promotion-title + .s-product-card-promotion-title {
+  left: 48px !important;
+  background-color: #bf3617 !important;
+  color: #fff !important;
+}
+
+.s-block--latest-products .s-product-card-entry .s-product-card-promotion-title + .s-product-card-promotion-title + .s-product-card-promotion-title {
+  left: 88px !important;
+  background-color: #28a745 !important;
+  color: #fff !important;
+}
+
+/* Product Image - Side Layout with Gallery */
+.s-block--latest-products .s-product-card-image {
+  width: 120px !important;
+  min-width: 120px !important;
+  max-width: 120px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 100px !important;
+  min-height: 100px !important;
+  position: relative !important;
+  flex-shrink: 0 !important;
+  overflow: visible !important; // Allow heart icon to overlay
+  
+  // Mobile: Smaller image on left side
+  @media (max-width: 768px) {
+    width: 35% !important; // Smaller image
+    min-width: 35% !important;
+    max-width: 35% !important;
+    height: auto !important;
+    min-height: 100px !important;
+    max-height: 120px !important;
+    flex-shrink: 0 !important;
+    padding: 12px !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    z-index: 1 !important;
+    
+    img {
+      width: 100% !important;
+      height: auto !important;
+      max-height: 120px !important;
+      object-fit: contain !important;
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+  }
+  
+  img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    width: auto !important;
+    height: auto !important;
+    
+    // Mobile: Ensure images don't stretch
+    @media (max-width: 768px) {
+      max-width: 100% !important;
+      max-height: 100% !important;
+      object-fit: contain !important;
+    }
+  }
+  
+  a {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+  }
+  
+  /* Image Gallery Wrapper */
+  .product-image-gallery-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  
+  /* Image Gallery - Scrollable */
+  .product-image-gallery {
+    display: flex !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important; /* IE/Edge */
+    
+    &::-webkit-scrollbar {
+      display: none !important; /* Chrome/Safari */
+    }
+    
+    img {
+      flex-shrink: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: contain !important;
+      scroll-snap-align: start !important;
+      cursor: pointer !important;
+    }
+  }
+  
+  /* Gallery Dots */
+  .product-gallery-dots {
+    position: absolute !important;
+    bottom: 5px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    display: flex !important;
+    gap: 4px !important;
+    z-index: 10 !important;
+    
+    .gallery-dot {
+      width: 6px !important;
+      height: 6px !important;
+      border-radius: 50% !important;
+      background-color: rgba(255, 255, 255, 0.5) !important;
+      cursor: pointer !important;
+      transition: all 0.3s !important;
+      
+      &.active {
+        background-color: #034c8c !important;
+        width: 8px !important;
+        height: 8px !important;
+      }
+    }
+  }
+}
+
+/* Wishlist Button - Top-right corner of image container, overlaying image */
+.s-block--latest-products .s-product-card-wishlist-btn {
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+  z-index: 20 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 32px !important;
+  height: 32px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border: none !important;
+  border-radius: 50% !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.3s ease !important;
+  backdrop-filter: blur(4px) !important;
+  
+  // Position relative to image container
+  .s-product-card-image & {
+    position: absolute !important;
+  }
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2) !important;
+    transform: scale(1.05) !important;
+  }
+  
+  button,
+  salla-button {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 50% !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #333333 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: none !important;
+    
+    &:hover {
+      color: #bf3617 !important;
+      background-color: transparent !important;
+    }
+    
+    i {
+      font-size: 16px !important;
+      color: #333333 !important;
+      transition: color 0.3s ease !important;
+    }
+  }
+  
+  // When added to wishlist - red color
+  &.s-product-card-wishlist-added {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    
+    button,
+    salla-button {
+      color: #bf3617 !important;
+      background-color: transparent !important;
+      
+      i {
+        color: #bf3617 !important;
+      }
+    }
+  }
+}
+
+/* Product Content - Compact */
+.s-block--latest-products .s-product-card-content {
+  padding: 0 !important;
+  text-align: left !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+  justify-content: space-between !important;
+  min-width: 0 !important;
+  
+  // Mobile: Content takes remaining space next to image - FORCE VISIBILITY
+  @media (max-width: 768px) {
+    width: 65% !important; // Remaining space after 35% image
+    flex-grow: 1 !important;
+    padding: 12px !important;
+    padding-left: 8px !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: auto !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+}
+
+/* Product Title - Compact */
+.s-block--latest-products .s-product-card-content h3,
+.s-block--latest-products .s-product-card-content .s-product-card-title,
+.s-block--latest-products .s-product-card-content a[href*="/product/"] {
+  font-size: 14px !important;
+  line-height: 18px !important;
+  font-weight: 700 !important;
+  margin-bottom: 4px !important;
+  min-height: auto !important;
+  max-height: 36px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  color: #333 !important;
+  text-decoration: none !important;
+  
+  // Mobile: Title visible next to image - MAXIMUM VISIBILITY
+  @media (max-width: 768px) {
+    font-size: 14px !important;
+    line-height: 18px !important;
+    margin-bottom: 8px !important;
+    margin-top: 0 !important;
+    max-height: 40px !important;
+    display: -webkit-box !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: auto !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    color: #333 !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+  
+  &:hover {
+    color: #034c8c !important;
+  }
+}
+
+/* Product Rating - Only show if exists */
+.s-block--latest-products .s-product-card-content .s-rating-stars,
+.s-block--latest-products .s-product-card-content .s-rating-stars-reviews {
+  color: #ddd !important;
+  margin-bottom: 4px !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  
+  i {
+    color: #ddd !important;
+  }
+  
+  /* Hide if empty */
+  &:empty {
+    display: none !important;
+  }
+  
+  // Mobile: Ensure rating is visible
+  @media (max-width: 768px) {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin-bottom: 4px !important;
+  }
+}
+
+/* Product Price - Compact */
+.s-block--latest-products .s-product-card-content .s-product-card-sale-price,
+.s-block--latest-products .s-product-card-content .s-product-card-price {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #bf3617 !important;
+  margin-top: 4px !important;
+  margin-bottom: 0 !important;
+  display: inline-flex !important;
+  width: 100% !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  
+  // Mobile: Price visible next to image - MAXIMUM VISIBILITY
+  @media (max-width: 768px) {
+    font-size: 16px !important;
+    margin-top: 4px !important;
+    margin-bottom: 0 !important;
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: auto !important;
+    width: 100% !important;
+    overflow: visible !important;
+    color: #bf3617 !important;
+    font-weight: 700 !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+  
+  h4 {
+    color: #bf3617 !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+    
+    @media (max-width: 768px) {
+      font-size: 16px !important;
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      height: auto !important;
+      color: #bf3617 !important;
+    }
+  }
+  
+  span {
+    color: #bf3617 !important;
+  }
+}
+
+.s-block--latest-products .s-product-card-content .s-product-card-starting-price {
+  font-size: 12px !important;
+  color: #999 !important;
+  text-decoration: line-through !important;
+  margin-right: 6px !important;
+}
+
+/* Add to Cart Button - Bottom of card, full width, single arrow */
+.s-block--latest-products .s-product-card-content salla-add-product-button,
+.s-block--latest-products .s-product-card-content salla-button[fill="outline"],
+.s-block--latest-products .s-product-card-content .s-product-card-actions salla-button {
+  position: relative !important;
+  margin-top: auto !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: center !important;
+  width: 100% !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  background-color: #034c8c !important;
+  padding: 8px 16px !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 36px !important;
+  height: 36px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 4px rgba(3, 76, 140, 0.2) !important;
+  
+  // Mobile: Hide button inside .s-product-card-content only
+  @media (max-width: 768px) {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    opacity: 0 !important;
+  }
+  
+  button,
+  .s-button {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    width: 100% !important;
+    min-height: 36px !important;
+    height: 36px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+  }
+  
+  &:hover,
+  &:hover button,
+  &:hover .s-button {
+    color: #ffffff !important;
+    background-color: #023a6b !important;
+    box-shadow: 0 3px 6px rgba(3, 76, 140, 0.3) !important;
+    transform: translateY(-1px) !important;
+  }
+  
+  /* Hide ALL Salla's default icons and arrows - Very aggressive targeting */
+  salla-add-product-button,
+  salla-button,
+  button,
+  .s-button {
+    i,
+    .sicon,
+    [class*="icon"],
+    svg,
+    [class*="arrow"],
+    [class*="Arrow"],
+    * i,
+    * .sicon,
+    * [class*="icon"],
+    * svg,
+    ::before {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      width: 0 !important;
+      height: 0 !important;
+      font-size: 0 !important;
+      line-height: 0 !important;
+      content: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+  
+  // Single arrow after text
+  &::after {
+    content: "→" !important;
+    display: inline-block !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    color: #ffffff !important;
+    margin-left: 6px !important;
+    transition: transform 0.3s ease !important;
+    font-weight: normal !important;
+  }
+  
+  &:hover::after {
+    transform: translateX(2px) !important;
+  }
+}
+
+/* Hide default Salla button styles */
+.s-block--latest-products .s-product-card-content salla-add-product-button salla-button,
+.s-block--latest-products .s-product-card-content salla-button {
+  --s-button-padding: 0 !important;
+  --s-button-min-height: auto !important;
+}
+
+/* Product Actions Wrapper - Bottom of card, full width */
+.s-block--latest-products .s-product-card-actions,
+.s-block--latest-products .s-product-card-content-footer {
+  margin-top: auto !important;
+  margin-bottom: 0 !important;
+  text-align: center !important;
+  display: flex !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  justify-content: stretch !important;
+  width: 100% !important;
+  
+  // Ensure add to cart button is visible and styled
+  salla-add-product-button {
+    display: flex !important;
+    width: 100% !important;
+    order: 1 !important;
+  }
+  
+  // Mobile: Show button below card - FORCE VISIBILITY
+  @media (max-width: 768px) {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: 42px !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    order: 2 !important; // Below card content
+    position: relative !important;
+    
+    salla-add-product-button,
+    salla-button {
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      width: 100% !important;
+      height: auto !important;
+      min-height: 42px !important;
+    }
+  }
+}
+
+/* Out of Stock */
+.s-block--latest-products .s-product-card-out-of-stock {
+  opacity: 0.6 !important;
+  
+  salla-add-product-button {
+    pointer-events: none !important;
+    opacity: 0.5 !important;
+  }
+}
+
+// Mobile: COMPLETE REDESIGN - Image left, content right, button below
+@media (max-width: 768px) {
+  // Card entry: Grid layout (image left, content right, button below)
+    .s-block--latest-products .s-product-card-entry {
+      display: grid !important;
+      grid-template-columns: 35% 65% !important;
+      grid-template-rows: auto auto !important;
+      width: 100% !important;
+      padding: 0 !important;
+      border-radius: 8px 8px 0 0 !important;
+      margin-bottom: 0 !important;
+      overflow: visible !important;
+      background-color: #fff !important;
+      border: 1px solid #e0e0e0 !important;
+      border-bottom: none !important;
+      gap: 0 !important;
+      
+      > .s-product-card-image {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+      
+      > .s-product-card-content {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+      
+      > .s-product-card-content-footer {
+        grid-column: 1 / -1 !important;
+        grid-row: 2 !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+    }
+  
+  // Image: 35% width on left (grid handles width)
+  .s-block--latest-products .s-product-card-entry .s-product-card-image {
+    width: 100% !important;
+    padding: 12px !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: 100px !important;
+    max-height: 120px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    img {
+      width: 100% !important;
+      height: auto !important;
+      max-height: 120px !important;
+      object-fit: contain !important;
+    }
+  }
+  
+  // Content: 65% width on right with title and price (grid handles width)
+  .s-block--latest-products .s-product-card-entry .s-product-card-content {
+    width: 100% !important;
+    padding: 12px !important;
+    padding-left: 8px !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    
+    // Title: FORCE VISIBLE
+    h3,
+    .s-product-card-title,
+    a[href*="/product/"],
+    .s-product-card-content-title {
+      display: -webkit-box !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      height: auto !important;
+      min-height: auto !important;
+      max-height: 40px !important;
+      color: #333 !important;
+      font-size: 14px !important;
+      line-height: 18px !important;
+      font-weight: 700 !important;
+      margin-bottom: 8px !important;
+      margin-top: 0 !important;
+      -webkit-line-clamp: 2 !important;
+      -webkit-box-orient: vertical !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      text-decoration: none !important;
+      position: relative !important;
+      z-index: 2 !important;
+    }
+    
+    // Price: FORCE VISIBLE
+    .s-product-card-sale-price,
+    .s-product-card-price,
+    .s-product-card-starting-price {
+      display: inline-flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      height: auto !important;
+      min-height: auto !important;
+      color: #bf3617 !important;
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      margin-top: 4px !important;
+      margin-bottom: 0 !important;
+      width: 100% !important;
+      position: relative !important;
+      z-index: 2 !important;
+      
+      h4,
+      span,
+      * {
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        color: #bf3617 !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+      }
+    }
+    
+    // Rating: FORCE VISIBLE if exists
+    .s-rating-stars,
+    .s-rating-stars-reviews {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      height: auto !important;
+      margin-bottom: 4px !important;
+    }
+    
+    // Hide button inside content
+    .s-product-card-content-footer,
+    salla-add-product-button {
+      display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      overflow: hidden !important;
+    }
+  }
+  
+  // Button: Below card, full width
+  .s-block--latest-products .s-product-card-entry .s-product-card-content-footer {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: 42px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    order: 2 !important;
+    position: relative !important;
+    z-index: 10 !important;
+    
+    salla-add-product-button {
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      width: 100% !important;
+      height: auto !important;
+      min-height: 42px !important;
+      margin: 0 !important;
+      padding: 10px 16px !important;
+      background-color: #034c8c !important;
+      color: #ffffff !important;
+      border: none !important;
+      border-radius: 0 0 8px 8px !important;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      transition: all 0.3s ease !important;
+      box-shadow: 0 2px 4px rgba(3, 76, 140, 0.2) !important;
+      
+      salla-button,
+      button,
+      .s-button {
+        background-color: transparent !important;
+        color: #ffffff !important;
+        border: none !important;
+        padding: 0 !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        width: 100% !important;
+        min-height: 42px !important;
+        height: 42px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      
+      &:hover {
+        background-color: #023a6b !important;
+      }
+    }
+  }
+}
