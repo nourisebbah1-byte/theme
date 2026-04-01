@@ -11,19 +11,12 @@
     <section class="hero-section">
         <div class="hero-slider">
             <div class="hero-slide active">
-                <div class="hero-image">
-                    <img src="{{ 'images/slider.png'|asset }}" alt="Hero Banner" onerror="this.src='{{ 'images/placeholder.png'|asset }}'">
+                {# Desktop: background via CSS (slide-1); img hidden on wide screens #}
+                <div class="hero-image" role="img" aria-label="{{ trans('blocks.home.battery_starters') }}">
+                    <img src="{{ 'images/slider.png'|asset }}" alt="" class="hero-image-fallback" onerror="this.src='{{ 'images/placeholder.png'|asset }}'">
                 </div>
-                {# Desktop Overlay Images - Right Side #}
-                <div class="hero-overlay-images-right-desktop">
-                    {# Second image on top #}
-                    <div class="hero-overlay-image hero-overlay-image-2">
-                        <img src="https://enovathemes.com/mobex/wp-content/uploads/slider-asset-2.webp" alt="Hero Asset 2">
-                    </div>
-                    {# First image below #}
-                    <div class="hero-overlay-image hero-overlay-image-1">
-                        <img src="https://enovathemes.com/mobex/wp-content/uploads/slider-asset-1.webp" alt="Hero Asset 1">
-                    </div>
+                <div class="hero-product-composite">
+                    <img src="{{ 'images/firstslider.png'|asset }}" alt="{{ trans('blocks.home.battery_starters') }}" width="800" height="600" onerror="this.style.display='none'">
                 </div>
                 <div class="hero-content">
                     <div class="hero-text">
@@ -38,15 +31,8 @@
         
         {# Mobile Slider with Overlay Images #}
         <div class="hero-section-mobile-slider">
-            <div class="hero-overlay-images-right">
-                {# Second image on top #}
-                <div class="hero-overlay-image hero-overlay-image-2">
-                    <img src="https://enovathemes.com/mobex/wp-content/uploads/slider-asset-2.webp" alt="Hero Asset 2">
-                </div>
-                {# First image below #}
-                <div class="hero-overlay-image hero-overlay-image-1">
-                    <img src="https://enovathemes.com/mobex/wp-content/uploads/slider-asset-1.webp" alt="Hero Asset 1">
-                </div>
+            <div class="hero-product-composite">
+                <img src="{{ 'images/firstslider.png'|asset }}" alt="{{ trans('blocks.home.battery_starters') }}" width="800" height="600" onerror="this.style.display='none'">
             </div>
             <div class="hero-content">
                 <div class="hero-text">
