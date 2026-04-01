@@ -3855,6 +3855,12 @@ textarea.s-input{
   padding: 0 20px;
   overflow: visible;
 }
+@media (max-width: 768px) {
+  .promotional-banners-grid .s-advertisement-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
 .footer-features-section .s-advertisement-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -50569,6 +50575,12 @@ model-viewer[style*=width]:before{
   padding: 0 20px;
   overflow: visible;
 }
+@media (max-width: 768px) {
+  .promotional-banners-grid .s-comments-product .s-comments-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
 .footer-features-section .s-comments-product .s-comments-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -54297,24 +54309,275 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
     min-height: 200px !important;
   }
 }
+/* Mobile: elegant stacked cards, readable type, CTA + arrow (matches brake / index promos) */
 @media (max-width: 768px) {
   .promotional-banners-grid {
-    padding: 40px 0 !important;
+    padding: 28px 0 36px !important;
+  }
+  .promotional-banners-grid .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .banners-grid-layout {
+    gap: 16px !important;
   }
   .promo-banner-large,
   .promo-banner-small,
   .promo-banner-medium {
-    padding: 25px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    min-height: 0 !important;
+    padding: 20px 18px 18px !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.1) !important;
   }
-  .promo-banner-small .banner-image-small {
-    width: 35% !important;
-    max-width: 150px !important;
+  .promo-banner-large {
+    min-height: 0 !important;
   }
-  .promo-banner-small .banner-image-small img {
-    max-height: 140px !important;
+  .promo-banner-large .banner-overlay {
+    background: linear-gradient(118deg, rgba(10, 10, 10, 0.88) 0%, rgba(12, 12, 12, 0.55) 48%, rgba(20, 18, 16, 0.22) 100%) !important;
+  }
+  .promo-banner-large .banner-content-wrapper {
+    position: relative !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    padding-right: 6% !important;
+  }
+  .promo-banner-large .banner-badge {
+    border-radius: 999px !important;
+    padding: 6px 14px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.04em !important;
+    margin-bottom: 12px !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25) !important;
+  }
+  .promo-banner-large .banner-title-large {
+    font-size: max(14px, min(3.8vw, 17px)) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.07em !important;
+    text-transform: uppercase !important;
+    line-height: 1.25 !important;
+    margin: 0 0 6px 0 !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55) !important;
+  }
+  .promo-banner-large .banner-title-mega {
+    font-size: max(26px, min(8.5vw, 38px)) !important;
+    font-weight: 900 !important;
+    line-height: 1.05 !important;
+    letter-spacing: 0.02em !important;
+    margin: 0 0 10px 0 !important;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45) !important;
+  }
+  .promo-banner-large .banner-subtitle {
+    font-size: max(13px, min(3.5vw, 15px)) !important;
+    line-height: 1.45 !important;
+    margin-bottom: 18px !important;
+    opacity: 0.96 !important;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4) !important;
+  }
+  .promo-banner-large .banner-actions {
+    margin-bottom: 10px !important;
+    gap: 10px !important;
+  }
+  .promo-banner-large .banner-category-link {
+    font-size: 13px !important;
+    text-underline-offset: 3px !important;
+  }
+  .promo-banner-large .banner-image-small {
+    order: 2 !important;
+    position: relative !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    margin: 14px 0 0 !important;
+    padding: 0 !important;
+    align-self: center !important;
+  }
+  .promo-banner-large .banner-image-small img {
+    max-height: 200px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+  .promo-banner-large.care-kit-banner {
+    height: auto !important;
+  }
+  .promo-banner-large.care-kit-banner .banner-content-wrapper {
+    order: 1 !important;
+  }
+  .promo-banner-large.care-kit-banner .banner-image-small {
+    order: 2 !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  .promo-banner-large.care-kit-banner .banner-image-small img {
+    max-height: 180px !important;
+  }
+  .promo-banner-large.lamps-banner .banner-content-wrapper {
+    order: 1 !important;
+  }
+  .promo-banner-small {
+    min-height: 0 !important;
+  }
+  .promo-banner-small .banner-overlay {
+    background: linear-gradient(118deg, rgba(10, 10, 10, 0.86) 0%, rgba(12, 12, 12, 0.5) 52%, rgba(0, 0, 0, 0.15) 100%) !important;
   }
   .promo-banner-small .banner-content-wrapper {
-    width: 60% !important;
+    order: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    padding-right: 5% !important;
+  }
+  .promo-banner-small .banner-image-small {
+    order: 2 !important;
+    position: relative !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 12px 0 0 !important;
+    transform: none !important;
+    align-self: center !important;
+  }
+  .promo-banner-small .banner-image-small img {
+    max-height: 170px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+  .promo-banner-small .banner-badge {
+    border-radius: 999px !important;
+    padding: 6px 14px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    margin-bottom: 10px !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.22) !important;
+  }
+  .promo-banner-small .banner-title {
+    font-size: max(17px, min(5vw, 22px)) !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    line-height: 1.15 !important;
+    margin: 0 0 8px 0 !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5) !important;
+  }
+  .promo-banner-small .banner-description {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 16px !important;
+    opacity: 0.95 !important;
+  }
+  .promo-banner-small .banner-category-link {
+    margin-top: 8px !important;
+    font-size: 13px !important;
+  }
+  .promo-banner-medium {
+    min-height: 0 !important;
+    align-items: stretch !important;
+  }
+  .promo-banner-medium .banner-overlay {
+    background: linear-gradient(118deg, rgba(10, 10, 10, 0.88) 0%, rgba(12, 12, 12, 0.52) 50%, rgba(0, 0, 0, 0.18) 100%) !important;
+  }
+  .promo-banner-medium .transmission-badge {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: 4 !important;
+    order: 1 !important;
+    align-self: flex-start !important;
+    margin: 0 0 10px 0 !important;
+    border-radius: 999px !important;
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.22) !important;
+  }
+  .promo-banner-medium .banner-content-wrapper {
+    order: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    padding-right: 5% !important;
+  }
+  .promo-banner-medium .banner-image-small {
+    order: 3 !important;
+    position: relative !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 12px 0 0 !important;
+    transform: none !important;
+    align-self: center !important;
+  }
+  .promo-banner-medium .banner-image-small img {
+    max-height: 190px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+  .promo-banner-medium .banner-title {
+    font-size: max(17px, min(5vw, 22px)) !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    line-height: 1.15 !important;
+    margin: 0 0 8px 0 !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5) !important;
+  }
+  .promo-banner-medium .banner-description {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 16px !important;
+  }
+  .promo-banner-medium .banner-category-link {
+    font-size: 13px !important;
+  }
+  .promotional-banners-grid .banner-btn-white {
+    padding: 13px 26px !important;
+    border-radius: 12px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+    gap: 6px !important;
+  }
+  .promotional-banners-grid .banner-btn-white i {
+    display: none !important;
+  }
+  .promotional-banners-grid .banner-btn-white::after {
+    content: "→" !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    margin-left: 4px !important;
+  }
+  .promotional-banners-grid .banner-btn-white:hover {
+    transform: none !important;
+    background-color: #f5f5f5 !important;
+    color: #000000 !important;
   }
 }
 /* Footer Features Section - Above Footer - Match Frontend */
