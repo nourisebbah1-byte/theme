@@ -11,12 +11,8 @@
     <section class="hero-section">
         <div class="hero-slider">
             <div class="hero-slide active">
-                {# Desktop: background via CSS (slide-1); img hidden on wide screens #}
                 <div class="hero-image" role="img" aria-label="{{ trans('blocks.home.battery_starters') }}">
-                    <img src="{{ 'images/slider.png'|asset }}" alt="" class="hero-image-fallback" onerror="this.src='{{ 'images/placeholder.png'|asset }}'">
-                </div>
-                <div class="hero-product-composite">
-                    <img src="{{ 'images/firstslider.png'|asset }}" alt="{{ trans('blocks.home.battery_starters') }}" width="800" height="600" onerror="this.style.display='none'">
+                    <img src="{{ 'images/pcslider1.png'|asset }}" alt="" class="hero-slide-bg-img" onerror="this.src='{{ 'images/placeholder.png'|asset }}'">
                 </div>
                 <div class="hero-content">
                     <div class="hero-text">
@@ -30,10 +26,7 @@
         </div>
         
         {# Mobile Slider with Overlay Images #}
-        <div class="hero-section-mobile-slider">
-            <div class="hero-product-composite">
-                <img src="{{ 'images/firstslider.png'|asset }}" alt="{{ trans('blocks.home.battery_starters') }}" width="800" height="600" onerror="this.style.display='none'">
-            </div>
+        <div class="hero-section-mobile-slider" style="background-image: url('{{ 'images/mobileslider1.png'|asset }}');">
             <div class="hero-content">
                 <div class="hero-text">
                     <h2>{{ trans('blocks.home.battery_starters') }}</h2>
