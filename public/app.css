@@ -51609,8 +51609,8 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
 }
 @media (max-width: 767px) {
   .s-block--latest-products salla-products-list .s-products-list {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
     width: 100% !important;
   }
 }
@@ -51633,21 +51633,22 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
   }
 }
 @media (max-width: 768px) {
+  /* Two columns like Deals — do not force grid-column: 1/-1 on cards or only one column shows */
   .s-block--latest-products salla-products-list .s-products-list-wrapper,
   .s-block--latest-products salla-products-list .s-products-list-vertical-cards {
     display: grid !important;
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     grid-template-rows: auto !important;
     width: 100% !important;
     max-width: 100% !important;
-    grid-gap: 16px !important;
-    gap: 16px !important;
+    grid-gap: 12px !important;
+    gap: 12px !important;
   }
   .s-block--latest-products salla-products-list .s-products-list-wrapper > *,
   .s-block--latest-products salla-products-list .s-products-list-vertical-cards > * {
     width: 100% !important;
     max-width: 100% !important;
-    grid-column: 1/-1 !important;
+    grid-column: auto !important;
   }
   .s-block--latest-products .s-products-list-wrapper,
   .s-block--latest-products .s-products-list-vertical-cards,
@@ -51656,12 +51657,12 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
   .s-block--latest-products .s-products-list-wrapper .s-products-list,
   .s-block--latest-products .s-products-list-vertical-cards .s-products-list {
     display: grid !important;
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     grid-template-rows: auto !important;
     width: 100% !important;
     max-width: 100% !important;
-    grid-gap: 16px !important;
-    gap: 16px !important;
+    grid-gap: 12px !important;
+    gap: 12px !important;
   }
   .s-block--latest-products .s-products-list-wrapper > *,
   .s-block--latest-products .s-products-list-wrapper .s-product-card-entry,
@@ -51689,9 +51690,9 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
   .s-block--latest-products .s-products-list-vertical-cards .s-products-list [class*=s-product-card] {
     width: 100% !important;
     max-width: 100% !important;
-    grid-column: 1/-1 !important;
-    flex-basis: 100% !important;
-    flex-grow: 1 !important;
+    grid-column: auto !important;
+    flex-basis: auto !important;
+    flex-grow: 0 !important;
     flex-shrink: 0 !important;
     min-width: 0 !important;
   }
@@ -51713,28 +51714,22 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
   gap: 12px !important;
 }
 @media (max-width: 768px) {
+  /* Match Deals of the Week: vertical card, image full width on top, content below */
   .s-block--latest-products .s-product-card-entry {
     width: 100% !important;
     max-width: 100% !important;
     padding: 0 !important;
-    min-height: auto !important;
-    grid-gap: 0 !important;
-    gap: 0 !important;
-    border-radius: 8px 8px 0 0 !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
-    flex-shrink: 0 !important;
-    flex-grow: 1 !important;
+    min-height: 0 !important;
     margin-bottom: 0 !important;
-    display: grid !important;
-    grid-template-columns: 35% 65% !important;
-    grid-template-rows: auto auto !important;
-    align-items: stretch !important;
-    overflow: visible !important;
-    background-color: #fff !important;
-    border: 1px solid #e0e0e0 !important;
-    border-bottom: none !important;
     display: flex !important;
     flex-direction: column !important;
+    align-items: stretch !important;
+    overflow: hidden !important;
+    background-color: #fff !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+    gap: 0 !important;
     position: relative !important;
   }
   .s-block--latest-products .s-product-card-entry .s-product-card-content-footer,
@@ -51901,12 +51896,12 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
 }
 @media (max-width: 768px) {
   .s-block--latest-products .s-product-card-image {
-    width: 35% !important;
-    min-width: 35% !important;
-    max-width: 35% !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
     height: auto !important;
-    min-height: 100px !important;
-    max-height: 120px !important;
+    min-height: 0 !important;
+    max-height: none !important;
     flex-shrink: 0 !important;
     padding: 12px !important;
     display: flex !important;
@@ -52097,10 +52092,9 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
 }
 @media (max-width: 768px) {
   .s-block--latest-products .s-product-card-content {
-    width: 65% !important;
+    width: 100% !important;
     flex-grow: 1 !important;
-    padding: 12px !important;
-    padding-left: 8px !important;
+    padding: 0 8px 8px 8px !important;
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -52111,6 +52105,7 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
     overflow: visible !important;
     position: relative !important;
     z-index: 2 !important;
+    box-sizing: border-box !important;
   }
 }
 /* Product Title - Compact */
@@ -52279,6 +52274,42 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
   height: 36px !important;
   transition: all 0.3s ease !important;
   box-shadow: 0 2px 4px rgba(3, 76, 140, 0.2) !important;
+}
+/* Mobile: do NOT hide salla-add-product-button under .s-product-card-content — it matches the footer button too and hid Add to cart. */
+@media (max-width: 768px) {
+  .s-block--latest-products .s-product-card-content-sub {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    position: static !important;
+  }
+  .s-block--latest-products .s-product-card-content-sub .s-product-card-sale-price,
+  .s-block--latest-products .s-product-card-content-sub .s-product-card-price {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    font-size: 18px !important;
+  }
+  .s-block--latest-products .s-product-card-content-footer {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    position: static !important;
+  }
+  .s-block--latest-products .s-product-card-content-footer salla-add-product-button,
+  .s-block--latest-products .s-product-card-content-footer salla-add-product-button .s-button-wrap {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
 }
 .s-block--latest-products .s-product-card-content salla-add-product-button button,
 .s-block--latest-products .s-product-card-content salla-add-product-button .s-button,
@@ -58044,57 +58075,4 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
     .rtl\:xs\:left-5:where([dir="rtl"], [dir="rtl"] *){
         left: 1.25rem;
     }
-}
-
-/* Mobile: Latest Products — tighten price→button gap, compact CTA; header cart nudge */
-@media (max-width: 768px) {
-  .s-block--latest-products .s-product-card-content {
-    justify-content: flex-start !important;
-    flex-grow: 0 !important;
-    min-height: 0 !important;
-    gap: 0 !important;
-    width: 100% !important;
-  }
-  .s-block--latest-products .s-product-card-content .s-product-card-content-main,
-  .s-block--latest-products .s-product-card-content .s-product-card-content-sub {
-    flex-grow: 0 !important;
-  }
-  .s-block--latest-products .s-product-card-content salla-add-product-button,
-  .s-block--latest-products .s-product-card-content .s-product-card-content-footer salla-add-product-button {
-    margin-top: 0 !important;
-  }
-  .s-block--latest-products .s-product-card-content .s-product-card-content-footer {
-    margin-top: 6px !important;
-    margin-bottom: 0 !important;
-    min-height: 0 !important;
-    padding: 0 !important;
-  }
-  .s-block--latest-products .s-product-card-entry .s-product-card-content-footer salla-add-product-button,
-  .s-block--latest-products .s-product-card-entry .s-product-card-content .s-product-card-content-footer salla-add-product-button {
-    min-height: 0 !important;
-    height: auto !important;
-    max-height: none !important;
-    padding: 4px 8px !important;
-    align-items: center !important;
-  }
-  .s-block--latest-products .s-product-card-entry .s-product-card-content-footer salla-add-product-button button,
-  .s-block--latest-products .s-product-card-entry .s-product-card-content-footer salla-add-product-button .s-button,
-  .s-block--latest-products .s-product-card-entry .s-product-card-content-footer salla-add-product-button salla-button button {
-    height: auto !important;
-    min-height: 28px !important;
-    padding: 4px 8px !important;
-    line-height: 1.2 !important;
-    font-size: 12px !important;
-  }
-  .s-block--latest-products .s-product-card-entry .s-product-card-content-footer salla-add-product-button,
-  .s-block--latest-products .s-product-card-entry .s-product-card-actions salla-button {
-    min-height: 0 !important;
-    padding: 4px 8px !important;
-  }
-  body .main-nav-container .main-nav-row-1 .header-actions-wrapper salla-cart-summary.cart-link-main {
-    transform: translateX(-10px) !important;
-  }
-  body .main-nav-container .main-nav-row-1 .header-actions-wrapper salla-cart-summary.cart-link-main:where([dir="rtl"], [dir="rtl"] *) {
-    transform: translateX(10px) !important;
-  }
 }
