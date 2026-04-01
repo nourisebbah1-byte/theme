@@ -51633,7 +51633,7 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
   }
 }
 @media (max-width: 768px) {
-  /* Two columns like Deals — do not force grid-column: 1/-1 on cards or only one column shows */
+  /* Same idea as .deals-section: 2 columns, cards not forced full row */
   .s-block--latest-products salla-products-list .s-products-list-wrapper,
   .s-block--latest-products salla-products-list .s-products-list-vertical-cards {
     display: grid !important;
@@ -51714,7 +51714,10 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
   gap: 12px !important;
 }
 @media (max-width: 768px) {
-  /* Match Deals of the Week: vertical card, image full width on top, content below */
+  /* Deals-style: vertical card, image full width, then content (custom-salla-product-card.s-product-card-vertical) */
+  .s-block--latest-products custom-salla-product-card.s-product-card-entry {
+    display: flex !important;
+  }
   .s-block--latest-products .s-product-card-entry {
     width: 100% !important;
     max-width: 100% !important;
@@ -51915,9 +51918,9 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
   .s-block--latest-products .s-product-card-image img {
     width: 100% !important;
     height: auto !important;
-    max-height: 120px !important;
-    -o-object-fit: contain !important;
-       object-fit: contain !important;
+    max-height: none !important;
+    -o-object-fit: cover !important;
+       object-fit: cover !important;
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -52275,7 +52278,7 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
   transition: all 0.3s ease !important;
   box-shadow: 0 2px 4px rgba(3, 76, 140, 0.2) !important;
 }
-/* Mobile: do NOT hide salla-add-product-button under .s-product-card-content — it matches the footer button too and hid Add to cart. */
+/* Mobile: never hide salla-add-product-button under .s-product-card-content — selector matches footer (inside same wrapper) and hid Add to cart. */
 @media (max-width: 768px) {
   .s-block--latest-products .s-product-card-content-sub {
     display: block !important;
@@ -52291,7 +52294,6 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
     opacity: 1 !important;
     flex-wrap: wrap !important;
     align-items: center !important;
-    justify-content: flex-start !important;
     font-size: 18px !important;
   }
   .s-block--latest-products .s-product-card-content-footer {
@@ -52300,6 +52302,7 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
     opacity: 1 !important;
     width: 100% !important;
     position: static !important;
+    margin-top: auto !important;
   }
   .s-block--latest-products .s-product-card-content-footer salla-add-product-button,
   .s-block--latest-products .s-product-card-content-footer salla-add-product-button .s-button-wrap {
