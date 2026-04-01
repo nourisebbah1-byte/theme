@@ -45318,7 +45318,7 @@ section.hero-section {
   position: relative !important;
   padding: 0 !important;
   overflow: visible !important;
-  min-height: 500px !important;
+  min-height: 0 !important;
   width: 100% !important;
   margin: 0 !important;
   margin-top: 0 !important;
@@ -45339,16 +45339,16 @@ section.hero-section .hero-section-mobile-slider {
 }
 section.hero-section .hero-slider {
   width: 100% !important;
-  height: 100% !important;
+  height: auto !important;
   position: relative !important;
-  min-height: 500px !important;
+  min-height: 0 !important;
   overflow: visible !important;
 }
 section.hero-section .hero-slide {
   width: 100% !important;
-  height: 100% !important;
+  height: auto !important;
   display: none !important;
-  min-height: 500px !important;
+  min-height: 0 !important;
   position: relative !important;
   overflow: visible !important;
 }
@@ -45356,22 +45356,24 @@ section.hero-section .hero-slide.active {
   display: block !important;
 }
 section.hero-section .hero-slide .hero-image {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
   width: 100% !important;
-  height: 100% !important;
+  height: auto !important;
   z-index: 0 !important;
+  line-height: 0 !important;
 }
 section.hero-section .hero-slide .hero-image .hero-slide-bg-img {
   width: 100% !important;
-  height: 100% !important;
-  -o-object-fit: cover !important;
-     object-fit: cover !important;
-  -o-object-position: center !important;
-     object-position: center !important;
+  height: auto !important;
+  max-width: 100% !important;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
+  -o-object-position: center center !important;
+     object-position: center center !important;
   display: block !important;
 }
 section.hero-section .hero-content {
@@ -45384,15 +45386,24 @@ section.hero-section .hero-content {
   height: 100% !important;
   z-index: 2 !important;
   pointer-events: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 24px 20px !important;
+  box-sizing: border-box !important;
 }
 section.hero-section .hero-text {
-  position: absolute !important;
-  bottom: 100px !important;
-  right: 20px !important;
-  max-width: 500px !important;
+  position: relative !important;
+  bottom: auto !important;
+  right: auto !important;
+  left: auto !important;
+  max-width: 36rem !important;
+  width: 100% !important;
   z-index: 3 !important;
-  text-align: right !important;
+  text-align: center !important;
   pointer-events: auto !important;
+  margin: 0 auto !important;
 }
 section.hero-section .hero-text h2 {
   font-size: 48px !important;
@@ -45437,7 +45448,9 @@ section.hero-section .shop-now-btn i {
 section.hero-section .hero-slide .price-badge {
   position: absolute !important;
   bottom: 20px !important;
-  right: 20px !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
   background-color: #bf3617 !important;
   color: #ffffff !important;
   padding: 10px 20px !important;
@@ -45692,7 +45705,8 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
     opacity: 1 !important;
   }
   section.hero-section .hero-section-mobile-slider .hero-text {
-    display: block !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
   section.hero-section .slider-dots {
     display: flex !important;
@@ -45718,12 +45732,15 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   }
   .hero-section-mobile-slider {
     position: relative !important;
-    min-height: max(300px, min(78vw, 360px)) !important;
-    overflow: visible !important;
-    padding-bottom: 20px !important;
+    width: 100% !important;
+    aspect-ratio: 1306/816 !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: hidden !important;
+    padding-bottom: 0 !important;
     margin-bottom: 8px !important;
-    background-size: cover !important;
-    background-position: center !important;
+    background-size: contain !important;
+    background-position: center center !important;
     background-repeat: no-repeat !important;
     border-radius: 24px !important;
     margin: 12px 12px 8px !important;
@@ -45753,9 +45770,9 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
     z-index: 4 !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: stretch !important;
-    justify-content: flex-start !important;
-    padding: 22px 16px 96px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 20px 16px !important;
     pointer-events: none !important;
     margin: 0 !important;
   }
@@ -45764,13 +45781,13 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   }
   .hero-section-mobile-slider .hero-text {
     width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
+    max-width: 22rem !important;
+    margin: 0 auto !important;
     padding: 0 !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-end !important;
-    text-align: right !important;
+    align-items: center !important;
+    text-align: center !important;
     pointer-events: auto !important;
   }
   .hero-section-mobile-slider .hero-text h2 {
@@ -45781,7 +45798,7 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
     color: #0a1744 !important;
     margin: 0 0 6px 0 !important;
     padding: 0 !important;
-    text-align: right !important;
+    text-align: center !important;
     width: 100% !important;
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35), 0 1px 0 rgba(255, 255, 255, 0.15) !important;
   }
@@ -45790,17 +45807,17 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
     font-weight: 500 !important;
     line-height: 1.35 !important;
     color: #ffffff !important;
-    margin: 0 0 0 0 !important;
+    margin: 0 !important;
     padding: 0 !important;
-    max-width: 15.5rem !important;
-    margin-left: auto !important;
-    text-align: right !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    text-align: center !important;
     text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55) !important;
   }
   .hero-section-mobile-slider .hero-text .shop-now-btn {
     display: inline-flex !important;
     align-items: center !important;
-    align-self: flex-end !important;
+    align-self: center !important;
     background-color: #ffffff !important;
     color: #000000 !important;
     border: none !important;
@@ -45815,7 +45832,7 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
     gap: 6px !important;
     margin-top: 20px !important;
     margin-bottom: 0 !important;
-    transform: translateY(10px) !important;
+    transform: none !important;
     position: relative !important;
     z-index: 8 !important;
   }
