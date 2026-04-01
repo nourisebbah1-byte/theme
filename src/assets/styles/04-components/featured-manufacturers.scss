@@ -60,6 +60,13 @@
     i {
       font-size: 16px !important;
     }
+
+    i.fas,
+    i[class*="fa-"] {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+      font-style: normal !important;
+    }
     
     @media (max-width: 768px) {
       width: 35px !important;

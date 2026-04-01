@@ -1,4 +1,4 @@
-/* Products List - Featured Products Style */
+/* Products List - Featured Products Style (compiled to public/app.css via webpack) */
 
 /* Section Header */
 .s-block--latest-products {
@@ -68,92 +68,68 @@
     padding-right: 24px !important;
   }
   
+  // Mobile: 2 columns like Deals; single column only on very small screens
   .s-products-list {
     display: grid !important;
-    // Mobile-first: Start with 1 column
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
     width: 100% !important;
-    
-    // Mobile: Ensure one card per line (explicit override)
-    @media (max-width: 767px) {
-      grid-template-columns: 1fr !important; // One card per line
-      gap: 16px !important; // Comfortable spacing between cards
-      width: 100% !important; // Ensure full width
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr !important;
+      gap: 12px !important;
     }
-    
-    // Tablet and up: 2 columns
-    @media (min-width: 768px) {
+
+    @media (min-width: 769px) {
       grid-template-columns: repeat(2, 1fr) !important;
       gap: 16px !important;
     }
-    
-    // Desktop: 3 columns
+
     @media (min-width: 1024px) {
       grid-template-columns: repeat(3, 1fr) !important;
       gap: 20px !important;
     }
-    
-    // Large desktop: 4 columns
+
     @media (min-width: 1280px) {
       grid-template-columns: repeat(4, 1fr) !important;
       gap: 24px !important;
     }
   }
-  
-  // FORCE one card per line on mobile - target Salla's wrapper classes
+
   .s-products-list-wrapper,
   .s-products-list-vertical-cards {
     @media (max-width: 768px) {
       display: grid !important;
-      grid-template-columns: 1fr !important;
-      grid-template-rows: auto !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: 12px !important;
       width: 100% !important;
       max-width: 100% !important;
-      gap: 16px !important;
-      
-      // Force all children to be full width
-      > * {
-        width: 100% !important;
-        max-width: 100% !important;
-        grid-column: 1 / -1 !important;
+
+      @media (max-width: 480px) {
+        grid-template-columns: 1fr !important;
       }
     }
   }
 }
 
-// FORCE one card per line on mobile - AGGRESSIVE targeting of Salla classes
 .s-block--latest-products .s-products-list-wrapper,
 .s-block--latest-products .s-products-list-vertical-cards,
 .s-block--latest-products salla-products-list .s-products-list-wrapper,
-.s-block--latest-products salla-products-list .s-products-list-vertical-cards,
-.s-block--latest-products .s-products-list-wrapper .s-products-list,
-.s-block--latest-products .s-products-list-vertical-cards .s-products-list {
+.s-block--latest-products salla-products-list .s-products-list-vertical-cards {
   @media (max-width: 768px) {
     display: grid !important;
-    grid-template-columns: 1fr !important;
-    grid-template-rows: auto !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
     width: 100% !important;
     max-width: 100% !important;
-    gap: 16px !important;
-    
-    // Force all children to be full width
-    > *,
-    .s-product-card-entry,
-    [class*="product-card"],
-    [class*="s-product-card"] {
-      width: 100% !important;
-      max-width: 100% !important;
-      grid-column: 1 / -1 !important;
-      flex-basis: 100% !important;
-      flex-grow: 1 !important;
-      flex-shrink: 0 !important;
-      min-width: 0 !important;
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr !important;
     }
   }
 }
 
-/* Product Card - Horizontal Layout */
+/* Product Card — horizontal desktop, vertical mobile (aligned with Deals) */
 .s-block--latest-products .s-product-card-entry {
   background-color: #fff !important;
   border-radius: 6px !important;
@@ -168,141 +144,16 @@
   height: auto !important;
   min-height: 120px !important;
   gap: 12px !important;
-  
-  // Mobile: Complete redesign - grid layout (image left, content right, button below)
+
   @media (max-width: 768px) {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 !important; // Remove padding, add to inner elements
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 0 !important;
     min-height: auto !important;
     gap: 0 !important;
-    border-radius: 8px 8px 0 0 !important; // Rounded top only
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
-    flex-shrink: 0 !important;
-    flex-grow: 1 !important;
-    margin-bottom: 0 !important;
-    display: grid !important; // Grid layout for precise control
-    grid-template-columns: 35% 65% !important; // Image 35%, Content 65%
-    grid-template-rows: auto auto !important; // Content row + button row
-    align-items: stretch !important;
-    overflow: visible !important;
-    background-color: #fff !important;
-    border: 1px solid #e0e0e0 !important;
-    border-bottom: none !important; // Button will have border
-  }
-}
-
-// Mobile: Add to cart button below card - FORCE VISIBILITY
-.s-block--latest-products .s-product-card-entry {
-  @media (max-width: 768px) {
-    // Create wrapper for card + button
-    display: flex !important;
-    flex-direction: column !important;
-    position: relative !important;
-    
-    // Show button below card - AGGRESSIVE OVERRIDE
-    .s-product-card-content-footer,
-    .s-product-card-actions {
-      display: flex !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      height: auto !important;
-      min-height: 42px !important;
-      overflow: visible !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      width: 100% !important;
-      margin-top: 0 !important;
-      order: 2 !important; // Below card content
-      position: relative !important;
-      
-      salla-add-product-button,
-      salla-button {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        height: auto !important;
-        min-height: 42px !important;
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-    }
-  }
-}
-
-// Mobile: Style button below card - MAXIMUM VISIBILITY AND STYLING
-.s-block--latest-products .s-product-card-entry .s-product-card-content-footer salla-add-product-button,
-.s-block--latest-products .s-product-card-entry .s-product-card-actions salla-button,
-.s-block--latest-products .s-product-card-entry .s-product-card-content-footer salla-button,
-.s-block--latest-products .s-product-card-entry .s-product-card-content-footer salla-add-product-button salla-button {
-  @media (max-width: 768px) {
-    position: relative !important;
-    margin: 0 !important;
-    text-align: center !important;
     width: 100% !important;
-    font-size: 13px !important;
-    font-weight: 600 !important;
-    background-color: #034c8c !important;
-    padding: 10px 16px !important;
-    color: #ffffff !important;
-    border: none !important;
-    border-radius: 0 0 8px 8px !important; // Rounded bottom only
-    cursor: pointer !important;
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    height: auto !important;
-    min-height: 42px !important;
-    max-height: none !important;
-    align-items: center !important;
-    justify-content: center !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 2px 4px rgba(3, 76, 140, 0.2) !important;
-    overflow: visible !important;
-    z-index: 11 !important;
-    
-    button,
-    .s-button {
-      background-color: transparent !important;
-      color: #ffffff !important;
-      border: none !important;
-      padding: 0 !important;
-      font-size: 13px !important;
-      font-weight: 600 !important;
-      text-align: center !important;
-      width: 100% !important;
-      min-height: 42px !important;
-      height: 42px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 6px !important;
-    }
-    
-    &:hover,
-    &:hover button,
-    &:hover .s-button {
-      color: #ffffff !important;
-      background-color: #023a6b !important;
-      box-shadow: 0 3px 6px rgba(3, 76, 140, 0.3) !important;
-    }
-    
-    // Single arrow after text
-    &::after {
-      content: "→" !important;
-      display: inline-block !important;
-      font-size: 16px !important;
-      line-height: 1 !important;
-      color: #ffffff !important;
-      margin-left: 6px !important;
-      transition: transform 0.3s ease !important;
-      font-weight: normal !important;
-    }
-    
-    &:hover::after {
-      transform: translateX(2px) !important;
-    }
+    max-width: 100% !important;
+    min-width: 0 !important;
   }
 }
 
@@ -356,32 +207,27 @@
   flex-shrink: 0 !important;
   overflow: visible !important; // Allow heart icon to overlay
   
-  // Mobile: Smaller image on left side
   @media (max-width: 768px) {
-    width: 35% !important; // Smaller image
-    min-width: 35% !important;
-    max-width: 35% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
     height: auto !important;
-    min-height: 100px !important;
-    max-height: 120px !important;
+    min-height: 140px !important;
+    max-height: 180px !important;
     flex-shrink: 0 !important;
     padding: 12px !important;
     display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
     align-items: center !important;
     justify-content: center !important;
     position: relative !important;
     z-index: 1 !important;
-    
+
     img {
       width: 100% !important;
       height: auto !important;
-      max-height: 120px !important;
+      max-height: 100% !important;
       object-fit: contain !important;
       display: block !important;
-      visibility: visible !important;
-      opacity: 1 !important;
     }
   }
   
@@ -482,6 +328,13 @@
   justify-content: center !important;
   width: 32px !important;
   height: 32px !important;
+
+  @media (max-width: 768px) {
+    width: 26px !important;
+    height: 26px !important;
+    top: 6px !important;
+    right: 6px !important;
+  }
   margin: 0 !important;
   padding: 0 !important;
   background-color: rgba(255, 255, 255, 0.9) !important;
@@ -511,6 +364,11 @@
     height: 100% !important;
     min-width: 32px !important;
     min-height: 32px !important;
+
+    @media (max-width: 768px) {
+      min-width: 26px !important;
+      min-height: 26px !important;
+    }
     padding: 0 !important;
     display: flex !important;
     align-items: center !important;
@@ -528,6 +386,10 @@
       font-size: 16px !important;
       color: #333333 !important;
       transition: color 0.3s ease !important;
+
+      @media (max-width: 768px) {
+        font-size: 13px !important;
+      }
     }
   }
   
@@ -557,22 +419,14 @@
   justify-content: space-between !important;
   min-width: 0 !important;
   
-  // Mobile: Content takes remaining space next to image - FORCE VISIBILITY
   @media (max-width: 768px) {
-    width: 65% !important; // Remaining space after 35% image
-    flex-grow: 1 !important;
-    padding: 12px !important;
-    padding-left: 8px !important;
+    width: 100% !important;
+    flex-grow: 0 !important;
+    padding: 0 8px 8px 8px !important;
     display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    height: auto !important;
-    min-height: auto !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
-    overflow: visible !important;
-    position: relative !important;
-    z-index: 2 !important;
+    min-width: 0 !important;
   }
 }
 
@@ -661,37 +515,19 @@
   align-items: center !important;
   justify-content: flex-start !important;
   
-  // Mobile: Price visible next to image - MAXIMUM VISIBILITY
   @media (max-width: 768px) {
-    font-size: 16px !important;
+    font-size: 18px !important;
     margin-top: 4px !important;
-    margin-bottom: 0 !important;
-    display: inline-flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    height: auto !important;
-    min-height: auto !important;
-    width: 100% !important;
-    overflow: visible !important;
-    color: #bf3617 !important;
-    font-weight: 700 !important;
-    position: relative !important;
-    z-index: 2 !important;
   }
-  
+
   h4 {
     color: #bf3617 !important;
     font-size: 16px !important;
     font-weight: 700 !important;
     margin: 0 !important;
-    
+
     @media (max-width: 768px) {
-      font-size: 16px !important;
-      display: block !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      height: auto !important;
-      color: #bf3617 !important;
+      font-size: 18px !important;
     }
   }
   
@@ -733,18 +569,7 @@
   height: 36px !important;
   transition: all 0.3s ease !important;
   box-shadow: 0 2px 4px rgba(3, 76, 140, 0.2) !important;
-  
-  // Mobile: Hide button inside .s-product-card-content only
-  @media (max-width: 768px) {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    overflow: hidden !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    opacity: 0 !important;
-  }
-  
+
   button,
   .s-button {
     background-color: transparent !important;
@@ -844,29 +669,12 @@
     order: 1 !important;
   }
   
-  // Mobile: Show button below card - FORCE VISIBILITY
   @media (max-width: 768px) {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    height: auto !important;
-    min-height: 42px !important;
-    overflow: visible !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    margin-top: 4px !important;
     width: 100% !important;
-    order: 2 !important; // Below card content
-    position: relative !important;
-    
-    salla-add-product-button,
-    salla-button {
-      display: flex !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      width: 100% !important;
-      height: auto !important;
-      min-height: 42px !important;
-    }
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
   }
 }
 
@@ -880,212 +688,75 @@
   }
 }
 
-// Mobile: COMPLETE REDESIGN - Image left, content right, button below
+// Mobile: CTA matches Deals (text link + mask arrow); never hide nested footer/button
 @media (max-width: 768px) {
-  // Card entry: Grid layout (image left, content right, button below)
-    .s-block--latest-products .s-product-card-entry {
-      display: grid !important;
-      grid-template-columns: 35% 65% !important;
-      grid-template-rows: auto auto !important;
-      width: 100% !important;
-      padding: 0 !important;
-      border-radius: 8px 8px 0 0 !important;
-      margin-bottom: 0 !important;
-      overflow: visible !important;
-      background-color: #fff !important;
-      border: 1px solid #e0e0e0 !important;
-      border-bottom: none !important;
-      gap: 0 !important;
-      
-      > .s-product-card-image {
-        grid-column: 1 !important;
-        grid-row: 1 !important;
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-      }
-      
-      > .s-product-card-content {
-        grid-column: 2 !important;
-        grid-row: 1 !important;
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-      }
-      
-      > .s-product-card-content-footer {
-        grid-column: 1 / -1 !important;
-        grid-row: 2 !important;
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-      }
-    }
-  
-  // Image: 35% width on left (grid handles width)
-  .s-block--latest-products .s-product-card-entry .s-product-card-image {
-    width: 100% !important;
-    padding: 12px !important;
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    height: auto !important;
-    min-height: 100px !important;
-    max-height: 120px !important;
-    align-items: center !important;
-    justify-content: center !important;
-    
-    img {
-      width: 100% !important;
-      height: auto !important;
-      max-height: 120px !important;
-      object-fit: contain !important;
-    }
-  }
-  
-  // Content: 65% width on right with title and price (grid handles width)
-  .s-block--latest-products .s-product-card-entry .s-product-card-content {
-    width: 100% !important;
-    padding: 12px !important;
-    padding-left: 8px !important;
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    height: auto !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    
-    // Title: FORCE VISIBLE
-    h3,
-    .s-product-card-title,
-    a[href*="/product/"],
-    .s-product-card-content-title {
-      display: -webkit-box !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      height: auto !important;
-      min-height: auto !important;
-      max-height: 40px !important;
-      color: #333 !important;
-      font-size: 14px !important;
-      line-height: 18px !important;
-      font-weight: 700 !important;
-      margin-bottom: 8px !important;
-      margin-top: 0 !important;
-      -webkit-line-clamp: 2 !important;
-      -webkit-box-orient: vertical !important;
-      overflow: hidden !important;
-      text-overflow: ellipsis !important;
-      text-decoration: none !important;
-      position: relative !important;
-      z-index: 2 !important;
-    }
-    
-    // Price: FORCE VISIBLE
-    .s-product-card-sale-price,
-    .s-product-card-price,
-    .s-product-card-starting-price {
-      display: inline-flex !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      height: auto !important;
-      min-height: auto !important;
-      color: #bf3617 !important;
-      font-size: 16px !important;
-      font-weight: 700 !important;
-      margin-top: 4px !important;
-      margin-bottom: 0 !important;
-      width: 100% !important;
-      position: relative !important;
-      z-index: 2 !important;
-      
-      h4,
-      span,
-      * {
-        display: inline-block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        color: #bf3617 !important;
-        font-size: 16px !important;
-        font-weight: 700 !important;
-      }
-    }
-    
-    // Rating: FORCE VISIBLE if exists
-    .s-rating-stars,
-    .s-rating-stars-reviews {
-      display: block !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      height: auto !important;
-      margin-bottom: 4px !important;
-    }
-    
-    // Hide button inside content
-    .s-product-card-content-footer,
-    salla-add-product-button {
-      display: none !important;
-      visibility: hidden !important;
-      height: 0 !important;
-      overflow: hidden !important;
-    }
-  }
-  
-  // Button: Below card, full width
-  .s-block--latest-products .s-product-card-entry .s-product-card-content-footer {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    height: auto !important;
-    min-height: 42px !important;
-    width: 100% !important;
-    margin: 0 !important;
+  .s-block--latest-products .s-product-card-content salla-add-product-button,
+  .s-block--latest-products .s-product-card-content salla-button[fill="outline"],
+  .s-block--latest-products .s-product-card-content .s-product-card-actions salla-button,
+  .s-block--latest-products .s-product-card-content-footer salla-add-product-button {
+    margin-top: 4px !important;
+    margin-bottom: 0 !important;
+    text-align: left !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    background-color: transparent !important;
     padding: 0 !important;
-    order: 2 !important;
-    position: relative !important;
-    z-index: 10 !important;
-    
-    salla-add-product-button {
-      display: flex !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      width: 100% !important;
-      height: auto !important;
-      min-height: 42px !important;
-      margin: 0 !important;
-      padding: 10px 16px !important;
-      background-color: #034c8c !important;
-      color: #ffffff !important;
+    color: #034c8c !important;
+    border: none !important;
+    border-radius: 0 !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: auto !important;
+    height: auto !important;
+    box-shadow: none !important;
+
+    button,
+    .s-button {
+      background-color: transparent !important;
+      color: #034c8c !important;
       border: none !important;
-      border-radius: 0 0 8px 8px !important;
-      font-size: 13px !important;
-      font-weight: 600 !important;
-      align-items: center !important;
-      justify-content: center !important;
-      cursor: pointer !important;
-      transition: all 0.3s ease !important;
-      box-shadow: 0 2px 4px rgba(3, 76, 140, 0.2) !important;
-      
-      salla-button,
-      button,
-      .s-button {
-        background-color: transparent !important;
-        color: #ffffff !important;
-        border: none !important;
-        padding: 0 !important;
-        font-size: 13px !important;
-        font-weight: 600 !important;
-        width: 100% !important;
-        min-height: 42px !important;
-        height: 42px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-      }
-      
-      &:hover {
-        background-color: #023a6b !important;
-      }
+      padding: 0 !important;
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      text-align: left !important;
+      width: fit-content !important;
+      min-height: auto !important;
+      height: auto !important;
     }
+
+    &::after {
+      content: "" !important;
+      width: 14px !important;
+      height: 14px !important;
+      display: inline-block !important;
+      margin-left: 8px !important;
+      vertical-align: middle !important;
+      transition: all 0.2s ease-out !important;
+      background-color: #034c8c !important;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M7 0L5.5 1.5L9.5 5.5H0V8.5H9.5L5.5 12.5L7 14L14 7L7 0Z'/%3E%3C/svg%3E") no-repeat 50% 50% !important;
+      -webkit-mask-size: 100% !important;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M7 0L5.5 1.5L9.5 5.5H0V8.5H9.5L5.5 12.5L7 14L14 7L7 0Z'/%3E%3C/svg%3E") no-repeat 50% 50% !important;
+      mask-size: 100% !important;
+    }
+
+    &:hover,
+    &:hover button,
+    &:hover .s-button {
+      color: #023a6b !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      transform: none !important;
+    }
+
+    &:hover::after {
+      background-color: #023a6b !important;
+    }
+  }
+
+  .s-block--latest-products .s-product-card-content-footer {
+    padding: 0 8px 8px 8px !important;
   }
 }

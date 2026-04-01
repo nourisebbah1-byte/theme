@@ -95,7 +95,8 @@
             --color-primary-light: {{ theme.color.lighter(0.15) }};
             --color-primary-reverse: {{ theme.color.reverse_text }};
         }
-        body, html, * {
+        /* Do not use `*` here — it overrides Font Awesome on <i class="fas"> (Deals / Best Brands arrows). */
+        body, html {
             font-family: 'Cairo', sans-serif !important;
         }
     </style>
