@@ -45,10 +45,10 @@
     }
   }
   
-  // Mobile: Ensure title is centered and reduce bottom spacing
+  // Mobile: Tight gap before Latest Products (keep top spacing from section above)
   @media (max-width: 768px) {
     margin-bottom: 0 !important;
-    padding-bottom: 20px !important;
+    padding-bottom: 0 !important;
     
     .s-block__title {
       justify-content: center !important;

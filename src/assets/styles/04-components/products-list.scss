@@ -5,9 +5,8 @@
   padding: 60px 0 !important;
   background-color: #ffffff !important;
   
-  // Mobile: Reduce top padding to bring closer to Featured Categories
   @media (max-width: 768px) {
-    padding-top: 20px !important; // Reduced from 60px
+    padding-top: 0 !important;
     padding-bottom: 40px !important;
     margin-top: 0 !important;
   }
