@@ -167,10 +167,17 @@ section.hero-section {
     .dot {
       width: 12px !important;
       height: 12px !important;
+      min-width: 12px !important;
+      min-height: 12px !important;
+      padding: 0 !important;
+      border: none !important;
       border-radius: 50% !important;
       background-color: rgba(255, 255, 255, 0.5) !important;
       cursor: pointer !important;
       transition: background-color 0.3s !important;
+      appearance: none !important;
+      -webkit-appearance: none !important;
+      flex-shrink: 0 !important;
       
       &.active {
         background-color: #ffffff !important; // var(--white)
@@ -178,6 +185,11 @@ section.hero-section {
       
       &:hover {
         background-color: rgba(255, 255, 255, 0.8) !important;
+      }
+      
+      &:focus-visible {
+        outline: 2px solid #034c8c !important;
+        outline-offset: 2px !important;
       }
     }
   }
@@ -410,9 +422,13 @@ section.hero-section .hero-vehicle-filter {
   section.hero-section {
     display: block !important;
     visibility: visible !important;
-    overflow: visible !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
     min-height: auto !important;
     position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
     
     // Hide hero content (image, text, price badge)
     .hero-slider {
@@ -478,25 +494,50 @@ section.hero-section .hero-vehicle-filter {
     }
   }
   
-  // Mobile hero: full image (no crop), copy + CTA centered on top
+  // Mobile hero: fluid images (no fixed aspect box), copy + CTA centered
   .hero-section-mobile-slider {
     position: relative !important;
-    width: 100% !important;
-    aspect-ratio: 1306 / 816 !important;
+    width: calc(100% - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
     min-height: 0 !important;
-    max-height: none !important;
+    margin: 12px auto 8px !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
     overflow: hidden !important;
-    padding-bottom: 0 !important;
-    margin-bottom: 8px !important;
-    background-size: contain !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
     border-radius: 24px !important;
-    margin: 12px 12px 8px !important;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18) !important;
     isolation: isolate !important;
     visibility: visible !important;
     opacity: 1 !important;
+
+    .hero-mobile-slides {
+      position: relative !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      line-height: 0 !important;
+    }
+
+    .hero-mobile-slide {
+      display: none !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      box-sizing: border-box !important;
+
+      &.active {
+        display: block !important;
+      }
+    }
+
+    .hero-mobile-slide-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      display: block !important;
+      box-sizing: border-box !important;
+    }
 
     &::before {
       content: '' !important;

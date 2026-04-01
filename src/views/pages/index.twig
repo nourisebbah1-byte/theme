@@ -10,9 +10,35 @@
     {# Hero Banner with Vehicle Filter #}
     <section class="hero-section">
         <div class="hero-slider">
-            <div class="hero-slide active">
+            <div class="hero-slide active" data-hero-slide="0">
                 <div class="hero-image" role="img" aria-label="{{ trans('blocks.home.battery_starters') }}">
-                    <img src="https://i.ibb.co/rGf92Ct2/pcslider1.png" alt="" class="hero-slide-bg-img" onerror="this.src='{{ 'images/placeholder.png'|asset }}'">
+                    <img src="https://i.ibb.co/v6C337zM/Gemini-Generated-Image-rahwsirahwsirahw.png" alt="" class="hero-slide-bg-img" onerror="this.src='{{ 'images/placeholder.png'|asset }}'">
+                </div>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h2>{{ trans('blocks.home.battery_starters') }}</h2>
+                        <p>{{ trans('blocks.home.start_batteries_seconds') }}</p>
+                        <a href="{{ link('/') }}" class="shop-now-btn">{{ trans('blocks.home.shop_now') }} <i class="sicon-sar"></i></a>
+                    </div>
+                </div>
+                <div class="price-badge">{{ trans('blocks.home.from_price') }}</div>
+            </div>
+            <div class="hero-slide" data-hero-slide="1">
+                <div class="hero-image" role="img" aria-hidden="true">
+                    <img src="https://i.ibb.co/Rpf8scDs/Gemini-Generated-Image-7c8c2z7c8c2z7c8c.png" alt="" class="hero-slide-bg-img" onerror="this.src='{{ 'images/placeholder.png'|asset }}'">
+                </div>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h2>{{ trans('blocks.home.battery_starters') }}</h2>
+                        <p>{{ trans('blocks.home.start_batteries_seconds') }}</p>
+                        <a href="{{ link('/') }}" class="shop-now-btn">{{ trans('blocks.home.shop_now') }} <i class="sicon-sar"></i></a>
+                    </div>
+                </div>
+                <div class="price-badge">{{ trans('blocks.home.from_price') }}</div>
+            </div>
+            <div class="hero-slide" data-hero-slide="2">
+                <div class="hero-image" role="img" aria-hidden="true">
+                    <img src="https://i.ibb.co/bgtxXpTY/Gemini-Generated-Image-pnwe4pnwe4pnwe4p.png" alt="" class="hero-slide-bg-img" onerror="this.src='{{ 'images/placeholder.png'|asset }}'">
                 </div>
                 <div class="hero-content">
                     <div class="hero-text">
@@ -25,8 +51,19 @@
             </div>
         </div>
         
-        {# Mobile Slider with Overlay Images #}
-        <div class="hero-section-mobile-slider" style="background-image: url('https://i.ibb.co/svFyX2nY/mobileslider1.png');">
+        {# Mobile Slider — fluid img slides, synced with dots #}
+        <div class="hero-section-mobile-slider">
+            <div class="hero-mobile-slides">
+                <div class="hero-mobile-slide active" data-hero-slide="0">
+                    <img class="hero-mobile-slide-img" src="https://i.ibb.co/svFyX2nY/mobileslider1.png" alt="" width="1306" height="816" loading="eager" decoding="async" onerror="this.src='{{ 'images/placeholder.png'|asset }}'">
+                </div>
+                <div class="hero-mobile-slide" data-hero-slide="1">
+                    <img class="hero-mobile-slide-img" src="https://i.ibb.co/0ybhDvfR/Gemini-Generated-Image-kyl86jkyl86jkyl8.png" alt="" loading="lazy" decoding="async" onerror="this.src='{{ 'images/placeholder.png'|asset }}'">
+                </div>
+                <div class="hero-mobile-slide" data-hero-slide="2">
+                    <img class="hero-mobile-slide-img" src="https://i.ibb.co/WWm87Z9P/Gemini-Generated-Image-j3jyq2j3jyq2j3jy.png" alt="" loading="lazy" decoding="async" onerror="this.src='{{ 'images/placeholder.png'|asset }}'">
+                </div>
+            </div>
             <div class="hero-content">
                 <div class="hero-text">
                     <h2>{{ trans('blocks.home.battery_starters') }}</h2>
@@ -68,10 +105,10 @@
             </div>
         </div>
         
-        <div class="slider-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+        <div class="slider-dots" role="tablist" aria-label="{{ trans('blocks.home.battery_starters') }}">
+            <button type="button" class="dot active" data-hero-dot="0" role="tab" aria-selected="true" aria-label="1"></button>
+            <button type="button" class="dot" data-hero-dot="1" role="tab" aria-selected="false" aria-label="2"></button>
+            <button type="button" class="dot" data-hero-dot="2" role="tab" aria-selected="false" aria-label="3"></button>
         </div>
     </section>
     

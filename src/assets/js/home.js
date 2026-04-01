@@ -10,7 +10,8 @@ class Home extends BasePage {
         this.initDealsSection();
         this.initTopBannerCountdown();
         this.initVehicleSearch();
-        
+        this.initHeroSlider();
+
         // Initialize product image gallery
         new ProductImageGallery();
     }
@@ -349,6 +350,46 @@ class Home extends BasePage {
      * Collects values from brand, model, year, engine, trim fields
      * Combines them into a search query and redirects to Salla search
      */
+    /**
+     * Hero (desktop + mobile) slide sync — dots control both tracks
+     */
+    initHeroSlider() {
+        const section = document.querySelector('section.hero-section');
+        if (!section) return;
+
+        const dots = section.querySelectorAll('.slider-dots .dot');
+        const desktopSlides = section.querySelectorAll('.hero-slider .hero-slide');
+        const mobileSlides = section.querySelectorAll('.hero-mobile-slides .hero-mobile-slide');
+
+        if (!dots.length || !desktopSlides.length) return;
+
+        let count = Math.min(dots.length, desktopSlides.length);
+        if (mobileSlides.length > 0) {
+            count = Math.min(count, mobileSlides.length);
+        }
+
+        const goTo = (index) => {
+            if (index < 0 || index >= count) return;
+
+            desktopSlides.forEach((el, i) => el.classList.toggle('active', i === index));
+            if (mobileSlides.length > 0) {
+                mobileSlides.forEach((el, i) => el.classList.toggle('active', i === index));
+            }
+            dots.forEach((el, i) => {
+                el.classList.toggle('active', i === index);
+                el.setAttribute('aria-selected', i === index ? 'true' : 'false');
+            });
+        };
+
+        dots.forEach((dot, i) => {
+            if (i >= count) return;
+            dot.addEventListener('click', (e) => {
+                e.preventDefault();
+                goTo(i);
+            });
+        });
+    }
+
     initVehicleSearch() {
         const searchBtn = document.getElementById('vehicle-search-btn');
         if (!searchBtn) return;
