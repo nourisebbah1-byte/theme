@@ -52857,18 +52857,6 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
 .deals-nav .nav-arrow i {
   font-size: 16px !important;
 }
-/* Deals / Featured Brands: master layout sets * { font-family: Cairo !important } which breaks Font Awesome chevrons */
-.deals-nav .nav-arrow i[class*=fa-],
-.deals-header .nav-arrow i[class*=fa-],
-.manufacturers-nav .nav-arrow i[class*=fa-] {
-  font-family: "Font Awesome 6 Free" !important;
-  font-weight: 900 !important;
-  font-style: normal !important;
-  font-variant: normal !important;
-  line-height: 1 !important;
-  display: inline-block !important;
-  -webkit-font-smoothing: antialiased !important;
-}
 @media (max-width: 768px) {
   .deals-nav .nav-arrow {
     width: 35px !important;
