@@ -3737,6 +3737,13 @@ textarea.s-input{
   margin: 0 auto;
   padding: 0 20px;
 }
+@media (max-width: 768px) {
+  .promo-banners .s-advertisement-content {
+    padding-left: 16px;
+    padding-right: 16px;
+    overflow: visible;
+  }
+}
 .store-footer__inner .s-advertisement-content.footer-content-grid,
 .store-footer__inner .s-advertisement-content .grid {
   display: grid;
@@ -46049,26 +46056,14 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   padding: 0 20px !important;
 }
 @media (max-width: 768px) {
+  .promo-banners .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    overflow: visible !important;
+  }
   .promo-banners {
     padding-top: 20px !important;
-    padding-bottom: 40px !important;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.08), 0 0 60px rgba(0, 0, 0, 0.04) !important;
-    background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.02) 50%, transparent 100%) !important;
-    position: relative !important;
-  }
-  .promo-banners::before {
-    content: "" !important;
-    position: absolute !important;
-    top: -10px !important;
-    left: -10px !important;
-    right: -10px !important;
-    bottom: -10px !important;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, transparent 100%) !important;
-    border-radius: 20px !important;
-    z-index: -1 !important;
-    pointer-events: none !important;
-    filter: blur(20px) !important;
-    opacity: 0.6 !important;
+    padding-bottom: 32px !important;
   }
 }
 .banner-grid {
@@ -46077,14 +46072,30 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   grid-gap: 20px !important;
   gap: 20px !important;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 769px) {
   .banner-grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
-@media (max-width: 640px) {
+.banner-grid {
+  /* Mobile: horizontal scroll cards (reference: Mobex-style promo strip) */
+}
+@media (max-width: 768px) {
   .banner-grid {
-    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 14px !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    padding: 4px 0 12px !important;
+    margin: 0 -4px !important;
+    scroll-padding-inline: 4px !important;
+  }
+  .banner-grid::-webkit-scrollbar {
+    display: none !important;
   }
 }
 .promo-banner {
@@ -46097,14 +46108,42 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   justify-content: space-between !important;
   overflow: hidden !important;
 }
+@media (max-width: 768px) {
+  .promo-banner {
+    flex: 0 0 min(292px, 100vw - 48px) !important;
+    width: min(292px, 100vw - 48px) !important;
+    min-width: min(292px, 100vw - 48px) !important;
+    scroll-snap-align: start !important;
+    min-height: 360px !important;
+    padding: 18px 16px 0 !important;
+    border-radius: 14px !important;
+    justify-content: flex-start !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08) !important;
+  }
+}
 .batteries-banner {
   background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%) !important;
+}
+@media (max-width: 768px) {
+  .batteries-banner {
+    background: #ffcc33 !important;
+  }
 }
 .tires-banner {
   background: linear-gradient(135deg, #e0e0e0 0%, #b0b0b0 100%) !important;
 }
+@media (max-width: 768px) {
+  .tires-banner {
+    background: linear-gradient(180deg, #d4ecfc 0%, #9fd4f0 55%, #7fc4e8 100%) !important;
+  }
+}
 .springs-banner {
   background: linear-gradient(135deg, #ff6b6b 0%, #ff8c00 100%) !important;
+}
+@media (max-width: 768px) {
+  .springs-banner {
+    background: linear-gradient(180deg, #e53935 0%, #c62828 100%) !important;
+  }
 }
 .banner-content {
   position: relative !important;
@@ -46122,12 +46161,27 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   color: #000000 !important;
 }
 @media (max-width: 768px) {
+  .banner-content {
+    flex: 1 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
+    padding-bottom: 8px !important;
+  }
   .banner-content h2 {
-    font-size: 26px !important;
+    font-size: 22px !important;
+    line-height: 1.15 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.02em !important;
+    margin-bottom: 8px !important;
   }
   .banner-content p {
-    font-size: 14px !important;
-    margin-bottom: 15px !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 1.35 !important;
+    margin-bottom: 14px !important;
   }
 }
 .banner-badge {
@@ -46155,12 +46209,16 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
 }
 @media (max-width: 768px) {
   .banner-badge {
-    padding: 3px 10px !important;
-    font-size: 9px !important;
-    margin-bottom: 10px !important;
-    border-radius: 12px !important;
-    font-weight: 500 !important;
-    letter-spacing: 0.3px !important;
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    margin-bottom: 12px !important;
+    border-radius: 999px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em !important;
+  }
+  .batteries-banner .banner-badge:not(.green):not(.yellow):not(.red):not(.orange) {
+    background-color: #8f1d24 !important;
+    color: #ffffff !important;
   }
 }
 .banner-btn {
@@ -46191,16 +46249,27 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
 }
 @media (max-width: 768px) {
   .banner-btn {
-    padding: 6px 14px !important;
-    font-size: 11px !important;
-    border-width: 1px !important;
-    border-radius: 4px !important;
-    gap: 5px !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.2px !important;
+    padding: 10px 18px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    gap: 6px !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12) !important;
   }
   .banner-btn i {
-    font-size: 10px !important;
+    display: none !important;
+  }
+  .banner-btn::after {
+    content: "→" !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    font-weight: 400 !important;
+    margin-left: 2px !important;
+  }
+  .banner-btn:hover {
+    background-color: #f5f5f5 !important;
+    color: #000000 !important;
   }
 }
 .banner-image {
@@ -46214,6 +46283,28 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   width: 100% !important;
   height: auto !important;
   display: block !important;
+}
+@media (max-width: 768px) {
+  .banner-image {
+    position: relative !important;
+    right: auto !important;
+    bottom: auto !important;
+    max-width: 100% !important;
+    width: calc(100% + 32px) !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+    margin-top: auto !important;
+    align-self: stretch !important;
+    z-index: 1 !important;
+  }
+  .banner-image img {
+    width: 100% !important;
+    max-height: 150px !important;
+    -o-object-fit: contain !important;
+       object-fit: contain !important;
+    -o-object-position: center bottom !important;
+       object-position: center bottom !important;
+  }
 }
 /* Footer - Match Frontend Design - Dark Black Background */
 .store-footer{
@@ -50363,6 +50454,13 @@ model-viewer[style*=width]:before{
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+@media (max-width: 768px) {
+  .promo-banners .s-comments-product .s-comments-container {
+    padding-left: 16px;
+    padding-right: 16px;
+    overflow: visible;
+  }
 }
 .store-footer__inner .s-comments-product .s-comments-container.footer-content-grid,
 .store-footer__inner .s-comments-product .s-comments-container .grid {
