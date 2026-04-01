@@ -23,7 +23,9 @@ class App extends AppHelpers {
     this.initiateCollapse();
     this.initAttachWishlistListeners();
     this.initVehicleFilterModal();
-    
+    this.initHeroSlider();
+    setTimeout(() => this.initHeroSlider(), 500);
+
     // Ensure #more-menu-dropdown exists before running changeMenuDirection
     const menuDirInterval = setInterval(() => {
       if (document.querySelector('#more-menu-dropdown')) {
@@ -407,6 +409,57 @@ isElementLoaded(selector){
       // DOM is already ready, but wait a bit for Salla components
       setTimeout(initModal, 100);
     }
+  }
+
+  /**
+   * Hero dots: sync desktop + mobile slides (runs on any page with markup;
+   * Home class only loads for slug "index", but Salla home may use another slug).
+   */
+  initHeroSlider() {
+    const section = document.querySelector('section.hero-section');
+    if (!section || section.dataset.heroSliderBound === '1') {
+      return;
+    }
+
+    const dots = section.querySelectorAll('.slider-dots .dot');
+    const desktopSlides = section.querySelectorAll('.hero-slider .hero-slide');
+    const mobileSlides = section.querySelectorAll('.hero-mobile-slides .hero-mobile-slide');
+
+    if (!dots.length || !desktopSlides.length) {
+      return;
+    }
+
+    section.dataset.heroSliderBound = '1';
+
+    let count = Math.min(dots.length, desktopSlides.length);
+    if (mobileSlides.length > 0) {
+      count = Math.min(count, mobileSlides.length);
+    }
+
+    const goTo = (index) => {
+      if (index < 0 || index >= count) {
+        return;
+      }
+
+      desktopSlides.forEach((el, i) => el.classList.toggle('active', i === index));
+      if (mobileSlides.length > 0) {
+        mobileSlides.forEach((el, i) => el.classList.toggle('active', i === index));
+      }
+      dots.forEach((el, i) => {
+        el.classList.toggle('active', i === index);
+        el.setAttribute('aria-selected', i === index ? 'true' : 'false');
+      });
+    };
+
+    dots.forEach((dot, i) => {
+      if (i >= count) {
+        return;
+      }
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        goTo(i);
+      });
+    });
   }
 }
 

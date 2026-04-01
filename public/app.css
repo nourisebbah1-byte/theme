@@ -45365,16 +45365,23 @@ section.hero-section .hero-slide .hero-image {
   height: auto !important;
   z-index: 0 !important;
   line-height: 0 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  justify-content: center !important;
 }
 section.hero-section .hero-slide .hero-image .hero-slide-bg-img {
   width: 100% !important;
+  max-width: min(100%, 1920px) !important;
   height: auto !important;
-  max-width: 100% !important;
   -o-object-fit: contain !important;
      object-fit: contain !important;
-  -o-object-position: center center !important;
-     object-position: center center !important;
+  -o-object-position: center top !important;
+     object-position: center top !important;
   display: block !important;
+  flex-shrink: 0 !important;
+  clip-path: inset(0 0 10% 0) !important;
+  -webkit-clip-path: inset(0 0 10% 0) !important;
+  image-rendering: auto !important;
 }
 section.hero-section .hero-content {
   position: absolute !important;
@@ -45447,7 +45454,7 @@ section.hero-section .shop-now-btn i {
 }
 section.hero-section .hero-slide .price-badge {
   position: absolute !important;
-  bottom: 20px !important;
+  bottom: 110px !important;
   left: 50% !important;
   right: auto !important;
   transform: translateX(-50%) !important;
@@ -45468,7 +45475,8 @@ section.hero-section .slider-dots {
   transform: translateX(-50%) !important;
   display: flex !important;
   gap: 10px !important;
-  z-index: 5 !important;
+  z-index: 15 !important;
+  pointer-events: auto !important;
 }
 section.hero-section .slider-dots .dot {
   width: 12px !important;
@@ -45481,7 +45489,8 @@ section.hero-section .slider-dots .dot {
   background-color: rgba(255, 255, 255, 0.5) !important;
   cursor: pointer !important;
   transition: background-color 0.3s !important;
-  appearance: none !important;
+  -moz-appearance: none !important;
+       appearance: none !important;
   -webkit-appearance: none !important;
   flex-shrink: 0 !important;
 }
@@ -45774,16 +45783,27 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
     margin: 0 !important;
     padding: 0 !important;
     box-sizing: border-box !important;
+    overflow: hidden !important;
+    justify-content: center !important;
   }
   .hero-section-mobile-slider .hero-mobile-slide.active {
-    display: block !important;
+    display: flex !important;
   }
   .hero-section-mobile-slider .hero-mobile-slide-img {
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: min(100%, 1400px) !important;
     height: auto !important;
     display: block !important;
     box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+    margin: 0 auto !important;
+    -o-object-fit: contain !important;
+       object-fit: contain !important;
+    -o-object-position: center top !important;
+       object-position: center top !important;
+    clip-path: inset(0 0 10% 0) !important;
+    -webkit-clip-path: inset(0 0 10% 0) !important;
+    image-rendering: auto !important;
   }
   .hero-section-mobile-slider::before {
     content: "" !important;
