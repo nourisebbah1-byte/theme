@@ -25,6 +25,7 @@ class App extends AppHelpers {
     this.initVehicleFilterModal();
     this.initHeroSlider();
     setTimeout(() => this.initHeroSlider(), 500);
+    this.initMobileBottomNav();
 
     // Ensure #more-menu-dropdown exists before running changeMenuDirection
     const menuDirInterval = setInterval(() => {
@@ -459,6 +460,50 @@ isElementLoaded(selector){
         e.preventDefault();
         goTo(i);
       });
+    });
+  }
+
+  /**
+   * Mobile bottom bar: categories → same drawer as header menu; car filter → vehicle modal; guest account → login.
+   */
+  initMobileBottomNav() {
+    const nav = document.querySelector('.mob-bottom-nav');
+    if (!nav || nav.dataset.mobNavBound === '1') {
+      return;
+    }
+    nav.dataset.mobNavBound = '1';
+
+    const openMobileMenu = () => {
+      const trigger = document.querySelector("a[href='#mobile-menu']");
+      if (trigger) {
+        trigger.click();
+      }
+    };
+
+    const openCarFilter = () => {
+      document.getElementById('vehicle-filter-toggle-btn')?.click();
+    };
+
+    nav.querySelector('[data-mob-nav="account"]')?.addEventListener('click', (e) => {
+      const a = e.currentTarget;
+      if (a.getAttribute('href') === '#') {
+        e.preventDefault();
+        if (typeof salla !== 'undefined' && salla.event?.dispatch) {
+          salla.event.dispatch('login::open');
+        }
+      }
+    });
+
+    nav.querySelector('[data-mob-nav="categories"]')?.addEventListener('click', () => {
+      openMobileMenu();
+    });
+
+    nav.querySelector('[data-mob-nav="car-filter"]')?.addEventListener('click', () => {
+      openCarFilter();
+    });
+
+    nav.querySelector('[data-mob-nav="top"]')?.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 }

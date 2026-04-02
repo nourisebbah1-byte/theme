@@ -1,0 +1,53 @@
+{# Fixed mobile bottom bar — max-width 1024px (matches mobile drawer) #}
+<nav class="mob-bottom-nav" aria-label="{{ trans('blocks.header.mobile_nav_aria') }}">
+  <a href="{% if user.type == 'user' %}{{ link('customer.profile') }}{% else %}#{% endif %}"
+     class="mob-bottom-nav__item"
+     data-mob-nav="account">
+    <span class="mob-bottom-nav__icon" aria-hidden="true">
+      <i class="sicon-user"></i>
+    </span>
+    <span class="mob-bottom-nav__label">{{ trans('blocks.header.mobile_nav_account') }}</span>
+  </a>
+
+  <button type="button" class="mob-bottom-nav__item" data-mob-nav="categories">
+    <span class="mob-bottom-nav__icon mob-bottom-nav__icon--grid" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="7" height="7" rx="1.25"/>
+        <rect x="14" y="3" width="7" height="7" rx="1.25"/>
+        <rect x="3" y="14" width="7" height="7" rx="1.25"/>
+        <rect x="14" y="14" width="7" height="7" rx="1.25"/>
+      </svg>
+    </span>
+    <span class="mob-bottom-nav__label">{{ trans('blocks.header.mobile_nav_categories') }}</span>
+  </button>
+
+  <button type="button" class="mob-bottom-nav__item" data-mob-nav="car-filter">
+    <span class="mob-bottom-nav__icon mob-bottom-nav__icon--car" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 17h14v-2l-1-5H6L5 15v2z"/>
+        <path d="M7 10V8a2 2 0 012-2h6a2 2 0 012 2v2"/>
+        <circle cx="7.5" cy="17" r="1.5"/>
+        <circle cx="16.5" cy="17" r="1.5"/>
+      </svg>
+    </span>
+    <span class="mob-bottom-nav__label">{{ trans('blocks.header.mobile_nav_car_filter') }}</span>
+  </button>
+
+  <a href="{{ store.url }}/search" class="mob-bottom-nav__item" data-mob-nav="search">
+    <span class="mob-bottom-nav__icon" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+        <path d="M30.276 28.391l-7.576-7.576c1.644-2.053 2.633-4.652 2.633-7.481 0-6.616-5.384-12-12-12s-12 5.384-12 12 5.384 12 12 12c2.829 0 5.428-0.989 7.481-2.633l7.576 7.576c0.26 0.26 0.601 0.391 0.943 0.391s0.683-0.131 0.943-0.391c0.521-0.521 0.521-1.364 0-1.885zM13.333 22.667c-5.147 0-9.333-4.187-9.333-9.333s4.187-9.333 9.333-9.333 9.333 4.187 9.333 9.333-4.187 9.333-9.333 9.333z"/>
+      </svg>
+    </span>
+    <span class="mob-bottom-nav__label">{{ trans('blocks.header.mobile_nav_search') }}</span>
+  </a>
+
+  <button type="button" class="mob-bottom-nav__item" data-mob-nav="top">
+    <span class="mob-bottom-nav__icon" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+    </span>
+    <span class="mob-bottom-nav__label">{{ trans('blocks.header.mobile_nav_top') }}</span>
+  </button>
+</nav>

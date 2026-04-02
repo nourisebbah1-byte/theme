@@ -8,7 +8,13 @@
       "all_categories": "All Categories",
       "featured_categories": "Featured Categories",
       "pre_black_friday_sale": "Pre-Black Friday Sale: Up to 65% off | Use code \"BLACK\"",
-      "offer_ends_in": "Offer ends in"
+      "offer_ends_in": "Offer ends in",
+      "mobile_nav_aria": "Mobile bottom navigation",
+      "mobile_nav_account": "Account",
+      "mobile_nav_categories": "Categories",
+      "mobile_nav_car_filter": "Car filter",
+      "mobile_nav_search": "Search",
+      "mobile_nav_top": "Top"
     },
     "appBanner": {
       "download_now": "download now"

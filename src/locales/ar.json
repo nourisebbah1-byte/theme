@@ -8,7 +8,13 @@
       "all_categories": "جميع الفئات",
       "featured_categories": "فئات مميزة",
       "pre_black_friday_sale": "تخفيضات ما قبل الجمعة السوداء : خصم يصل إلى 65% | استخدم الكود \"BLACK\"",
-      "offer_ends_in": "تنتهي العروض خلال"
+      "offer_ends_in": "تنتهي العروض خلال",
+      "mobile_nav_aria": "التنقل السفلي للجوال",
+      "mobile_nav_account": "حسابي",
+      "mobile_nav_categories": "التصنيفات",
+      "mobile_nav_car_filter": "فلتر السيارة",
+      "mobile_nav_search": "بحث",
+      "mobile_nav_top": "الأعلى"
     },
     "appBanner": {
       "download_now": "حمله الان"
