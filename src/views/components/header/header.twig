@@ -6,7 +6,7 @@
 | cart.total       | string  | Formatted total ex: "١٠٠ ر.س"   |
 #}
 {% set important_links = theme.settings.get('important_links') %}
-<header class="store-header{% if is_page('index') %} store-header--home{% endif %}">
+<header class="store-header">
   {# Top Banner - Two Section Design: Contact Info + Promotional Banner #}
   {# Section 1: Contact Information #}
   <div class="top-banner-contact">
@@ -71,7 +71,7 @@
                           {# MOBEX AUTO PARTS & ACCESSORIES Logo #}
                           {% if is_page('index') %}
                             <h1 class="mobex-logo">
-                              <span class="mobex-title"><span class="mob-w">MOB</span><span class="mob-e">EX</span></span>
+                              <span class="mobex-title">MOBEX</span>
                               <span class="mobex-subtitle">AUTO PARTS & ACCESSORIES</span>
                             </h1>
                           {% else %}

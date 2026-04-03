@@ -1554,9 +1554,9 @@ salla-cart-summary:not(.cart-link-main) {
   }
 }
 
-/* Homepage only — mobile/tablet header layout to match Mobex reference (desktop ≥1024px unchanged) */
+/* Homepage only (first main section = mobex hero): mobile/tablet header layout — no extra header classes */
 @media (max-width: 1023px) {
-  .store-header.store-header--home .main-nav-container {
+  body:has(main#main-content > section.hero-section.mobex-hero:first-child) .store-header .main-nav-container {
     padding: 10px 0 12px !important;
     min-height: 0 !important;
     height: auto !important;
@@ -1618,14 +1618,7 @@ salla-cart-summary:not(.cart-link-main) {
       font-style: italic !important;
       letter-spacing: -0.02em !important;
       line-height: 1.1 !important;
-    }
-
-    .mobex-logo .mob-w {
       color: #ffffff !important;
-    }
-
-    .mobex-logo .mob-e {
-      color: #f29f05 !important;
     }
 
     .mobex-logo .mobex-subtitle {
