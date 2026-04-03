@@ -2,6 +2,7 @@ import "lite-youtube-embed";
 import BasePage from "./base-page";
 import Lightbox from "fslightbox";
 import ProductImageGallery from "./product-image-gallery";
+import { selectDisplayText } from "./partials/vehicle-dropdowns";
 window.fslightbox = Lightbox;
 
 class Home extends BasePage {
@@ -9,6 +10,8 @@ class Home extends BasePage {
         this.initFeaturedTabs();
         this.initDealsSection();
         this.initTopBannerCountdown();
+        this.initVehicleSearch();
+
         // Initialize product image gallery
         new ProductImageGallery();
     }
@@ -342,6 +345,47 @@ class Home extends BasePage {
         }
     }
 
+    /**
+     * Initialize vehicle search functionality
+     * Collects values from brand, model, year, engine, trim fields
+     * Combines them into a search query and redirects to Salla search
+     */
+    initVehicleSearch() {
+        const searchBtn = document.getElementById('vehicle-search-btn');
+        if (!searchBtn) return;
+
+        searchBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            // Get all form field values
+            const brand = selectDisplayText(document.getElementById('vehicle-brand'));
+            const model = selectDisplayText(document.getElementById('vehicle-model'));
+            const year = selectDisplayText(document.getElementById('vehicle-year'));
+
+            const values = [brand, model, year];
+
+            // Remove empty values
+            const nonEmptyValues = values.filter(value => value && value.trim() !== '');
+
+            // If no values selected, don't redirect
+            if (nonEmptyValues.length === 0) {
+                console.log('No vehicle search criteria selected');
+                return;
+            }
+
+            // Join values with spaces
+            const searchQuery = nonEmptyValues.join(' ');
+
+            // Encode the query
+            const encodedQuery = encodeURIComponent(searchQuery);
+
+            // Redirect to Salla search
+            const searchUrl = `/search?q=${encodedQuery}`;
+            console.log('Redirecting to search:', searchUrl);
+            window.location.href = searchUrl;
+        });
+    }
 }
 
 Home.initiateWhenReady(['index']);

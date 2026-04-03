@@ -4,7 +4,6 @@ import Anime from './partials/anime';
 import initTootTip from './partials/tooltip';
 import AppHelpers from "./app-helpers";
 import { initVehicleDropdowns, selectDisplayText } from './partials/vehicle-dropdowns';
-import { navigateToStoreSearch } from './partials/store-search';
 
 class App extends AppHelpers {
   constructor() {
@@ -26,8 +25,6 @@ class App extends AppHelpers {
     this.initAttachWishlistListeners();
     this.initVehicleFilterModal();
     initVehicleDropdowns();
-    this.initHeroVehicleSearch();
-    setTimeout(() => this.initHeroVehicleSearch(), 500);
     this.initHeroSlider();
     setTimeout(() => this.initHeroSlider(), 500);
 
@@ -326,64 +323,6 @@ isElementLoaded(selector){
     });
   }
 
-  /**
-   * Hero “Choose your car”: combined selection labels → Salla search; VIN alone → Salla search.
-   * Lives in app.js so it runs on the home layout even when page slug is not `index`.
-   */
-  initHeroVehicleSearch() {
-    if (typeof window !== 'undefined' && window.__heroVehicleSearchBound) {
-      return;
-    }
-    const searchBtn = document.getElementById('vehicle-search-btn');
-    const vinBtn = document.getElementById('vehicle-vin-search-btn');
-    if (!searchBtn && !vinBtn) {
-      return;
-    }
-    if (typeof window !== 'undefined') {
-      window.__heroVehicleSearchBound = true;
-    }
-
-    if (searchBtn) {
-      searchBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const values = [
-          selectDisplayText(document.getElementById('vehicle-brand')),
-          selectDisplayText(document.getElementById('vehicle-model')),
-          selectDisplayText(document.getElementById('vehicle-year')),
-        ].filter((v) => v && v.trim() !== '');
-        if (values.length === 0) {
-          return;
-        }
-        navigateToStoreSearch(values.join(' '));
-      });
-    }
-
-    const vinInput = document.getElementById('vehicle-vin');
-    const runHeroVinSearch = (e) => {
-      if (e) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-      const vin = vinInput?.value?.trim() || '';
-      if (!vin) {
-        return;
-      }
-      navigateToStoreSearch(vin);
-    };
-
-    if (vinBtn) {
-      vinBtn.addEventListener('click', runHeroVinSearch);
-    }
-    if (vinInput) {
-      vinInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-          runHeroVinSearch(e);
-        }
-      });
-    }
-  }
-
   initVehicleFilterModal() {
     // Wait for DOM to be ready
     const initModal = () => {
@@ -433,42 +372,35 @@ isElementLoaded(selector){
       }
     });
 
-    // Handle search: Make + Model + Year as one keyword string → Salla search
+    // Handle search button click (sync with main form if exists)
     if (searchBtn) {
       searchBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        const brandEl = document.getElementById('vehicle-filter-brand');
+        const modelEl = document.getElementById('vehicle-filter-model');
+        const yearEl = document.getElementById('vehicle-filter-year');
         const values = [
-          selectDisplayText(document.getElementById('vehicle-filter-brand')),
-          selectDisplayText(document.getElementById('vehicle-filter-model')),
-          selectDisplayText(document.getElementById('vehicle-filter-year')),
+          selectDisplayText(brandEl),
+          selectDisplayText(modelEl),
+          selectDisplayText(yearEl),
         ].filter((v) => v && v.trim() !== '');
-        if (values.length === 0) {
-          return;
-        }
-        navigateToStoreSearch(values.join(' '));
+        if (values.length === 0) return;
+
+        const searchQuery = values.join(' ');
+        const encodedQuery = encodeURIComponent(searchQuery);
+        window.location.href = `/search?q=${encodedQuery}`;
       });
     }
 
-    const vinInput = document.getElementById('vehicle-filter-vin');
-    const runModalVinSearch = (e) => {
-      if (e) {
-        e.preventDefault();
-      }
-      const vin = vinInput?.value?.trim() || '';
-      if (!vin) {
-        return;
-      }
-      navigateToStoreSearch(vin);
-    };
-
+    // Handle VIN search button click
     if (vinSearchBtn) {
-      vinSearchBtn.addEventListener('click', runModalVinSearch);
-    }
-    if (vinInput) {
-      vinInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-          runModalVinSearch(e);
-        }
+      vinSearchBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const vin = document.getElementById('vehicle-filter-vin')?.value || '';
+        if (!vin.trim()) return;
+
+        const encodedQuery = encodeURIComponent(vin);
+        window.location.href = `/search?q=${encodedQuery}`;
       });
     }
     };
