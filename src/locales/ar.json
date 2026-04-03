@@ -10,6 +10,14 @@
       "pre_black_friday_sale": "تخفيضات ما قبل الجمعة السوداء : خصم يصل إلى 65% | استخدم الكود \"BLACK\"",
       "offer_ends_in": "تنتهي العروض خلال"
     },
+    "mobile_nav": {
+      "nav_label": "التنقل السفلي",
+      "account": "حسابي",
+      "categories": "التصنيفات",
+      "car_filter": "فلتر السيارة",
+      "search": "بحث",
+      "top": "الأعلى"
+    },
     "appBanner": {
       "download_now": "حمله الان"
     },
@@ -79,13 +87,7 @@
       "fifteen_percent_off": "خصم 15%"
     },
     "footer": {
-      "demo_store": "متجر تجريبي",
-      "mobile_nav_label": "التنقل السفلي",
-      "mobile_nav_account": "الحساب",
-      "mobile_nav_categories": "التصنيفات",
-      "mobile_nav_car_filter": "فلتر السيارة",
-      "mobile_nav_search": "بحث",
-      "mobile_nav_top": "للأعلى"
+      "demo_store": "متجر تجريبي"
     }
   },
   "pages": {
