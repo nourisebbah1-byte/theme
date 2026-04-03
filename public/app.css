@@ -46067,35 +46067,8 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   padding: 40px 20px 64px;
   gap: 12px;
 }
-/* Keep slide layout (copy left / product art right) identical in RTL — flex order follows LTR */
-@media (min-width: 768px) {
-  .hero-section.mobex-hero .hero-content {
-    direction: ltr;
-  }
-  .mobex-hero .hero-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    flex: 0 1 auto;
-    max-width: min(42vw, 440px);
-    align-self: center;
-  }
-  /* Arabic (or RTL page) still reads correctly inside the text stack */
-  html[dir=rtl] .mobex-hero .hero-text {
-    direction: rtl;
-  }
-  html[dir=ltr] .mobex-hero .hero-text {
-    direction: ltr;
-  }
-  .mobex-hero .hero-text .hero-promo-line {
-    max-width: 380px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hero-section.mobex-hero .shop-now-btn {
-    align-self: center;
-  }
+.mobex-hero .hero-text {
+  align-self: center;
 }
 .mobex-hero .hero-text h2 {
   font-family: "Oswald", "Inter", sans-serif;
@@ -46599,26 +46572,10 @@ section.hero-section.mobex-hero .hero-vehicle-filter {
     align-items: center;
     text-align: center;
     padding: 22px 14px 72px;
-    direction: ltr;
-  }
-  .mobex-hero .hero-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    max-width: 22rem;
-  }
-  html[dir=rtl] .mobex-hero .hero-text {
-    direction: rtl;
-  }
-  html[dir=ltr] .mobex-hero .hero-text {
-    direction: ltr;
   }
   .mobex-hero .hero-text .hero-promo-line {
     margin-left: auto;
     margin-right: auto;
-    max-width: 100%;
   }
   .hero-section.mobex-hero .shop-now-btn {
     margin: 0 auto;

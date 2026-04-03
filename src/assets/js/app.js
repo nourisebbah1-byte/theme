@@ -27,7 +27,7 @@ class App extends AppHelpers {
     initVehicleDropdowns();
     this.initHeroSlider();
     setTimeout(() => this.initHeroSlider(), 500);
-    this.initHeaderCategoryQuickLinks();
+    this.initHeaderCategorySelect();
 
     // Ensure #more-menu-dropdown exists before running changeMenuDirection
     const menuDirInterval = setInterval(() => {
@@ -416,13 +416,14 @@ isElementLoaded(selector){
   }
 
   /**
-   * Desktop header: replace category placeholder with real category links from API.
+   * Desktop header: category <select> — store menus first, then /categories API (same sources as all-categories dropdown).
    */
-  initHeaderCategoryQuickLinks() {
-    const ul = document.getElementById('header-category-quick-links');
-    if (!ul || ul.dataset.populated === '1') {
+  initHeaderCategorySelect() {
+    const select = document.getElementById('header-category-select');
+    if (!select || select.dataset.bound === '1') {
       return;
     }
+    select.dataset.bound = '1';
 
     const safeHref = (u) => {
       if (!u || typeof u !== 'string') {
@@ -435,45 +436,105 @@ isElementLoaded(selector){
       }
     };
 
-    const render = (categories) => {
-      const list = Array.isArray(categories) ? categories : [];
-      const slice = list.slice(0, 12).filter((c) => c && (c.url || c.full_url || c.link) && (c.name || c.title));
-      if (!slice.length) {
-        return;
-      }
-      ul.dataset.populated = '1';
-      ul.textContent = '';
-      slice.forEach((c) => {
-        const href = safeHref(c.url || c.full_url || c.link);
-        if (!href) {
+    const appendOptions = (items, labelKey, urlKey) => {
+      const seen = new Set();
+      items.forEach((item) => {
+        const url = safeHref(item[urlKey] || item.url || item.full_url || item.link);
+        const label = item[labelKey] || item.name || item.title;
+        if (!url || !label || seen.has(url)) {
           return;
         }
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = href;
-        a.textContent = c.name || c.title || '';
-        li.appendChild(a);
-        ul.appendChild(li);
+        seen.add(url);
+        const opt = document.createElement('option');
+        opt.value = url;
+        opt.textContent = label;
+        select.appendChild(opt);
       });
     };
 
-    const run = () => {
-      if (typeof salla === 'undefined' || !salla.api || !salla.api.get) {
-        return;
+    const fillFromMenus = (menus) => {
+      if (!Array.isArray(menus) || menus.length === 0) {
+        return false;
       }
-      salla.api
-        .get('/categories', { limit: 24 })
-        .then((res) => {
-          const data = res && res.data !== undefined ? res.data : res;
-          render(Array.isArray(data) ? data : []);
-        })
-        .catch(() => {});
+      appendOptions(menus.slice(0, 40), 'title', 'url');
+      return select.options.length > 1;
     };
 
-    if (typeof salla !== 'undefined' && salla.onReady) {
-      salla.onReady().then(run).catch(run);
+    const fillFromCategories = (data) => {
+      const list = Array.isArray(data) ? data : [];
+      appendOptions(list.slice(0, 40), 'name', 'url');
+      return select.options.length > 1;
+    };
+
+    const tryLoad = async () => {
+      if (select.dataset.populated === '1') {
+        return;
+      }
+
+      if (typeof salla === 'undefined') {
+        return;
+      }
+
+      while (select.options.length > 1) {
+        select.remove(1);
+      }
+
+      // 1) Header menu (same as custom-main-menu)
+      if (salla.api?.component?.getMenus) {
+        try {
+          const res = await salla.api.component.getMenus();
+          if (fillFromMenus(res?.data)) {
+            select.dataset.populated = '1';
+            return;
+          }
+        } catch {
+          /* continue */
+        }
+      }
+
+      const menuEl = document.querySelector('custom-main-menu');
+      if (menuEl?.menus?.length && fillFromMenus(menuEl.menus)) {
+        select.dataset.populated = '1';
+        return;
+      }
+
+      // 2) Categories API
+      if (salla.api?.get) {
+        try {
+          const res = await salla.api.get('/categories', { limit: 50 });
+          const data = res?.data !== undefined ? res.data : res;
+          if (fillFromCategories(data)) {
+            select.dataset.populated = '1';
+            return;
+          }
+        } catch {
+          /* continue */
+        }
+      }
+    };
+
+    select.addEventListener('change', () => {
+      const v = select.value;
+      if (v) {
+        window.location.href = v;
+      }
+      select.selectedIndex = 0;
+    });
+
+    const schedule = () => {
+      tryLoad().then(() => {
+        if (select.dataset.populated === '1') {
+          return;
+        }
+        setTimeout(() => tryLoad(), 1200);
+        setTimeout(() => tryLoad(), 2500);
+      });
+    };
+
+    if (salla.onReady) {
+      salla.onReady().then(schedule).catch(schedule);
     } else {
-      setTimeout(run, 800);
+      setTimeout(schedule, 500);
     }
   }
 
