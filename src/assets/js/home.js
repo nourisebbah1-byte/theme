@@ -19,26 +19,36 @@ class Home extends BasePage {
     }
 
     /**
-     * Mobex reference hero: 4 slides, prev/next, dots, autoplay 7s, swipe (matches reference script.js).
+     * Mobex hero slider: delegated events + fresh DOM queries so it keeps working after
+     * language switches (updated markup) and on both mobile and desktop.
      */
     initMobexHeroSlider() {
-        const root = document.querySelector('.mobex-hero-slider');
-        if (!root || root.dataset.mobexHeroBound === '1') {
+        if (window.__mobexHeroSliderBootstrapped) {
             return;
         }
+        window.__mobexHeroSliderBootstrapped = true;
 
-        const slides = root.querySelectorAll('.mobex-hero-slide');
-        const dots = document.querySelectorAll('.mobex-hero-dots .dot');
-        const prevBtn = document.querySelector('.mobex-hero-prev');
-        const nextBtn = document.querySelector('.mobex-hero-next');
-        if (!slides.length || !dots.length) {
-            return;
-        }
+        let autoTimer = null;
+        let touchX = null;
+        let touchRoot = null;
 
-        root.dataset.mobexHeroBound = '1';
+        const getSection = () => document.querySelector('.hero-section.mobex-hero');
 
-        let idx = 0;
-        let autoTimer;
+        const getState = () => {
+            const root = document.querySelector('.mobex-hero-slider');
+            const section = getSection();
+            if (!root || !section) {
+                return null;
+            }
+            const slides = root.querySelectorAll('.mobex-hero-slide');
+            const dotsWrap = section.querySelector('.mobex-hero-dots');
+            const dots = dotsWrap ? dotsWrap.querySelectorAll('.dot') : [];
+            const n = Math.min(slides.length, dots.length);
+            if (!n) {
+                return null;
+            }
+            return { root, section, slides, dots, n };
+        };
 
         const restartMobexRsAnimations = (slide) => {
             if (!slide || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -55,11 +65,13 @@ class Home extends BasePage {
         };
 
         const show = (i) => {
-            const n = slides.length;
-            if (!n) {
+            const st = getState();
+            if (!st) {
                 return;
             }
-            idx = ((i % n) + n) % n;
+            const { slides, dots, n } = st;
+            const idx = ((i % n) + n) % n;
+            window.__mobexHeroIdx = idx;
             slides.forEach((s, j) => {
                 s.classList.toggle('active', j === idx);
             });
@@ -71,85 +83,163 @@ class Home extends BasePage {
             restartMobexRsAnimations(slides[idx]);
         };
 
-        const next = () => show(idx + 1);
+        const next = () => {
+            const st = getState();
+            if (!st) {
+                return;
+            }
+            show((window.__mobexHeroIdx ?? 0) + 1);
+        };
 
         const resetAuto = () => {
             clearInterval(autoTimer);
             autoTimer = setInterval(next, 7000);
         };
 
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                show(idx - 1);
-                resetAuto();
-            });
-        }
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                show(idx + 1);
-                resetAuto();
-            });
-        }
+        const boot = () => {
+            const st = getState();
+            if (!st) {
+                return;
+            }
+            const saved = window.__mobexHeroIdx;
+            const start =
+                typeof saved === 'number' && saved >= 0 && saved < st.n ? saved : 0;
+            show(start);
+            resetAuto();
+        };
 
-        dots.forEach((dot, j) => {
-            dot.addEventListener('click', () => {
-                show(j);
+        document.addEventListener(
+            'click',
+            (e) => {
+                const section = getSection();
+                if (!section || !section.contains(e.target)) {
+                    return;
+                }
+                const prev = e.target.closest('.mobex-hero-prev');
+                const nextBtn = e.target.closest('.mobex-hero-next');
+                const dot = e.target.closest('.mobex-hero-dots .dot');
+                if (!prev && !nextBtn && !dot) {
+                    return;
+                }
+                e.preventDefault();
+                const cur = window.__mobexHeroIdx ?? 0;
+                if (prev) {
+                    show(cur - 1);
+                } else if (nextBtn) {
+                    show(cur + 1);
+                } else if (dot) {
+                    const wrap = dot.closest('.mobex-hero-dots');
+                    if (!wrap) {
+                        return;
+                    }
+                    const dots = Array.from(wrap.querySelectorAll('.dot'));
+                    const j = dots.indexOf(dot);
+                    if (j >= 0) {
+                        show(j);
+                    }
+                }
                 resetAuto();
-            });
-        });
+            },
+            false
+        );
 
-        let touchX = null;
-        root.addEventListener(
+        document.addEventListener(
             'touchstart',
             (e) => {
+                const root = e.target.closest('.mobex-hero-slider');
+                if (!root) {
+                    return;
+                }
+                touchRoot = root;
                 touchX = e.touches[0].clientX;
             },
             { passive: true }
         );
-        root.addEventListener(
+
+        document.addEventListener(
             'touchend',
             (e) => {
-                if (touchX == null) {
+                if (touchX == null || !touchRoot) {
                     return;
                 }
                 const dx = e.changedTouches[0].clientX - touchX;
                 touchX = null;
+                touchRoot = null;
                 if (Math.abs(dx) < 45) {
                     return;
                 }
+                const cur = window.__mobexHeroIdx ?? 0;
                 if (dx > 0) {
-                    show(idx - 1);
+                    show(cur - 1);
                 } else {
-                    show(idx + 1);
+                    show(cur + 1);
                 }
                 resetAuto();
             },
             { passive: true }
         );
 
-        show(0);
-        resetAuto();
+        boot();
+        setTimeout(boot, 400);
+
+        if (typeof salla !== 'undefined' && salla.lang && typeof salla.lang.onLoaded === 'function') {
+            salla.lang.onLoaded(() => {
+                setTimeout(boot, 0);
+            });
+        }
+
+        if (typeof salla !== 'undefined' && salla.event && typeof salla.event.on === 'function') {
+            try {
+                salla.event.on('localization::updated', () => setTimeout(boot, 50));
+            } catch (_) {
+                /* optional */
+            }
+        }
     }
 
     initMobexRsParallax() {
+        if (window.__mobexRsParallaxBound) {
+            return;
+        }
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             return;
         }
-        document.querySelectorAll('.mobex-rs-stage').forEach((stage) => {
-            stage.addEventListener('mousemove', (e) => {
-                const r = stage.getBoundingClientRect();
-                if (r.width < 1 || r.height < 1) {
-                    return;
+        window.__mobexRsParallaxBound = true;
+
+        document.addEventListener('mousemove', (e) => {
+            const hero = document.querySelector('.hero-section.mobex-hero');
+            if (!hero) {
+                return;
+            }
+
+            if (!hero.contains(e.target)) {
+                hero.querySelectorAll('.mobex-rs-stage').forEach((s) => {
+                    s.style.setProperty('--mobex-rx', '0px');
+                    s.style.setProperty('--mobex-ry', '0px');
+                });
+                return;
+            }
+
+            const stage = e.target.closest('.mobex-rs-stage');
+            hero.querySelectorAll('.mobex-rs-stage').forEach((s) => {
+                if (s !== stage) {
+                    s.style.setProperty('--mobex-rx', '0px');
+                    s.style.setProperty('--mobex-ry', '0px');
                 }
-                const mx = (e.clientX - r.left) / r.width - 0.5;
-                const my = (e.clientY - r.top) / r.height - 0.5;
-                stage.style.setProperty('--mobex-rx', `${mx * 14}px`);
-                stage.style.setProperty('--mobex-ry', `${my * 10}px`);
             });
-            stage.addEventListener('mouseleave', () => {
-                stage.style.setProperty('--mobex-rx', '0px');
-                stage.style.setProperty('--mobex-ry', '0px');
-            });
+
+            if (!stage) {
+                return;
+            }
+
+            const r = stage.getBoundingClientRect();
+            if (r.width < 1 || r.height < 1) {
+                return;
+            }
+            const mx = (e.clientX - r.left) / r.width - 0.5;
+            const my = (e.clientY - r.top) / r.height - 0.5;
+            stage.style.setProperty('--mobex-rx', `${mx * 14}px`);
+            stage.style.setProperty('--mobex-ry', `${my * 10}px`);
         });
     }
 

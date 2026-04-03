@@ -44355,72 +44355,68 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
   height: 20px !important;
   display: block !important;
 }
-.main-nav-container .header-search .search-category-wrapper {
+.main-nav-container .header-search .search-category-wrapper.search-category-links {
   position: relative;
-  display: flex;
-  align-items: center;
-  flex: 0 0 auto;
-  min-width: 140px;
-  max-width: min(340px, 32vw);
-  height: 48px;
-  border-right: 1px solid #e0e0e0;
-  padding: 4px 10px 4px 12px;
-  box-sizing: border-box;
-}
-.main-nav-container .header-search .header-search-category-nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   gap: 2px;
-  min-width: 0;
-  width: 100%;
+  min-width: 140px;
+  max-width: min(32vw, 320px);
+  height: 48px;
+  padding: 4px 10px 4px 14px;
+  border-right: 1px solid #e0e0e0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
-.main-nav-container .header-search .header-search-category-label {
-  display: block;
+.main-nav-container .header-search .search-category-links__label {
   font-size: 10px;
   font-weight: 700;
-  color: #034c8c;
-  text-transform: uppercase;
   letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #666;
   line-height: 1.2;
   white-space: nowrap;
 }
-.main-nav-container .header-search .header-search-category-list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: center;
-  gap: 4px 10px;
+.main-nav-container .header-search .search-category-links__list {
   list-style: none;
   margin: 0;
   padding: 0;
-  max-height: 34px;
-  overflow: hidden;
-  min-width: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0 12px;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
-.main-nav-container .header-search .header-search-category-list li {
-  margin: 0;
-  padding: 0;
-  line-height: 1.2;
+.main-nav-container .header-search .search-category-links__list::-webkit-scrollbar {
+  height: 3px;
 }
-.main-nav-container .header-search .header-search-category-list a {
-  font-size: 12px;
-  font-weight: 500;
-  color: #222;
+.main-nav-container .header-search .search-category-links__list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+.main-nav-container .header-search .search-category-links__list li {
+  flex-shrink: 0;
+}
+.main-nav-container .header-search .search-category-links__list a {
+  font-size: 13px;
+  font-weight: 600;
+  color: #034c8c;
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
+  line-height: 1.3;
 }
-.main-nav-container .header-search .header-search-category-list a:hover {
-  color: #bf3617;
+.main-nav-container .header-search .search-category-links__list a:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-.main-nav-container .header-search .header-search-category-list .header-search-category-placeholder,
-.main-nav-container .header-search .header-search-category-list .header-search-category-empty {
-  font-size: 11px;
-  color: #888;
-  white-space: normal;
+  color: #023a6b;
 }
 .main-nav-container .header-search salla-search {
   display: flex;
@@ -44712,24 +44708,21 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
     padding: 0 !important;
     box-sizing: border-box !important;
     flex: 1 1 100% !important;
-    overflow: hidden !important;
+    overflow: visible !important;
   }
   .main-nav-container .main-nav-row-1 .header-search .search-wrapper {
     width: 100% !important;
     max-width: 100% !important;
     display: flex !important;
     align-items: stretch !important;
-    height: 44px !important;
     min-height: 44px !important;
-    max-height: 44px !important;
+    height: 44px !important;
     border-radius: 999px !important;
     overflow: hidden !important;
     box-sizing: border-box !important;
-    background-color: #034c8c !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e2e2e2 !important;
     box-shadow: none !important;
-    gap: 0 !important;
-    padding: 0 !important;
   }
   .main-nav-container .main-nav-row-1 .header-search .search-wrapper .search-category-wrapper {
     display: none !important;
@@ -44737,49 +44730,33 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
   .main-nav-container .main-nav-row-1 .header-search .search-wrapper salla-search {
     width: 100% !important;
     flex: 1 !important;
+    min-height: 44px !important;
     height: 44px !important;
     min-width: 0 !important;
     max-width: 100% !important;
     overflow: hidden !important;
-    display: flex !important;
-    align-items: stretch !important;
-    align-self: stretch !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    background: transparent !important;
   }
   .main-nav-container .main-nav-row-1 .header-search .search-wrapper salla-search .s-search-container {
-    height: 100% !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-shadow: none !important;
+    height: 44px !important;
+    min-height: 44px !important;
     background: transparent !important;
-    border: none !important;
   }
   .main-nav-container .main-nav-row-1 .header-search .search-wrapper salla-search .s-search-input-wrapper {
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
-    background-color: #ffffff !important;
-    border-radius: 999px 0 0 999px !important;
-    overflow: hidden !important;
-    display: flex !important;
-    align-items: stretch !important;
-    min-height: 0 !important;
+    background: transparent !important;
   }
   .main-nav-container .main-nav-row-1 .header-search .search-wrapper salla-search .s-search-input {
     height: 44px !important;
     min-height: 44px !important;
-    line-height: 1.25 !important;
-    padding: 0 14px !important;
+    padding: 10px 14px !important;
     font-size: 14px !important;
     border-radius: 0 !important;
     border: none !important;
     box-sizing: border-box !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin: 0 !important;
-    vertical-align: middle !important;
+    background: transparent !important;
+    box-shadow: none !important;
   }
   .main-nav-container .main-nav-row-1 .header-search .search-wrapper .search-submit-btn {
     width: 46px !important;
@@ -44789,7 +44766,6 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
     border-radius: 0 !important;
     padding: 0 !important;
     box-sizing: border-box !important;
-    align-self: stretch !important;
   }
   .main-nav-container .main-nav-row-1 .header-search .search-wrapper .search-submit-btn svg {
     width: 18px !important;
@@ -44804,20 +44780,18 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
     min-height: 44px !important;
     background-color: #034c8c !important;
     border: none !important;
-    border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
-    border-radius: 0 999px 999px 0 !important;
+    border-radius: 0 !important;
     cursor: pointer !important;
     flex-shrink: 0 !important;
     padding: 0 !important;
-    margin: 0 !important;
+    margin-left: 0 !important;
     transition: background-color 0.3s !important;
-    align-self: stretch !important;
   }
   .main-nav-container .main-nav-row-1 .header-search .search-wrapper .vehicle-filter-toggle-btn:hover {
     background-color: #023a6b !important;
   }
   .main-nav-container .main-nav-row-1 .header-search .search-wrapper .vehicle-filter-toggle-btn i {
-    font-size: 18px !important;
+    font-size: 20px !important;
     color: #ffffff !important;
   }
   .main-nav-container .main-nav-row-2 {
@@ -44876,11 +44850,15 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
   .store-header #mainnav.main-nav-container .main-nav-row-1 .header-search .search-wrapper {
     border-radius: 999px !important;
     min-height: 44px !important;
-    height: auto !important;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06) !important;
+    height: 44px !important;
+    box-shadow: none !important;
+    border: 1px solid #e2e2e2 !important;
+    background-color: #ffffff !important;
   }
   .store-header #mainnav.main-nav-container .main-nav-row-1 .header-search .search-wrapper salla-search .s-search-input {
-    border-radius: 999px 0 0 999px !important;
+    border-radius: 0 !important;
+    border: none !important;
+    background: transparent !important;
   }
   .store-header #mainnav.main-nav-container .main-nav-row-1 .header-search .search-wrapper .vehicle-filter-toggle-btn {
     color: #f29f05 !important;
@@ -46089,8 +46067,35 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   padding: 40px 20px 64px;
   gap: 12px;
 }
-.mobex-hero .hero-text {
-  align-self: center;
+/* Keep slide layout (copy left / product art right) identical in RTL — flex order follows LTR */
+@media (min-width: 768px) {
+  .hero-section.mobex-hero .hero-content {
+    direction: ltr;
+  }
+  .mobex-hero .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 0 1 auto;
+    max-width: min(42vw, 440px);
+    align-self: center;
+  }
+  /* Arabic (or RTL page) still reads correctly inside the text stack */
+  html[dir=rtl] .mobex-hero .hero-text {
+    direction: rtl;
+  }
+  html[dir=ltr] .mobex-hero .hero-text {
+    direction: ltr;
+  }
+  .mobex-hero .hero-text .hero-promo-line {
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-section.mobex-hero .shop-now-btn {
+    align-self: center;
+  }
 }
 .mobex-hero .hero-text h2 {
   font-family: "Oswald", "Inter", sans-serif;
@@ -46098,7 +46103,7 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   color: #034c8c;
   margin: 0 0 8px;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 0.02em;
   line-height: 1.1;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
@@ -46109,7 +46114,7 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   color: #fff;
   margin: 0 0 10px;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: none;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 .mobex-hero .hero-text .hero-promo-line {
@@ -46594,10 +46599,26 @@ section.hero-section.mobex-hero .hero-vehicle-filter {
     align-items: center;
     text-align: center;
     padding: 22px 14px 72px;
+    direction: ltr;
+  }
+  .mobex-hero .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 22rem;
+  }
+  html[dir=rtl] .mobex-hero .hero-text {
+    direction: rtl;
+  }
+  html[dir=ltr] .mobex-hero .hero-text {
+    direction: ltr;
   }
   .mobex-hero .hero-text .hero-promo-line {
     margin-left: auto;
     margin-right: auto;
+    max-width: 100%;
   }
   .hero-section.mobex-hero .shop-now-btn {
     margin: 0 auto;
