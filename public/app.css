@@ -46571,6 +46571,84 @@ salla-trust-badges img {
   filter: brightness(0) invert(1) !important;
   opacity: 0.7 !important;
 }
+/* Mobile bottom navigation — matches header #mobile-menu + Salla search/login; hidden on desktop */
+.mobex-mobile-bottom-nav {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .mobex-mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 120;
+    align-items: stretch;
+    justify-content: space-around;
+    gap: 2px;
+    min-height: calc(3.5rem + env(safe-area-inset-bottom, 0px));
+    padding: 6px 4px calc(6px + env(safe-area-inset-bottom, 0px));
+    margin: 0;
+    background: #ffffff;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+  }
+  /* Space so last content isn’t hidden behind the bar */
+  .app-inner {
+    padding-bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px));
+  }
+  .mobex-mobile-bottom-nav__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    min-width: 0;
+    padding: 4px 2px;
+    margin: 0;
+    border: none;
+    background: transparent;
+    color: #111111;
+    font-family: inherit;
+    font-size: 0.625rem;
+    font-weight: 600;
+    line-height: 1.15;
+    text-align: center;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: opacity 0.15s ease, color 0.15s ease;
+  }
+  .mobex-mobile-bottom-nav__item:active {
+    opacity: 0.7;
+  }
+  .mobex-mobile-bottom-nav__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.125rem;
+    color: #111111;
+  }
+  .mobex-mobile-bottom-nav__icon i {
+    line-height: 1;
+  }
+  .mobex-mobile-bottom-nav__icon--car svg {
+    display: block;
+  }
+  .mobex-mobile-bottom-nav__label {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+  }
+}
 .main-menu > li > a[href*=offer]{
     --tw-text-opacity: 1;
     color: rgba(153, 27, 27, 1);
@@ -58139,85 +58217,79 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
     }
 }
 
-/* Mobile bottom navigation (theme-mobex) */
-.mobile-bottom-nav {
+/* Mobile bottom navigation (Mobex) */
+.mobex-mobile-bottom-nav {
   display: none;
 }
-@media (max-width: 1023px) {
-  .mobile-bottom-nav {
-    display: block;
+@media (max-width: 1024px) {
+  .mobex-mobile-bottom-nav {
+    display: flex;
     position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 950;
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-    background: #ffffff;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
-    pointer-events: auto;
-  }
-  .mobile-bottom-nav__inner {
-    display: flex;
+    z-index: 120;
     align-items: stretch;
     justify-content: space-around;
-    max-width: 100%;
-    min-height: 56px;
-    padding: 6px 4px calc(6px + env(safe-area-inset-bottom, 0px));
     gap: 2px;
+    min-height: calc(3.5rem + env(safe-area-inset-bottom, 0px));
+    padding: 6px 4px calc(6px + env(safe-area-inset-bottom, 0px));
+    margin: 0;
+    background: #ffffff;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
   }
-  .mobile-bottom-nav__item {
-    flex: 1 1 0;
-    min-width: 0;
+  .app-inner {
+    padding-bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px));
+  }
+  .mobex-mobile-bottom-nav__item {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4px;
+    gap: 2px;
+    min-width: 0;
     padding: 4px 2px;
     margin: 0;
     border: none;
     background: transparent;
-    color: #034c8c;
-    font-family: var(--font-main, 'Cairo', sans-serif);
-    font-size: 10px;
-    font-weight: 700;
+    color: #111111;
+    font-family: inherit;
+    font-size: 0.625rem;
+    font-weight: 600;
     line-height: 1.15;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    border-radius: 8px;
-    transition: background-color 0.15s ease, color 0.15s ease;
+    transition: opacity 0.15s ease, color 0.15s ease;
   }
-  .mobile-bottom-nav__item:active {
-    background-color: rgba(3, 76, 140, 0.08);
+  .mobex-mobile-bottom-nav__item:active {
+    opacity: 0.7;
   }
-  .mobile-bottom-nav__icon {
+  .mobex-mobile-bottom-nav__icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
-    font-size: 18px;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.125rem;
     color: #111111;
   }
-  .mobile-bottom-nav__icon .fa-solid,
-  .mobile-bottom-nav__icon .far {
-    font-size: 18px;
+  .mobex-mobile-bottom-nav__icon i {
     line-height: 1;
   }
-  .mobile-bottom-nav__label {
+  .mobex-mobile-bottom-nav__icon--car svg {
+    display: block;
+  }
+  .mobex-mobile-bottom-nav__label {
     display: block;
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: #034c8c;
     letter-spacing: 0.01em;
-  }
-  body#app.theme-mobex .app-inner {
-    padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px));
   }
 }
