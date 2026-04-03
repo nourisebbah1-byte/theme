@@ -7,70 +7,94 @@
 #}
 {% extends "layouts.master" %}
 {% block content %}
-    {# Hero Banner with Vehicle Filter #}
-    <section class="hero-section">
-        <div class="hero-slider">
-            <div class="hero-slide active" data-hero-slide="0">
-                <div class="hero-image" role="img" aria-label="{{ trans('blocks.home.battery_starters') }}">
-                    <img src="https://i.ibb.co/v6C337zM/Gemini-Generated-Image-rahwsirahwsirahw.png" alt="" class="hero-slide-bg-img" onerror="this.src='{{ 'images/placeholder.png'|asset }}'">
-                </div>
+    {# Hero — Mobex reference slider (single layout desktop + mobile) #}
+    <section class="hero-section mobex-hero">
+        <div class="mobex-hero-slider hero-slider">
+            <div class="hero-slide mobex-hero-slide active" data-slide="0">
+                <div class="hero-slide-bg" style="background-image:url('{{ 'images/mobex-slider/slide-1.webp'|asset }}')"></div>
+                <div class="hero-slide-overlay" aria-hidden="true"></div>
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h2>{{ trans('blocks.home.battery_starters') }}</h2>
-                        <p>{{ trans('blocks.home.start_batteries_seconds') }}</p>
-                        <a href="{{ link('/') }}" class="shop-now-btn">{{ trans('blocks.home.shop_now') }} <i class="sicon-sar"></i></a>
+                        <h2>MOBIL 1</h2>
+                        <p class="hero-tagline">Full Synthetic</p>
+                        <p class="hero-promo-line">It's more than just oil. It's liquid engineering.</p>
+                        <a href="{{ link('/') }}" class="shop-now-btn">{{ trans('blocks.home.shop_now') }} <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="hero-image mobex-rs-root">
+                        <div class="mobex-rs-stage mobex-rs-stage--s1" aria-hidden="true">
+                            <div class="mobex-rs-slot mobex-rs-parallax mobex-rs-pxl2 mobex-rs-s1-z6"><img class="mobex-rs-anim mobex-rs-anim-elastic mobex-rs-anim-delay-100" src="{{ 'images/mobex-slider/slider-asset-1.webp'|asset }}" width="353" height="466" alt=""></div>
+                            <div class="mobex-rs-slot mobex-rs-parallax mobex-rs-s1-z7"><img class="mobex-rs-anim mobex-rs-anim-elastic" src="{{ 'images/mobex-slider/slider-asset-2.webp'|asset }}" width="696" height="460" alt=""></div>
+                            <div class="mobex-rs-slot mobex-rs-parallax mobex-rs-pxl2 mobex-rs-s1-z8"><img class="mobex-rs-anim mobex-rs-anim-sticker" src="{{ 'images/mobex-slider/slider-asset-3.webp'|asset }}" width="110" height="110" alt=""></div>
+                        </div>
                     </div>
                 </div>
-                <div class="price-badge">{{ trans('blocks.home.from_price') }}</div>
             </div>
-            <div class="hero-slide" data-hero-slide="1">
-                <div class="hero-image" role="img" aria-hidden="true">
-                    <img src="https://i.ibb.co/Rpf8scDs/Gemini-Generated-Image-7c8c2z7c8c2z7c8c.png" alt="" class="hero-slide-bg-img" onerror="this.src='{{ 'images/placeholder.png'|asset }}'">
-                </div>
+            <div class="hero-slide mobex-hero-slide" data-slide="1">
+                <div class="hero-slide-bg" style="background-image:url('{{ 'images/mobex-slider/slide-2.webp'|asset }}')"></div>
+                <div class="hero-slide-overlay" aria-hidden="true"></div>
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h2>{{ trans('blocks.home.battery_starters') }}</h2>
-                        <p>{{ trans('blocks.home.start_batteries_seconds') }}</p>
-                        <a href="{{ link('/') }}" class="shop-now-btn">{{ trans('blocks.home.shop_now') }} <i class="sicon-sar"></i></a>
+                        <h2>WIPER BLADES</h2>
+                        <p class="hero-tagline">KEEP YOUR VISION CLEAR</p>
+                        <p class="hero-promo-line">Plus Price Lock on 100s of lines</p>
+                        <a href="{{ link('/') }}" class="shop-now-btn">{{ trans('blocks.home.shop_now') }} <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="hero-image mobex-rs-root">
+                        <div class="mobex-rs-stage mobex-rs-stage--s2" aria-hidden="true">
+                            <div class="mobex-rs-slot mobex-rs-parallax mobex-rs-pxl2 mobex-rs-s2-z6"><img class="mobex-rs-anim mobex-rs-anim-elastic mobex-rs-anim-delay-100" src="{{ 'images/mobex-slider/slider-asset-4.webp'|asset }}" width="561" height="566" alt=""></div>
+                            <div class="mobex-rs-slot mobex-rs-parallax mobex-rs-s2-z7"><img class="mobex-rs-anim mobex-rs-anim-elastic" src="{{ 'images/mobex-slider/slider-asset-6.webp'|asset }}" width="624" height="458" alt=""></div>
+                            <div class="mobex-rs-slot mobex-rs-parallax mobex-rs-pxl2 mobex-rs-s2-z8"><img class="mobex-rs-anim mobex-rs-anim-sticker" src="{{ 'images/mobex-slider/slider-asset-5.webp'|asset }}" width="110" height="110" alt=""></div>
+                        </div>
                     </div>
                 </div>
-                <div class="price-badge">{{ trans('blocks.home.from_price') }}</div>
             </div>
-            <div class="hero-slide" data-hero-slide="2">
-                <div class="hero-image" role="img" aria-hidden="true">
-                    <img src="https://i.ibb.co/bgtxXpTY/Gemini-Generated-Image-pnwe4pnwe4pnwe4p.png" alt="" class="hero-slide-bg-img" onerror="this.src='{{ 'images/placeholder.png'|asset }}'">
-                </div>
+            <div class="hero-slide mobex-hero-slide" data-slide="2">
+                <div class="hero-slide-bg" style="background-image:url('{{ 'images/mobex-slider/slide-3.webp'|asset }}')"></div>
+                <div class="hero-slide-overlay" aria-hidden="true"></div>
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h2>{{ trans('blocks.home.battery_starters') }}</h2>
-                        <p>{{ trans('blocks.home.start_batteries_seconds') }}</p>
-                        <a href="{{ link('/') }}" class="shop-now-btn">{{ trans('blocks.home.shop_now') }} <i class="sicon-sar"></i></a>
+                        <h2>JUMP STARTERS</h2>
+                        <p class="hero-tagline">START BATTERIES in SECONDS</p>
+                        <p class="hero-promo-line">Up tp 45% Off</p>
+                        <a href="{{ link('/') }}" class="shop-now-btn">{{ trans('blocks.home.shop_now') }} <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="hero-image mobex-rs-root">
+                        <div class="mobex-rs-stage mobex-rs-stage--s3" aria-hidden="true">
+                            <div class="mobex-rs-slot mobex-rs-parallax mobex-rs-s3-z7"><img class="mobex-rs-anim mobex-rs-anim-elastic" src="{{ 'images/mobex-slider/slider-asset-7.webp'|asset }}" width="529" height="525" alt=""></div>
+                            <div class="mobex-rs-slot mobex-rs-parallax mobex-rs-pxl2 mobex-rs-s3-z8"><img class="mobex-rs-anim mobex-rs-anim-sticker" src="{{ 'images/mobex-slider/slider-asset-8.webp'|asset }}" width="110" height="110" alt=""></div>
+                        </div>
                     </div>
                 </div>
-                <div class="price-badge">{{ trans('blocks.home.from_price') }}</div>
+            </div>
+            <div class="hero-slide mobex-hero-slide" data-slide="3">
+                <div class="hero-slide-bg" style="background-image:url('{{ 'images/mobex-slider/slide-5.webp'|asset }}')"></div>
+                <div class="hero-slide-overlay" aria-hidden="true"></div>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h2>BATTERIES</h2>
+                        <p class="hero-tagline">STAY CHARGED UP</p>
+                        <p class="hero-promo-line">Top brands — ready when you are.</p>
+                        <a href="{{ link('/') }}" class="shop-now-btn">{{ trans('blocks.home.shop_now') }} <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="hero-image mobex-rs-root">
+                        <div class="mobex-rs-stage mobex-rs-stage--s4" aria-hidden="true">
+                            <div class="mobex-rs-slot mobex-rs-parallax mobex-rs-s4-z7"><img class="mobex-rs-anim mobex-rs-anim-elastic" src="{{ 'images/mobex-slider/slider-asset-4.webp'|asset }}" width="624" height="458" alt=""></div>
+                            <div class="mobex-rs-slot mobex-rs-parallax mobex-rs-pxl2 mobex-rs-s4-z8"><img class="mobex-rs-anim mobex-rs-anim-sticker" src="{{ 'images/mobex-slider/slider-asset-5.webp'|asset }}" width="110" height="110" alt=""></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        {# Mobile Slider — fluid img slides, synced with dots #}
-        <div class="hero-section-mobile-slider">
-            <div class="hero-mobile-slides">
-                <div class="hero-mobile-slide active" data-hero-slide="0">
-                    <img class="hero-mobile-slide-img" src="https://i.ibb.co/svFyX2nY/mobileslider1.png" alt="" width="1306" height="816" loading="eager" decoding="async" onerror="this.src='{{ 'images/placeholder.png'|asset }}'">
-                </div>
-                <div class="hero-mobile-slide" data-hero-slide="1">
-                    <img class="hero-mobile-slide-img" src="https://i.ibb.co/0ybhDvfR/Gemini-Generated-Image-kyl86jkyl86jkyl8.png" alt="" loading="lazy" decoding="async" onerror="this.src='{{ 'images/placeholder.png'|asset }}'">
-                </div>
-                <div class="hero-mobile-slide" data-hero-slide="2">
-                    <img class="hero-mobile-slide-img" src="https://i.ibb.co/sJ52H1q2/Gemini-Generated-Image-j3jyq2j3jyq2j3jy.png" alt="" loading="lazy" decoding="async" onerror="this.src='{{ 'images/placeholder.png'|asset }}'">
-                </div>
+
+        <div class="mobex-hero-controls" aria-label="Hero slider controls">
+            <button type="button" class="mobex-hero-nav mobex-hero-prev" aria-label="Previous slide"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+            <div class="slider-dots mobex-hero-dots" role="tablist" aria-label="Hero slides">
+                <button type="button" class="dot active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+                <button type="button" class="dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+                <button type="button" class="dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+                <button type="button" class="dot" role="tab" aria-selected="false" aria-label="Slide 4"></button>
             </div>
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h2>{{ trans('blocks.home.battery_starters') }}</h2>
-                    <p>{{ trans('blocks.home.start_batteries_seconds') }}</p>
-                    <a href="{{ link('/') }}" class="shop-now-btn">{{ trans('blocks.home.shop_now') }} <i class="sicon-sar"></i></a>
-                </div>
-            </div>
+            <button type="button" class="mobex-hero-nav mobex-hero-next" aria-label="Next slide"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
         </div>
         
         {# Vehicle Filter - Fixed in Hero Banner #}
@@ -99,11 +123,6 @@
             </div>
         </div>
         
-        <div class="slider-dots" role="tablist" aria-label="{{ trans('blocks.home.battery_starters') }}">
-            <button type="button" class="dot active" data-hero-dot="0" role="tab" aria-selected="true" aria-label="1"></button>
-            <button type="button" class="dot" data-hero-dot="1" role="tab" aria-selected="false" aria-label="2"></button>
-            <button type="button" class="dot" data-hero-dot="2" role="tab" aria-selected="false" aria-label="3"></button>
-        </div>
     </section>
     
     {# Promotional Banners - Top Brands #}

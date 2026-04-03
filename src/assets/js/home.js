@@ -7,6 +7,8 @@ window.fslightbox = Lightbox;
 
 class Home extends BasePage {
     onReady() {
+        this.initMobexHeroSlider();
+        this.initMobexRsParallax();
         this.initFeaturedTabs();
         this.initDealsSection();
         this.initTopBannerCountdown();
@@ -14,6 +16,121 @@ class Home extends BasePage {
 
         // Initialize product image gallery
         new ProductImageGallery();
+    }
+
+    /**
+     * Mobex reference hero: 4 slides, arrows, dots, autoplay 7s, swipe, restart RS animations.
+     */
+    initMobexHeroSlider() {
+        const root = document.querySelector('.mobex-hero-slider');
+        if (!root) return;
+
+        const slides = root.querySelectorAll('.mobex-hero-slide');
+        const section = root.closest('section.hero-section');
+        const dots = section ? section.querySelectorAll('.mobex-hero-dots .dot') : [];
+        const prevBtn = section ? section.querySelector('.mobex-hero-prev') : null;
+        const nextBtn = section ? section.querySelector('.mobex-hero-next') : null;
+
+        let idx = 0;
+        let autoTimer;
+
+        const restartMobexRsAnimations = (slide) => {
+            if (!slide || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            const animEls = slide.querySelectorAll('.mobex-rs-slot > img.mobex-rs-anim, .hero-text > *');
+            animEls.forEach((el) => {
+                el.style.animation = 'none';
+            });
+            void slide.offsetWidth;
+            animEls.forEach((el) => {
+                el.style.animation = '';
+            });
+        };
+
+        const show = (i) => {
+            const n = slides.length;
+            if (!n) return;
+            idx = ((i % n) + n) % n;
+            slides.forEach((s, j) => s.classList.toggle('active', j === idx));
+            dots.forEach((d, j) => {
+                const on = j === idx;
+                d.classList.toggle('active', on);
+                d.setAttribute('aria-selected', on ? 'true' : 'false');
+            });
+            restartMobexRsAnimations(slides[idx]);
+        };
+
+        const next = () => show(idx + 1);
+
+        const resetAuto = () => {
+            clearInterval(autoTimer);
+            autoTimer = setInterval(next, 7000);
+        };
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                show(idx - 1);
+                resetAuto();
+            });
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                show(idx + 1);
+                resetAuto();
+            });
+        }
+
+        dots.forEach((dot, j) => {
+            dot.addEventListener('click', () => {
+                show(j);
+                resetAuto();
+            });
+        });
+
+        let touchX = null;
+        root.addEventListener(
+            'touchstart',
+            (e) => {
+                touchX = e.touches[0].clientX;
+            },
+            { passive: true }
+        );
+        root.addEventListener(
+            'touchend',
+            (e) => {
+                if (touchX == null) return;
+                const dx = e.changedTouches[0].clientX - touchX;
+                touchX = null;
+                if (Math.abs(dx) < 45) return;
+                if (dx > 0) show(idx - 1);
+                else show(idx + 1);
+                resetAuto();
+            },
+            { passive: true }
+        );
+
+        show(0);
+        resetAuto();
+    }
+
+    /**
+     * RS-style mouse parallax on .mobex-rs-stage (reference mob/js/script.js).
+     */
+    initMobexRsParallax() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        document.querySelectorAll('.mobex-rs-stage').forEach((stage) => {
+            stage.addEventListener('mousemove', (e) => {
+                const r = stage.getBoundingClientRect();
+                if (r.width < 1 || r.height < 1) return;
+                const mx = (e.clientX - r.left) / r.width - 0.5;
+                const my = (e.clientY - r.top) / r.height - 0.5;
+                stage.style.setProperty('--mobex-rx', `${mx * 14}px`);
+                stage.style.setProperty('--mobex-ry', `${my * 10}px`);
+            });
+            stage.addEventListener('mouseleave', () => {
+                stage.style.setProperty('--mobex-rx', '0px');
+                stage.style.setProperty('--mobex-ry', '0px');
+            });
+        });
     }
 
     /**

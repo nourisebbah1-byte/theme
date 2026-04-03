@@ -1,5 +1,5 @@
-/* Hero Section - High specificity to override Salla styles */
-section.hero-section {
+/* Hero Section - High specificity to override Salla styles (legacy layout; not .mobex-hero) */
+section.hero-section:not(.mobex-hero) {
   position: relative !important;
   padding: 0 !important;
   overflow: visible !important; // Allow overlay images to extend outside
@@ -369,7 +369,7 @@ section.hero-section .hero-vehicle-filter {
 
 // Responsive adjustments
 @media (max-width: 1024px) {
-  section.hero-section .hero-vehicle-filter {
+  section.hero-section:not(.mobex-hero) .hero-vehicle-filter {
     position: relative !important;
     left: auto !important;
     bottom: auto !important;
@@ -377,13 +377,13 @@ section.hero-section .hero-vehicle-filter {
     margin: 20px !important;
   }
   
-  section.hero-section .hero-content {
+  section.hero-section:not(.mobex-hero) .hero-content {
     flex-direction: column !important;
     text-align: center !important;
     gap: 30px !important;
   }
   
-  section.hero-section .hero-text {
+  section.hero-section:not(.mobex-hero) .hero-text {
     max-width: 100% !important;
     
     h2 {
@@ -395,18 +395,18 @@ section.hero-section .hero-vehicle-filter {
     }
   }
   
-  section.hero-section .hero-image {
+  section.hero-section:not(.mobex-hero) .hero-image {
     max-width: 100% !important;
   }
 }
 
 @media (max-width: 640px) {
-  section.hero-section {
+  section.hero-section:not(.mobex-hero) {
     padding: 40px 0 !important;
     min-height: 400px !important;
   }
   
-  section.hero-section .hero-text {
+  section.hero-section:not(.mobex-hero) .hero-text {
     h2 {
       font-size: 28px !important;
     }
@@ -416,7 +416,7 @@ section.hero-section .hero-vehicle-filter {
     }
   }
   
-  section.hero-section .hero-vehicle-filter {
+  section.hero-section:not(.mobex-hero) .hero-vehicle-filter {
     .vehicle-filter-form {
       padding: 20px !important;
     }
@@ -431,9 +431,9 @@ section.hero-section .hero-vehicle-filter {
   }
 }
 
-// Mobile: Hide hero-section content but keep slider visible
+// Mobile: Hide hero-section content but keep slider visible (legacy only)
 @media (max-width: 768px) {
-  section.hero-section {
+  section.hero-section:not(.mobex-hero) {
     display: block !important;
     visibility: visible !important;
     overflow-x: hidden !important;

@@ -424,6 +424,10 @@ isElementLoaded(selector){
       return;
     }
 
+    if (section.querySelector('.mobex-hero-slider')) {
+      return;
+    }
+
     const dots = section.querySelectorAll('.slider-dots .dot');
     const desktopSlides = section.querySelectorAll('.hero-slider .hero-slide');
     const mobileSlides = section.querySelectorAll('.hero-mobile-slides .hero-mobile-slide');
