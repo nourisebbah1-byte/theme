@@ -327,24 +327,33 @@ isElementLoaded(selector){
     // Wait for DOM to be ready
     const initModal = () => {
       const toggleBtn = document.getElementById('vehicle-filter-toggle-btn');
+      const garageBtn = document.getElementById('header-garage-btn');
       const modal = document.getElementById('vehicle-filter-modal');
       const closeBtn = document.getElementById('vehicle-filter-close-btn');
       const searchBtn = document.getElementById('vehicle-filter-search-btn');
       const vinSearchBtn = document.getElementById('vehicle-filter-vin-search-btn');
 
-      if (!toggleBtn || !modal) {
+      if (!modal) {
         return;
       }
 
-      // Open modal
-      toggleBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
+      const openModal = (e) => {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
         document.body.style.position = 'fixed';
         document.body.style.width = '100%';
-      });
+      };
+
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', openModal);
+      }
+      if (garageBtn) {
+        garageBtn.addEventListener('click', openModal);
+      }
 
       // Close modal
       const closeModal = () => {

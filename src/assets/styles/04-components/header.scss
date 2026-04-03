@@ -677,14 +677,49 @@ salla-cart-summary:not(.cart-link-main) {
       }
     }
     
-    // PC: rounded search bar (category dropdown removed)
+    // PC: rounded search bar; red submit flush as last item (no white strip after)
     &.header-search--rounded {
       @media (min-width: 769px) {
         .search-wrapper {
+          direction: ltr; /* input | red button always; avoids RTL flex flipping order */
           border-radius: 12px;
           overflow: hidden;
           border: 1px solid #e0e0e0;
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+          display: flex;
+          flex-direction: row;
+          align-items: stretch;
+        }
+
+        .vehicle-filter-toggle-btn {
+          display: none !important;
+          flex: 0 0 0 !important;
+          width: 0 !important;
+          min-width: 0 !important;
+          max-width: 0 !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          overflow: hidden !important;
+          border: 0 !important;
+          visibility: hidden !important;
+        }
+
+        salla-search {
+          flex: 1 1 auto !important;
+          min-width: 0 !important;
+        }
+
+        .search-submit-btn {
+          flex: 0 0 50px !important;
+          border-top-right-radius: 11px !important;
+          border-bottom-right-radius: 11px !important;
+          border-top-left-radius: 0 !important;
+          border-bottom-left-radius: 0 !important;
+        }
+
+        salla-search .s-search-input-wrapper {
+          border-top-left-radius: 11px !important;
+          border-bottom-left-radius: 11px !important;
         }
       }
     }
@@ -1217,7 +1252,7 @@ salla-cart-summary:not(.cart-link-main) {
   }
 }
 
-// Vehicle Filter Modal (Mobile Only)
+// Vehicle filter modal (mobile header button + desktop "My garage")
 .vehicle-filter-modal {
   display: none !important;
   position: fixed !important;
@@ -1236,6 +1271,12 @@ salla-cart-summary:not(.cart-link-main) {
     align-items: center !important;
     justify-content: center !important;
     padding: 15px !important;
+  }
+
+  @media (min-width: 769px) {
+    &.active .vehicle-filter-modal-content {
+      max-width: 440px !important;
+    }
   }
   
   .vehicle-filter-modal-content {
@@ -1547,13 +1588,9 @@ salla-cart-summary:not(.cart-link-main) {
   }
 }
 
-// Desktop: Hide filter button and modal
+// Desktop: hide header search filter chip (My garage opens same modal)
 @media (min-width: 769px) {
   .vehicle-filter-toggle-btn {
-    display: none !important;
-  }
-  
-  .vehicle-filter-modal {
     display: none !important;
   }
 }

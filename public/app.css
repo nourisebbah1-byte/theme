@@ -1298,6 +1298,9 @@ input:where([type='file']):focus{
 .flex-shrink{
     flex-shrink: 1;
 }
+.flex-shrink-0{
+    flex-shrink: 0;
+}
 .shrink-0{
     flex-shrink: 0;
 }
@@ -44357,10 +44360,41 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
 }
 @media (min-width: 769px) {
   .main-nav-container .header-search.header-search--rounded .search-wrapper {
+    direction: ltr; /* input | red button always; avoids RTL flex flipping order */
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid #e0e0e0;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .main-nav-container .header-search.header-search--rounded .vehicle-filter-toggle-btn {
+    display: none !important;
+    flex: 0 0 0 !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    visibility: hidden !important;
+  }
+  .main-nav-container .header-search.header-search--rounded salla-search {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+  .main-nav-container .header-search.header-search--rounded .search-submit-btn {
+    flex: 0 0 50px !important;
+    border-top-right-radius: 11px !important;
+    border-bottom-right-radius: 11px !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+  .main-nav-container .header-search.header-search--rounded salla-search .s-search-input-wrapper {
+    border-top-left-radius: 11px !important;
+    border-bottom-left-radius: 11px !important;
   }
 }
 .main-nav-container .header-search salla-search {
@@ -44831,6 +44865,11 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
   justify-content: center !important;
   padding: 15px !important;
 }
+@media (min-width: 769px) {
+  .vehicle-filter-modal.active .vehicle-filter-modal-content {
+    max-width: 440px !important;
+  }
+}
 .vehicle-filter-modal .vehicle-filter-modal-content {
   background-color: #ffffff !important;
   border-radius: 16px !important;
@@ -45129,9 +45168,6 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
 }
 @media (min-width: 769px) {
   .vehicle-filter-toggle-btn {
-    display: none !important;
-  }
-  .vehicle-filter-modal {
     display: none !important;
   }
 }
@@ -46524,17 +46560,17 @@ section.hero-section:not(.mobex-hero) .hero-vehicle-filter {
   background-color: #fff;
   transform: scale(1.15);
 }
-/* Desktop: vehicle form below slider — no overlap with hero copy (hero-banner absolute rule overridden) */
+/* Desktop: Choose Your Car lives in header modal (My garage); hide inline hero form on PC */
 @media (min-width: 768px) {
   section.hero-section.mobex-hero .hero-vehicle-filter {
-    position: relative !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    z-index: 5 !important;
-    max-width: 420px !important;
-    width: 100% !important;
-    margin: 4px auto 20px !important;
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
   }
 }
 @media only screen and (max-width: 767px) {

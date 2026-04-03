@@ -127,12 +127,12 @@
       </div>
   </div>
   
-  {# Navigation Row 2: All Categories Button | Nav Links (all on same line) #}
+  {# Navigation Row 2: All Categories | Nav (center) | My garage (opens Choose Your Car modal on PC) #}
   <nav class="main-nav-row-2">
       <div class="container">
-          <div class="flex items-center">
-              {# All Categories Button with Dropdown - Left #}
-              <div class="all-categories-dropdown">
+          <div class="flex items-center w-full main-nav-row-2-inner">
+              {# All Categories Button with Dropdown #}
+              <div class="all-categories-dropdown flex-shrink-0">
                   <button class="all-categories-btn" aria-label="{{ trans('blocks.header.all_categories') }}" id="all-categories-btn">
                   <i class="sicon-menu rtl:ml-2 ltr:mr-2"></i>
                       <span>{{ trans('blocks.header.all_categories') }}</span>
@@ -143,10 +143,15 @@
                   </div>
               </div>
               
-              {# Navigation Menu - Center (same line as button) #}
-              <div class="flex-1 flex justify-center nav-menu-wrapper">
+              {# Navigation Menu - Center #}
+              <div class="flex-1 flex justify-center nav-menu-wrapper min-w-0">
                   <custom-main-menu></custom-main-menu>
               </div>
+
+              <button type="button" class="all-categories-btn header-garage-btn flex-shrink-0" id="header-garage-btn" aria-haspopup="dialog" aria-label="{{ trans('blocks.header.my_garage') }}">
+                <i class="fas fa-tools" aria-hidden="true"></i>
+                <span>{{ trans('blocks.header.my_garage') }}</span>
+              </button>
           </div>
       </div>
   </nav>
