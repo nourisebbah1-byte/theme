@@ -44329,17 +44329,6 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
   background-color: #ffffff;
   position: relative;
 }
-.main-nav-container .header-search.header-search--rounded .search-wrapper {
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid #e3e3e3;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
-}
-.main-nav-container .header-search.header-search--rounded .search-wrapper:focus-within {
-  border-color: #c9c9c9;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-}
 .main-nav-container .header-search .search-submit-btn {
   background-color: #bf3617 !important;
   color: #ffffff !important;
@@ -44365,6 +44354,14 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
   width: 20px !important;
   height: 20px !important;
   display: block !important;
+}
+@media (min-width: 769px) {
+  .main-nav-container .header-search.header-search--rounded .search-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
 }
 .main-nav-container .header-search salla-search {
   display: flex;
@@ -45551,12 +45548,8 @@ section.hero-section:not(.mobex-hero) .slider-dots .dot:focus-visible {
   outline: 2px solid #034c8c !important;
   outline-offset: 2px !important;
 }
-/* Vehicle Filter - Fixed in Hero Banner - High specificity */
+/* Vehicle filter: form styles for all heroes; corner placement only for legacy hero (Mobex uses mobex-hero.scss) */
 section.hero-section .hero-vehicle-filter {
-  position: absolute !important;
-  left: 20px !important;
-  bottom: 20px !important;
-  z-index: 10 !important;
   max-width: 380px !important;
   width: 100% !important;
 }
@@ -45693,6 +45686,12 @@ section.hero-section .hero-vehicle-filter .vin-search-btn {
 }
 section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   background-color: #023a6b !important;
+}
+section.hero-section:not(.mobex-hero) .hero-vehicle-filter {
+  position: absolute !important;
+  left: 20px !important;
+  bottom: 20px !important;
+  z-index: 10 !important;
 }
 @media (max-width: 1024px) {
   section.hero-section:not(.mobex-hero) .hero-vehicle-filter {
@@ -45965,25 +45964,22 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   position: relative;
   background: #1a1a1a;
   padding: 0;
-  overflow: visible;
+  overflow: hidden;
   min-height: 0;
 }
-/* Slider + controls only — vehicle filter sits after this in document flow */
-.mobex-hero-stage {
+/* Slider + controls share positioning context (dots stay on the slide, not below vehicle form) */
+.mobex-hero-stage-wrap {
   position: relative;
-  width: 100%;
-  overflow: hidden;
-  min-height: min(52vh, 540px);
 }
 .mobex-hero-slider {
   position: relative;
-  min-height: min(52vh, 540px);
+  min-height: 320px;
   overflow: hidden;
 }
 .mobex-hero-slide {
   display: none;
   position: relative;
-  min-height: min(52vh, 540px);
+  min-height: 320px;
 }
 .mobex-hero-slide.active {
   display: block;
@@ -46008,31 +46004,36 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   background: linear-gradient(100deg, rgba(30, 30, 30, 0.72) 0%, rgba(30, 30, 30, 0.35) 42%, rgba(20, 20, 20, 0.45) 100%);
   z-index: 1;
 }
+/* Row layout like Mobex reference (EN/AR same geometry); copy + CTA centered inside text column only */
 .mobex-hero .hero-content {
   position: relative;
   z-index: 2;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: space-between;
+  align-items: flex-end;
   max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
-  min-height: min(48vh, 500px);
-  padding: 48px 24px 88px;
-  gap: 20px;
+  padding: 40px 20px 64px;
+  gap: 12px;
   box-sizing: border-box;
 }
 .mobex-hero .hero-text {
   align-self: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 100%;
+  flex: 0 1 auto;
   max-width: 36rem;
-  margin: 0 auto;
+  text-align: center;
+}
+/* Same visual column order as English (copy | product art); Arabic text still reads RTL */
+[dir=rtl] .mobex-hero .hero-content {
+  direction: ltr;
+}
+[dir=rtl] .mobex-hero .hero-text {
+  direction: rtl;
+  text-align: center;
+}
+.mobex-hero .hero-text .shop-now-btn {
+  margin-left: auto;
+  margin-right: auto;
 }
 .mobex-hero .hero-text h2 {
   font-family: "Oswald", "Inter", sans-serif;
@@ -46083,12 +46084,10 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   -webkit-text-decoration: none;
   text-decoration: none;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-  margin-left: auto;
-  margin-right: auto;
 }
 .mobex-rs-root {
   flex-shrink: 0;
-  align-self: center;
+  align-self: flex-end;
   width: min(52vw, 520px);
   max-width: 100%;
 }
@@ -46096,7 +46095,6 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   position: relative;
   width: 100%;
   margin-left: auto;
-  margin-right: auto;
   --mobex-rx: 0px;
   --mobex-ry: 0px;
   aspect-ratio: 1024/548;
@@ -46473,7 +46471,7 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
     opacity: 0;
   }
 }
-.mobex-hero-stage .mobex-hero-controls {
+.mobex-hero-controls {
   position: absolute;
   z-index: 8;
   left: 0;
@@ -46485,8 +46483,8 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   gap: 18px;
   pointer-events: none;
 }
-.mobex-hero-stage .mobex-hero-controls .mobex-hero-nav,
-.mobex-hero-stage .mobex-hero-controls .mobex-hero-dots {
+.mobex-hero-controls .mobex-hero-nav,
+.mobex-hero-controls .mobex-hero-dots {
   pointer-events: auto;
 }
 .mobex-hero-nav {
@@ -46526,19 +46524,17 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   background-color: #fff;
   transform: scale(1.15);
 }
-/* Desktop: vehicle filter below slider — not overlapping hero copy */
+/* Desktop: vehicle form below slider — no overlap with hero copy (hero-banner absolute rule overridden) */
 @media (min-width: 768px) {
   section.hero-section.mobex-hero .hero-vehicle-filter {
     position: relative !important;
     left: auto !important;
     right: auto !important;
     bottom: auto !important;
-    top: auto !important;
-    z-index: 2 !important;
-    max-width: 440px !important;
-    width: calc(100% - 40px) !important;
-    margin: 8px auto 32px !important;
-    padding: 0 !important;
+    z-index: 5 !important;
+    max-width: 420px !important;
+    width: 100% !important;
+    margin: 4px auto 20px !important;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -46546,17 +46542,14 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
     padding: 0;
     min-height: 0;
   }
-  .mobex-hero-stage,
   .mobex-hero-slider,
   .mobex-hero-slide {
-    min-height: 280px;
+    min-height: 260px;
   }
   .mobex-hero .hero-content {
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    min-height: 240px;
     padding: 22px 14px 72px;
   }
   .mobex-hero .hero-text .hero-promo-line {
@@ -46573,7 +46566,11 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
     max-width: min(92vw, 400px);
     margin: 10px auto 0;
   }
-  .mobex-hero-stage .mobex-hero-controls {
+  .mobex-rs-stage {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .mobex-hero-controls {
     bottom: 10px;
     gap: 14px;
     padding: 0 8px;

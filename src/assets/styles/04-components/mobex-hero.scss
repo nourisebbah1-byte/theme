@@ -6,28 +6,25 @@
   position: relative;
   background: #1a1a1a;
   padding: 0;
-  overflow: visible;
+  overflow: hidden;
   min-height: 0;
 }
 
-/* Slider + controls only — vehicle filter sits after this in document flow */
-.mobex-hero-stage {
+/* Slider + controls share positioning context (dots stay on the slide, not below vehicle form) */
+.mobex-hero-stage-wrap {
   position: relative;
-  width: 100%;
-  overflow: hidden;
-  min-height: min(52vh, 540px);
 }
 
 .mobex-hero-slider {
   position: relative;
-  min-height: min(52vh, 540px);
+  min-height: 320px;
   overflow: hidden;
 }
 
 .mobex-hero-slide {
   display: none;
   position: relative;
-  min-height: min(52vh, 540px);
+  min-height: 320px;
 }
 
 .mobex-hero-slide.active {
@@ -50,32 +47,39 @@
   z-index: 1;
 }
 
+/* Row layout like Mobex reference (EN/AR same geometry); copy + CTA centered inside text column only */
 .mobex-hero .hero-content {
   position: relative;
   z-index: 2;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: space-between;
+  align-items: flex-end;
   max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
-  min-height: min(48vh, 500px);
-  padding: 48px 24px 88px;
-  gap: 20px;
+  padding: 40px 20px 64px;
+  gap: 12px;
   box-sizing: border-box;
 }
 
 .mobex-hero .hero-text {
   align-self: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 100%;
+  flex: 0 1 auto;
   max-width: 36rem;
-  margin: 0 auto;
+  text-align: center;
+}
+
+/* Same visual column order as English (copy | product art); Arabic text still reads RTL */
+[dir='rtl'] .mobex-hero .hero-content {
+  direction: ltr;
+}
+
+[dir='rtl'] .mobex-hero .hero-text {
+  direction: rtl;
+  text-align: center;
+}
+
+.mobex-hero .hero-text .shop-now-btn {
+  margin-inline: auto;
 }
 
 .mobex-hero .hero-text h2 {
@@ -129,12 +133,11 @@
   gap: 10px;
   text-decoration: none;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-  margin-inline: auto;
 }
 
 .mobex-rs-root {
   flex-shrink: 0;
-  align-self: center;
+  align-self: flex-end;
   width: min(52vw, 520px);
   max-width: 100%;
 }
@@ -142,7 +145,7 @@
 .mobex-rs-stage {
   position: relative;
   width: 100%;
-  margin-inline: auto;
+  margin-left: auto;
   --mobex-rx: 0px;
   --mobex-ry: 0px;
   aspect-ratio: 1024 / 548;
@@ -403,7 +406,7 @@
   }
 }
 
-.mobex-hero-stage .mobex-hero-controls {
+.mobex-hero-controls {
   position: absolute;
   z-index: 8;
   left: 0;
@@ -416,8 +419,8 @@
   pointer-events: none;
 }
 
-.mobex-hero-stage .mobex-hero-controls .mobex-hero-nav,
-.mobex-hero-stage .mobex-hero-controls .mobex-hero-dots {
+.mobex-hero-controls .mobex-hero-nav,
+.mobex-hero-controls .mobex-hero-dots {
   pointer-events: auto;
 }
 
@@ -463,19 +466,17 @@
   transform: scale(1.15);
 }
 
-/* Desktop: vehicle filter below slider — not overlapping hero copy */
+/* Desktop: vehicle form below slider — no overlap with hero copy (hero-banner absolute rule overridden) */
 @media (min-width: 768px) {
   section.hero-section.mobex-hero .hero-vehicle-filter {
     position: relative !important;
     left: auto !important;
     right: auto !important;
     bottom: auto !important;
-    top: auto !important;
-    z-index: 2 !important;
-    max-width: 440px !important;
-    width: calc(100% - 40px) !important;
-    margin: 8px auto 32px !important;
-    padding: 0 !important;
+    z-index: 5 !important;
+    max-width: 420px !important;
+    width: 100% !important;
+    margin: 4px auto 20px !important;
   }
 }
 
@@ -485,18 +486,15 @@
     min-height: 0;
   }
 
-  .mobex-hero-stage,
   .mobex-hero-slider,
   .mobex-hero-slide {
-    min-height: 280px;
+    min-height: 260px;
   }
 
   .mobex-hero .hero-content {
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    min-height: 240px;
     padding: 22px 14px 72px;
   }
 
@@ -516,7 +514,12 @@
     margin: 10px auto 0;
   }
 
-  .mobex-hero-stage .mobex-hero-controls {
+  .mobex-rs-stage {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mobex-hero-controls {
     bottom: 10px;
     gap: 14px;
     padding: 0 8px;
