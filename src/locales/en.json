@@ -5,6 +5,7 @@
       "contact_us": "Contact us from 8 AM - 10 PM / 6668 5555 8464",
       "login": "Login",
       "choose_category": "Choose Category",
+      "categories_quick": "Categories",
       "all_categories": "All Categories",
       "featured_categories": "Featured Categories",
       "pre_black_friday_sale": "Pre-Black Friday Sale: Up to 65% off | Use code \"BLACK\"",
@@ -76,7 +77,19 @@
       "save_25_all_one": "Save 25%. All in One!",
       "care_care_kit": "CARE CARE KIT",
       "keep_clean_shine": "Keep things clean and shinela",
-      "fifteen_percent_off": "15% off"
+      "fifteen_percent_off": "15% off",
+      "hero_slide1_title": "Premium engine oils",
+      "hero_slide1_tagline": "Full synthetic protection",
+      "hero_slide1_promo": "It's more than just oil. It's liquid engineering.",
+      "hero_slide2_title": "Wiper blades",
+      "hero_slide2_tagline": "Keep your vision clear",
+      "hero_slide2_promo": "Reliable wipes for every season — see the road ahead.",
+      "hero_slide3_title": "Jump starters",
+      "hero_slide3_tagline": "Start batteries in seconds",
+      "hero_slide3_promo": "Portable power when you need it — no more dead-battery stress.",
+      "hero_slide4_title": "Car batteries",
+      "hero_slide4_tagline": "Stay charged up",
+      "hero_slide4_promo": "Trusted brands — ready when you are."
     },
     "footer": {
       "demo_store": "Demo Store"

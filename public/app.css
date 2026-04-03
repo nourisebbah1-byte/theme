@@ -44359,70 +44359,68 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
   position: relative;
   display: flex;
   align-items: center;
-  min-width: 150px;
+  flex: 0 0 auto;
+  min-width: 140px;
+  max-width: min(340px, 32vw);
   height: 48px;
   border-right: 1px solid #e0e0e0;
+  padding: 4px 10px 4px 12px;
+  box-sizing: border-box;
 }
-.main-nav-container .header-search .search-category-wrapper::after {
-  content: "";
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 6px solid #666;
-  pointer-events: none;
-  z-index: 1;
-}
-.main-nav-container .header-search .search-category {
-  padding: 12px 35px 12px 15px !important;
-  border-right: none !important;
-  appearance: none !important;
-  -webkit-appearance: none !important;
-  -moz-appearance: none !important;
-  background-image: none !important;
-  background-repeat: no-repeat !important;
-  background-position: right center !important;
-}
-.main-nav-container .header-search .search-category {
-  border: none;
-  background-color: #ffffff;
-  border-radius: 0;
-  cursor: pointer;
-  font-size: 14px;
-  color: #111;
-  min-width: 150px;
-  width: 100%;
-  height: 48px;
+.main-nav-container .header-search .header-search-category-nav {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  min-width: 0;
+  width: 100%;
+}
+.main-nav-container .header-search .header-search-category-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  color: #034c8c;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.main-nav-container .header-search .header-search-category-list {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  line-height: 1.5;
-  vertical-align: middle;
+  align-content: center;
+  gap: 4px 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 34px;
+  overflow: hidden;
+  min-width: 0;
 }
-.main-nav-container .header-search .search-category::-ms-expand {
-  display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
+.main-nav-container .header-search .header-search-category-list li {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
 }
-.main-nav-container .header-search .search-category::-moz-appearance {
-  -moz-appearance: none !important;
+.main-nav-container .header-search .header-search-category-list a {
+  font-size: 12px;
+  font-weight: 500;
+  color: #222;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
 }
-.main-nav-container .header-search .search-category::-moz-appearance {
-  text-indent: 0.01px;
-  text-overflow: "";
+.main-nav-container .header-search .header-search-category-list a:hover {
+  color: #bf3617;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
-.main-nav-container .header-search .search-category::-webkit-appearance {
-  -webkit-appearance: none !important;
-}
-.main-nav-container .header-search .search-category::before, .main-nav-container .header-search .search-category::after {
-  display: none !important;
-}
-.main-nav-container .header-search .search-category option {
-  padding: 8px;
-  line-height: 1.5;
+.main-nav-container .header-search .header-search-category-list .header-search-category-placeholder,
+.main-nav-container .header-search .header-search-category-list .header-search-category-empty {
+  font-size: 11px;
+  color: #888;
+  white-space: normal;
 }
 .main-nav-container .header-search salla-search {
   display: flex;
@@ -44721,11 +44719,17 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
     max-width: 100% !important;
     display: flex !important;
     align-items: stretch !important;
-    height: 40px !important;
-    border-radius: 8px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    max-height: 44px !important;
+    border-radius: 999px !important;
     overflow: hidden !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
     box-sizing: border-box !important;
+    background-color: #034c8c !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: none !important;
+    gap: 0 !important;
+    padding: 0 !important;
   }
   .main-nav-container .main-nav-row-1 .header-search .search-wrapper .search-category-wrapper {
     display: none !important;
@@ -44733,29 +44737,59 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
   .main-nav-container .main-nav-row-1 .header-search .search-wrapper salla-search {
     width: 100% !important;
     flex: 1 !important;
-    height: 40px !important;
+    height: 44px !important;
     min-width: 0 !important;
     max-width: 100% !important;
     overflow: hidden !important;
+    display: flex !important;
+    align-items: stretch !important;
+    align-self: stretch !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .main-nav-container .main-nav-row-1 .header-search .search-wrapper salla-search .s-search-container {
+    height: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    border: none !important;
+  }
+  .main-nav-container .main-nav-row-1 .header-search .search-wrapper salla-search .s-search-input-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background-color: #ffffff !important;
+    border-radius: 999px 0 0 999px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: stretch !important;
+    min-height: 0 !important;
   }
   .main-nav-container .main-nav-row-1 .header-search .search-wrapper salla-search .s-search-input {
-    height: 40px !important;
-    padding: 10px 15px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    line-height: 1.25 !important;
+    padding: 0 14px !important;
     font-size: 14px !important;
-    border-radius: 8px 0 0 8px !important;
-    border: 1px solid #e0e0e0 !important;
-    border-right: none !important;
+    border-radius: 0 !important;
+    border: none !important;
     box-sizing: border-box !important;
     width: 100% !important;
     max-width: 100% !important;
+    margin: 0 !important;
+    vertical-align: middle !important;
   }
   .main-nav-container .main-nav-row-1 .header-search .search-wrapper .search-submit-btn {
-    width: 45px !important;
-    height: 40px !important;
+    width: 46px !important;
+    height: 44px !important;
+    min-height: 44px !important;
     flex-shrink: 0 !important;
     border-radius: 0 !important;
     padding: 0 !important;
     box-sizing: border-box !important;
+    align-self: stretch !important;
   }
   .main-nav-container .main-nav-row-1 .header-search .search-wrapper .search-submit-btn svg {
     width: 18px !important;
@@ -44765,22 +44799,25 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 45px !important;
-    height: 40px !important;
+    width: 46px !important;
+    height: 44px !important;
+    min-height: 44px !important;
     background-color: #034c8c !important;
     border: none !important;
-    border-radius: 0 8px 8px 0 !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 0 999px 999px 0 !important;
     cursor: pointer !important;
     flex-shrink: 0 !important;
     padding: 0 !important;
-    margin-left: 0 !important;
+    margin: 0 !important;
     transition: background-color 0.3s !important;
+    align-self: stretch !important;
   }
   .main-nav-container .main-nav-row-1 .header-search .search-wrapper .vehicle-filter-toggle-btn:hover {
     background-color: #023a6b !important;
   }
   .main-nav-container .main-nav-row-1 .header-search .search-wrapper .vehicle-filter-toggle-btn i {
-    font-size: 20px !important;
+    font-size: 18px !important;
     color: #ffffff !important;
   }
   .main-nav-container .main-nav-row-2 {

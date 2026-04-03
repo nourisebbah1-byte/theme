@@ -86,11 +86,10 @@
                   {# Search bar - Center with category dropdown #}
                   <div class="header-search flex-1" style="max-width: 600px; margin: 0 20px;">
                     <div class="search-wrapper">
-                      <div class="search-category-wrapper">
-                        <select class="search-category">
-                          <option>{{ trans('blocks.header.choose_category') }}</option>
-                        </select>
-                      </div>
+                      <nav class="search-category-wrapper search-category-links" aria-label="{{ trans('blocks.header.categories_quick') }}">
+                        <span class="search-category-links__label">{{ trans('blocks.header.categories_quick') }}</span>
+                        <ul id="header-category-quick-links" class="search-category-links__list"></ul>
+                      </nav>
                       <salla-search inline height="48"></salla-search>
                       {# Red search button at the end #}
                       <button type="button" class="search-submit-btn" onclick="document.querySelector('.s-search-input')?.closest('salla-search')?.querySelector('button[type=\"submit\"]')?.click() || document.querySelector('.s-search-input')?.form?.requestSubmit()">

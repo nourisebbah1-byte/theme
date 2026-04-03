@@ -677,86 +677,73 @@ salla-cart-summary:not(.cart-link-main) {
       }
     }
     
-    // Category dropdown wrapper - for custom arrow positioning
-    .search-category-wrapper {
+    // Category quick links (desktop) — populated via app.js from /categories
+    .search-category-wrapper.search-category-links {
       position: relative;
       display: flex;
-      align-items: center;
-      min-width: 150px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2px;
+      min-width: 140px;
+      max-width: min(32vw, 320px);
       height: 48px;
+      padding: 4px 10px 4px 14px;
       border-right: 1px solid #e0e0e0;
-      
-      // Custom dropdown arrow - properly positioned and vertically centered
-      &::after {
-        content: '';
-        position: absolute;
-        right: 12px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 0;
-        height: 0;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-top: 6px solid #666;
-        pointer-events: none;
-        z-index: 1;
-      }
+      flex-shrink: 0;
+      box-sizing: border-box;
+      overflow: hidden;
     }
-    
-    // Category dropdown on left - EXACT match - Fixed chevron positioning
-    .search-category {
-      padding: 12px 35px 12px 15px !important; // Add right padding for custom arrow
-      border: none;
-      background-color: #ffffff;
-      border-radius: 0;
-      cursor: pointer;
-      font-size: 14px;
-      color: #111;
-      min-width: 150px;
-      width: 100%;
-      height: 48px;
-      border-right: none !important; // Border is on wrapper
-      appearance: none !important;
-      -webkit-appearance: none !important;
-      -moz-appearance: none !important;
+
+    .search-category-links__label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #666;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .search-category-links__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
       display: flex;
+      flex-wrap: nowrap;
       align-items: center;
-      line-height: 1.5;
-      vertical-align: middle;
-      
-      // Remove ALL default arrow backgrounds and icons
-      background-image: none !important;
-      background-repeat: no-repeat !important;
-      background-position: right center !important;
-      
-      // Hide default browser arrow - ALL browsers
-      &::-ms-expand {
-        display: none !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
+      gap: 0 12px;
+      max-width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+
+      &::-webkit-scrollbar {
+        height: 3px;
       }
-      
-      // Firefox - hide dropdown arrow
-      &::-moz-appearance {
-        text-indent: 0.01px;
-        text-overflow: '';
-        -moz-appearance: none !important;
+
+      &::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 3px;
       }
-      
-      // Chrome/Safari/Edge - hide dropdown arrow
-      &::-webkit-appearance {
-        -webkit-appearance: none !important;
+
+      li {
+        flex-shrink: 0;
       }
-      
-      // Additional selectors to catch any default arrows
-      &::before,
-      &::after {
-        display: none !important;
-      }
-      
-      option {
-        padding: 8px;
-        line-height: 1.5;
+
+      a {
+        font-size: 13px;
+        font-weight: 600;
+        color: #034c8c;
+        text-decoration: none;
+        white-space: nowrap;
+        line-height: 1.3;
+
+        &:hover {
+          text-decoration: underline;
+          color: #023a6b;
+        }
       }
     }
     
@@ -1089,7 +1076,7 @@ salla-cart-summary:not(.cart-link-main) {
       }
     }
     
-    // Search bar - below logo/cart/login row, full width
+    // Search bar - below logo/cart/login row, full width (single surface — no double white strip)
     .main-nav-row-1 .header-search {
       order: 3 !important; // Third item, wraps to new line
       width: 100% !important; // Full width
@@ -1099,50 +1086,68 @@ salla-cart-summary:not(.cart-link-main) {
       padding: 0 !important;
       box-sizing: border-box !important;
       flex: 1 1 100% !important; // Take full width when wrapped
-      overflow: hidden !important;
+      overflow: visible !important;
       
       .search-wrapper {
         width: 100% !important;
         max-width: 100% !important;
         display: flex !important;
         align-items: stretch !important;
-        height: 40px !important; // Compact height
-        border-radius: 8px !important; // Elegant rounded corners
+        min-height: 44px !important;
+        height: 44px !important;
+        border-radius: 999px !important;
         overflow: hidden !important;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; // Subtle shadow
         box-sizing: border-box !important;
+        background-color: #ffffff !important;
+        border: 1px solid #e2e2e2 !important;
+        box-shadow: none !important;
         
-        // Hide category dropdown on mobile
+        // Hide category links on mobile
         .search-category-wrapper {
           display: none !important;
-    }
+        }
     
         salla-search {
           width: 100% !important;
           flex: 1 !important;
-          height: 40px !important;
+          min-height: 44px !important;
+          height: 44px !important;
           min-width: 0 !important;
           max-width: 100% !important;
           overflow: hidden !important;
+          background: transparent !important;
+
+          .s-search-container {
+            height: 44px !important;
+            min-height: 44px !important;
+            background: transparent !important;
+          }
+
+          .s-search-input-wrapper {
+            background: transparent !important;
+          }
           
           .s-search-input {
-            height: 40px !important;
-            padding: 10px 15px !important;
+            height: 44px !important;
+            min-height: 44px !important;
+            padding: 10px 14px !important;
             font-size: 14px !important;
-            border-radius: 8px 0 0 8px !important;
-            border: 1px solid #e0e0e0 !important;
-            border-right: none !important;
+            border-radius: 0 !important;
+            border: none !important;
             box-sizing: border-box !important;
             width: 100% !important;
             max-width: 100% !important;
+            background: transparent !important;
+            box-shadow: none !important;
           }
         }
         
         .search-submit-btn {
-          width: 45px !important;
-          height: 40px !important;
+          width: 46px !important;
+          height: 44px !important;
+          min-height: 44px !important;
           flex-shrink: 0 !important;
-          border-radius: 0 !important; // No border radius, filter button will have it
+          border-radius: 0 !important;
           padding: 0 !important;
           box-sizing: border-box !important;
           
@@ -1157,11 +1162,12 @@ salla-cart-summary:not(.cart-link-main) {
           display: flex !important;
           align-items: center !important;
           justify-content: center !important;
-          width: 45px !important;
-          height: 40px !important;
+          width: 46px !important;
+          height: 44px !important;
+          min-height: 44px !important;
           background-color: #034c8c !important;
           border: none !important;
-          border-radius: 0 8px 8px 0 !important; // Right side rounded
+          border-radius: 0 !important;
           cursor: pointer !important;
           flex-shrink: 0 !important;
           padding: 0 !important;
@@ -1249,12 +1255,16 @@ salla-cart-summary:not(.cart-link-main) {
     .main-nav-row-1 .header-search .search-wrapper {
       border-radius: 999px !important;
       min-height: 44px !important;
-      height: auto !important;
-      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06) !important;
+      height: 44px !important;
+      box-shadow: none !important;
+      border: 1px solid #e2e2e2 !important;
+      background-color: #ffffff !important;
     }
 
     .main-nav-row-1 .header-search .search-wrapper salla-search .s-search-input {
-      border-radius: 999px 0 0 999px !important;
+      border-radius: 0 !important;
+      border: none !important;
+      background: transparent !important;
     }
 
     .main-nav-row-1 .header-search .search-wrapper .vehicle-filter-toggle-btn {

@@ -5,6 +5,7 @@
       "contact_us": "اتصل بنا من 8 صباحاً - 10 مساءً / 6668 5555 8464",
       "login": "تسجيل الدخول",
       "choose_category": "اختر الفئة",
+      "categories_quick": "التصنيفات",
       "all_categories": "جميع الفئات",
       "featured_categories": "فئات مميزة",
       "pre_black_friday_sale": "تخفيضات ما قبل الجمعة السوداء : خصم يصل إلى 65% | استخدم الكود \"BLACK\"",
@@ -76,7 +77,19 @@
       "save_25_all_one": "وفر 25%. كل شيء في واحد!",
       "care_care_kit": "طقم العناية",
       "keep_clean_shine": "ابق نظيفاً ولامعاً",
-      "fifteen_percent_off": "خصم 15%"
+      "fifteen_percent_off": "خصم 15%",
+      "hero_slide1_title": "زيوت محرك ممتازة",
+      "hero_slide1_tagline": "حماية تخليقية كاملة",
+      "hero_slide1_promo": "أكثر من زيت فقط — هندسة سائلة لأداء أطول.",
+      "hero_slide2_title": "مساحات الزجاج",
+      "hero_slide2_tagline": "رؤية أوضح دائماً",
+      "hero_slide2_promo": "مساحات موثوقة لكل الفصول — طرق أوضح أمامك.",
+      "hero_slide3_title": "مشغلات التشغيل",
+      "hero_slide3_tagline": "شغّل البطارية في ثوانٍ",
+      "hero_slide3_promo": "طاقة محمولة عند الحاجة — بعيداً عن توتر البطارية الفارغة.",
+      "hero_slide4_title": "بطاريات السيارات",
+      "hero_slide4_tagline": "ابقَ مشحوناً",
+      "hero_slide4_promo": "علامات موثوقة — جاهزة عندما تحتاجها."
     },
     "footer": {
       "demo_store": "متجر تجريبي"

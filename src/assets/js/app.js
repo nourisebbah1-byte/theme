@@ -27,6 +27,7 @@ class App extends AppHelpers {
     initVehicleDropdowns();
     this.initHeroSlider();
     setTimeout(() => this.initHeroSlider(), 500);
+    this.initHeaderCategoryQuickLinks();
 
     // Ensure #more-menu-dropdown exists before running changeMenuDirection
     const menuDirInterval = setInterval(() => {
@@ -411,6 +412,68 @@ isElementLoaded(selector){
     } else {
       // DOM is already ready, but wait a bit for Salla components
       setTimeout(initModal, 100);
+    }
+  }
+
+  /**
+   * Desktop header: replace category placeholder with real category links from API.
+   */
+  initHeaderCategoryQuickLinks() {
+    const ul = document.getElementById('header-category-quick-links');
+    if (!ul || ul.dataset.populated === '1') {
+      return;
+    }
+
+    const safeHref = (u) => {
+      if (!u || typeof u !== 'string') {
+        return '';
+      }
+      try {
+        return new URL(u, window.location.origin).href;
+      } catch {
+        return '';
+      }
+    };
+
+    const render = (categories) => {
+      const list = Array.isArray(categories) ? categories : [];
+      const slice = list.slice(0, 12).filter((c) => c && (c.url || c.full_url || c.link) && (c.name || c.title));
+      if (!slice.length) {
+        return;
+      }
+      ul.dataset.populated = '1';
+      ul.textContent = '';
+      slice.forEach((c) => {
+        const href = safeHref(c.url || c.full_url || c.link);
+        if (!href) {
+          return;
+        }
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = href;
+        a.textContent = c.name || c.title || '';
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+    };
+
+    const run = () => {
+      if (typeof salla === 'undefined' || !salla.api || !salla.api.get) {
+        return;
+      }
+      salla.api
+        .get('/categories', { limit: 24 })
+        .then((res) => {
+          const data = res && res.data !== undefined ? res.data : res;
+          render(Array.isArray(data) ? data : []);
+        })
+        .catch(() => {});
+    };
+
+    if (typeof salla !== 'undefined' && salla.onReady) {
+      salla.onReady().then(run).catch(run);
+    } else {
+      setTimeout(run, 800);
     }
   }
 
