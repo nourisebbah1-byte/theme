@@ -3,7 +3,8 @@ import Swal from 'sweetalert2';
 import Anime from './partials/anime';
 import initTootTip from './partials/tooltip';
 import AppHelpers from "./app-helpers";
-import { initVehicleDropdowns, selectDisplayText } from './partials/vehicle-dropdowns';
+import { initVehicleDropdowns } from './partials/vehicle-dropdowns';
+import { initHeroVehicleSearchForm, wireModalVehicleSearch } from './partials/vehicle-search';
 
 class App extends AppHelpers {
   constructor() {
@@ -25,6 +26,7 @@ class App extends AppHelpers {
     this.initAttachWishlistListeners();
     this.initVehicleFilterModal();
     initVehicleDropdowns();
+    initHeroVehicleSearchForm();
     this.initHeroSlider();
     setTimeout(() => this.initHeroSlider(), 500);
 
@@ -329,9 +331,6 @@ isElementLoaded(selector){
       const toggleBtn = document.getElementById('vehicle-filter-toggle-btn');
       const modal = document.getElementById('vehicle-filter-modal');
       const closeBtn = document.getElementById('vehicle-filter-close-btn');
-      const searchBtn = document.getElementById('vehicle-filter-search-btn');
-      const vinSearchBtn = document.getElementById('vehicle-filter-vin-search-btn');
-
       if (!toggleBtn || !modal) {
         return;
       }
@@ -372,37 +371,7 @@ isElementLoaded(selector){
       }
     });
 
-    // Handle search button click (sync with main form if exists)
-    if (searchBtn) {
-      searchBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const brandEl = document.getElementById('vehicle-filter-brand');
-        const modelEl = document.getElementById('vehicle-filter-model');
-        const yearEl = document.getElementById('vehicle-filter-year');
-        const values = [
-          selectDisplayText(brandEl),
-          selectDisplayText(modelEl),
-          selectDisplayText(yearEl),
-        ].filter((v) => v && v.trim() !== '');
-        if (values.length === 0) return;
-
-        const searchQuery = values.join(' ');
-        const encodedQuery = encodeURIComponent(searchQuery);
-        window.location.href = `/search?q=${encodedQuery}`;
-      });
-    }
-
-    // Handle VIN search button click
-    if (vinSearchBtn) {
-      vinSearchBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const vin = document.getElementById('vehicle-filter-vin')?.value || '';
-        if (!vin.trim()) return;
-
-        const encodedQuery = encodeURIComponent(vin);
-        window.location.href = `/search?q=${encodedQuery}`;
-      });
-    }
+    wireModalVehicleSearch(closeModal);
     };
 
     // Initialize immediately if DOM is ready, otherwise wait
