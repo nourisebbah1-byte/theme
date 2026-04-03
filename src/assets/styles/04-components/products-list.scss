@@ -4,11 +4,11 @@
 .s-block--latest-products {
   padding: 60px 0 !important;
   background-color: #ffffff !important;
-  
+
   @media (max-width: 768px) {
-    padding-top: 0 !important;
-    padding-bottom: 40px !important;
+    padding: 28px 0 40px !important;
     margin-top: 0 !important;
+    background-color: #f4f4f4 !important;
   }
   
   .s-block__title {
@@ -144,15 +144,23 @@
   min-height: 120px !important;
   gap: 12px !important;
 
+  /* Mobile: Mobex reference — image | copy row, full-width footer (mob-static.css) */
   @media (max-width: 768px) {
-    flex-direction: column !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
     align-items: stretch !important;
     padding: 0 !important;
-    min-height: auto !important;
+    min-height: 0 !important;
     gap: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
+    border-radius: 12px !important;
+    border: 1px solid #e8e8e8 !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06) !important;
+    overflow: hidden !important;
+    --mobex-latest-img: 112px;
+    --mobex-latest-gap: 10px;
   }
 }
 
@@ -207,29 +215,33 @@
   overflow: visible !important; // Allow heart icon to overlay
   
   @media (max-width: 768px) {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
+    width: var(--mobex-latest-img, 112px) !important;
+    min-width: 86px !important;
+    max-width: 112px !important;
+    flex: 0 0 var(--mobex-latest-img, 112px) !important;
     height: auto !important;
-    min-height: 140px !important;
-    max-height: 180px !important;
-    flex-shrink: 0 !important;
-    padding: 12px !important;
+    min-height: 118px !important;
+    max-height: none !important;
+    align-self: stretch !important;
+    background-color: #f7f7f7 !important;
+    padding: 10px 6px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     position: relative !important;
     z-index: 1 !important;
+    border-radius: 0 !important;
 
     img {
-      width: 100% !important;
+      width: auto !important;
+      max-width: 100% !important;
       height: auto !important;
-      max-height: 100% !important;
+      max-height: 96px !important;
       object-fit: contain !important;
       display: block !important;
     }
   }
-  
+
   img {
     max-width: 100% !important;
     max-height: 100% !important;
@@ -329,10 +341,17 @@
   height: 32px !important;
 
   @media (max-width: 768px) {
-    width: 26px !important;
-    height: 26px !important;
-    top: 6px !important;
-    right: 6px !important;
+    width: 28px !important;
+    height: 28px !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: 8px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    background-color: #fff !important;
+    border: 1px solid #d8d8d8 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
   }
   margin: 0 !important;
   padding: 0 !important;
@@ -419,9 +438,10 @@
   min-width: 0 !important;
   
   @media (max-width: 768px) {
-    width: 100% !important;
-    flex-grow: 0 !important;
-    padding: 0 8px 8px 8px !important;
+    width: auto !important;
+    flex: 1 1 auto !important;
+    flex-grow: 1 !important;
+    padding: 12px 12px 12px 10px !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
@@ -447,23 +467,20 @@
   color: #333 !important;
   text-decoration: none !important;
   
-  // Mobile: Title visible next to image - MAXIMUM VISIBILITY
   @media (max-width: 768px) {
-    font-size: 14px !important;
-    line-height: 18px !important;
-    margin-bottom: 8px !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 6px !important;
     margin-top: 0 !important;
-    max-height: 40px !important;
+    max-height: none !important;
     display: -webkit-box !important;
     visibility: visible !important;
     opacity: 1 !important;
-    height: auto !important;
-    min-height: auto !important;
-    -webkit-line-clamp: 2 !important;
+    -webkit-line-clamp: 3 !important;
     -webkit-box-orient: vertical !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
-    color: #333 !important;
+    color: #111 !important;
     font-weight: 700 !important;
     text-decoration: none !important;
     position: relative !important;
@@ -492,12 +509,14 @@
     display: none !important;
   }
   
-  // Mobile: Ensure rating is visible
   @media (max-width: 768px) {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
     margin-bottom: 4px !important;
+    line-height: 1 !important;
+    transform: scale(0.92) !important;
+    transform-origin: left center !important;
   }
 }
 
@@ -515,8 +534,14 @@
   justify-content: flex-start !important;
   
   @media (max-width: 768px) {
-    font-size: 18px !important;
-    margin-top: 4px !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    margin-top: 2px !important;
+    padding-top: 2px !important;
+    width: 100% !important;
+    justify-content: flex-end !important;
+    text-align: right !important;
+    color: #c45a28 !important;
   }
 
   h4 {
@@ -526,12 +551,18 @@
     margin: 0 !important;
 
     @media (max-width: 768px) {
-      font-size: 18px !important;
+      font-size: 15px !important;
+      font-weight: 800 !important;
+      color: #c45a28 !important;
     }
   }
-  
+
   span {
     color: #bf3617 !important;
+
+    @media (max-width: 768px) {
+      color: #c45a28 !important;
+    }
   }
 }
 
@@ -540,6 +571,33 @@
   color: #999 !important;
   text-decoration: line-through !important;
   margin-right: 6px !important;
+}
+
+/* Mobile Mobex: price + rating stack, price aligned end */
+@media (max-width: 768px) {
+  .s-block--latest-products .s-product-card-content-sub {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    text-align: right !important;
+    gap: 4px !important;
+    width: 100% !important;
+  }
+
+  [dir='rtl'] .s-block--latest-products .s-product-card-content .s-rating-stars,
+  [dir='rtl'] .s-block--latest-products .s-product-card-content .s-rating-stars-reviews {
+    transform-origin: right center !important;
+  }
+
+  .s-block--latest-products .s-product-card-rating {
+    line-height: 1 !important;
+    transform: scale(0.92) !important;
+    transform-origin: left center !important;
+  }
+
+  [dir='rtl'] .s-block--latest-products .s-product-card-rating {
+    transform-origin: right center !important;
+  }
 }
 
 /* Add to Cart Button - Bottom of card, full width, single arrow */
@@ -698,7 +756,7 @@
     text-align: left !important;
     width: fit-content !important;
     max-width: 100% !important;
-    font-size: 15px !important;
+    font-size: 13px !important;
     font-weight: 700 !important;
     background-color: transparent !important;
     padding: 0 !important;
@@ -718,7 +776,7 @@
       color: #034c8c !important;
       border: none !important;
       padding: 0 !important;
-      font-size: 15px !important;
+      font-size: 13px !important;
       font-weight: 700 !important;
       text-align: left !important;
       width: fit-content !important;
@@ -756,6 +814,17 @@
   }
 
   .s-block--latest-products .s-product-card-content-footer {
-    padding: 0 8px 8px 8px !important;
+    margin-inline-start: calc(-1 * (var(--mobex-latest-img, 112px) + var(--mobex-latest-gap, 10px))) !important;
+    width: calc(100% + var(--mobex-latest-img, 112px) + var(--mobex-latest-gap, 10px)) !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    padding: 10px 12px 12px !important;
+    border-top: 1px solid #efefef !important;
+    margin-top: auto !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 14px !important;
   }
 }
