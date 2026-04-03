@@ -228,7 +228,7 @@
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    position: relative !important;
+    position: static !important;
     z-index: 1 !important;
     border-radius: 0 !important;
 
@@ -340,18 +340,29 @@
   width: 32px !important;
   height: 32px !important;
 
+  /* Mobile Mobex: circle icon in footer band (left), same row as add-to-cart */
   @media (max-width: 768px) {
     width: 28px !important;
     height: 28px !important;
     top: auto !important;
     right: auto !important;
-    bottom: 8px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    bottom: 10px !important;
+    inset-inline-start: 12px !important;
+    inset-inline-end: auto !important;
+    left: auto !important;
+    transform: none !important;
     background-color: #fff !important;
     border: 1px solid #d8d8d8 !important;
     box-shadow: none !important;
     backdrop-filter: none !important;
+    color: #777 !important;
+    z-index: 8 !important;
+    font-size: 11px !important;
+
+    button,
+    salla-button {
+      pointer-events: auto !important;
+    }
   }
   margin: 0 !important;
   padding: 0 !important;
@@ -362,15 +373,20 @@
   transition: all 0.3s ease !important;
   backdrop-filter: blur(4px) !important;
   
-  // Position relative to image container
+  // Position relative to image container (desktop); mobile uses card entry (see below)
   .s-product-card-image & {
     position: absolute !important;
   }
-  
+
   &:hover {
     background-color: rgba(255, 255, 255, 1) !important;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2) !important;
     transform: scale(1.05) !important;
+
+    @media (max-width: 768px) {
+      transform: none !important;
+      border-color: #bbb !important;
+    }
   }
   
   button,
@@ -384,8 +400,8 @@
     min-height: 32px !important;
 
     @media (max-width: 768px) {
-      min-width: 26px !important;
-      min-height: 26px !important;
+      min-width: 28px !important;
+      min-height: 28px !important;
     }
     padding: 0 !important;
     display: flex !important;
@@ -425,6 +441,11 @@
       }
     }
   }
+
+  /* After base `border: none`, re-apply Mobex ring on mobile */
+  @media (max-width: 768px) {
+    border: 1px solid #d8d8d8 !important;
+  }
 }
 
 /* Product Content - Compact */
@@ -446,6 +467,7 @@
     flex-direction: column !important;
     justify-content: flex-start !important;
     min-width: 0 !important;
+    position: static !important;
   }
 }
 
@@ -653,37 +675,8 @@
     box-shadow: 0 3px 6px rgba(3, 76, 140, 0.3) !important;
     transform: translateY(-1px) !important;
   }
-  
-  /* Hide ALL Salla's default icons and arrows - Very aggressive targeting */
-  salla-add-product-button,
-  salla-button,
-  button,
-  .s-button {
-    i,
-    .sicon,
-    [class*="icon"],
-    svg,
-    [class*="arrow"],
-    [class*="Arrow"],
-    * i,
-    * .sicon,
-    * [class*="icon"],
-    * svg,
-    ::before {
-      display: none !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
-      width: 0 !important;
-      height: 0 !important;
-      font-size: 0 !important;
-      line-height: 0 !important;
-      content: none !important;
-      margin: 0 !important;
-      padding: 0 !important;
-    }
-  }
-  
-  // Single arrow after text
+
+  /* Decorative arrow only — must not intercept clicks (Salla add-to-cart + toast) */
   &::after {
     content: "→" !important;
     display: inline-block !important;
@@ -693,8 +686,9 @@
     margin-left: 6px !important;
     transition: transform 0.3s ease !important;
     font-weight: normal !important;
+    pointer-events: none !important;
   }
-  
+
   &:hover::after {
     transform: translateX(2px) !important;
   }
@@ -753,7 +747,8 @@
   .s-block--latest-products .s-product-card-content-footer salla-add-product-button {
     margin-top: 4px !important;
     margin-bottom: 0 !important;
-    text-align: left !important;
+    margin-inline-start: auto !important;
+    text-align: end !important;
     width: fit-content !important;
     max-width: 100% !important;
     font-size: 13px !important;
@@ -769,6 +764,9 @@
     min-height: auto !important;
     height: auto !important;
     box-shadow: none !important;
+    position: relative !important;
+    z-index: 4 !important;
+    pointer-events: auto !important;
 
     button,
     .s-button {
@@ -778,10 +776,11 @@
       padding: 0 !important;
       font-size: 13px !important;
       font-weight: 700 !important;
-      text-align: left !important;
+      text-align: end !important;
       width: fit-content !important;
       min-height: auto !important;
       height: auto !important;
+      pointer-events: auto !important;
     }
 
     &::after {
@@ -789,10 +788,11 @@
       width: 14px !important;
       height: 14px !important;
       display: inline-block !important;
-      margin-left: 8px !important;
+      margin-inline-start: 8px !important;
       vertical-align: middle !important;
       transition: all 0.2s ease-out !important;
       background-color: #034c8c !important;
+      pointer-events: none !important;
       -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M7 0L5.5 1.5L9.5 5.5H0V8.5H9.5L5.5 12.5L7 14L14 7L7 0Z'/%3E%3C/svg%3E") no-repeat 50% 50% !important;
       -webkit-mask-size: 100% !important;
       mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M7 0L5.5 1.5L9.5 5.5H0V8.5H9.5L5.5 12.5L7 14L14 7L7 0Z'/%3E%3C/svg%3E") no-repeat 50% 50% !important;
@@ -823,8 +823,11 @@
     margin-top: auto !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
-    justify-content: center !important;
+    justify-content: flex-end !important;
     align-items: center !important;
     gap: 14px !important;
+    position: relative !important;
+    z-index: 2 !important;
+    overflow: visible !important;
   }
 }
