@@ -7,35 +7,43 @@ window.fslightbox = Lightbox;
 
 class Home extends BasePage {
     onReady() {
-        this.initMobexHeroSlider();
-        this.initMobexRsParallax();
         this.initFeaturedTabs();
         this.initDealsSection();
         this.initTopBannerCountdown();
         this.initVehicleSearch();
+        this.initMobexHeroSlider();
+        this.initMobexRsParallax();
 
         // Initialize product image gallery
         new ProductImageGallery();
     }
 
     /**
-     * Mobex reference hero: 4 slides, arrows, dots, autoplay 7s, swipe, restart RS animations.
+     * Mobex reference hero: 4 slides, prev/next, dots, autoplay 7s, swipe (matches reference script.js).
      */
     initMobexHeroSlider() {
         const root = document.querySelector('.mobex-hero-slider');
-        if (!root) return;
+        if (!root || root.dataset.mobexHeroBound === '1') {
+            return;
+        }
 
         const slides = root.querySelectorAll('.mobex-hero-slide');
-        const section = root.closest('section.hero-section');
-        const dots = section ? section.querySelectorAll('.mobex-hero-dots .dot') : [];
-        const prevBtn = section ? section.querySelector('.mobex-hero-prev') : null;
-        const nextBtn = section ? section.querySelector('.mobex-hero-next') : null;
+        const dots = document.querySelectorAll('.mobex-hero-dots .dot');
+        const prevBtn = document.querySelector('.mobex-hero-prev');
+        const nextBtn = document.querySelector('.mobex-hero-next');
+        if (!slides.length || !dots.length) {
+            return;
+        }
+
+        root.dataset.mobexHeroBound = '1';
 
         let idx = 0;
         let autoTimer;
 
         const restartMobexRsAnimations = (slide) => {
-            if (!slide || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            if (!slide || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                return;
+            }
             const animEls = slide.querySelectorAll('.mobex-rs-slot > img.mobex-rs-anim, .hero-text > *');
             animEls.forEach((el) => {
                 el.style.animation = 'none';
@@ -48,9 +56,13 @@ class Home extends BasePage {
 
         const show = (i) => {
             const n = slides.length;
-            if (!n) return;
+            if (!n) {
+                return;
+            }
             idx = ((i % n) + n) % n;
-            slides.forEach((s, j) => s.classList.toggle('active', j === idx));
+            slides.forEach((s, j) => {
+                s.classList.toggle('active', j === idx);
+            });
             dots.forEach((d, j) => {
                 const on = j === idx;
                 d.classList.toggle('active', on);
@@ -97,12 +109,19 @@ class Home extends BasePage {
         root.addEventListener(
             'touchend',
             (e) => {
-                if (touchX == null) return;
+                if (touchX == null) {
+                    return;
+                }
                 const dx = e.changedTouches[0].clientX - touchX;
                 touchX = null;
-                if (Math.abs(dx) < 45) return;
-                if (dx > 0) show(idx - 1);
-                else show(idx + 1);
+                if (Math.abs(dx) < 45) {
+                    return;
+                }
+                if (dx > 0) {
+                    show(idx - 1);
+                } else {
+                    show(idx + 1);
+                }
                 resetAuto();
             },
             { passive: true }
@@ -112,15 +131,16 @@ class Home extends BasePage {
         resetAuto();
     }
 
-    /**
-     * RS-style mouse parallax on .mobex-rs-stage (reference mob/js/script.js).
-     */
     initMobexRsParallax() {
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            return;
+        }
         document.querySelectorAll('.mobex-rs-stage').forEach((stage) => {
             stage.addEventListener('mousemove', (e) => {
                 const r = stage.getBoundingClientRect();
-                if (r.width < 1 || r.height < 1) return;
+                if (r.width < 1 || r.height < 1) {
+                    return;
+                }
                 const mx = (e.clientX - r.left) / r.width - 0.5;
                 const my = (e.clientY - r.top) / r.height - 0.5;
                 stage.style.setProperty('--mobex-rx', `${mx * 14}px`);

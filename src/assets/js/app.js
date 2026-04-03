@@ -419,12 +419,12 @@ isElementLoaded(selector){
    * Home class only loads for slug "index", but Salla home may use another slug).
    */
   initHeroSlider() {
-    const section = document.querySelector('section.hero-section');
-    if (!section || section.dataset.heroSliderBound === '1') {
+    if (document.querySelector('.mobex-hero-slider')) {
       return;
     }
 
-    if (section.querySelector('.mobex-hero-slider')) {
+    const section = document.querySelector('section.hero-section');
+    if (!section || section.dataset.heroSliderBound === '1') {
       return;
     }
 

@@ -1,4 +1,4 @@
-/* Hero Section - High specificity to override Salla styles (legacy layout; not .mobex-hero) */
+/* Hero Section - legacy layout (not Mobex homepage hero) */
 section.hero-section:not(.mobex-hero) {
   position: relative !important;
   padding: 0 !important;
@@ -431,7 +431,7 @@ section.hero-section .hero-vehicle-filter {
   }
 }
 
-// Mobile: Hide hero-section content but keep slider visible (legacy only)
+// Mobile: legacy hero — hide desktop block, show fluid mobile slider
 @media (max-width: 768px) {
   section.hero-section:not(.mobex-hero) {
     display: block !important;
