@@ -77,21 +77,15 @@
         <div class="hero-vehicle-filter">
             <div class="vehicle-filter-form">
                 <h5>{{ trans('blocks.home.choose_your_car') }}</h5>
-                <div class="vehicle-filter-fields">
+                <div class="vehicle-filter-fields vehicle-filter-fields--4">
                     <select class="vehicle-select" id="vehicle-brand">
                         <option value="">{{ trans('blocks.home.brand') }}</option>
                     </select>
-                    <select class="vehicle-select" id="vehicle-model">
+                    <select class="vehicle-select" id="vehicle-model" disabled>
                         <option value="">{{ trans('blocks.home.model') }}</option>
                     </select>
-                    <select class="vehicle-select" id="vehicle-year">
+                    <select class="vehicle-select" id="vehicle-year" disabled>
                         <option value="">{{ trans('blocks.home.year') }}</option>
-                    </select>
-                    <select class="vehicle-select" id="vehicle-engine">
-                        <option value="">{{ trans('blocks.home.engine') }}</option>
-                    </select>
-                    <select class="vehicle-select" id="vehicle-trim">
-                        <option value="">{{ trans('blocks.home.trim') }}</option>
                     </select>
                     <button type="button" class="vehicle-search-btn" id="vehicle-search-btn">{{ trans('blocks.home.search') }}</button>
                 </div>

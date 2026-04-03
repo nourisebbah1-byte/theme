@@ -2,6 +2,7 @@ import "lite-youtube-embed";
 import BasePage from "./base-page";
 import Lightbox from "fslightbox";
 import ProductImageGallery from "./product-image-gallery";
+import { selectDisplayText } from "./partials/vehicle-dropdowns";
 window.fslightbox = Lightbox;
 
 class Home extends BasePage {
@@ -358,14 +359,11 @@ class Home extends BasePage {
             e.stopPropagation();
 
             // Get all form field values
-            const brand = document.getElementById('vehicle-brand')?.value || '';
-            const model = document.getElementById('vehicle-model')?.value || '';
-            const year = document.getElementById('vehicle-year')?.value || '';
-            const engine = document.getElementById('vehicle-engine')?.value || '';
-            const trim = document.getElementById('vehicle-trim')?.value || '';
+            const brand = selectDisplayText(document.getElementById('vehicle-brand'));
+            const model = selectDisplayText(document.getElementById('vehicle-model'));
+            const year = selectDisplayText(document.getElementById('vehicle-year'));
 
-            // Create array of values
-            const values = [brand, model, year, engine, trim];
+            const values = [brand, model, year];
 
             // Remove empty values
             const nonEmptyValues = values.filter(value => value && value.trim() !== '');

@@ -44923,6 +44923,27 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
     margin-bottom: 16px !important;
   }
 }
+.vehicle-filter-modal .vehicle-filter-modal-content .vehicle-filter-modal-body .vehicle-filter-form .vehicle-filter-fields.vehicle-filter-fields--4 {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  flex-direction: initial !important;
+}
+@media (min-width: 480px) {
+  .vehicle-filter-modal .vehicle-filter-modal-content .vehicle-filter-modal-body .vehicle-filter-form .vehicle-filter-fields.vehicle-filter-fields--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .vehicle-filter-modal .vehicle-filter-modal-content .vehicle-filter-modal-body .vehicle-filter-form .vehicle-filter-fields.vehicle-filter-fields--4 .vehicle-search-btn {
+    grid-column: span 2 !important;
+  }
+}
+@media (min-width: 640px) {
+  .vehicle-filter-modal .vehicle-filter-modal-content .vehicle-filter-modal-body .vehicle-filter-form .vehicle-filter-fields.vehicle-filter-fields--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+  .vehicle-filter-modal .vehicle-filter-modal-content .vehicle-filter-modal-body .vehicle-filter-form .vehicle-filter-fields.vehicle-filter-fields--4 .vehicle-search-btn {
+    grid-column: auto !important;
+  }
+}
 .vehicle-filter-modal .vehicle-filter-modal-content .vehicle-filter-modal-body .vehicle-filter-form .vehicle-select {
   padding: 14px 16px !important;
   border: 1px solid #e0e0e0 !important;
@@ -45510,7 +45531,7 @@ section.hero-section .hero-vehicle-filter {
   left: 20px !important;
   bottom: 20px !important;
   z-index: 10 !important;
-  max-width: 380px !important;
+  max-width: min(720px, 100vw - 40px) !important;
   width: 100% !important;
 }
 section.hero-section .hero-vehicle-filter .vehicle-filter-form {
@@ -45530,12 +45551,14 @@ section.hero-section .hero-vehicle-filter .vehicle-filter-form h5 {
 }
 section.hero-section .hero-vehicle-filter .vehicle-filter-fields {
   display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
   grid-gap: 8px !important;
   gap: 8px !important;
   margin-bottom: 12px !important;
   grid-column-gap: 8px !important;
   grid-row-gap: 8px !important;
+}
+section.hero-section .hero-vehicle-filter .vehicle-filter-fields.vehicle-filter-fields--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
 }
 section.hero-section .hero-vehicle-filter .vehicle-select {
   padding: 12px !important;
@@ -45558,7 +45581,7 @@ section.hero-section .hero-vehicle-filter .vehicle-select:hover, section.hero-se
   outline-color: #034c8c !important;
 }
 section.hero-section .hero-vehicle-filter .vehicle-search-btn {
-  grid-column: span 3 !important;
+  grid-column: auto !important;
   padding: 12px !important;
   background-color: #f29f05 !important;
   color: #000000 !important;
@@ -45644,6 +45667,14 @@ section.hero-section .hero-vehicle-filter .vin-search-btn {
 }
 section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   background-color: #023a6b !important;
+}
+@media (max-width: 1200px) {
+  section.hero-section .hero-vehicle-filter .vehicle-filter-fields--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  section.hero-section .hero-vehicle-filter .vehicle-filter-fields--4 .vehicle-search-btn {
+    grid-column: span 2 !important;
+  }
 }
 @media (max-width: 1024px) {
   section.hero-section .hero-vehicle-filter {
@@ -46570,84 +46601,6 @@ salla-payments img {
 salla-trust-badges img {
   filter: brightness(0) invert(1) !important;
   opacity: 0.7 !important;
-}
-/* Mobile bottom navigation — matches header #mobile-menu + Salla search/login; hidden on desktop */
-.mobex-mobile-bottom-nav {
-  display: none;
-}
-@media (max-width: 1024px) {
-  .mobex-mobile-bottom-nav {
-    display: flex;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 120;
-    align-items: stretch;
-    justify-content: space-around;
-    gap: 2px;
-    min-height: calc(3.5rem + env(safe-area-inset-bottom, 0px));
-    padding: 6px 4px calc(6px + env(safe-area-inset-bottom, 0px));
-    margin: 0;
-    background: #ffffff;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.06);
-    box-sizing: border-box;
-  }
-  /* Space so last content isn’t hidden behind the bar */
-  .app-inner {
-    padding-bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px));
-  }
-  .mobex-mobile-bottom-nav__item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2px;
-    min-width: 0;
-    padding: 4px 2px;
-    margin: 0;
-    border: none;
-    background: transparent;
-    color: #111111;
-    font-family: inherit;
-    font-size: 0.625rem;
-    font-weight: 600;
-    line-height: 1.15;
-    text-align: center;
-    -webkit-text-decoration: none;
-    text-decoration: none;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    transition: opacity 0.15s ease, color 0.15s ease;
-  }
-  .mobex-mobile-bottom-nav__item:active {
-    opacity: 0.7;
-  }
-  .mobex-mobile-bottom-nav__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.5rem;
-    height: 1.5rem;
-    font-size: 1.125rem;
-    color: #111111;
-  }
-  .mobex-mobile-bottom-nav__icon i {
-    line-height: 1;
-  }
-  .mobex-mobile-bottom-nav__icon--car svg {
-    display: block;
-  }
-  .mobex-mobile-bottom-nav__label {
-    display: block;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    letter-spacing: 0.01em;
-  }
 }
 .main-menu > li > a[href*=offer]{
     --tw-text-opacity: 1;
@@ -58215,81 +58168,4 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
     .rtl\:xs\:left-5:where([dir="rtl"], [dir="rtl"] *){
         left: 1.25rem;
     }
-}
-
-/* Mobile bottom navigation (Mobex) */
-.mobex-mobile-bottom-nav {
-  display: none;
-}
-@media (max-width: 1024px) {
-  .mobex-mobile-bottom-nav {
-    display: flex;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 120;
-    align-items: stretch;
-    justify-content: space-around;
-    gap: 2px;
-    min-height: calc(3.5rem + env(safe-area-inset-bottom, 0px));
-    padding: 6px 4px calc(6px + env(safe-area-inset-bottom, 0px));
-    margin: 0;
-    background: #ffffff;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.06);
-    box-sizing: border-box;
-  }
-  .app-inner {
-    padding-bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px));
-  }
-  .mobex-mobile-bottom-nav__item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2px;
-    min-width: 0;
-    padding: 4px 2px;
-    margin: 0;
-    border: none;
-    background: transparent;
-    color: #111111;
-    font-family: inherit;
-    font-size: 0.625rem;
-    font-weight: 600;
-    line-height: 1.15;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    transition: opacity 0.15s ease, color 0.15s ease;
-  }
-  .mobex-mobile-bottom-nav__item:active {
-    opacity: 0.7;
-  }
-  .mobex-mobile-bottom-nav__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.5rem;
-    height: 1.5rem;
-    font-size: 1.125rem;
-    color: #111111;
-  }
-  .mobex-mobile-bottom-nav__icon i {
-    line-height: 1;
-  }
-  .mobex-mobile-bottom-nav__icon--car svg {
-    display: block;
-  }
-  .mobex-mobile-bottom-nav__label {
-    display: block;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    letter-spacing: 0.01em;
-  }
 }

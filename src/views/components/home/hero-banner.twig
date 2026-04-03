@@ -20,23 +20,17 @@
     <div class="hero-vehicle-filter">
         <div class="vehicle-filter-form">
             <h5>Select your car</h5>
-            <div class="vehicle-filter-fields">
-                <select class="vehicle-select">
-                    <option>Make</option>
+            <div class="vehicle-filter-fields vehicle-filter-fields--4">
+                <select class="vehicle-select" id="vehicle-brand">
+                    <option value="">Make</option>
                 </select>
-                <select class="vehicle-select">
-                    <option>Model</option>
+                <select class="vehicle-select" id="vehicle-model" disabled>
+                    <option value="">Model</option>
                 </select>
-                <select class="vehicle-select">
-                    <option>Year</option>
+                <select class="vehicle-select" id="vehicle-year" disabled>
+                    <option value="">Year</option>
                 </select>
-                <select class="vehicle-select">
-                    <option>Engine</option>
-                </select>
-                <select class="vehicle-select">
-                    <option>Trim</option>
-                </select>
-                <button class="vehicle-search-btn">Search</button>
+                <button type="button" class="vehicle-search-btn" id="vehicle-search-btn">Search</button>
             </div>
             <div class="vehicle-filter-or">
                 <span>OR</span>

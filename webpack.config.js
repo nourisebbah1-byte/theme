@@ -65,7 +65,12 @@ module.exports = {
     plugins: [
         new ThemeWatcher(),
         new MiniCssExtractPlugin(),
-        new CopyPlugin({patterns: [{from: asset('images'), to: public('images')}]}),
+        new CopyPlugin({
+            patterns: [
+                { from: asset('images'), to: public('images') },
+                { from: asset('data/dropdown_data.json'), to: public('dropdown_data.json') },
+            ],
+        }),
     ],
     optimization: {
         minimizer: [

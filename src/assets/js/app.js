@@ -3,6 +3,7 @@ import Swal from 'sweetalert2';
 import Anime from './partials/anime';
 import initTootTip from './partials/tooltip';
 import AppHelpers from "./app-helpers";
+import { initVehicleDropdowns, selectDisplayText } from './partials/vehicle-dropdowns';
 
 class App extends AppHelpers {
   constructor() {
@@ -23,6 +24,7 @@ class App extends AppHelpers {
     this.initiateCollapse();
     this.initAttachWishlistListeners();
     this.initVehicleFilterModal();
+    initVehicleDropdowns();
     this.initHeroSlider();
     setTimeout(() => this.initHeroSlider(), 500);
 
@@ -374,13 +376,14 @@ isElementLoaded(selector){
     if (searchBtn) {
       searchBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        const brand = document.getElementById('vehicle-filter-brand')?.value || '';
-        const model = document.getElementById('vehicle-filter-model')?.value || '';
-        const year = document.getElementById('vehicle-filter-year')?.value || '';
-        const engine = document.getElementById('vehicle-filter-engine')?.value || '';
-        const trim = document.getElementById('vehicle-filter-trim')?.value || '';
-
-        const values = [brand, model, year, engine, trim].filter(v => v && v.trim() !== '');
+        const brandEl = document.getElementById('vehicle-filter-brand');
+        const modelEl = document.getElementById('vehicle-filter-model');
+        const yearEl = document.getElementById('vehicle-filter-year');
+        const values = [
+          selectDisplayText(brandEl),
+          selectDisplayText(modelEl),
+          selectDisplayText(yearEl),
+        ].filter((v) => v && v.trim() !== '');
         if (values.length === 0) return;
 
         const searchQuery = values.join(' ');
