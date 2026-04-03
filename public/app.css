@@ -52596,42 +52596,36 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
   width: 8px !important;
   height: 8px !important;
 }
-/* Wishlist — Salla host keeps onclick / wishlist.toggle; only light-DOM + host shell styled */
+/*
+ * Wishlist: Salla draws ONE circle on the inner button — do not paint the host or you get a double white disc.
+ * Host = positioning + pointer events only; icon sized via i (slotted / light DOM).
+ */
 .s-block--latest-products .s-product-card-wishlist-btn {
   position: absolute !important;
   top: 8px !important;
   right: 8px !important;
   z-index: 20 !important;
-  box-sizing: border-box !important;
   margin: 0 !important;
   padding: 0 !important;
-  width: 36px !important;
-  width: var(--latest-wishlist-size) !important;
-  min-width: 36px !important;
-  min-width: var(--latest-wishlist-size) !important;
-  height: 36px !important;
-  height: var(--latest-wishlist-size) !important;
-  min-height: 36px !important;
-  min-height: var(--latest-wishlist-size) !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  flex-shrink: 0 !important;
-  border-radius: 50% !important;
-  background-color: #ffffff !important;
-  background-image: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%) !important;
-  border: 1px solid rgba(0, 0, 0, 0.07) !important;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 14px rgba(0, 0, 0, 0.08) !important;
-  color: #2a2a2a !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
   pointer-events: auto !important;
   cursor: pointer !important;
   touch-action: manipulation !important;
   -webkit-tap-highlight-color: transparent !important;
-  overflow: visible !important;
-  transition: box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s ease !important;
-}
-.s-block--latest-products .s-product-card-wishlist-btn {
-  --latest-wishlist-size: 36px;
+  color: #333 !important;
 }
 @media (max-width: 768px) {
   .s-block--latest-products .s-product-card-wishlist-btn {
@@ -52642,64 +52636,67 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
     inset-inline-end: auto !important;
     left: auto !important;
     z-index: 30 !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 6px 16px rgba(0, 0, 0, 0.1) !important;
-  }
-  .s-block--latest-products .s-product-card-wishlist-btn {
-    --latest-wishlist-size: 42px;
   }
 }
 .s-product-card-image .s-block--latest-products .s-product-card-wishlist-btn {
   position: absolute !important;
 }
-.s-block--latest-products .s-product-card-wishlist-btn:hover {
-  border-color: rgba(0, 0, 0, 0.12) !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06), 0 8px 20px rgba(0, 0, 0, 0.12) !important;
-  background-image: linear-gradient(180deg, #ffffff 0%, #fafafa 100%) !important;
-}
-@media (min-width: 769px) {
-  .s-block--latest-products .s-product-card-wishlist-btn:hover {
-    transform: scale(1.04) !important;
-  }
-}
-.s-block--latest-products .s-product-card-wishlist-btn:active {
-  transform: scale(0.96) !important;
-}
-@media (max-width: 768px) {
-  .s-block--latest-products .s-product-card-wishlist-btn:active {
-    transform: scale(0.97) !important;
-  }
-}
 .s-block--latest-products .s-product-card-wishlist-btn {
-  /* Direct <i> in light DOM — sicon-heart sits high in em-box; nudge down for true center */
+  /* Single circle: Salla’s actual clickable surface */
 }
-.s-block--latest-products .s-product-card-wishlist-btn > i.sicon-heart, .s-block--latest-products .s-product-card-wishlist-btn > i {
-  font-size: 17px !important;
-  width: 1em !important;
-  height: 1em !important;
+.s-block--latest-products .s-product-card-wishlist-btn button,
+.s-block--latest-products .s-product-card-wishlist-btn .s-button {
   margin: 0 !important;
+  box-sizing: border-box !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
   padding: 0 !important;
-  line-height: 1 !important;
-  display: flex !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  color: inherit !important;
-  transition: color 0.2s ease, transform 0.2s ease !important;
-  -webkit-font-smoothing: antialiased !important;
-  transform: translateY(3px) !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
 }
 @media (max-width: 768px) {
-  .s-block--latest-products .s-product-card-wishlist-btn > i.sicon-heart, .s-block--latest-products .s-product-card-wishlist-btn > i {
-    font-size: 18px !important;
-    transform: translateY(4px) !important;
+  .s-block--latest-products .s-product-card-wishlist-btn button,
+  .s-block--latest-products .s-product-card-wishlist-btn .s-button {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    min-height: 34px !important;
   }
 }
-.s-block--latest-products .s-product-card-wishlist-btn.s-product-card-wishlist-added {
-  background-image: linear-gradient(180deg, #fff5f3 0%, #ffe8e4 100%) !important;
-  border-color: rgba(191, 54, 23, 0.22) !important;
-  box-shadow: 0 1px 2px rgba(191, 54, 23, 0.08), 0 4px 14px rgba(191, 54, 23, 0.12) !important;
-  color: #bf3617 !important;
+.s-block--latest-products .s-product-card-wishlist-btn:hover button, .s-block--latest-products .s-product-card-wishlist-btn:hover .s-button {
+  border-color: rgba(0, 0, 0, 0.14) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important;
 }
-.s-block--latest-products .s-product-card-wishlist-btn.s-product-card-wishlist-added > i.sicon-heart, .s-block--latest-products .s-product-card-wishlist-btn.s-product-card-wishlist-added > i {
+.s-block--latest-products .s-product-card-wishlist-btn:active button, .s-block--latest-products .s-product-card-wishlist-btn:active .s-button {
+  transform: scale(0.96) !important;
+}
+.s-block--latest-products .s-product-card-wishlist-btn {
+  /* Smaller heart; sicon sits high — nudge down inside the circle */
+}
+.s-block--latest-products .s-product-card-wishlist-btn i.sicon-heart,
+.s-block--latest-products .s-product-card-wishlist-btn i {
+  font-size: 13px !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  transform: translateY(2px) !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+.s-block--latest-products .s-product-card-wishlist-btn.s-product-card-wishlist-added button, .s-block--latest-products .s-product-card-wishlist-btn.s-product-card-wishlist-added .s-button {
+  background-color: #fff5f3 !important;
+  border-color: rgba(191, 54, 23, 0.3) !important;
+}
+.s-block--latest-products .s-product-card-wishlist-btn.s-product-card-wishlist-added i.sicon-heart, .s-block--latest-products .s-product-card-wishlist-btn.s-product-card-wishlist-added i {
   color: #bf3617 !important;
 }
 /* Product Content - Compact */
@@ -53120,6 +53117,11 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
     position: relative !important;
     z-index: 2 !important;
     overflow: visible !important;
+  }
+  /* One arrow only: hide Salla bag icon; mask arrow comes from ::after on host */
+  .s-block--latest-products .s-product-card-content-footer salla-add-product-button > i,
+  .s-block--latest-products .s-product-card-content salla-add-product-button > i {
+    display: none !important;
   }
 }
 /* Deals Section - Orange Background - Auto height based on visible products */
