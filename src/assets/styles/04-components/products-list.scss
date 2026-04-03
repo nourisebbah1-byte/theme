@@ -421,11 +421,13 @@
       color: #333333 !important;
       transition: color 0.3s ease !important;
       line-height: 1 !important;
+      display: block !important;
+      /* sicon-heart glyph sits high in the font box — nudge down for visual center in circle */
+      transform: translateY(3px) !important;
 
       @media (max-width: 768px) {
         font-size: 13px !important;
-        position: relative !important;
-        top: 2px !important;
+        transform: translateY(5px) !important;
       }
     }
   }
