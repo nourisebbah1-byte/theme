@@ -44329,6 +44329,17 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
   background-color: #ffffff;
   position: relative;
 }
+.main-nav-container .header-search.header-search--rounded .search-wrapper {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e3e3e3;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.main-nav-container .header-search.header-search--rounded .search-wrapper:focus-within {
+  border-color: #c9c9c9;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
 .main-nav-container .header-search .search-submit-btn {
   background-color: #bf3617 !important;
   color: #ffffff !important;
@@ -44354,69 +44365,6 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
   width: 20px !important;
   height: 20px !important;
   display: block !important;
-}
-.main-nav-container .header-search .search-category-wrapper.search-category-links {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2px;
-  min-width: 140px;
-  max-width: min(32vw, 320px);
-  height: 48px;
-  padding: 4px 10px 4px 14px;
-  border-right: 1px solid #e0e0e0;
-  flex-shrink: 0;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-.main-nav-container .header-search .search-category-links__label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #666;
-  line-height: 1.2;
-  white-space: nowrap;
-}
-.main-nav-container .header-search .search-category-links__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 0 12px;
-  max-width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-}
-.main-nav-container .header-search .search-category-links__list::-webkit-scrollbar {
-  height: 3px;
-}
-.main-nav-container .header-search .search-category-links__list::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 3px;
-}
-.main-nav-container .header-search .search-category-links__list li {
-  flex-shrink: 0;
-}
-.main-nav-container .header-search .search-category-links__list a {
-  font-size: 13px;
-  font-weight: 600;
-  color: #034c8c;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  white-space: nowrap;
-  line-height: 1.3;
-}
-.main-nav-container .header-search .search-category-links__list a:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  color: #023a6b;
 }
 .main-nav-container .header-search salla-search {
   display: flex;
@@ -44723,9 +44671,6 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
     background-color: #ffffff !important;
     border: 1px solid #e2e2e2 !important;
     box-shadow: none !important;
-  }
-  .main-nav-container .main-nav-row-1 .header-search .search-wrapper .search-category-wrapper {
-    display: none !important;
   }
   .main-nav-container .main-nav-row-1 .header-search .search-wrapper salla-search {
     width: 100% !important;
@@ -46020,18 +45965,25 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   position: relative;
   background: #1a1a1a;
   padding: 0;
-  overflow: hidden;
+  overflow: visible;
   min-height: 0;
+}
+/* Slider + controls only — vehicle filter sits after this in document flow */
+.mobex-hero-stage {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  min-height: min(52vh, 540px);
 }
 .mobex-hero-slider {
   position: relative;
-  min-height: 320px;
+  min-height: min(52vh, 540px);
   overflow: hidden;
 }
 .mobex-hero-slide {
   display: none;
   position: relative;
-  min-height: 320px;
+  min-height: min(52vh, 540px);
 }
 .mobex-hero-slide.active {
   display: block;
@@ -46060,15 +46012,27 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   position: relative;
   z-index: 2;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px 64px;
-  gap: 12px;
+  width: 100%;
+  min-height: min(48vh, 500px);
+  padding: 48px 24px 88px;
+  gap: 20px;
+  box-sizing: border-box;
 }
 .mobex-hero .hero-text {
   align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 36rem;
+  margin: 0 auto;
 }
 .mobex-hero .hero-text h2 {
   font-family: "Oswald", "Inter", sans-serif;
@@ -46080,6 +46044,8 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   letter-spacing: 0.02em;
   line-height: 1.1;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 100%;
 }
 .mobex-hero .hero-tagline {
   font-family: "Oswald", "Inter", sans-serif;
@@ -46089,14 +46055,17 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   font-weight: 700;
   text-transform: none;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  width: 100%;
 }
 .mobex-hero .hero-text .hero-promo-line {
   font-size: max(13px, min(3vw, 17px));
   color: rgba(255, 255, 255, 0.95);
   margin: 0 0 20px;
   font-weight: 500;
-  max-width: 280px;
+  max-width: min(100%, 28rem);
   line-height: 1.45;
+  text-align: center;
 }
 .hero-section.mobex-hero .shop-now-btn {
   background-color: #fff;
@@ -46109,14 +46078,17 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   border-radius: 6px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   -webkit-text-decoration: none;
   text-decoration: none;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  margin-left: auto;
+  margin-right: auto;
 }
 .mobex-rs-root {
   flex-shrink: 0;
-  align-self: flex-end;
+  align-self: center;
   width: min(52vw, 520px);
   max-width: 100%;
 }
@@ -46124,6 +46096,7 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   position: relative;
   width: 100%;
   margin-left: auto;
+  margin-right: auto;
   --mobex-rx: 0px;
   --mobex-ry: 0px;
   aspect-ratio: 1024/548;
@@ -46500,7 +46473,7 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
     opacity: 0;
   }
 }
-.mobex-hero-controls {
+.mobex-hero-stage .mobex-hero-controls {
   position: absolute;
   z-index: 8;
   left: 0;
@@ -46512,8 +46485,8 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   gap: 18px;
   pointer-events: none;
 }
-.mobex-hero-controls .mobex-hero-nav,
-.mobex-hero-controls .mobex-hero-dots {
+.mobex-hero-stage .mobex-hero-controls .mobex-hero-nav,
+.mobex-hero-stage .mobex-hero-controls .mobex-hero-dots {
   pointer-events: auto;
 }
 .mobex-hero-nav {
@@ -46553,24 +46526,37 @@ section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   background-color: #fff;
   transform: scale(1.15);
 }
-/* Vehicle filter: sit above slider controls on desktop */
-section.hero-section.mobex-hero .hero-vehicle-filter {
-  bottom: 58px;
-  z-index: 9;
+/* Desktop: vehicle filter below slider — not overlapping hero copy */
+@media (min-width: 768px) {
+  section.hero-section.mobex-hero .hero-vehicle-filter {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    top: auto !important;
+    z-index: 2 !important;
+    max-width: 440px !important;
+    width: calc(100% - 40px) !important;
+    margin: 8px auto 32px !important;
+    padding: 0 !important;
+  }
 }
 @media only screen and (max-width: 767px) {
   .hero-section.mobex-hero {
     padding: 0;
     min-height: 0;
   }
+  .mobex-hero-stage,
   .mobex-hero-slider,
   .mobex-hero-slide {
-    min-height: 260px;
+    min-height: 280px;
   }
   .mobex-hero .hero-content {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
+    min-height: 240px;
     padding: 22px 14px 72px;
   }
   .mobex-hero .hero-text .hero-promo-line {
@@ -46578,7 +46564,8 @@ section.hero-section.mobex-hero .hero-vehicle-filter {
     margin-right: auto;
   }
   .hero-section.mobex-hero .shop-now-btn {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   .mobex-rs-root {
     align-self: center;
@@ -46586,7 +46573,7 @@ section.hero-section.mobex-hero .hero-vehicle-filter {
     max-width: min(92vw, 400px);
     margin: 10px auto 0;
   }
-  .mobex-hero-controls {
+  .mobex-hero-stage .mobex-hero-controls {
     bottom: 10px;
     gap: 14px;
     padding: 0 8px;

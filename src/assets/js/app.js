@@ -27,7 +27,9 @@ class App extends AppHelpers {
     initVehicleDropdowns();
     this.initHeroSlider();
     setTimeout(() => this.initHeroSlider(), 500);
-    this.initHeaderCategorySelect();
+    this.initMobexHeroSlider();
+    this.initMobexRsParallax();
+    setTimeout(() => this.initMobexHeroSlider(), 400);
 
     // Ensure #more-menu-dropdown exists before running changeMenuDirection
     const menuDirInterval = setInterval(() => {
@@ -416,126 +418,142 @@ isElementLoaded(selector){
   }
 
   /**
-   * Desktop header: category <select> — store menus first, then /categories API (same sources as all-categories dropdown).
+   * Mobex hero: prev/next, dots, autoplay, swipe. Runs from App (not Home) so it works when storefront home slug is not "index".
    */
-  initHeaderCategorySelect() {
-    const select = document.getElementById('header-category-select');
-    if (!select || select.dataset.bound === '1') {
+  initMobexHeroSlider() {
+    const root = document.querySelector('.mobex-hero-slider');
+    if (!root || root.dataset.mobexHeroBound === '1') {
       return;
     }
-    select.dataset.bound = '1';
 
-    const safeHref = (u) => {
-      if (!u || typeof u !== 'string') {
-        return '';
-      }
-      try {
-        return new URL(u, window.location.origin).href;
-      } catch {
-        return '';
-      }
-    };
+    const slides = root.querySelectorAll('.mobex-hero-slide');
+    const dots = document.querySelectorAll('.mobex-hero-dots .dot');
+    const prevBtn = document.querySelector('.mobex-hero-prev');
+    const nextBtn = document.querySelector('.mobex-hero-next');
+    if (!slides.length || !dots.length) {
+      return;
+    }
 
-    const appendOptions = (items, labelKey, urlKey) => {
-      const seen = new Set();
-      items.forEach((item) => {
-        const url = safeHref(item[urlKey] || item.url || item.full_url || item.link);
-        const label = item[labelKey] || item.name || item.title;
-        if (!url || !label || seen.has(url)) {
-          return;
-        }
-        seen.add(url);
-        const opt = document.createElement('option');
-        opt.value = url;
-        opt.textContent = label;
-        select.appendChild(opt);
+    root.dataset.mobexHeroBound = '1';
+
+    let idx = 0;
+    let autoTimer;
+
+    const restartMobexRsAnimations = (slide) => {
+      if (!slide || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+      }
+      const animEls = slide.querySelectorAll('.mobex-rs-slot > img.mobex-rs-anim, .hero-text > *');
+      animEls.forEach((el) => {
+        el.style.animation = 'none';
+      });
+      void slide.offsetWidth;
+      animEls.forEach((el) => {
+        el.style.animation = '';
       });
     };
 
-    const fillFromMenus = (menus) => {
-      if (!Array.isArray(menus) || menus.length === 0) {
-        return false;
-      }
-      appendOptions(menus.slice(0, 40), 'title', 'url');
-      return select.options.length > 1;
-    };
-
-    const fillFromCategories = (data) => {
-      const list = Array.isArray(data) ? data : [];
-      appendOptions(list.slice(0, 40), 'name', 'url');
-      return select.options.length > 1;
-    };
-
-    const tryLoad = async () => {
-      if (select.dataset.populated === '1') {
+    const show = (i) => {
+      const n = slides.length;
+      if (!n) {
         return;
       }
-
-      if (typeof salla === 'undefined') {
-        return;
-      }
-
-      while (select.options.length > 1) {
-        select.remove(1);
-      }
-
-      // 1) Header menu (same as custom-main-menu)
-      if (salla.api?.component?.getMenus) {
-        try {
-          const res = await salla.api.component.getMenus();
-          if (fillFromMenus(res?.data)) {
-            select.dataset.populated = '1';
-            return;
-          }
-        } catch {
-          /* continue */
-        }
-      }
-
-      const menuEl = document.querySelector('custom-main-menu');
-      if (menuEl?.menus?.length && fillFromMenus(menuEl.menus)) {
-        select.dataset.populated = '1';
-        return;
-      }
-
-      // 2) Categories API
-      if (salla.api?.get) {
-        try {
-          const res = await salla.api.get('/categories', { limit: 50 });
-          const data = res?.data !== undefined ? res.data : res;
-          if (fillFromCategories(data)) {
-            select.dataset.populated = '1';
-            return;
-          }
-        } catch {
-          /* continue */
-        }
-      }
+      idx = ((i % n) + n) % n;
+      slides.forEach((s, j) => {
+        s.classList.toggle('active', j === idx);
+      });
+      dots.forEach((d, j) => {
+        const on = j === idx;
+        d.classList.toggle('active', on);
+        d.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      restartMobexRsAnimations(slides[idx]);
     };
 
-    select.addEventListener('change', () => {
-      const v = select.value;
-      if (v) {
-        window.location.href = v;
-      }
-      select.selectedIndex = 0;
+    const next = () => show(idx + 1);
+
+    const resetAuto = () => {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(next, 7000);
+    };
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        show(idx - 1);
+        resetAuto();
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        show(idx + 1);
+        resetAuto();
+      });
+    }
+
+    dots.forEach((dot, j) => {
+      dot.addEventListener('click', () => {
+        show(j);
+        resetAuto();
+      });
     });
 
-    const schedule = () => {
-      tryLoad().then(() => {
-        if (select.dataset.populated === '1') {
+    let touchX = null;
+    root.addEventListener(
+      'touchstart',
+      (e) => {
+        touchX = e.touches[0].clientX;
+      },
+      { passive: true }
+    );
+    root.addEventListener(
+      'touchend',
+      (e) => {
+        if (touchX == null) {
           return;
         }
-        setTimeout(() => tryLoad(), 1200);
-        setTimeout(() => tryLoad(), 2500);
-      });
-    };
+        const dx = e.changedTouches[0].clientX - touchX;
+        touchX = null;
+        if (Math.abs(dx) < 45) {
+          return;
+        }
+        if (dx > 0) {
+          show(idx - 1);
+        } else {
+          show(idx + 1);
+        }
+        resetAuto();
+      },
+      { passive: true }
+    );
 
-    if (salla.onReady) {
-      salla.onReady().then(schedule).catch(schedule);
-    } else {
-      setTimeout(schedule, 500);
+    show(0);
+    resetAuto();
+  }
+
+  initMobexRsParallax() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
     }
+    document.querySelectorAll('.mobex-rs-stage').forEach((stage) => {
+      if (stage.dataset.mobexRsParallaxBound === '1') {
+        return;
+      }
+      stage.dataset.mobexRsParallaxBound = '1';
+      stage.addEventListener('mousemove', (e) => {
+        const r = stage.getBoundingClientRect();
+        if (r.width < 1 || r.height < 1) {
+          return;
+        }
+        const mx = (e.clientX - r.left) / r.width - 0.5;
+        const my = (e.clientY - r.top) / r.height - 0.5;
+        stage.style.setProperty('--mobex-rx', `${mx * 14}px`);
+        stage.style.setProperty('--mobex-ry', `${my * 10}px`);
+      });
+      stage.addEventListener('mouseleave', () => {
+        stage.style.setProperty('--mobex-rx', '0px');
+        stage.style.setProperty('--mobex-ry', '0px');
+      });
+    });
   }
 
   /**

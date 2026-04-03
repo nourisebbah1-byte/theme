@@ -9,6 +9,7 @@
 {% block content %}
     {# Mobex reference hero — same structure, images, and layer order as reference index.html #}
     <section class="hero-section mobex-hero">
+        <div class="mobex-hero-stage">
         <div class="mobex-hero-slider hero-slider">
             <div class="hero-slide mobex-hero-slide active" data-slide="0">
                 <div class="hero-slide-bg" style="background-image:url('{{ 'images/mobex-slider/slide-1.webp'|asset }}')"></div>
@@ -96,8 +97,9 @@
             </div>
             <button type="button" class="mobex-hero-nav mobex-hero-next" aria-label="Next slide"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
         </div>
+        </div>
 
-        {# Vehicle Filter - Fixed in Hero Banner #}
+        {# Vehicle filter — below slider on desktop (no overlap with hero copy) #}
         <div class="hero-vehicle-filter">
             <div class="vehicle-filter-form">
                 <h5>{{ trans('blocks.home.choose_your_car') }}</h5>
