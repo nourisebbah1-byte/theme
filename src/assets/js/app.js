@@ -4,6 +4,7 @@ import Anime from './partials/anime';
 import initTootTip from './partials/tooltip';
 import AppHelpers from "./app-helpers";
 import { initVehicleDropdowns, selectDisplayText } from './partials/vehicle-dropdowns';
+import { initProductListPayloadLogging } from './partials/product-list-debug';
 
 class App extends AppHelpers {
   constructor() {
@@ -38,6 +39,8 @@ class App extends AppHelpers {
 
     initTootTip();
     this.loadModalImgOnclick();
+
+    initProductListPayloadLogging();
 
     salla.comment.event.onAdded(() => window.location.reload());
 
