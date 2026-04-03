@@ -1,0 +1,6772 @@
+[
+  {
+    "make": "AUDI",
+    "model": "Q7",
+    "year": "2015"
+  },
+  {
+    "make": "AUDI",
+    "model": "Q7",
+    "year": "2014"
+  },
+  {
+    "make": "AUDI",
+    "model": "Q7",
+    "year": "2013"
+  },
+  {
+    "make": "AUDI",
+    "model": "Q7",
+    "year": "2012"
+  },
+  {
+    "make": "AUDI",
+    "model": "Q7",
+    "year": "2011"
+  },
+  {
+    "make": "AUDI",
+    "model": "Q7",
+    "year": "2010"
+  },
+  {
+    "make": "AUDI",
+    "model": "Q7",
+    "year": "2009"
+  },
+  {
+    "make": "AUDI",
+    "model": "Q7",
+    "year": "2008"
+  },
+  {
+    "make": "AUDI",
+    "model": "Q7",
+    "year": "2007"
+  },
+  {
+    "make": "AUDI",
+    "model": "Q7",
+    "year": "2006"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2025"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2024"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2023"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2022"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2021"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2020"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2019"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2018"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2017"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2016"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2015"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2014"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2013"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2012"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2011"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2010"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2009"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2008"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2007"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2006"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2005"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 1",
+    "year": "2004"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2025"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2024"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2023"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2022"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2021"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2020"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2019"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2018"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2017"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2016"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2015"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2014"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2013"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2012"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2011"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2010"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2009"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2008"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2007"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2006"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2005"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 2",
+    "year": "2004"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2025"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2024"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2023"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2022"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2021"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2020"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2019"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2018"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2017"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2016"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2015"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2014"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2013"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2012"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2011"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2010"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2009"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2008"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2007"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2006"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2005"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2004"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2003"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2002"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2001"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "2000"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "1999"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "1998"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "1997"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "1996"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3",
+    "year": "1995"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3 COUPE",
+    "year": "2013"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3 COUPE",
+    "year": "2012"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3 COUPE",
+    "year": "2011"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3 COUPE",
+    "year": "2010"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3 COUPE",
+    "year": "2009"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3 COUPE",
+    "year": "2008"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3 COUPE",
+    "year": "2007"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3 COUPE",
+    "year": "2006"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3 COUPE",
+    "year": "2005"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3 COUPE",
+    "year": "2004"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 3 COUPE",
+    "year": "2003"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 4",
+    "year": "2025"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 4",
+    "year": "2024"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 4",
+    "year": "2023"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 4",
+    "year": "2022"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 4",
+    "year": "2021"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 4",
+    "year": "2020"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 4",
+    "year": "2019"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 4",
+    "year": "2018"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 4",
+    "year": "2017"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 4",
+    "year": "2016"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 4",
+    "year": "2015"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 4",
+    "year": "2014"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 4",
+    "year": "2013"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 4",
+    "year": "2012"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2025"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2024"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2023"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2022"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2021"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2020"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2019"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2018"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2017"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2016"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2015"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2014"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2013"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2012"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2011"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2010"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2009"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2008"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2007"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2006"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2005"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2004"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2003"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2002"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2001"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "2000"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "1999"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "1998"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "1997"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "1996"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 5",
+    "year": "1995"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 6",
+    "year": "2018"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 6",
+    "year": "2017"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 6",
+    "year": "2016"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 6",
+    "year": "2015"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 6",
+    "year": "2014"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 6",
+    "year": "2013"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 6",
+    "year": "2012"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 6",
+    "year": "2011"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 6",
+    "year": "2010"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 6",
+    "year": "2009"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 6",
+    "year": "2008"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 6",
+    "year": "2007"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 6",
+    "year": "2006"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 6",
+    "year": "2005"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 6",
+    "year": "2004"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 6",
+    "year": "2003"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 6",
+    "year": "2002"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2025"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2024"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2023"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2022"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2021"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2020"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2019"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2018"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2017"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2016"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2015"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2014"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2013"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2012"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2011"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2010"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2009"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2008"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2007"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2006"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2005"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2004"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2003"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2002"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2001"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "2000"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "1999"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "1998"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "1997"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 7",
+    "year": "1996"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 8",
+    "year": "2025"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 8",
+    "year": "2024"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 8",
+    "year": "2023"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 8",
+    "year": "2022"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 8",
+    "year": "2021"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 8",
+    "year": "2020"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 8",
+    "year": "2019"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES 8",
+    "year": "2018"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X1",
+    "year": "2025"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X1",
+    "year": "2024"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X1",
+    "year": "2023"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X1",
+    "year": "2022"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X1",
+    "year": "2021"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X1",
+    "year": "2020"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X1",
+    "year": "2019"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X1",
+    "year": "2018"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X1",
+    "year": "2017"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X1",
+    "year": "2016"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X1",
+    "year": "2015"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X1",
+    "year": "2014"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X1",
+    "year": "2013"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X1",
+    "year": "2012"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X1",
+    "year": "2011"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X1",
+    "year": "2010"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X1",
+    "year": "2009"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X2",
+    "year": "2025"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X2",
+    "year": "2024"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X2",
+    "year": "2023"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X2",
+    "year": "2022"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X2",
+    "year": "2021"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X2",
+    "year": "2020"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X2",
+    "year": "2019"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X2",
+    "year": "2018"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2025"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2024"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2023"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2022"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2021"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2020"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2019"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2018"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2017"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2016"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2015"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2014"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2013"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2012"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2011"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2010"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2009"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2008"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2007"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2006"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2005"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2004"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X3",
+    "year": "2003"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X4",
+    "year": "2025"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X4",
+    "year": "2024"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X4",
+    "year": "2023"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X4",
+    "year": "2022"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X4",
+    "year": "2021"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X4",
+    "year": "2020"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X4",
+    "year": "2019"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X4",
+    "year": "2018"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X4",
+    "year": "2017"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X4",
+    "year": "2016"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X4",
+    "year": "2015"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X4",
+    "year": "2014"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2025"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2024"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2023"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2022"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2021"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2020"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2019"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2018"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2017"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2016"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2015"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2014"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2013"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2012"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2011"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2010"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2009"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2008"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2007"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2006"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2005"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2004"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2003"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X5",
+    "year": "2002"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X6",
+    "year": "2025"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X6",
+    "year": "2024"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X6",
+    "year": "2023"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X6",
+    "year": "2022"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X6",
+    "year": "2021"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X6",
+    "year": "2020"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X6",
+    "year": "2019"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X6",
+    "year": "2018"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X6",
+    "year": "2017"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X6",
+    "year": "2016"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X6",
+    "year": "2015"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X6",
+    "year": "2014"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X6",
+    "year": "2013"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X6",
+    "year": "2012"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X6",
+    "year": "2011"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X6",
+    "year": "2010"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X6",
+    "year": "2009"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X6",
+    "year": "2008"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X6",
+    "year": "2007"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X7",
+    "year": "2025"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X7",
+    "year": "2024"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X7",
+    "year": "2023"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X7",
+    "year": "2022"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X7",
+    "year": "2021"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X7",
+    "year": "2020"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X7",
+    "year": "2019"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES X7",
+    "year": "2018"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2025"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2024"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2023"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2022"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2021"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2020"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2019"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2018"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2017"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2016"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2015"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2014"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2013"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2012"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2011"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2010"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2009"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2008"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2007"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2006"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2005"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2004"
+  },
+  {
+    "make": "BMW",
+    "model": "SERIES Z4",
+    "year": "2003"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2024"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2023"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2022"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2021"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2020"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2019"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2018"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2017"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2016"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2015"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2014"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2013"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2012"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2011"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2010"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2009"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2008"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2007"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2006"
+  },
+  {
+    "make": "CHRYSLER",
+    "model": "C300",
+    "year": "2005"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHALLENGER",
+    "year": "2024"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHALLENGER",
+    "year": "2023"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHALLENGER",
+    "year": "2022"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHALLENGER",
+    "year": "2021"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHALLENGER",
+    "year": "2020"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHALLENGER",
+    "year": "2019"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHALLENGER",
+    "year": "2018"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHALLENGER",
+    "year": "2017"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHALLENGER",
+    "year": "2016"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHALLENGER",
+    "year": "2015"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHALLENGER",
+    "year": "2014"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHALLENGER",
+    "year": "2013"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHALLENGER",
+    "year": "2012"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHALLENGER",
+    "year": "2011"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHALLENGER",
+    "year": "2010"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHALLENGER",
+    "year": "2009"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHARGER",
+    "year": "2024"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHARGER",
+    "year": "2023"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHARGER",
+    "year": "2022"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHARGER",
+    "year": "2021"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHARGER",
+    "year": "2020"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHARGER",
+    "year": "2019"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHARGER",
+    "year": "2018"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHARGER",
+    "year": "2017"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHARGER",
+    "year": "2016"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHARGER",
+    "year": "2015"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHARGER",
+    "year": "2014"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHARGER",
+    "year": "2013"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHARGER",
+    "year": "2012"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHARGER",
+    "year": "2011"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHARGER",
+    "year": "2010"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHARGER",
+    "year": "2009"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHARGER",
+    "year": "2008"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHARGER",
+    "year": "2007"
+  },
+  {
+    "make": "DODGE",
+    "model": "CHARGER",
+    "year": "2006"
+  },
+  {
+    "make": "DODGE",
+    "model": "DURANGO",
+    "year": "2024"
+  },
+  {
+    "make": "DODGE",
+    "model": "DURANGO",
+    "year": "2023"
+  },
+  {
+    "make": "DODGE",
+    "model": "DURANGO",
+    "year": "2022"
+  },
+  {
+    "make": "DODGE",
+    "model": "DURANGO",
+    "year": "2021"
+  },
+  {
+    "make": "DODGE",
+    "model": "DURANGO",
+    "year": "2020"
+  },
+  {
+    "make": "DODGE",
+    "model": "DURANGO",
+    "year": "2019"
+  },
+  {
+    "make": "DODGE",
+    "model": "DURANGO",
+    "year": "2018"
+  },
+  {
+    "make": "DODGE",
+    "model": "DURANGO",
+    "year": "2017"
+  },
+  {
+    "make": "DODGE",
+    "model": "DURANGO",
+    "year": "2016"
+  },
+  {
+    "make": "DODGE",
+    "model": "DURANGO",
+    "year": "2015"
+  },
+  {
+    "make": "DODGE",
+    "model": "DURANGO",
+    "year": "2014"
+  },
+  {
+    "make": "DODGE",
+    "model": "DURANGO",
+    "year": "2013"
+  },
+  {
+    "make": "DODGE",
+    "model": "DURANGO",
+    "year": "2012"
+  },
+  {
+    "make": "DODGE",
+    "model": "DURANGO",
+    "year": "2011"
+  },
+  {
+    "make": "DODGE",
+    "model": "RAM",
+    "year": "2024"
+  },
+  {
+    "make": "DODGE",
+    "model": "RAM",
+    "year": "2023"
+  },
+  {
+    "make": "DODGE",
+    "model": "RAM",
+    "year": "2022"
+  },
+  {
+    "make": "DODGE",
+    "model": "RAM",
+    "year": "2021"
+  },
+  {
+    "make": "DODGE",
+    "model": "RAM",
+    "year": "2020"
+  },
+  {
+    "make": "DODGE",
+    "model": "RAM",
+    "year": "2019"
+  },
+  {
+    "make": "DODGE",
+    "model": "RAM",
+    "year": "2018"
+  },
+  {
+    "make": "DODGE",
+    "model": "RAM",
+    "year": "2017"
+  },
+  {
+    "make": "DODGE",
+    "model": "RAM",
+    "year": "2016"
+  },
+  {
+    "make": "DODGE",
+    "model": "RAM",
+    "year": "2015"
+  },
+  {
+    "make": "DODGE",
+    "model": "RAM",
+    "year": "2014"
+  },
+  {
+    "make": "DODGE",
+    "model": "RAM",
+    "year": "2013"
+  },
+  {
+    "make": "JEEP",
+    "model": "CHEROKEE",
+    "year": "2022"
+  },
+  {
+    "make": "JEEP",
+    "model": "CHEROKEE",
+    "year": "2021"
+  },
+  {
+    "make": "JEEP",
+    "model": "CHEROKEE",
+    "year": "2020"
+  },
+  {
+    "make": "JEEP",
+    "model": "CHEROKEE",
+    "year": "2019"
+  },
+  {
+    "make": "JEEP",
+    "model": "CHEROKEE",
+    "year": "2018"
+  },
+  {
+    "make": "JEEP",
+    "model": "CHEROKEE",
+    "year": "2017"
+  },
+  {
+    "make": "JEEP",
+    "model": "CHEROKEE",
+    "year": "2016"
+  },
+  {
+    "make": "JEEP",
+    "model": "CHEROKEE",
+    "year": "2015"
+  },
+  {
+    "make": "JEEP",
+    "model": "CHEROKEE",
+    "year": "2014"
+  },
+  {
+    "make": "JEEP",
+    "model": "CHEROKEE",
+    "year": "2013"
+  },
+  {
+    "make": "JEEP",
+    "model": "CHEROKEE",
+    "year": "2012"
+  },
+  {
+    "make": "JEEP",
+    "model": "CHEROKEE",
+    "year": "2011"
+  },
+  {
+    "make": "JEEP",
+    "model": "COMPASS",
+    "year": "2024"
+  },
+  {
+    "make": "JEEP",
+    "model": "COMPASS",
+    "year": "2023"
+  },
+  {
+    "make": "JEEP",
+    "model": "COMPASS",
+    "year": "2022"
+  },
+  {
+    "make": "JEEP",
+    "model": "COMPASS",
+    "year": "2021"
+  },
+  {
+    "make": "JEEP",
+    "model": "COMPASS",
+    "year": "2020"
+  },
+  {
+    "make": "JEEP",
+    "model": "COMPASS",
+    "year": "2019"
+  },
+  {
+    "make": "JEEP",
+    "model": "COMPASS",
+    "year": "2018"
+  },
+  {
+    "make": "JEEP",
+    "model": "COMPASS",
+    "year": "2017"
+  },
+  {
+    "make": "JEEP",
+    "model": "COMPASS",
+    "year": "2016"
+  },
+  {
+    "make": "JEEP",
+    "model": "COMPASS",
+    "year": "2015"
+  },
+  {
+    "make": "JEEP",
+    "model": "COMPASS",
+    "year": "2014"
+  },
+  {
+    "make": "JEEP",
+    "model": "COMPASS",
+    "year": "2013"
+  },
+  {
+    "make": "JEEP",
+    "model": "COMPASS",
+    "year": "2012"
+  },
+  {
+    "make": "JEEP",
+    "model": "COMPASS",
+    "year": "2011"
+  },
+  {
+    "make": "JEEP",
+    "model": "GRAND CHEROKEE",
+    "year": "2024"
+  },
+  {
+    "make": "JEEP",
+    "model": "GRAND CHEROKEE",
+    "year": "2023"
+  },
+  {
+    "make": "JEEP",
+    "model": "GRAND CHEROKEE",
+    "year": "2022"
+  },
+  {
+    "make": "JEEP",
+    "model": "GRAND CHEROKEE",
+    "year": "2021"
+  },
+  {
+    "make": "JEEP",
+    "model": "GRAND CHEROKEE",
+    "year": "2020"
+  },
+  {
+    "make": "JEEP",
+    "model": "GRAND CHEROKEE",
+    "year": "2019"
+  },
+  {
+    "make": "JEEP",
+    "model": "GRAND CHEROKEE",
+    "year": "2018"
+  },
+  {
+    "make": "JEEP",
+    "model": "GRAND CHEROKEE",
+    "year": "2017"
+  },
+  {
+    "make": "JEEP",
+    "model": "GRAND CHEROKEE",
+    "year": "2016"
+  },
+  {
+    "make": "JEEP",
+    "model": "GRAND CHEROKEE",
+    "year": "2015"
+  },
+  {
+    "make": "JEEP",
+    "model": "GRAND CHEROKEE",
+    "year": "2014"
+  },
+  {
+    "make": "JEEP",
+    "model": "GRAND CHEROKEE",
+    "year": "2013"
+  },
+  {
+    "make": "JEEP",
+    "model": "GRAND CHEROKEE",
+    "year": "2012"
+  },
+  {
+    "make": "JEEP",
+    "model": "GRAND CHEROKEE",
+    "year": "2011"
+  },
+  {
+    "make": "JEEP",
+    "model": "GRAND CHEROKEE",
+    "year": "2010"
+  },
+  {
+    "make": "JEEP",
+    "model": "GRAND CHEROKEE",
+    "year": "2009"
+  },
+  {
+    "make": "JEEP",
+    "model": "GRAND CHEROKEE",
+    "year": "2008"
+  },
+  {
+    "make": "JEEP",
+    "model": "GRAND CHEROKEE",
+    "year": "2007"
+  },
+  {
+    "make": "JEEP",
+    "model": "GRAND CHEROKEE",
+    "year": "2006"
+  },
+  {
+    "make": "JEEP",
+    "model": "RENEGADA",
+    "year": "2020"
+  },
+  {
+    "make": "JEEP",
+    "model": "RENEGADA",
+    "year": "2019"
+  },
+  {
+    "make": "JEEP",
+    "model": "RENEGADA",
+    "year": "2018"
+  },
+  {
+    "make": "JEEP",
+    "model": "RENEGADA",
+    "year": "2017"
+  },
+  {
+    "make": "JEEP",
+    "model": "RENEGADA",
+    "year": "2016"
+  },
+  {
+    "make": "JEEP",
+    "model": "RENEGADA",
+    "year": "2015"
+  },
+  {
+    "make": "JEEP",
+    "model": "WRANGLER",
+    "year": "2022"
+  },
+  {
+    "make": "JEEP",
+    "model": "WRANGLER",
+    "year": "2021"
+  },
+  {
+    "make": "JEEP",
+    "model": "WRANGLER",
+    "year": "2020"
+  },
+  {
+    "make": "JEEP",
+    "model": "WRANGLER",
+    "year": "2019"
+  },
+  {
+    "make": "JEEP",
+    "model": "WRANGLER",
+    "year": "2018"
+  },
+  {
+    "make": "JEEP",
+    "model": "WRANGLER",
+    "year": "2017"
+  },
+  {
+    "make": "JEEP",
+    "model": "WRANGLER",
+    "year": "2016"
+  },
+  {
+    "make": "JEEP",
+    "model": "WRANGLER",
+    "year": "2015"
+  },
+  {
+    "make": "JEEP",
+    "model": "WRANGLER",
+    "year": "2014"
+  },
+  {
+    "make": "JEEP",
+    "model": "WRANGLER",
+    "year": "2013"
+  },
+  {
+    "make": "JEEP",
+    "model": "WRANGLER",
+    "year": "2012"
+  },
+  {
+    "make": "JEEP",
+    "model": "WRANGLER",
+    "year": "2011"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DEFENDER",
+    "year": "2025"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DEFENDER",
+    "year": "2024"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DEFENDER",
+    "year": "2023"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DEFENDER",
+    "year": "2022"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DEFENDER",
+    "year": "2021"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DEFENDER",
+    "year": "2020"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR3",
+    "year": "2009"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR3",
+    "year": "2008"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR3",
+    "year": "2007"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR3",
+    "year": "2006"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR3",
+    "year": "2005"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR4",
+    "year": "2016"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR4",
+    "year": "2015"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR4",
+    "year": "2014"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR4",
+    "year": "2013"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR4",
+    "year": "2012"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR4",
+    "year": "2011"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR4",
+    "year": "2010"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR5",
+    "year": "2025"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR5",
+    "year": "2024"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR5",
+    "year": "2023"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR5",
+    "year": "2022"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR5",
+    "year": "2021"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR5",
+    "year": "2020"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR5",
+    "year": "2019"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR5",
+    "year": "2018"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY LR5",
+    "year": "2017"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY SPORT",
+    "year": "2025"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY SPORT",
+    "year": "2024"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY SPORT",
+    "year": "2023"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY SPORT",
+    "year": "2022"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY SPORT",
+    "year": "2021"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY SPORT",
+    "year": "2020"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY SPORT",
+    "year": "2019"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY SPORT",
+    "year": "2018"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY SPORT",
+    "year": "2017"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY SPORT",
+    "year": "2016"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "DISCOVERY SPORT",
+    "year": "2015"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "EVOQUE",
+    "year": "2025"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "EVOQUE",
+    "year": "2024"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "EVOQUE",
+    "year": "2023"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "EVOQUE",
+    "year": "2022"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "EVOQUE",
+    "year": "2021"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "EVOQUE",
+    "year": "2020"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "EVOQUE",
+    "year": "2019"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "EVOQUE",
+    "year": "2018"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "EVOQUE",
+    "year": "2017"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "EVOQUE",
+    "year": "2016"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "EVOQUE",
+    "year": "2015"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "EVOQUE",
+    "year": "2014"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "EVOQUE",
+    "year": "2013"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "EVOQUE",
+    "year": "2012"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "FREELANDER LR2",
+    "year": "2016"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "FREELANDER LR2",
+    "year": "2015"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "FREELANDER LR2",
+    "year": "2014"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "FREELANDER LR2",
+    "year": "2013"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "FREELANDER LR2",
+    "year": "2012"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "FREELANDER LR2",
+    "year": "2011"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "FREELANDER LR2",
+    "year": "2010"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "FREELANDER LR2",
+    "year": "2009"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "FREELANDER LR2",
+    "year": "2008"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "FREELANDER LR2",
+    "year": "2007"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2025"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2024"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2023"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2022"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2021"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2020"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2019"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2018"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2017"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2016"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2015"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2014"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2013"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2012"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2011"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2010"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2009"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2008"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2007"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER SPORT",
+    "year": "2006"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2025"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2024"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2023"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2022"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2021"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2020"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2019"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2018"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2017"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2016"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2015"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2014"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2013"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2012"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2011"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2010"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2009"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2008"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2007"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2006"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2005"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2004"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2003"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "RANG ROVER VOGUE",
+    "year": "2002"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "VELAR",
+    "year": "2025"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "VELAR",
+    "year": "2024"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "VELAR",
+    "year": "2023"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "VELAR",
+    "year": "2022"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "VELAR",
+    "year": "2021"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "VELAR",
+    "year": "2020"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "VELAR",
+    "year": "2019"
+  },
+  {
+    "make": "LAND ROVER",
+    "model": "VELAR",
+    "year": "2018"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2026"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2025"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2024"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2023"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2022"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2021"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2020"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2019"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2018"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2017"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2016"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2015"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2014"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2013"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2012"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2011"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2010"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2009"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2008"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2007"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2006"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2005"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2004"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2003"
+  },
+  {
+    "make": "LEXUS",
+    "model": "ES",
+    "year": "2002"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GS",
+    "year": "2020"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GS",
+    "year": "2019"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GS",
+    "year": "2018"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GS",
+    "year": "2017"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GS",
+    "year": "2016"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GS",
+    "year": "2015"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GS",
+    "year": "2014"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GS",
+    "year": "2013"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GS",
+    "year": "2012"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GS",
+    "year": "2011"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GS",
+    "year": "2010"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GS",
+    "year": "2009"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GS",
+    "year": "2008"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GS",
+    "year": "2007"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GS",
+    "year": "2006"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GS",
+    "year": "2005"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GX",
+    "year": "2026"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GX",
+    "year": "2025"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GX",
+    "year": "2024"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GX",
+    "year": "2023"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GX",
+    "year": "2022"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GX",
+    "year": "2021"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GX",
+    "year": "2020"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GX",
+    "year": "2019"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GX",
+    "year": "2018"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GX",
+    "year": "2017"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GX",
+    "year": "2016"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GX",
+    "year": "2015"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GX",
+    "year": "2014"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GX",
+    "year": "2013"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GX",
+    "year": "2012"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GX",
+    "year": "2011"
+  },
+  {
+    "make": "LEXUS",
+    "model": "GX",
+    "year": "2010"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2025"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2024"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2023"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2022"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2021"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2020"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2019"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2018"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2017"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2016"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2015"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2014"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2013"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2012"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2011"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2010"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2009"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2008"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2007"
+  },
+  {
+    "make": "LEXUS",
+    "model": "IS",
+    "year": "2006"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LC",
+    "year": "2025"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LC",
+    "year": "2024"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LC",
+    "year": "2023"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LC",
+    "year": "2022"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LC",
+    "year": "2021"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LC",
+    "year": "2020"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LC",
+    "year": "2019"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LC",
+    "year": "2018"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2025"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2024"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2023"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2022"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2021"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2020"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2019"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2018"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2017"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2016"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2015"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2014"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2013"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2012"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2011"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2010"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2009"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2008"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2007"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2006"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2005"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2004"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2003"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2002"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LS",
+    "year": "2001"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LX",
+    "year": "2026"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LX",
+    "year": "2025"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LX",
+    "year": "2024"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LX",
+    "year": "2023"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LX",
+    "year": "2022"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LX",
+    "year": "2021"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LX",
+    "year": "2020"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LX",
+    "year": "2019"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LX",
+    "year": "2018"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LX",
+    "year": "2017"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LX",
+    "year": "2016"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LX",
+    "year": "2015"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LX",
+    "year": "2014"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LX",
+    "year": "2013"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LX",
+    "year": "2012"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LX",
+    "year": "2011"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LX",
+    "year": "2010"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LX",
+    "year": "2009"
+  },
+  {
+    "make": "LEXUS",
+    "model": "LX",
+    "year": "2008"
+  },
+  {
+    "make": "LEXUS",
+    "model": "NX",
+    "year": "2025"
+  },
+  {
+    "make": "LEXUS",
+    "model": "NX",
+    "year": "2024"
+  },
+  {
+    "make": "LEXUS",
+    "model": "NX",
+    "year": "2023"
+  },
+  {
+    "make": "LEXUS",
+    "model": "NX",
+    "year": "2022"
+  },
+  {
+    "make": "LEXUS",
+    "model": "NX",
+    "year": "2021"
+  },
+  {
+    "make": "LEXUS",
+    "model": "NX",
+    "year": "2020"
+  },
+  {
+    "make": "LEXUS",
+    "model": "NX",
+    "year": "2019"
+  },
+  {
+    "make": "LEXUS",
+    "model": "NX",
+    "year": "2018"
+  },
+  {
+    "make": "LEXUS",
+    "model": "NX",
+    "year": "2017"
+  },
+  {
+    "make": "LEXUS",
+    "model": "NX",
+    "year": "2016"
+  },
+  {
+    "make": "LEXUS",
+    "model": "NX",
+    "year": "2015"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RC",
+    "year": "2025"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RC",
+    "year": "2024"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RC",
+    "year": "2023"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RC",
+    "year": "2022"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RC",
+    "year": "2021"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RC",
+    "year": "2020"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RC",
+    "year": "2019"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RC",
+    "year": "2018"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RC",
+    "year": "2017"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RC",
+    "year": "2016"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RC",
+    "year": "2015"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2025"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2024"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2023"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2022"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2021"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2020"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2019"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2018"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2017"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2016"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2015"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2014"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2013"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2012"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2011"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2010"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2009"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2008"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2007"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2006"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2005"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2004"
+  },
+  {
+    "make": "LEXUS",
+    "model": "RX",
+    "year": "2003"
+  },
+  {
+    "make": "LEXUS",
+    "model": "UX",
+    "year": "2025"
+  },
+  {
+    "make": "LEXUS",
+    "model": "UX",
+    "year": "2024"
+  },
+  {
+    "make": "LEXUS",
+    "model": "UX",
+    "year": "2023"
+  },
+  {
+    "make": "LEXUS",
+    "model": "UX",
+    "year": "2022"
+  },
+  {
+    "make": "LEXUS",
+    "model": "UX",
+    "year": "2021"
+  },
+  {
+    "make": "LEXUS",
+    "model": "UX",
+    "year": "2020"
+  },
+  {
+    "make": "LEXUS",
+    "model": "UX",
+    "year": "2019"
+  },
+  {
+    "make": "MAZDA",
+    "model": "3",
+    "year": "2025"
+  },
+  {
+    "make": "MAZDA",
+    "model": "3",
+    "year": "2024"
+  },
+  {
+    "make": "MAZDA",
+    "model": "3",
+    "year": "2023"
+  },
+  {
+    "make": "MAZDA",
+    "model": "3",
+    "year": "2022"
+  },
+  {
+    "make": "MAZDA",
+    "model": "3",
+    "year": "2021"
+  },
+  {
+    "make": "MAZDA",
+    "model": "3",
+    "year": "2020"
+  },
+  {
+    "make": "MAZDA",
+    "model": "3",
+    "year": "2019"
+  },
+  {
+    "make": "MAZDA",
+    "model": "3",
+    "year": "2018"
+  },
+  {
+    "make": "MAZDA",
+    "model": "3",
+    "year": "2017"
+  },
+  {
+    "make": "MAZDA",
+    "model": "3",
+    "year": "2016"
+  },
+  {
+    "make": "MAZDA",
+    "model": "3",
+    "year": "2015"
+  },
+  {
+    "make": "MAZDA",
+    "model": "3",
+    "year": "2014"
+  },
+  {
+    "make": "MAZDA",
+    "model": "3",
+    "year": "2013"
+  },
+  {
+    "make": "MAZDA",
+    "model": "3",
+    "year": "2012"
+  },
+  {
+    "make": "MAZDA",
+    "model": "3",
+    "year": "2011"
+  },
+  {
+    "make": "MAZDA",
+    "model": "3",
+    "year": "2010"
+  },
+  {
+    "make": "MAZDA",
+    "model": "6",
+    "year": "2025"
+  },
+  {
+    "make": "MAZDA",
+    "model": "6",
+    "year": "2024"
+  },
+  {
+    "make": "MAZDA",
+    "model": "6",
+    "year": "2023"
+  },
+  {
+    "make": "MAZDA",
+    "model": "6",
+    "year": "2022"
+  },
+  {
+    "make": "MAZDA",
+    "model": "6",
+    "year": "2021"
+  },
+  {
+    "make": "MAZDA",
+    "model": "6",
+    "year": "2020"
+  },
+  {
+    "make": "MAZDA",
+    "model": "6",
+    "year": "2019"
+  },
+  {
+    "make": "MAZDA",
+    "model": "6",
+    "year": "2018"
+  },
+  {
+    "make": "MAZDA",
+    "model": "6",
+    "year": "2017"
+  },
+  {
+    "make": "MAZDA",
+    "model": "6",
+    "year": "2016"
+  },
+  {
+    "make": "MAZDA",
+    "model": "6",
+    "year": "2015"
+  },
+  {
+    "make": "MAZDA",
+    "model": "6",
+    "year": "2014"
+  },
+  {
+    "make": "MAZDA",
+    "model": "6",
+    "year": "2013"
+  },
+  {
+    "make": "MAZDA",
+    "model": "6",
+    "year": "2012"
+  },
+  {
+    "make": "MAZDA",
+    "model": "6",
+    "year": "2011"
+  },
+  {
+    "make": "MAZDA",
+    "model": "6",
+    "year": "2010"
+  },
+  {
+    "make": "MAZDA",
+    "model": "6",
+    "year": "2009"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX3",
+    "year": "2021"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX3",
+    "year": "2020"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX3",
+    "year": "2019"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX3",
+    "year": "2018"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX3",
+    "year": "2017"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX3",
+    "year": "2016"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX3",
+    "year": "2015"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX30",
+    "year": "2025"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX30",
+    "year": "2024"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX30",
+    "year": "2023"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX30",
+    "year": "2022"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX30",
+    "year": "2021"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX30",
+    "year": "2020"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX5",
+    "year": "2025"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX5",
+    "year": "2024"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX5",
+    "year": "2023"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX5",
+    "year": "2022"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX5",
+    "year": "2021"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX5",
+    "year": "2020"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX5",
+    "year": "2019"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX5",
+    "year": "2018"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX5",
+    "year": "2017"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX5",
+    "year": "2016"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX5",
+    "year": "2015"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX5",
+    "year": "2014"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX60",
+    "year": "2025"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX60",
+    "year": "2024"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX60",
+    "year": "2023"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX9",
+    "year": "2025"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX9",
+    "year": "2024"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX9",
+    "year": "2023"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX9",
+    "year": "2022"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX9",
+    "year": "2021"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX9",
+    "year": "2020"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX9",
+    "year": "2019"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX9",
+    "year": "2018"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX9",
+    "year": "2017"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX9",
+    "year": "2016"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX9",
+    "year": "2015"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX9",
+    "year": "2014"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX9",
+    "year": "2013"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX9",
+    "year": "2012"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX9",
+    "year": "2011"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX9",
+    "year": "2010"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX9",
+    "year": "2009"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX9",
+    "year": "2008"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX90",
+    "year": "2025"
+  },
+  {
+    "make": "MAZDA",
+    "model": "CX90",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES A",
+    "year": "2025"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES A",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES A",
+    "year": "2023"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES A",
+    "year": "2022"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES A",
+    "year": "2021"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES A",
+    "year": "2020"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES A",
+    "year": "2019"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES A",
+    "year": "2018"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES A",
+    "year": "2017"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES A",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES A",
+    "year": "2015"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES A",
+    "year": "2014"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES A",
+    "year": "2013"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2025"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2023"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2022"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2021"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2020"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2019"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2018"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2017"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2015"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2014"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2013"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2012"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2011"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2010"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2009"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2008"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2007"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2006"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2005"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2004"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2003"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2002"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C",
+    "year": "2001"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2025"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2023"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2022"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2021"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2020"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2019"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2018"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2017"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2015"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2014"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2013"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2012"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2011"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2010"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2009"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2008"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2007"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2006"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2005"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2004"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2003"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2002"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES C COUPE",
+    "year": "2001"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CL",
+    "year": "2013"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CL",
+    "year": "2012"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CL",
+    "year": "2011"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CL",
+    "year": "2010"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CL",
+    "year": "2009"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CL",
+    "year": "2008"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CL",
+    "year": "2007"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLA",
+    "year": "2025"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLA",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLA",
+    "year": "2023"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLA",
+    "year": "2022"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLA",
+    "year": "2021"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLA",
+    "year": "2020"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLA",
+    "year": "2019"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLA",
+    "year": "2018"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLA",
+    "year": "2017"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLA",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLA",
+    "year": "2015"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLA",
+    "year": "2014"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLA",
+    "year": "2013"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLE COUPE",
+    "year": "2025"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLE COUPE",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2025"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2023"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2022"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2021"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2020"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2019"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2018"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2017"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2015"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2014"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2013"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2012"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2011"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2010"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2009"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2008"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2007"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2006"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES CLS",
+    "year": "2005"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2025"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2023"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2022"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2021"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2020"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2019"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2018"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2017"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2015"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2014"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2013"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2012"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2011"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2010"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2009"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2008"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2007"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2006"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2005"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2004"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E",
+    "year": "2003"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2025"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2023"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2022"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2021"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2020"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2019"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2018"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2017"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2015"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2014"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2013"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2012"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2011"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2010"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2009"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2008"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2007"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2006"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2005"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2004"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES E COUPE",
+    "year": "2003"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2025"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2023"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2022"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2021"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2020"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2019"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2018"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2017"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2015"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2014"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2013"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2012"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2011"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2010"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2009"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2008"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2007"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2006"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2005"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2004"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2003"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2002"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2001"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "2000"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "1999"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "1998"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "1997"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "1996"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "1995"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "1994"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "1993"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "1992"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "1991"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES G",
+    "year": "1990"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2025"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2023"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2022"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2021"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2020"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2019"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2018"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2017"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2015"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2014"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2013"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2012"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2011"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2010"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2009"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2008"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2007"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2006"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2005"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2004"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2003"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2002"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2001"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "2000"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "1999"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "1998"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "1997"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "1996"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "1995"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "1994"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "1993"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "1992"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "1991"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GL",
+    "year": "1990"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLA",
+    "year": "2025"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLA",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLA",
+    "year": "2023"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLA",
+    "year": "2022"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLA",
+    "year": "2021"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLA",
+    "year": "2020"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLA",
+    "year": "2019"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLA",
+    "year": "2018"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLA",
+    "year": "2017"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLA",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLA",
+    "year": "2015"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLC",
+    "year": "2025"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLC",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLC",
+    "year": "2023"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLC",
+    "year": "2022"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLC",
+    "year": "2021"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLC",
+    "year": "2020"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLC",
+    "year": "2019"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLC",
+    "year": "2018"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLC",
+    "year": "2017"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLC",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLC",
+    "year": "2015"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE",
+    "year": "2025"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE",
+    "year": "2023"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE",
+    "year": "2022"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE",
+    "year": "2021"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE",
+    "year": "2020"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE",
+    "year": "2019"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE",
+    "year": "2018"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE",
+    "year": "2017"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE",
+    "year": "2015"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE COUPE",
+    "year": "2025"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE COUPE",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE COUPE",
+    "year": "2023"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE COUPE",
+    "year": "2022"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE COUPE",
+    "year": "2021"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE COUPE",
+    "year": "2020"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE COUPE",
+    "year": "2019"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE COUPE",
+    "year": "2018"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE COUPE",
+    "year": "2017"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLE COUPE",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLK",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLK",
+    "year": "2015"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLK",
+    "year": "2014"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLK",
+    "year": "2013"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLK",
+    "year": "2012"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLK",
+    "year": "2011"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLK",
+    "year": "2010"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLK",
+    "year": "2009"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLK",
+    "year": "2008"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLS",
+    "year": "2025"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLS",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLS",
+    "year": "2023"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLS",
+    "year": "2022"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLS",
+    "year": "2021"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLS",
+    "year": "2020"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLS",
+    "year": "2019"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLS",
+    "year": "2018"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLS",
+    "year": "2017"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GLS",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GT",
+    "year": "2025"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GT",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GT",
+    "year": "2023"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GT",
+    "year": "2022"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GT",
+    "year": "2021"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GT",
+    "year": "2020"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GT",
+    "year": "2019"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GT",
+    "year": "2018"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GT",
+    "year": "2017"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GT",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GT",
+    "year": "2015"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES GT",
+    "year": "2014"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES ML",
+    "year": "2015"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES ML",
+    "year": "2014"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES ML",
+    "year": "2013"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES ML",
+    "year": "2012"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES ML",
+    "year": "2011"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES ML",
+    "year": "2010"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES ML",
+    "year": "2009"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES ML",
+    "year": "2008"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES ML",
+    "year": "2007"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES ML",
+    "year": "2006"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES ML",
+    "year": "2005"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES R",
+    "year": "2013"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES R",
+    "year": "2012"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES R",
+    "year": "2011"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES R",
+    "year": "2010"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES R",
+    "year": "2009"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES R",
+    "year": "2008"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES R",
+    "year": "2007"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES R",
+    "year": "2006"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES R",
+    "year": "2005"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2025"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2023"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2022"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2021"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2020"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2019"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2018"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2017"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2015"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2014"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2013"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2012"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2011"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2010"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2009"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2008"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2007"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2006"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2005"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2004"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2003"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2002"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2001"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "2000"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "1999"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S",
+    "year": "1998"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S COUPE",
+    "year": "2020"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S COUPE",
+    "year": "2019"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S COUPE",
+    "year": "2018"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S COUPE",
+    "year": "2017"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S COUPE",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S COUPE",
+    "year": "2015"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES S COUPE",
+    "year": "2014"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SL",
+    "year": "2025"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SL",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SL",
+    "year": "2023"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SL",
+    "year": "2022"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SL",
+    "year": "2021"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SL",
+    "year": "2020"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SL",
+    "year": "2019"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SL",
+    "year": "2018"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SL",
+    "year": "2017"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SL",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SL",
+    "year": "2015"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SL",
+    "year": "2014"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SL",
+    "year": "2013"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SL",
+    "year": "2012"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLC",
+    "year": "2025"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLC",
+    "year": "2024"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLC",
+    "year": "2023"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLC",
+    "year": "2022"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLC",
+    "year": "2021"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLC",
+    "year": "2020"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLC",
+    "year": "2019"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLC",
+    "year": "2018"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLC",
+    "year": "2017"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLK",
+    "year": "2016"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLK",
+    "year": "2015"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLK",
+    "year": "2014"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLK",
+    "year": "2013"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLK",
+    "year": "2012"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLK",
+    "year": "2011"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLK",
+    "year": "2010"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLK",
+    "year": "2009"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLK",
+    "year": "2008"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLK",
+    "year": "2007"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLK",
+    "year": "2006"
+  },
+  {
+    "make": "MERCEDES",
+    "model": "SERIES SLK",
+    "year": "2005"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2025"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2024"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2023"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2022"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2021"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2020"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2019"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2018"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2017"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2016"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2015"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2014"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2013"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2012"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2011"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2010"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2009"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2008"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2007"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2006"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "BOXSTER",
+    "year": "2005"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2025"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2024"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2023"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2022"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2021"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2020"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2019"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2018"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2017"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2016"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2015"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2014"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2013"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2012"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2011"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2010"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2009"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2008"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2007"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2006"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CARRERA",
+    "year": "2005"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2025"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2024"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2023"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2022"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2021"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2020"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2019"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2018"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2017"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2016"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2015"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2014"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2013"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2012"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2011"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2010"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2009"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2008"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2007"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2006"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2005"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2004"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2003"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYENNE",
+    "year": "2002"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2025"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2024"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2023"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2022"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2021"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2020"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2019"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2018"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2017"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2016"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2015"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2014"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2013"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2012"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2011"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2010"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2009"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2008"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2007"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2006"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "CAYMAN",
+    "year": "2005"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "MACAN",
+    "year": "2025"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "MACAN",
+    "year": "2024"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "MACAN",
+    "year": "2023"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "MACAN",
+    "year": "2022"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "MACAN",
+    "year": "2021"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "MACAN",
+    "year": "2020"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "MACAN",
+    "year": "2019"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "MACAN",
+    "year": "2018"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "MACAN",
+    "year": "2017"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "MACAN",
+    "year": "2016"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "MACAN",
+    "year": "2015"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "MACAN",
+    "year": "2014"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "PANAMERA",
+    "year": "2025"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "PANAMERA",
+    "year": "2024"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "PANAMERA",
+    "year": "2023"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "PANAMERA",
+    "year": "2022"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "PANAMERA",
+    "year": "2021"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "PANAMERA",
+    "year": "2020"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "PANAMERA",
+    "year": "2019"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "PANAMERA",
+    "year": "2018"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "PANAMERA",
+    "year": "2017"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "PANAMERA",
+    "year": "2016"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "PANAMERA",
+    "year": "2015"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "PANAMERA",
+    "year": "2014"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "PANAMERA",
+    "year": "2013"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "PANAMERA",
+    "year": "2012"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "PANAMERA",
+    "year": "2011"
+  },
+  {
+    "make": "PORSCHE",
+    "model": "PANAMERA",
+    "year": "2010"
+  }
+]

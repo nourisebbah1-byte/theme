@@ -44923,25 +44923,17 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
     margin-bottom: 16px !important;
   }
 }
-.vehicle-filter-modal .vehicle-filter-modal-content .vehicle-filter-modal-body .vehicle-filter-form .vehicle-filter-fields.vehicle-filter-fields--4 {
+.vehicle-filter-modal .vehicle-filter-modal-content .vehicle-filter-modal-body .vehicle-filter-form .vehicle-filter-fields.vehicle-filter-fields--2x2 {
   display: grid !important;
-  grid-template-columns: 1fr !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   flex-direction: initial !important;
 }
-@media (min-width: 480px) {
-  .vehicle-filter-modal .vehicle-filter-modal-content .vehicle-filter-modal-body .vehicle-filter-form .vehicle-filter-fields.vehicle-filter-fields--4 {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+@media (max-width: 400px) {
+  .vehicle-filter-modal .vehicle-filter-modal-content .vehicle-filter-modal-body .vehicle-filter-form .vehicle-filter-fields.vehicle-filter-fields--2x2 {
+    grid-template-columns: 1fr !important;
   }
-  .vehicle-filter-modal .vehicle-filter-modal-content .vehicle-filter-modal-body .vehicle-filter-form .vehicle-filter-fields.vehicle-filter-fields--4 .vehicle-search-btn {
-    grid-column: span 2 !important;
-  }
-}
-@media (min-width: 640px) {
-  .vehicle-filter-modal .vehicle-filter-modal-content .vehicle-filter-modal-body .vehicle-filter-form .vehicle-filter-fields.vehicle-filter-fields--4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  }
-  .vehicle-filter-modal .vehicle-filter-modal-content .vehicle-filter-modal-body .vehicle-filter-form .vehicle-filter-fields.vehicle-filter-fields--4 .vehicle-search-btn {
-    grid-column: auto !important;
+  .vehicle-filter-modal .vehicle-filter-modal-content .vehicle-filter-modal-body .vehicle-filter-form .vehicle-filter-fields.vehicle-filter-fields--2x2 .vehicle-search-btn {
+    grid-column: span 1 !important;
   }
 }
 .vehicle-filter-modal .vehicle-filter-modal-content .vehicle-filter-modal-body .vehicle-filter-form .vehicle-select {
@@ -45531,7 +45523,7 @@ section.hero-section .hero-vehicle-filter {
   left: 20px !important;
   bottom: 20px !important;
   z-index: 10 !important;
-  max-width: min(720px, 100vw - 40px) !important;
+  max-width: 380px !important;
   width: 100% !important;
 }
 section.hero-section .hero-vehicle-filter .vehicle-filter-form {
@@ -45557,8 +45549,8 @@ section.hero-section .hero-vehicle-filter .vehicle-filter-fields {
   grid-column-gap: 8px !important;
   grid-row-gap: 8px !important;
 }
-section.hero-section .hero-vehicle-filter .vehicle-filter-fields.vehicle-filter-fields--4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+section.hero-section .hero-vehicle-filter .vehicle-filter-fields.vehicle-filter-fields--2x2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
 }
 section.hero-section .hero-vehicle-filter .vehicle-select {
   padding: 12px !important;
@@ -45667,14 +45659,6 @@ section.hero-section .hero-vehicle-filter .vin-search-btn {
 }
 section.hero-section .hero-vehicle-filter .vin-search-btn:hover {
   background-color: #023a6b !important;
-}
-@media (max-width: 1200px) {
-  section.hero-section .hero-vehicle-filter .vehicle-filter-fields--4 {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-  section.hero-section .hero-vehicle-filter .vehicle-filter-fields--4 .vehicle-search-btn {
-    grid-column: span 2 !important;
-  }
 }
 @media (max-width: 1024px) {
   section.hero-section .hero-vehicle-filter {

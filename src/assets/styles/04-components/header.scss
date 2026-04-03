@@ -1336,24 +1336,16 @@ salla-cart-summary:not(.cart-link-main) {
             margin-bottom: 16px !important;
           }
 
-          &.vehicle-filter-fields--4 {
+          &.vehicle-filter-fields--2x2 {
             display: grid !important;
-            grid-template-columns: 1fr !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
             flex-direction: unset !important;
 
-            @media (min-width: 480px) {
-              grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            @media (max-width: 400px) {
+              grid-template-columns: 1fr !important;
 
               .vehicle-search-btn {
-                grid-column: span 2 !important;
-              }
-            }
-
-            @media (min-width: 640px) {
-              grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-
-              .vehicle-search-btn {
-                grid-column: auto !important;
+                grid-column: span 1 !important;
               }
             }
           }

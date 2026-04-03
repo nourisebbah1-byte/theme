@@ -211,7 +211,7 @@ section.hero-section .hero-vehicle-filter {
   left: 20px !important;
   bottom: 20px !important;
   z-index: 10 !important;
-  max-width: min(720px, calc(100vw - 40px)) !important;
+  max-width: 380px !important;
   width: 100% !important;
   
   .vehicle-filter-form {
@@ -238,8 +238,9 @@ section.hero-section .hero-vehicle-filter {
     grid-column-gap: 8px !important;
     grid-row-gap: 8px !important;
 
-    &.vehicle-filter-fields--4 {
-      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    // Row 1: Make | Model — Row 2: Year | Search
+    &.vehicle-filter-fields--2x2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     }
   }
   
@@ -362,17 +363,6 @@ section.hero-section .hero-vehicle-filter {
     
     &:hover {
       background-color: #023a6b !important; // var(--dark-blue)
-    }
-  }
-}
-
-// Hero vehicle form: 4 columns → 2 on medium, 1 on small
-@media (max-width: 1200px) {
-  section.hero-section .hero-vehicle-filter .vehicle-filter-fields--4 {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-
-    .vehicle-search-btn {
-      grid-column: span 2 !important;
     }
   }
 }

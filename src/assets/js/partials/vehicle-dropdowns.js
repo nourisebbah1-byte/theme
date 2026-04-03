@@ -1,7 +1,9 @@
 /**
- * Cascading Make → Model → Year from dropdown_data.json.
- * Option values use make_val / model_val / year_val; Salla search uses visible labels.
+ * Cascading Make → Model → Year from make_model_year.json
+ * (rows: { make, model, year } strings). Salla search uses visible labels.
  */
+
+const DATA_FILE = 'make_model_year.json';
 
 let rowsCache = null;
 let loadPromise = null;
@@ -20,10 +22,10 @@ function loadRows() {
   if (loadPromise) {
     return loadPromise;
   }
-  loadPromise = fetch(assetUrl('dropdown_data.json'))
+  loadPromise = fetch(assetUrl(DATA_FILE))
     .then((r) => {
       if (!r.ok) {
-        throw new Error('dropdown_data');
+        throw new Error('make_model_year');
       }
       return r.json();
     })
@@ -38,22 +40,19 @@ function loadRows() {
   return loadPromise;
 }
 
-function uniqueBy(rows, keyText, keyVal) {
-  const m = new Map();
-  rows.forEach((row) => {
-    const v = row[keyVal];
-    if (v == null || v === '') {
+function uniqueStrings(rows, key, filterFn) {
+  const list = filterFn ? rows.filter(filterFn) : rows;
+  const seen = new Set();
+  const out = [];
+  list.forEach((row) => {
+    const t = String(row[key] ?? '').trim();
+    if (!t || seen.has(t)) {
       return;
     }
-    const key = String(v);
-    if (!m.has(key)) {
-      m.set(key, {
-        text: String(row[keyText] ?? ''),
-        value: key,
-      });
-    }
+    seen.add(t);
+    out.push({ text: t, value: t });
   });
-  return [...m.values()].sort((a, b) =>
+  return out.sort((a, b) =>
     a.text.localeCompare(b.text, undefined, { sensitivity: 'base' })
   );
 }
@@ -95,7 +94,7 @@ function bindTriple(rows, makeSel, modelSel, yearSel) {
     return;
   }
 
-  const makes = uniqueBy(rows, 'make', 'make_val');
+  const makes = uniqueStrings(rows, 'make');
   refillSelect(makeSel, makes, { disabled: false });
   refillSelect(modelSel, [], { disabled: true });
   refillSelect(yearSel, [], { disabled: true });
@@ -107,11 +106,7 @@ function bindTriple(rows, makeSel, modelSel, yearSel) {
       refillSelect(yearSel, [], { disabled: true });
       return;
     }
-    const models = uniqueBy(
-      rows.filter((r) => String(r.make_val) === mv),
-      'model',
-      'model_val'
-    );
+    const models = uniqueStrings(rows, 'model', (r) => String(r.make) === mv);
     refillSelect(modelSel, models, { disabled: false });
     refillSelect(yearSel, [], { disabled: true });
   });
@@ -124,12 +119,10 @@ function bindTriple(rows, makeSel, modelSel, yearSel) {
       return;
     }
     const years = sortYearOptions(
-      uniqueBy(
-        rows.filter(
-          (r) => String(r.make_val) === mv && String(r.model_val) === mdv
-        ),
+      uniqueStrings(
+        rows,
         'year',
-        'year_val'
+        (r) => String(r.make) === mv && String(r.model) === mdv
       )
     );
     refillSelect(yearSel, years, { disabled: false });

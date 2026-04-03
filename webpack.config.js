@@ -68,7 +68,7 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 { from: asset('images'), to: public('images') },
-                { from: asset('data/dropdown_data.json'), to: public('dropdown_data.json') },
+                { from: asset('data/make_model_year.json'), to: public('make_model_year.json') },
             ],
         }),
     ],
