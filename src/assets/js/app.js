@@ -25,6 +25,7 @@ class App extends AppHelpers {
     this.initVehicleFilterModal();
     this.initHeroSlider();
     setTimeout(() => this.initHeroSlider(), 500);
+    this.initMobileBottomNav();
 
     // Ensure #more-menu-dropdown exists before running changeMenuDirection
     const menuDirInterval = setInterval(() => {
@@ -459,6 +460,38 @@ isElementLoaded(selector){
         e.preventDefault();
         goTo(i);
       });
+    });
+  }
+
+  /**
+   * Mobile bottom bar: car filter = same as header toggle; search = Salla modal; top = scroll.
+   */
+  initMobileBottomNav() {
+    const nav = document.querySelector('[data-mobile-bottom-nav]');
+    if (!nav || nav.dataset.mobileBottomNavBound === '1') {
+      return;
+    }
+    nav.dataset.mobileBottomNavBound = '1';
+
+    const carBtn = nav.querySelector('#mobile-bottom-nav-car-filter');
+    const searchBtn = nav.querySelector('#mobile-bottom-nav-search');
+    const topBtn = nav.querySelector('#mobile-bottom-nav-top');
+
+    carBtn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('vehicle-filter-toggle-btn')?.click();
+    });
+
+    searchBtn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (window.salla?.event) {
+        salla.event.dispatch('search::open');
+      }
+    });
+
+    topBtn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 }
