@@ -186,8 +186,8 @@
             <span>{{ trans('blocks.home.or') }}</span>
           </div>
           <div class="vehicle-filter-vin">
-            <input type="text" class="vin-input" id="vehicle-filter-vin" placeholder="{{ trans('blocks.home.search_by_vin') }}">
-            <button class="vin-search-btn" id="vehicle-filter-vin-search-btn">{{ trans('blocks.home.search') }}</button>
+            <input type="text" class="vin-input" id="vehicle-filter-vin" name="vehicle-filter-vin" autocomplete="off" placeholder="{{ trans('blocks.home.search_by_vin') }}">
+            <button type="button" class="vin-search-btn" id="vehicle-filter-vin-search-btn">{{ trans('blocks.home.search') }}</button>
           </div>
         </div>
       </div>

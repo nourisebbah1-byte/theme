@@ -3,8 +3,8 @@ import Swal from 'sweetalert2';
 import Anime from './partials/anime';
 import initTootTip from './partials/tooltip';
 import AppHelpers from "./app-helpers";
-import { initVehicleDropdowns } from './partials/vehicle-dropdowns';
-import { initHeroVehicleSearchForm, wireModalVehicleSearch } from './partials/vehicle-search';
+import { initVehicleDropdowns, selectDisplayText } from './partials/vehicle-dropdowns';
+import { navigateToStoreSearch } from './partials/store-search';
 
 class App extends AppHelpers {
   constructor() {
@@ -26,7 +26,8 @@ class App extends AppHelpers {
     this.initAttachWishlistListeners();
     this.initVehicleFilterModal();
     initVehicleDropdowns();
-    initHeroVehicleSearchForm();
+    this.initHeroVehicleSearch();
+    setTimeout(() => this.initHeroVehicleSearch(), 500);
     this.initHeroSlider();
     setTimeout(() => this.initHeroSlider(), 500);
 
@@ -325,12 +326,73 @@ isElementLoaded(selector){
     });
   }
 
+  /**
+   * Hero “Choose your car”: combined selection labels → Salla search; VIN alone → Salla search.
+   * Lives in app.js so it runs on the home layout even when page slug is not `index`.
+   */
+  initHeroVehicleSearch() {
+    if (typeof window !== 'undefined' && window.__heroVehicleSearchBound) {
+      return;
+    }
+    const searchBtn = document.getElementById('vehicle-search-btn');
+    const vinBtn = document.getElementById('vehicle-vin-search-btn');
+    if (!searchBtn && !vinBtn) {
+      return;
+    }
+    if (typeof window !== 'undefined') {
+      window.__heroVehicleSearchBound = true;
+    }
+
+    if (searchBtn) {
+      searchBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const values = [
+          selectDisplayText(document.getElementById('vehicle-brand')),
+          selectDisplayText(document.getElementById('vehicle-model')),
+          selectDisplayText(document.getElementById('vehicle-year')),
+        ].filter((v) => v && v.trim() !== '');
+        if (values.length === 0) {
+          return;
+        }
+        navigateToStoreSearch(values.join(' '));
+      });
+    }
+
+    const vinInput = document.getElementById('vehicle-vin');
+    const runHeroVinSearch = (e) => {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      const vin = vinInput?.value?.trim() || '';
+      if (!vin) {
+        return;
+      }
+      navigateToStoreSearch(vin);
+    };
+
+    if (vinBtn) {
+      vinBtn.addEventListener('click', runHeroVinSearch);
+    }
+    if (vinInput) {
+      vinInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          runHeroVinSearch(e);
+        }
+      });
+    }
+  }
+
   initVehicleFilterModal() {
     // Wait for DOM to be ready
     const initModal = () => {
       const toggleBtn = document.getElementById('vehicle-filter-toggle-btn');
       const modal = document.getElementById('vehicle-filter-modal');
       const closeBtn = document.getElementById('vehicle-filter-close-btn');
+      const searchBtn = document.getElementById('vehicle-filter-search-btn');
+      const vinSearchBtn = document.getElementById('vehicle-filter-vin-search-btn');
+
       if (!toggleBtn || !modal) {
         return;
       }
@@ -371,7 +433,44 @@ isElementLoaded(selector){
       }
     });
 
-    wireModalVehicleSearch(closeModal);
+    // Handle search: Make + Model + Year as one keyword string → Salla search
+    if (searchBtn) {
+      searchBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const values = [
+          selectDisplayText(document.getElementById('vehicle-filter-brand')),
+          selectDisplayText(document.getElementById('vehicle-filter-model')),
+          selectDisplayText(document.getElementById('vehicle-filter-year')),
+        ].filter((v) => v && v.trim() !== '');
+        if (values.length === 0) {
+          return;
+        }
+        navigateToStoreSearch(values.join(' '));
+      });
+    }
+
+    const vinInput = document.getElementById('vehicle-filter-vin');
+    const runModalVinSearch = (e) => {
+      if (e) {
+        e.preventDefault();
+      }
+      const vin = vinInput?.value?.trim() || '';
+      if (!vin) {
+        return;
+      }
+      navigateToStoreSearch(vin);
+    };
+
+    if (vinSearchBtn) {
+      vinSearchBtn.addEventListener('click', runModalVinSearch);
+    }
+    if (vinInput) {
+      vinInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          runModalVinSearch(e);
+        }
+      });
+    }
     };
 
     // Initialize immediately if DOM is ready, otherwise wait
