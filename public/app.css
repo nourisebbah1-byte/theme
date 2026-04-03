@@ -52696,11 +52696,14 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
   font-size: 16px !important;
   color: #333333 !important;
   transition: color 0.3s ease !important;
+  line-height: 1 !important;
 }
 @media (max-width: 768px) {
   .s-block--latest-products .s-product-card-wishlist-btn button i,
   .s-block--latest-products .s-product-card-wishlist-btn salla-button i {
     font-size: 13px !important;
+    position: relative !important;
+    top: 2px !important;
   }
 }
 .s-block--latest-products .s-product-card-wishlist-btn.s-product-card-wishlist-added {

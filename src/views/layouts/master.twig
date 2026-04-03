@@ -73,7 +73,8 @@
         window.imageZoom = "{{theme.settings.get('imageZoom')}}"
         window.can_access_wallet = {{ user.can_access_wallet | json_encode }}
         window.enable_more_menu = "{{ theme.settings.get('enable_more_menu', true) }}"
-        window.enable_add_product_toast = "{{ theme.settings.get('enable_add_product_toast', true) }}"
+        {# Boolean (unquoted) — quoted strings like "false" are truthy in JS and break toast vs Swal routing #}
+        window.enable_add_product_toast = {{ theme.settings.get('enable_add_product_toast', true)|json_encode }}
     </script>
     
     {% hook 'head:start' %}

@@ -420,9 +420,12 @@
       font-size: 16px !important;
       color: #333333 !important;
       transition: color 0.3s ease !important;
+      line-height: 1 !important;
 
       @media (max-width: 768px) {
         font-size: 13px !important;
+        position: relative !important;
+        top: 2px !important;
       }
     }
   }

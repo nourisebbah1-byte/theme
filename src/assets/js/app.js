@@ -130,7 +130,10 @@ isElementLoaded(selector){
 
   initiateNotifier() {
     salla.notify.setNotifier(function (message, type, data) {
-      if (window.enable_add_product_toast && data?.data?.googleTags?.event === "addToCart") {
+      const customAddToastOn =
+        !!window.enable_add_product_toast &&
+        !!document.querySelector('salla-add-product-toast');
+      if (customAddToastOn && data?.data?.googleTags?.event === "addToCart") {
         return;
       }
       if (typeof message == 'object') {
