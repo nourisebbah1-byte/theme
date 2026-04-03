@@ -15,10 +15,10 @@
                 <div class="hero-slide-overlay" aria-hidden="true"></div>
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h2>MOBIL 1</h2>
-                        <p class="hero-tagline">Full Synthetic</p>
-                        <p class="hero-promo-line">It's more than just oil. It's liquid engineering.</p>
-                        <a href="{{ link('/') }}" class="shop-now-btn">{{ trans('blocks.home.shop_now') }} <i class="fas fa-arrow-right"></i></a>
+                        <h2>{{ trans('blocks.home.hero_slide_1_title') }}</h2>
+                        <p class="hero-tagline">{{ trans('blocks.home.hero_slide_1_tagline') }}</p>
+                        <p class="hero-promo-line">{{ trans('blocks.home.hero_slide_1_promo') }}</p>
+                        <a href="{{ link('/') }}" class="shop-now-btn">{{ trans('blocks.home.shop_now') }} <i class="sicon-sar"></i></a>
                     </div>
                     <div class="hero-image mobex-rs-root">
                         <div class="mobex-rs-stage mobex-rs-stage--s1" aria-hidden="true">
@@ -34,10 +34,10 @@
                 <div class="hero-slide-overlay" aria-hidden="true"></div>
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h2>WIPER BLADES</h2>
-                        <p class="hero-tagline">KEEP YOUR VISION CLEAR</p>
-                        <p class="hero-promo-line">Plus Price Lock on 100s of lines</p>
-                        <a href="{{ link('/') }}" class="shop-now-btn">{{ trans('blocks.home.shop_now') }} <i class="fas fa-arrow-right"></i></a>
+                        <h2>{{ trans('blocks.home.hero_slide_2_title') }}</h2>
+                        <p class="hero-tagline">{{ trans('blocks.home.hero_slide_2_tagline') }}</p>
+                        <p class="hero-promo-line">{{ trans('blocks.home.hero_slide_2_promo') }}</p>
+                        <a href="{{ link('/') }}" class="shop-now-btn">{{ trans('blocks.home.shop_now') }} <i class="sicon-sar"></i></a>
                     </div>
                     <div class="hero-image mobex-rs-root">
                         <div class="mobex-rs-stage mobex-rs-stage--s2" aria-hidden="true">
@@ -53,10 +53,10 @@
                 <div class="hero-slide-overlay" aria-hidden="true"></div>
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h2>JUMP STARTERS</h2>
-                        <p class="hero-tagline">START BATTERIES in SECONDS</p>
-                        <p class="hero-promo-line">Up tp 45% Off</p>
-                        <a href="{{ link('/') }}" class="shop-now-btn">{{ trans('blocks.home.shop_now') }} <i class="fas fa-arrow-right"></i></a>
+                        <h2>{{ trans('blocks.home.hero_slide_3_title') }}</h2>
+                        <p class="hero-tagline">{{ trans('blocks.home.hero_slide_3_tagline') }}</p>
+                        <p class="hero-promo-line">{{ trans('blocks.home.hero_slide_3_promo') }}</p>
+                        <a href="{{ link('/') }}" class="shop-now-btn">{{ trans('blocks.home.shop_now') }} <i class="sicon-sar"></i></a>
                     </div>
                     <div class="hero-image mobex-rs-root">
                         <div class="mobex-rs-stage mobex-rs-stage--s3" aria-hidden="true">
@@ -71,10 +71,10 @@
                 <div class="hero-slide-overlay" aria-hidden="true"></div>
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h2>BATTERIES</h2>
-                        <p class="hero-tagline">STAY CHARGED UP</p>
-                        <p class="hero-promo-line">Top brands — ready when you are.</p>
-                        <a href="{{ link('/') }}" class="shop-now-btn">{{ trans('blocks.home.shop_now') }} <i class="fas fa-arrow-right"></i></a>
+                        <h2>{{ trans('blocks.home.hero_slide_4_title') }}</h2>
+                        <p class="hero-tagline">{{ trans('blocks.home.hero_slide_4_tagline') }}</p>
+                        <p class="hero-promo-line">{{ trans('blocks.home.hero_slide_4_promo') }}</p>
+                        <a href="{{ link('/') }}" class="shop-now-btn">{{ trans('blocks.home.shop_now') }} <i class="sicon-sar"></i></a>
                     </div>
                     <div class="hero-image mobex-rs-root">
                         <div class="mobex-rs-stage mobex-rs-stage--s4" aria-hidden="true">
@@ -86,15 +86,15 @@
             </div>
         </div>
 
-        <div class="mobex-hero-controls" aria-label="Hero slider controls">
-            <button type="button" class="mobex-hero-nav mobex-hero-prev" aria-label="Previous slide"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
-            <div class="slider-dots mobex-hero-dots" role="tablist" aria-label="Hero slides">
-                <button type="button" class="dot active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
-                <button type="button" class="dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
-                <button type="button" class="dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
-                <button type="button" class="dot" role="tab" aria-selected="false" aria-label="Slide 4"></button>
+        <div class="mobex-hero-controls" aria-label="{{ trans('blocks.home.hero_slider_region') }}">
+            <button type="button" class="mobex-hero-nav mobex-hero-prev" aria-label="{{ trans('blocks.home.hero_slider_prev') }}"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+            <div class="slider-dots mobex-hero-dots" role="tablist" aria-label="{{ trans('blocks.home.hero_slider_dots_label') }}">
+                <button type="button" class="dot active" role="tab" aria-selected="true" aria-label="{{ trans('blocks.home.hero_slide_dot_1') }}"></button>
+                <button type="button" class="dot" role="tab" aria-selected="false" aria-label="{{ trans('blocks.home.hero_slide_dot_2') }}"></button>
+                <button type="button" class="dot" role="tab" aria-selected="false" aria-label="{{ trans('blocks.home.hero_slide_dot_3') }}"></button>
+                <button type="button" class="dot" role="tab" aria-selected="false" aria-label="{{ trans('blocks.home.hero_slide_dot_4') }}"></button>
             </div>
-            <button type="button" class="mobex-hero-nav mobex-hero-next" aria-label="Next slide"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+            <button type="button" class="mobex-hero-nav mobex-hero-next" aria-label="{{ trans('blocks.home.hero_slider_next') }}"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
         </div>
         
         {# Vehicle Filter - Fixed in Hero Banner #}

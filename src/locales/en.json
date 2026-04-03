@@ -76,7 +76,27 @@
       "save_25_all_one": "Save 25%. All in One!",
       "care_care_kit": "CARE CARE KIT",
       "keep_clean_shine": "Keep things clean and shinela",
-      "fifteen_percent_off": "15% off"
+      "fifteen_percent_off": "15% off",
+      "hero_slide_1_title": "MOBIL 1",
+      "hero_slide_1_tagline": "Full Synthetic",
+      "hero_slide_1_promo": "It's more than just oil. It's liquid engineering.",
+      "hero_slide_2_title": "WIPER BLADES",
+      "hero_slide_2_tagline": "KEEP YOUR VISION CLEAR",
+      "hero_slide_2_promo": "Plus Price Lock on 100s of lines",
+      "hero_slide_3_title": "JUMP STARTERS",
+      "hero_slide_3_tagline": "START BATTERIES IN SECONDS",
+      "hero_slide_3_promo": "Up to 45% off",
+      "hero_slide_4_title": "BATTERIES",
+      "hero_slide_4_tagline": "STAY CHARGED UP",
+      "hero_slide_4_promo": "Top brands — ready when you are.",
+      "hero_slider_region": "Hero slider controls",
+      "hero_slider_prev": "Previous slide",
+      "hero_slider_next": "Next slide",
+      "hero_slider_dots_label": "Hero slides",
+      "hero_slide_dot_1": "Slide 1",
+      "hero_slide_dot_2": "Slide 2",
+      "hero_slide_dot_3": "Slide 3",
+      "hero_slide_dot_4": "Slide 4"
     },
     "footer": {
       "demo_store": "Demo Store"
