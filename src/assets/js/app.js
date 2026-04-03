@@ -42,6 +42,8 @@ class App extends AppHelpers {
 
     initProductListPayloadLogging();
 
+    this.initLogSallaProductCardImages();
+
     salla.comment.event.onAdded(() => window.location.reload());
 
     this.status = 'ready';
@@ -433,6 +435,94 @@ isElementLoaded(selector){
    * Hero dots: sync desktop + mobile slides (runs on any page with markup;
    * Home class only loads for slug "index", but Salla home may use another slug).
    */
+  /**
+   * After DOM is ready: find Twilight <salla-product-card>, read card.product.id,
+   * call salla.product.fetch(id) and log product.images[] grouped by name + id.
+   */
+  initLogSallaProductCardImages() {
+    const seenIds = new Set();
+
+    const run = async () => {
+      if (typeof salla === 'undefined' || !salla.product || typeof salla.product.fetch !== 'function') {
+        console.warn('[Mobex salla-product-card] salla.product.fetch is not available on this page.');
+        return;
+      }
+
+      const cards = document.querySelectorAll('salla-product-card');
+      if (!cards.length) {
+        return;
+      }
+
+      const byId = new Map();
+      cards.forEach((card) => {
+        const product = card.product;
+        const id = product?.id;
+        if (id == null || id === '') {
+          return;
+        }
+        const numId = Number(id);
+        if (!byId.has(numId)) {
+          byId.set(numId, {
+            name: product?.name || '(no name)',
+          });
+        }
+      });
+
+      if (!byId.size) {
+        console.info(
+          '[Mobex salla-product-card] Found <salla-product-card> nodes but none had card.product.id yet — list may still be hydrating; retry runs once after delay.'
+        );
+        return;
+      }
+
+      const pending = [...byId.entries()].filter(([productId]) => !seenIds.has(productId));
+      if (!pending.length) {
+        return;
+      }
+
+      console.groupCollapsed(
+        `[Mobex salla-product-card] salla.product.fetch → images (${pending.length} product(s))`
+      );
+
+      for (const [productId, { name }] of pending) {
+        seenIds.add(productId);
+
+        const label = `${name} — id: ${productId}`;
+        try {
+          const res = await salla.product.fetch(productId);
+          const productData = res?.data ?? res?.product ?? res;
+          const images = productData?.images;
+          const list = Array.isArray(images) ? images : [];
+
+          console.group(label);
+          console.log('imageCount:', list.length);
+          console.log('images[] (full):', list);
+          if (list.length && typeof list[0] === 'object' && list[0] !== null) {
+            console.log('first entry keys:', Object.keys(list[0]));
+          }
+          console.groupEnd();
+        } catch (err) {
+          console.group(label);
+          console.error('salla.product.fetch failed:', err);
+          console.groupEnd();
+        }
+      }
+
+      console.groupEnd();
+    };
+
+    const schedule = () => {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => setTimeout(run, 0), { once: true });
+      } else {
+        setTimeout(run, 0);
+      }
+    };
+
+    schedule();
+    setTimeout(run, 2500);
+  }
+
   initHeroSlider() {
     if (document.querySelector('.mobex-hero-slider')) {
       return;
