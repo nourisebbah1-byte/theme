@@ -52607,14 +52607,10 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
   z-index: 20 !important;
   margin: 0 !important;
   padding: 0 !important;
-  width: 32px !important;
-  width: var(--latest-wl-hit) !important;
-  height: 32px !important;
-  height: var(--latest-wl-hit) !important;
-  min-width: 32px !important;
-  min-width: var(--latest-wl-hit) !important;
-  min-height: 32px !important;
-  min-height: var(--latest-wl-hit) !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -52630,11 +52626,6 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
   touch-action: manipulation !important;
   -webkit-tap-highlight-color: transparent !important;
   color: #333 !important;
-  isolation: isolate !important;
-}
-.s-block--latest-products .s-product-card-wishlist-btn {
-  --latest-wl-hit: 32px;
-  /* Host must match inner button size or taps miss the custom element (esp. mobile) */
 }
 @media (max-width: 768px) {
   .s-block--latest-products .s-product-card-wishlist-btn {
@@ -52644,10 +52635,7 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
     left: 10px !important;
     inset-inline-end: auto !important;
     left: auto !important;
-    z-index: 50 !important;
-  }
-  .s-block--latest-products .s-product-card-wishlist-btn {
-    --latest-wl-hit: 34px;
+    z-index: 30 !important;
   }
 }
 .s-product-card-image .s-block--latest-products .s-product-card-wishlist-btn {
@@ -52660,10 +52648,10 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
 .s-block--latest-products .s-product-card-wishlist-btn .s-button {
   margin: 0 !important;
   box-sizing: border-box !important;
-  width: 100% !important;
-  height: 100% !important;
-  min-width: 100% !important;
-  min-height: 100% !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
   padding: 0 !important;
   border-radius: 50% !important;
   display: inline-flex !important;
@@ -52674,7 +52662,15 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
   border: 1px solid rgba(0, 0, 0, 0.1) !important;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
-  pointer-events: auto !important;
+}
+@media (max-width: 768px) {
+  .s-block--latest-products .s-product-card-wishlist-btn button,
+  .s-block--latest-products .s-product-card-wishlist-btn .s-button {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    min-height: 34px !important;
+  }
 }
 .s-block--latest-products .s-product-card-wishlist-btn:hover button, .s-block--latest-products .s-product-card-wishlist-btn:hover .s-button {
   border-color: rgba(0, 0, 0, 0.14) !important;
@@ -53124,9 +53120,9 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
     pointer-events: none !important;
   }
   .s-block--latest-products .s-product-card-content-footer {
-    /* Footer spans under the image; without this it steals taps over the wishlist */
+    /* Full-bleed footer sits over image column; empty flex area was eating taps on the wishlist */
   }
-  .s-block--latest-products .s-product-card-content-footer salla-button.s-product-card-wishlist-btn {
+  .s-block--latest-products .s-product-card-content-footer > * {
     pointer-events: auto !important;
   }
   /* One arrow only: hide Salla bag icon; mask arrow comes from ::after on host */
