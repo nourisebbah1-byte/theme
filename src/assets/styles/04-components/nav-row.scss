@@ -1,38 +1,43 @@
-/* Navigation Row 2 - NO background, menu in one line - HALF HEIGHT */
+/* Navigation Row 2 — elegant strip: categories + primary menu + garage */
 .main-nav-row-2 {
-  background-color: transparent;
-  padding: 5px 0 !important; // Cut to half to remove white space
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+  border-bottom: 1px solid rgba(3, 76, 140, 0.1);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  padding: 10px 0 !important;
   margin-bottom: 0 !important;
   margin-top: 0 !important;
   min-height: auto !important;
   height: auto !important;
-  transition: all 0.3s ease !important;
+  transition: background 0.25s ease, box-shadow 0.25s ease !important;
   
-  // Sticky state when scrolling - keep same background color
   &.sticky-nav-row {
-    background-color: transparent !important; // Keep same as non-sticky
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+    background: linear-gradient(180deg, #ffffff 0%, #f4f6f9 100%) !important;
+    box-shadow: 0 2px 12px rgba(3, 76, 140, 0.08) !important;
   }
   
   .container {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 20px;
     
     > * {
       display: inline-flex;
-      align-items: baseline;
-      vertical-align: baseline;
+      align-items: center;
+      vertical-align: middle;
     }
 
-    // Ensure spacing between button and menu
     > .flex.items-center {
-      gap: 40px !important;
+      gap: 28px !important;
       
       @media (max-width: 1024px) {
-        gap: 25px !important;
+        gap: 18px !important;
       }
     }
+  }
+
+  .main-nav-row-2-inner {
+    align-items: center !important;
+    min-height: 44px;
   }
 
   // Add space between categories button and menu
@@ -65,36 +70,43 @@
     margin-left: 0 !important; // Reset any existing margin
   }
   
-  // All Categories Button - Left (same line as menu, aligned vertically with menu items) - HALF HEIGHT
   .all-categories-btn {
-    background-color: #f29f05;
-    color: #000000;
-    border: none;
-    padding: 4px 12px !important; // Reduced padding to cut height in half
-    border-radius: 3px;
+    background: linear-gradient(180deg, #f5a623 0%, #e8940a 100%);
+    color: #1a1a1a;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 0 16px !important;
+    border-radius: 8px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.02em;
     display: inline-flex;
     align-items: center;
-    transition: background-color 0.3s;
-    font-size: 14px;
+    justify-content: center;
+    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
     text-decoration: none;
-    height: auto !important;
-    line-height: 1.2 !important; // Reduced line-height
+    min-height: 40px;
+    line-height: 1.25 !important;
     white-space: nowrap;
     gap: 8px;
     flex-shrink: 0;
     margin: 0;
-    vertical-align: baseline;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
     
     &:hover {
-      background-color: #e68f04;
-      color: #000000;
+      background: linear-gradient(180deg, #ffb32e 0%, #f5a623 100%);
+      color: #111;
+      box-shadow: 0 2px 8px rgba(232, 148, 10, 0.35);
+    }
+
+    &:active {
+      transform: scale(0.98);
     }
     
     i {
-      color: #000000;
-      font-size: 14px;
+      color: #1a1a1a;
+      font-size: 15px;
+      opacity: 0.9;
     }
   }
   
@@ -106,87 +118,103 @@
     min-width: 0; // Allow flex shrinking
   }
   
-  // Navigation Menu - Center, ONE LINE, no wrapping - FIXED - HALF HEIGHT
   custom-main-menu {
     display: inline-block !important;
     width: 100%;
     overflow: visible;
     margin: 0;
     padding: 0;
-    vertical-align: baseline;
+    vertical-align: middle;
     min-height: auto !important;
     height: auto !important;
     
-    // Hide mobile menu in desktop view
     #mobile-menu {
       display: none !important;
     }
     
-    // Show desktop menu
     .desktop-menu {
       display: flex !important;
-      align-items: baseline !important;
+      align-items: center !important;
       justify-content: center !important;
       list-style: none !important;
       margin: 0 !important;
-      padding: 0 !important;
-      gap: 30px !important;
+      padding: 4px 8px !important;
+      gap: 4px !important;
       flex-wrap: nowrap !important;
       white-space: nowrap !important;
-      overflow: visible !important;
+      overflow-x: auto !important;
+      overflow-y: visible !important;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
       width: auto !important;
-      max-width: none !important;
+      max-width: 100% !important;
       flex-direction: row !important;
-      vertical-align: baseline;
+      vertical-align: middle;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
     
-    // Override .main-menu flex-wrap from menus.scss (for mobile)
     .main-menu:not(.desktop-menu),
     ul:not(.desktop-menu) {
-      display: none !important; // Hide mobile menu in nav row
+      display: none !important;
     }
     
     li {
-      display: inline-block !important;
+      display: inline-flex !important;
       flex-shrink: 0 !important;
       white-space: nowrap !important;
       float: none !important;
       position: relative !important;
-      vertical-align: baseline;
+      vertical-align: middle;
       margin: 0;
       padding: 0;
       
-      // Override root-level padding that might cause wrapping
       &.root-level {
-        display: inline-block !important;
-        vertical-align: baseline;
+        display: inline-flex !important;
+        align-items: center !important;
+        vertical-align: middle;
         
         > a {
-          padding-top: 0 !important;
-          padding-bottom: 0 !important;
-          padding-left: 0 !important;
-          padding-right: 0 !important;
-          vertical-align: baseline;
-          line-height: 1.2 !important; // Reduced line-height to match button
+          padding: 8px 14px !important;
+          vertical-align: middle;
+          line-height: 1.35 !important;
+          border-radius: 8px;
         }
+
+        &:not(:first-child) {
+          border-inline-start: 1px solid rgba(3, 76, 140, 0.1);
+          margin-inline-start: 2px;
+          padding-inline-start: 6px;
+        }
+      }
+
+      &.has-children.root-level > a::after {
+        opacity: 0.4;
       }
     }
     
     a {
-      color: #111 !important;
+      color: #2d3748 !important;
       text-decoration: none !important;
-      font-weight: 500;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.02em;
       padding: 0;
-      transition: all 0.3s;
+      transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
       position: relative;
       white-space: nowrap !important;
-      display: inline-block !important;
-      line-height: 1.2 !important; // Reduced line-height to match button
+      display: inline-flex !important;
+      align-items: center !important;
+      line-height: 1.35 !important;
       
       &:hover,
       &.active {
-        color: #bf3617 !important;
-        text-decoration: underline !important;
+        color: #034c8c !important;
+        background-color: rgba(3, 76, 140, 0.08) !important;
+        text-decoration: none !important;
+        box-shadow: none !important;
       }
     }
   }
