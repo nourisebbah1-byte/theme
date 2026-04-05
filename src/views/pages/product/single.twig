@@ -13,7 +13,6 @@
                         <li><button type="button" class="mobex-pdp-nav-tab is-active" role="tab" aria-selected="true" id="mobex-pdp-tab-image" aria-controls="mobex-pdp-panel-image" data-mobex-pdp-tab="image">{{ trans('pages.products.pdp_tab_image') }}</button></li>
                         <li><button type="button" class="mobex-pdp-nav-tab" role="tab" aria-selected="false" id="mobex-pdp-tab-info" aria-controls="mobex-pdp-panel-info" data-mobex-pdp-tab="info">{{ trans('pages.products.pdp_tab_info') }}</button></li>
                         <li><button type="button" class="mobex-pdp-nav-tab" role="tab" aria-selected="false" id="mobex-pdp-tab-description" aria-controls="mobex-pdp-panel-description" data-mobex-pdp-tab="description">{{ trans('pages.products.pdp_tab_description') }}</button></li>
-                        <li><button type="button" class="mobex-pdp-nav-tab" role="tab" aria-selected="false" id="mobex-pdp-tab-vehicles" aria-controls="mobex-pdp-panel-vehicles" data-mobex-pdp-tab="vehicles">{{ trans('pages.products.pdp_tab_vehicles') }}</button></li>
                         {% if store.settings.rating.show_on_product %}
                         <li><button type="button" class="mobex-pdp-nav-tab" role="tab" aria-selected="false" id="mobex-pdp-tab-reviews" aria-controls="mobex-pdp-panel-reviews" data-mobex-pdp-tab="reviews">{{ trans('pages.products.pdp_tab_reviews') }}</button></li>
                         {% endif %}
@@ -215,53 +214,60 @@
                                         <digital-files-settings settings='{{ product.digital_files_settings|json_encode }}'></digital-files-settings>
                                     {% endif %}
 
-                                    {% if product.is_hidden_quantity or product.type == 'booking' %}
-                                        <input type="hidden" value="1" name="quantity" aria-label="{{ trans('pages.products.quantity') }}"/>
-                                    {% else %}
-                                        <div class="sticky-product-bar__quantity center-between mb-4">
-                                            <span class="mobex-pdp-qty-label">{{ trans('pages.products.quantity') }}</span>
-                                            <salla-quantity-input max="{{ product.max_quantity }}" value="1" name="quantity"
-                                                aria-label="{{ trans('pages.products.quantity') }}"
-                                                class="border-gray-200 flex justify-end w-full sm:w-auto"></salla-quantity-input>
-                                        </div>
-                                    {% endif %}
+                                    <div class="mobex-pdp-cart-actions">
+                                        {% if product.is_hidden_quantity or product.type == 'booking' %}
+                                            <input type="hidden" value="1" name="quantity" aria-label="{{ trans('pages.products.quantity') }}"/>
+                                        {% else %}
+                                            <div class="quantity mobex-pdp-quantity">
+                                                <span class="mobex-pdp-qty-label">{{ trans('pages.products.quantity') }}</span>
+                                                <div class="variation-calc mobex-pdp-variation-calc">
+                                                    <salla-quantity-input
+                                                        max="{{ product.max_quantity }}"
+                                                        value="1"
+                                                        name="quantity"
+                                                        aria-label="{{ trans('pages.products.quantity') }}"
+                                                        class="mobex-pdp-qty-input"></salla-quantity-input>
+                                                </div>
+                                            </div>
+                                        {% endif %}
 
-                                    <salla-add-product-button
-                                        {{ theme.settings.get('sticky_add_to_cart') ? ' support-sticky-bar' : '' }}
-                                        {{ product.is_require_shipping ? 'required-shipping' : '' }}
-                                        {{ product.has_preorder_campaign ? 'has-pre-order' : '' }}
-                                        amount="{{ product.base_currency_price }}"
-                                        class="mobex-pdp-btn-add w-full sticky-product-bar__btn"
-                                        product-status="{{ product.status }}"
-                                        product-type="{{ product.type }}"
-                                        product-id="{{ product.id }}"
-                                        loader-position="end"
-                                        type="submit"
-                                        width="wide"
-                                        {% if product.notify_availability %}
-                                            {{ product.notify_availability.subscribed ? 'is-subscribed' : '' }}
-                                            channels="{{ product.notify_availability.channels|join(',') }}"
-                                            subscribed-options="{{ product.notify_availability.subscribed_options|json_encode }}"
-                                            {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
-                                        {% endif %}>
-                                        {{ product.add_to_cart_label }}
-                                    </salla-add-product-button>
-
-                                    {% if product.can_quick_buy %}
                                         <salla-add-product-button
-                                            quick-buy
+                                            {{ theme.settings.get('sticky_add_to_cart') ? ' support-sticky-bar' : '' }}
                                             {{ product.is_require_shipping ? 'required-shipping' : '' }}
+                                            {{ product.has_preorder_campaign ? 'has-pre-order' : '' }}
                                             amount="{{ product.base_currency_price }}"
-                                            class="mobex-pdp-btn-buy w-full"
+                                            class="mobex-pdp-btn-add single_add_to_cart_button w-full sticky-product-bar__btn"
                                             product-status="{{ product.status }}"
                                             product-type="{{ product.type }}"
                                             product-id="{{ product.id }}"
                                             loader-position="end"
-                                            type="button"
-                                            width="wide">
-                                            {{ trans('pages.products.buy_now') }}
+                                            type="submit"
+                                            width="wide"
+                                            {% if product.notify_availability %}
+                                                {{ product.notify_availability.subscribed ? 'is-subscribed' : '' }}
+                                                channels="{{ product.notify_availability.channels|join(',') }}"
+                                                subscribed-options="{{ product.notify_availability.subscribed_options|json_encode }}"
+                                                {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
+                                            {% endif %}>
+                                            {{ product.add_to_cart_label }}
                                         </salla-add-product-button>
-                                    {% endif %}
+
+                                        {% if product.can_quick_buy %}
+                                            <salla-add-product-button
+                                                quick-buy
+                                                {{ product.is_require_shipping ? 'required-shipping' : '' }}
+                                                amount="{{ product.base_currency_price }}"
+                                                class="mobex-pdp-btn-buy buy-now-button w-full"
+                                                product-status="{{ product.status }}"
+                                                product-type="{{ product.type }}"
+                                                product-id="{{ product.id }}"
+                                                loader-position="end"
+                                                type="button"
+                                                width="wide">
+                                                {{ trans('pages.products.buy_now') }}
+                                            </salla-add-product-button>
+                                        {% endif %}
+                                    </div>
                                 </form>
 
                                 {% if product.is_giftable %}
@@ -349,32 +355,6 @@
                                     </article>
                                 {% endif %}
                             </div>
-                        </div>
-                    </section>
-
-                    <section id="mobex-pdp-panel-vehicles" class="mobex-pdp-panel mobex-pdp-panel--rich" role="tabpanel" aria-labelledby="mobex-pdp-tab-vehicles" data-mobex-pdp-panel="vehicles">
-                        <div class="single-product-vehicles">
-                            <h2>{{ trans('pages.products.pdp_vehicles_heading') }}</h2>
-                            <p class="text-gray-600 text-sm">{{ trans('pages.products.pdp_vehicles_hint') }}</p>
-                            <table class="shop_table shop_table_responsive">
-                                <thead>
-                                    <tr>
-                                        <th colspan="3">
-                                            <input type="search" class="single-product-vehicles-search w-full max-w-md border border-gray-200 rounded px-3 py-2 text-sm" placeholder="{{ trans('pages.products.pdp_vehicles_filter') }}" aria-label="{{ trans('pages.products.pdp_vehicles_filter') }}">
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th>{{ trans('pages.products.pdp_vehicle_make') }}</th>
-                                        <th>{{ trans('pages.products.pdp_vehicle_model') }}</th>
-                                        <th>{{ trans('pages.products.pdp_vehicle_year') }}</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="3" class="text-gray-500 text-sm">{{ trans('pages.products.pdp_vehicles_empty') }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
                         </div>
                     </section>
 

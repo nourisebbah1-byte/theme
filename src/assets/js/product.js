@@ -80,23 +80,6 @@ class Product extends BasePage {
             });
         });
 
-        const vehicleSearch = document.querySelector('.single-product-vehicles-search');
-        const vehicleTable = document.querySelector('.single-product-vehicles table');
-        if (vehicleSearch && vehicleTable) {
-            vehicleSearch.addEventListener('input', () => {
-                const q = vehicleSearch.value.trim().toLowerCase();
-                const rows = vehicleTable.querySelectorAll('tbody tr');
-                rows.forEach((tr) => {
-                    if (!q) {
-                        tr.style.display = '';
-                        return;
-                    }
-                    const text = tr.textContent.toLowerCase();
-                    tr.style.display = text.includes(q) ? '' : 'none';
-                });
-            });
-        }
-
         document.querySelectorAll('[data-mobex-pdp-goto-reviews]').forEach((a) => {
             a.addEventListener('click', (e) => {
                 e.preventDefault();

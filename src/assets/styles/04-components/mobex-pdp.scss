@@ -230,11 +230,19 @@ $mob-pdp: '.mobex-pdp-page-root';
     margin-inline-end: 10px;
   }
 
-  /* Cart form */
+  /* Cart form — Mobex PDP (reference product.html) */
   .summary form.cart.mobex-pdp-cart {
     margin-top: 8px;
     padding: 0;
     border: none;
+  }
+
+  .mobex-pdp-cart-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 10px;
   }
 
   .mobex-pdp-qty-label {
@@ -245,28 +253,251 @@ $mob-pdp: '.mobex-pdp-page-root';
     color: #111;
   }
 
-  .mobex-pdp-cart .sticky-product-bar__quantity {
-    margin-bottom: 16px !important;
+  .mobex-pdp-quantity {
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 280px;
   }
 
-  .mobex-pdp-cart salla-add-product-button {
+  .mobex-pdp-variation-calc {
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    min-height: 48px;
+  }
+
+  .mobex-pdp-variation-calc salla-quantity-input {
     display: flex !important;
+    flex: 1 1 auto;
+    width: 100% !important;
+    max-width: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  .mobex-pdp-variation-calc salla-quantity-input .s-quantity-input-container,
+  .mobex-pdp-variation-calc salla-quantity-input .s-quantity-input-wrapper {
+    border: none !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    justify-content: space-between !important;
+    gap: 0 !important;
+    padding: 0 4px !important;
+    min-height: 48px !important;
+  }
+
+  .mobex-pdp-variation-calc salla-quantity-input .s-quantity-input-input,
+  .mobex-pdp-variation-calc salla-quantity-input input {
+    border: none !important;
+    box-shadow: none !important;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    background: transparent !important;
+  }
+
+  .mobex-pdp-variation-calc salla-quantity-input .s-quantity-input-button {
+    border-radius: 0 !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  /* Add to cart / Buy now — full width, Mobex colors + FA icons on inner control */
+  .mobex-pdp-cart salla-add-product-button {
+    display: block !important;
     width: 100% !important;
     max-width: 100% !important;
+    margin-top: 0 !important;
+  }
+
+  .mobex-pdp-cart salla-add-product-button salla-button,
+  .mobex-pdp-cart salla-add-product-button .s-add-product-button-main {
+    width: 100% !important;
+    display: block !important;
+  }
+
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-add salla-button button,
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-add salla-button .s-button-btn,
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-add button {
+    width: 100% !important;
     min-height: 56px !important;
     border-radius: 9px !important;
+    padding: 0 16px !important;
     font-weight: 700 !important;
-    margin-top: 10px !important;
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    box-shadow: none !important;
+    border: none !important;
+    background-color: #ffa800 !important;
+    color: #111 !important;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 
-  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-add {
-    --color-primary: #ffa800;
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-add salla-button button::before,
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-add .s-button-btn::before {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    content: '\f07a';
+    font-size: 1.05rem;
+    line-height: 1;
+    display: inline-block;
   }
 
-  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy {
-    background: #004d99 !important;
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-add salla-button button::after,
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-add .s-button-btn::after {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    content: '\f061';
+    font-size: 0.85rem;
+    line-height: 1;
+    display: inline-block;
+    margin-inline-start: 4px;
+    opacity: 0.9;
+  }
+
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-add salla-button button:hover,
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-add .s-button-btn:hover,
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-add button:hover {
+    background-color: #e09600 !important;
+    color: #111 !important;
+  }
+
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-button button,
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-button .s-button-btn,
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy button {
+    width: 100% !important;
+    min-height: 56px !important;
+    border-radius: 9px !important;
+    padding: 0 16px !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    box-shadow: none !important;
+    border: none !important;
+    background-color: #004d99 !important;
     color: #fff !important;
-    border-color: #004d99 !important;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-button button::before,
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy .s-button-btn::before {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    content: '\f07a';
+    font-size: 1.05rem;
+    line-height: 1;
+    display: inline-block;
+    color: #fff;
+  }
+
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-button button::after,
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy .s-button-btn::after {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    content: '\f061';
+    font-size: 0.85rem;
+    line-height: 1;
+    display: inline-block;
+    margin-inline-start: 4px;
+    color: #fff;
+    opacity: 0.95;
+  }
+
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-button button:hover,
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy .s-button-btn:hover,
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy button:hover {
+    background-color: #003d7a !important;
+    color: #fff !important;
+  }
+
+  /* quick-buy often renders salla-quick-buy instead of salla-button */
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-quick-buy {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-quick-buy .s-quick-buy-button,
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-quick-buy button[type='button'] {
+    width: 100% !important;
+    min-height: 56px !important;
+    border-radius: 9px !important;
+    padding: 0 16px !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    box-shadow: none !important;
+    border: none !important;
+    background-color: #004d99 !important;
+    color: #fff !important;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-quick-buy .s-quick-buy-button svg {
+    display: none !important;
+  }
+
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-quick-buy .s-quick-buy-button::before {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    content: '\f07a';
+    font-size: 1.05rem;
+    line-height: 1;
+    display: inline-block;
+    color: #fff;
+  }
+
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-quick-buy .s-quick-buy-button::after {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    content: '\f061';
+    font-size: 0.85rem;
+    line-height: 1;
+    display: inline-block;
+    margin-inline-start: 4px;
+    color: #fff;
+    opacity: 0.95;
+  }
+
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-quick-buy .s-quick-buy-button:hover,
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-quick-buy button:hover {
+    background-color: #003d7a !important;
+    color: #fff !important;
+  }
+
+  [dir='rtl'] .mobex-pdp-cart salla-add-product-button salla-button button::after,
+  [dir='rtl'] .mobex-pdp-cart salla-add-product-button .s-button-btn::after,
+  [dir='rtl'] .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-quick-buy .s-quick-buy-button::after {
+    transform: scaleX(-1);
+  }
+
+  @media (max-width: 767px) {
+    .summary form.cart.mobex-pdp-cart {
+      padding: 20px 16px;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      background: #fff;
+    }
+
+    .mobex-pdp-quantity {
+      max-width: none;
+    }
   }
 
   @media (min-width: 1280px) {
@@ -508,34 +739,6 @@ $mob-pdp: '.mobex-pdp-page-root';
     margin: 0 0 12px;
     line-height: 1.55;
     color: #444;
-  }
-
-  .single-product-vehicles {
-    max-width: 900px;
-  }
-
-  .single-product-vehicles h2 {
-    font-size: 20px;
-    margin: 0 0 8px;
-  }
-
-  .single-product-vehicles .shop_table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 16px;
-    font-size: 14px;
-  }
-
-  .single-product-vehicles .shop_table th,
-  .single-product-vehicles .shop_table td {
-    border: 1px solid #e0e0e0;
-    padding: 10px 12px;
-    text-align: start;
-  }
-
-  .single-product-vehicles .shop_table thead th {
-    background: #f5f5f5;
-    font-weight: 700;
   }
 
   /* Mobile: stacked panels, tab scroll */
