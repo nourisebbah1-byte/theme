@@ -28,12 +28,12 @@ class Home extends BasePage {
             return;
         }
 
+        const wrap = root.parentElement;
         const slides = root.querySelectorAll('.mobex-hero-slide');
-        const heroScope = root.closest('.mobex-hero') || root.parentElement || document;
-        const dots = heroScope.querySelectorAll('.mobex-hero-dots .dot');
-        const prevBtn = heroScope.querySelector('.mobex-hero-prev');
-        const nextBtn = heroScope.querySelector('.mobex-hero-next');
-        if (!slides.length || !dots.length) {
+        const dots = wrap ? wrap.querySelectorAll('.mobex-hero-dots .dot') : [];
+        const prevBtn = wrap?.querySelector('.mobex-hero-prev') ?? null;
+        const nextBtn = wrap?.querySelector('.mobex-hero-next') ?? null;
+        if (!wrap || !slides.length || !dots.length) {
             return;
         }
 
@@ -557,39 +557,5 @@ class Home extends BasePage {
     }
 }
 
-/**
- * Salla home `page.slug` is not always `index` (often `home`, empty, or store-specific).
- * If we only gate on `index`, hero + featured-brands JS never runs.
- * Boot when Mobex home markup exists or slug looks like the storefront home.
- */
-function mobexHomeShouldInit() {
-    if (typeof document === 'undefined') {
-        return false;
-    }
-    if (document.querySelector('.mobex-hero-slider') || document.querySelector('[data-mobex-fb-carousel]')) {
-        return true;
-    }
-    try {
-        if (typeof salla === 'undefined' || !salla.config || typeof salla.config.get !== 'function') {
-            return false;
-        }
-        const slug = salla.config.get('page.slug');
-        const s = slug == null ? '' : String(slug);
-        return s === 'index' || s === 'home' || s === '';
-    } catch (e) {
-        return false;
-    }
-}
-
-function bootHome() {
-    if (!mobexHomeShouldInit()) {
-        return;
-    }
-    if (window.app?.status === 'ready') {
-        (new Home()).initiate(null);
-    } else {
-        document.addEventListener('theme::ready', () => (new Home()).initiate(null), { once: true });
-    }
-}
-
-bootHome();
+// home.js is only enqueued on the home template; Salla may report page.slug as something other than "index".
+Home.initiateWhenReady();
