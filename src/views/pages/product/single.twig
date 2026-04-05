@@ -7,7 +7,7 @@
         </nav>
 
         <div id="product-{{ product.id }}" class="product type-product mobex-pdp-product">
-            <div class="single-product-wrapper">
+            <div class="single-product-wrapper main-content w-full min-w-0">
                 <header class="mobex-pdp-head">
                     <ul class="mobex-pdp-nav-tabs" role="tablist" aria-label="{{ trans('pages.products.pdp_tabs_label') }}">
                         <li><button type="button" class="mobex-pdp-nav-tab is-active" role="tab" aria-selected="true" id="mobex-pdp-tab-image" aria-controls="mobex-pdp-panel-image" data-mobex-pdp-tab="image">{{ trans('pages.products.pdp_tab_image') }}</button></li>
@@ -200,7 +200,7 @@
 
                                 {% hook 'product:single.description' %}
 
-                                <form class="form product-form cart mobex-pdp-cart" enctype="multipart/form-data" method="post"
+                                <form id="product-form-{{ product.id }}" class="form product-form mobex-pdp-cart" enctype="multipart/form-data" method="post"
                                       onsubmit="return salla.form.onSubmit('cart.addItem', event)">
                                     <input type="hidden" name="id" value="{{ product.id }}">
 
@@ -218,60 +218,70 @@
                                         <digital-files-settings settings='{{ product.digital_files_settings|json_encode }}'></digital-files-settings>
                                     {% endif %}
 
-                                    <div class="mobex-pdp-cart-actions">
-                                        {% if product.is_hidden_quantity or product.type == 'booking' %}
-                                            <input type="hidden" value="1" name="quantity" aria-label="{{ trans('pages.products.quantity') }}"/>
-                                        {% else %}
-                                            <div class="quantity mobex-pdp-quantity">
-                                                <span class="mobex-pdp-qty-label">{{ trans('pages.products.quantity') }}</span>
-                                                <div class="variation-calc mobex-pdp-variation-calc">
-                                                    <salla-quantity-input
-                                                        max="{{ product.max_quantity }}"
-                                                        value="1"
-                                                        name="quantity"
-                                                        aria-label="{{ trans('pages.products.quantity') }}"
-                                                        class="mobex-pdp-qty-input"></salla-quantity-input>
+                                    {# sticky-product-bar: expected by Salla add-product-button + sticky bar; inner layout stays Mobex-styled #}
+                                    <section class="sticky-product-bar mobex-pdp-sticky-product-bar bg-white p-0 rounded-md rounded-b-none border-0 shadow-none">
+                                        <div class="mobex-pdp-cart-actions">
+                                            {% if product.is_hidden_quantity or product.type == 'booking' %}
+                                                <input type="hidden" value="1" name="quantity" aria-label="{{ trans('pages.products.quantity') }}"/>
+                                            {% else %}
+                                                <div class="quantity mobex-pdp-quantity sticky-product-bar__quantity">
+                                                    <span class="mobex-pdp-qty-label">{{ trans('pages.products.quantity') }}</span>
+                                                    <div class="variation-calc mobex-pdp-variation-calc">
+                                                        <salla-quantity-input
+                                                            max="{{ product.max_quantity }}"
+                                                            value="1"
+                                                            name="quantity"
+                                                            aria-label="{{ trans('pages.products.quantity') }}"
+                                                            class="mobex-pdp-qty-input"></salla-quantity-input>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        {% endif %}
+                                            {% endif %}
 
-                                        <salla-add-product-button
-                                            {{ theme.settings.get('sticky_add_to_cart') ? ' support-sticky-bar' : '' }}
-                                            {{ product.is_require_shipping ? 'required-shipping' : '' }}
-                                            {{ product.has_preorder_campaign ? 'has-pre-order' : '' }}
-                                            amount="{{ product.base_currency_price }}"
-                                            class="mobex-pdp-btn-add single_add_to_cart_button w-full sticky-product-bar__btn"
-                                            product-status="{{ product.status }}"
-                                            product-type="{{ product.type }}"
-                                            product-id="{{ product.id }}"
-                                            loader-position="end"
-                                            type="submit"
-                                            width="wide"
-                                            {% if product.notify_availability %}
-                                                {{ product.notify_availability.subscribed ? 'is-subscribed' : '' }}
-                                                channels="{{ product.notify_availability.channels|join(',') }}"
-                                                subscribed-options="{{ product.notify_availability.subscribed_options|json_encode }}"
-                                                {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
-                                            {% endif %}>
-                                            {{ product.add_to_cart_label }}
-                                        </salla-add-product-button>
-
-                                        {% if product.can_quick_buy %}
                                             <salla-add-product-button
-                                                quick-buy
+                                                {{ theme.settings.get('sticky_add_to_cart') ? ' support-sticky-bar' : '' }}
                                                 {{ product.is_require_shipping ? 'required-shipping' : '' }}
+                                                {{ product.has_preorder_campaign ? 'has-pre-order' : '' }}
                                                 amount="{{ product.base_currency_price }}"
-                                                class="mobex-pdp-btn-buy buy-now-button w-full"
+                                                class="mobex-pdp-btn-add single_add_to_cart_button w-full sticky-product-bar__btn"
                                                 product-status="{{ product.status }}"
                                                 product-type="{{ product.type }}"
                                                 product-id="{{ product.id }}"
                                                 loader-position="end"
-                                                type="button"
-                                                width="wide">
-                                                {{ trans('pages.products.buy_now') }}
+                                                type="submit"
+                                                width="wide"
+                                                {% if product.notify_availability %}
+                                                    {{ product.notify_availability.subscribed ? 'is-subscribed' : '' }}
+                                                    channels="{{ product.notify_availability.channels|join(',') }}"
+                                                    subscribed-options="{{ product.notify_availability.subscribed_options|json_encode }}"
+                                                    {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
+                                                {% endif %}>
+                                                {{ product.add_to_cart_label }}
                                             </salla-add-product-button>
-                                        {% endif %}
-                                    </div>
+
+                                            {% if product.can_quick_buy %}
+                                                <salla-add-product-button
+                                                    quick-buy
+                                                    {{ product.is_require_shipping ? 'required-shipping' : '' }}
+                                                    {{ product.has_preorder_campaign ? 'has-pre-order' : '' }}
+                                                    amount="{{ product.base_currency_price }}"
+                                                    class="mobex-pdp-btn-buy buy-now-button w-full sticky-product-bar__btn"
+                                                    product-status="{{ product.status }}"
+                                                    product-type="{{ product.type }}"
+                                                    product-id="{{ product.id }}"
+                                                    loader-position="end"
+                                                    type="button"
+                                                    width="wide"
+                                                    {% if product.notify_availability %}
+                                                        {{ product.notify_availability.subscribed ? 'is-subscribed' : '' }}
+                                                        channels="{{ product.notify_availability.channels|join(',') }}"
+                                                        subscribed-options="{{ product.notify_availability.subscribed_options|json_encode }}"
+                                                        {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
+                                                    {% endif %}>
+                                                    {{ trans('pages.products.buy_now') }}
+                                                </salla-add-product-button>
+                                            {% endif %}
+                                        </div>
+                                    </section>
                                 </form>
 
                                 {% if product.is_giftable %}

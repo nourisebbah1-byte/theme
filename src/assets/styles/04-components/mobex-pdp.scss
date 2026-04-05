@@ -255,11 +255,15 @@ $mob-pdp: '.mobex-pdp-page-root';
     color: #d33;
   }
 
-  /* Cart form — Mobex PDP (reference product.html) */
-  .summary form.cart.mobex-pdp-cart {
+  /* Cart form — Mobex PDP (reference product.html); class `cart` omitted so Salla add-product matches default product-form */
+  .summary form.mobex-pdp-cart {
     margin-top: 8px;
     padding: 0;
     border: none;
+  }
+
+  .mobex-pdp-sticky-product-bar {
+    margin-top: 0;
   }
 
   .mobex-pdp-cart-actions {
@@ -279,7 +283,7 @@ $mob-pdp: '.mobex-pdp-page-root';
   }
 
   .mobex-pdp-quantity {
-    margin-bottom: 0;
+    margin-bottom: 1.25rem;
     width: 100%;
     max-width: 280px;
   }
@@ -375,6 +379,7 @@ $mob-pdp: '.mobex-pdp-page-root';
     font-size: 1.05rem;
     line-height: 1;
     display: inline-block;
+    pointer-events: none;
   }
 
   .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-add salla-button button::after,
@@ -387,6 +392,7 @@ $mob-pdp: '.mobex-pdp-page-root';
     display: inline-block;
     margin-inline-start: 4px;
     opacity: 0.9;
+    pointer-events: none;
   }
 
   .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-add salla-button button:hover,
@@ -426,6 +432,7 @@ $mob-pdp: '.mobex-pdp-page-root';
     line-height: 1;
     display: inline-block;
     color: #fff;
+    pointer-events: none;
   }
 
   .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-button button::after,
@@ -439,6 +446,7 @@ $mob-pdp: '.mobex-pdp-page-root';
     margin-inline-start: 4px;
     color: #fff;
     opacity: 0.95;
+    pointer-events: none;
   }
 
   .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-button button:hover,
@@ -486,6 +494,7 @@ $mob-pdp: '.mobex-pdp-page-root';
     line-height: 1;
     display: inline-block;
     color: #fff;
+    pointer-events: none;
   }
 
   .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-quick-buy .s-quick-buy-button::after {
@@ -498,6 +507,7 @@ $mob-pdp: '.mobex-pdp-page-root';
     margin-inline-start: 4px;
     color: #fff;
     opacity: 0.95;
+    pointer-events: none;
   }
 
   .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-quick-buy .s-quick-buy-button:hover,
@@ -513,7 +523,7 @@ $mob-pdp: '.mobex-pdp-page-root';
   }
 
   @media (max-width: 767px) {
-    .summary form.cart.mobex-pdp-cart {
+    .summary form.mobex-pdp-cart .mobex-pdp-sticky-product-bar {
       padding: 20px 16px;
       border-radius: 8px;
       border: 1px solid #e0e0e0;
@@ -526,7 +536,7 @@ $mob-pdp: '.mobex-pdp-page-root';
   }
 
   @media (min-width: 1280px) {
-    .summary.entry-summary form.cart.mobex-pdp-cart {
+    .summary.entry-summary form.mobex-pdp-cart {
       width: 100% !important;
       max-width: 100% !important;
     }

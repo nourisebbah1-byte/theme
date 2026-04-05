@@ -1,4 +1,5 @@
-{# Featured Manufacturers Section - Above Footer Features #}
+{# Featured manufacturers + brake promo: hidden on product PDP (still on home & other pages) #}
+{% if not (page is defined and page.slug is defined and page.slug == 'product.single') %}
 <section class="featured-manufacturers">
     <div class="container">
         <div class="section-header">
@@ -58,6 +59,7 @@
         </div>
     </div>
 </section>
+{% endif %}
 
 {# Promotional grid removed — same blocks live in pages/partials/mobex-home-promos-stack.twig #}
 
