@@ -91,6 +91,49 @@ class Product extends BasePage {
         });
 
         this.initMobexPdpLightbox();
+        this.initMobexPdpBuyNowLabel();
+    }
+
+    /**
+     * Salla quick-buy wraps an extra .s-add-product-button-main (Add to cart) + salla-quick-buy.
+     * We hide the main row in CSS; this sets the real quick-buy control text to "Buy now" after hydration.
+     */
+    initMobexPdpBuyNowLabel() {
+        const root = document.querySelector('salla-add-product-button.mobex-pdp-btn-buy[data-mobex-buy-now-label]');
+        if (!root) {
+            return;
+        }
+        const label = root.getAttribute('data-mobex-buy-now-label');
+        if (!label) {
+            return;
+        }
+
+        const patch = () => {
+            const quick = root.querySelector('salla-quick-buy');
+            if (!quick) {
+                return;
+            }
+            quick.querySelectorAll('button[type="button"], .s-quick-buy-button').forEach((btn) => {
+                if (btn.classList.contains('s-fast-checkout-button')) {
+                    return;
+                }
+                if (btn.matches('button.outline')) {
+                    return;
+                }
+                const textNode =
+                    btn.querySelector('.s-button-text span') ||
+                    btn.querySelector('.s-button-text') ||
+                    btn.querySelector('span:not(.sr-only)');
+                if (textNode && textNode.textContent.trim() !== label) {
+                    textNode.textContent = label;
+                }
+            });
+        };
+
+        patch();
+        const obs = new MutationObserver(() => patch());
+        obs.observe(root, { childList: true, subtree: true });
+        [200, 600, 1200, 2400].forEach((ms) => setTimeout(patch, ms));
     }
 
     initMobexPdpLightbox() {

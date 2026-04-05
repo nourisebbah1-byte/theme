@@ -141,7 +141,8 @@ $mob-pdp: '.mobex-pdp-page-root';
       box-sizing: border-box;
     }
 
-    .swiper-slide img {
+    .swiper-slide img,
+    .swiper-slide .mobex-pdp-main-img {
       width: 100%;
       height: auto;
       max-height: 520px;
@@ -337,16 +338,25 @@ $mob-pdp: '.mobex-pdp-page-root';
   }
 
   /* Add to cart / Buy now — full width, Mobex colors + FA icons on inner control */
-  /* quick-buy host: avoid stray light-DOM text nodes showing under the real button */
-  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy {
-    font-size: 0;
-    line-height: 0;
+  /* quick-buy bundles a duplicate Add to cart (.s-add-product-button-main); we only show salla-quick-buy */
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy .s-add-product-button-main {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0) !important;
+    pointer-events: none !important;
   }
 
-  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-quick-buy,
-  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-button {
-    font-size: 16px;
-    line-height: 1.2;
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy .s-add-product-button-with-quick-buy {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
   }
 
   .mobex-pdp-cart salla-add-product-button {
@@ -534,11 +544,14 @@ $mob-pdp: '.mobex-pdp-page-root';
     transform: scaleX(-1);
   }
 
-  /* Tabby / "Buy with …" outline fast-checkout — Salla quick-buy still uses main blue button */
+  /* Tabby / wallet "Buy with …" — keep only the primary .s-quick-buy-button */
   .mobex-pdp-cart salla-quick-buy .s-fast-checkout-button,
   .mobex-pdp-cart salla-quick-buy button.s-fast-checkout-button,
   .mobex-pdp-cart salla-add-product-button salla-quick-buy .s-fast-checkout-button,
-  .mobex-pdp-cart salla-add-product-button salla-quick-buy button.s-fast-checkout-button {
+  .mobex-pdp-cart salla-add-product-button salla-quick-buy button.s-fast-checkout-button,
+  .mobex-pdp-cart salla-quick-buy button.outline.ltr,
+  .mobex-pdp-cart salla-quick-buy button.outline.rtl,
+  .mobex-pdp-cart salla-add-product-button salla-quick-buy button.outline {
     display: none !important;
     visibility: hidden !important;
     width: 0 !important;
@@ -893,6 +906,10 @@ $mob-pdp: '.mobex-pdp-page-root';
       max-width: 100%;
     }
 
+    .mobex-pdp-gallery salla-slider.details-slider .s-slider-container {
+      min-height: min(62vw, 360px);
+    }
+
     .mobex-pdp-gallery salla-slider.details-slider .swiper-wrapper {
       align-items: center !important;
     }
@@ -904,9 +921,13 @@ $mob-pdp: '.mobex-pdp-page-root';
       max-width: 100%;
       padding: 10px 8px;
       box-sizing: border-box;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
     }
 
     .mobex-pdp-gallery salla-slider.details-slider .swiper-slide.magnify-wrapper img,
+    .mobex-pdp-gallery salla-slider.details-slider .swiper-slide.magnify-wrapper .mobex-pdp-main-img,
     .mobex-pdp-gallery salla-slider.details-slider .swiper-slide.model-entry img {
       width: 100% !important;
       max-width: 100% !important;
