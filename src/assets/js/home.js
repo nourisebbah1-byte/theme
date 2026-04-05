@@ -29,9 +29,10 @@ class Home extends BasePage {
         }
 
         const slides = root.querySelectorAll('.mobex-hero-slide');
-        const dots = document.querySelectorAll('.mobex-hero-dots .dot');
-        const prevBtn = document.querySelector('.mobex-hero-prev');
-        const nextBtn = document.querySelector('.mobex-hero-next');
+        const heroScope = root.closest('.mobex-hero') || root.parentElement || document;
+        const dots = heroScope.querySelectorAll('.mobex-hero-dots .dot');
+        const prevBtn = heroScope.querySelector('.mobex-hero-prev');
+        const nextBtn = heroScope.querySelector('.mobex-hero-next');
         if (!slides.length || !dots.length) {
             return;
         }
@@ -137,9 +138,9 @@ class Home extends BasePage {
      */
     initMobexFeaturedBrandsCarousel() {
         const root = document.querySelector('[data-mobex-fb-carousel]');
-        const viewport = document.querySelector('[data-mobex-fb-viewport]');
-        const prev = document.querySelector('[data-mobex-fb-prev]');
-        const next = document.querySelector('[data-mobex-fb-next]');
+        const viewport = root?.querySelector('[data-mobex-fb-viewport]');
+        const prev = root?.querySelector('[data-mobex-fb-prev]');
+        const next = root?.querySelector('[data-mobex-fb-next]');
         if (!root || !viewport || !prev || !next || root.dataset.mobexFbBound === '1') {
             return;
         }
@@ -556,4 +557,39 @@ class Home extends BasePage {
     }
 }
 
-Home.initiateWhenReady(['index']);
+/**
+ * Salla home `page.slug` is not always `index` (often `home`, empty, or store-specific).
+ * If we only gate on `index`, hero + featured-brands JS never runs.
+ * Boot when Mobex home markup exists or slug looks like the storefront home.
+ */
+function mobexHomeShouldInit() {
+    if (typeof document === 'undefined') {
+        return false;
+    }
+    if (document.querySelector('.mobex-hero-slider') || document.querySelector('[data-mobex-fb-carousel]')) {
+        return true;
+    }
+    try {
+        if (typeof salla === 'undefined' || !salla.config || typeof salla.config.get !== 'function') {
+            return false;
+        }
+        const slug = salla.config.get('page.slug');
+        const s = slug == null ? '' : String(slug);
+        return s === 'index' || s === 'home' || s === '';
+    } catch (e) {
+        return false;
+    }
+}
+
+function bootHome() {
+    if (!mobexHomeShouldInit()) {
+        return;
+    }
+    if (window.app?.status === 'ready') {
+        (new Home()).initiate(null);
+    } else {
+        document.addEventListener('theme::ready', () => (new Home()).initiate(null), { once: true });
+    }
+}
+
+bootHome();

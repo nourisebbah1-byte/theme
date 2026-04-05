@@ -46219,8 +46219,8 @@ section.hero-section:not(.mobex-hero) .hero-vehicle-filter {
 }
 @media only screen and (max-width: 777px) {
   .mobex-rs-stage {
-    /* Slightly taller frame on phones so product art + copy feel closer to Mobex reference */
-    aspect-ratio: 360/292;
+    /* Mobex RS export: 360×260 at ≤777px */
+    aspect-ratio: 360/260;
   }
 }
 .mobex-rs-slot {
@@ -46645,59 +46645,130 @@ section.hero-section:not(.mobex-hero) .hero-vehicle-filter {
     pointer-events: none !important;
   }
 }
+/* Mobex mob-static.css — compact mobile hero (≤767px) */
 @media only screen and (max-width: 767px) {
   .hero-section.mobex-hero {
     padding: 0;
     min-height: 0;
-    overflow-x: clip;
+    overflow: hidden;
   }
   .mobex-hero-slider,
   .mobex-hero-slide {
-    min-height: max(300px, min(92vw, 460px));
+    min-height: 0;
+  }
+  .hero-section.mobex-hero .hero-slide-bg {
+    background-position: 52% 32%;
+    filter: blur(0.5px);
+    transform: scale(1.02);
   }
   .mobex-hero .hero-content {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 18px 14px max(64px, min(18vw, 88px));
+    align-items: flex-start;
+    text-align: left;
+    padding: 10px 14px 44px;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 0;
+  }
+  [dir=rtl] .mobex-hero .hero-content {
+    align-items: flex-end;
+    text-align: right;
+  }
+  .mobex-hero .hero-text {
+    width: 100%;
     max-width: 100%;
   }
+  [dir=rtl] .mobex-hero .hero-text {
+    text-align: right;
+  }
+  .mobex-hero .hero-text h2 {
+    font-size: max(20px, min(6vw, 28px));
+    margin: 0 0 5px;
+    line-height: 1.1;
+    text-align: left;
+  }
+  .mobex-hero .hero-tagline {
+    font-size: max(11px, min(3.1vw, 15px));
+    margin: 0 0 5px;
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+    text-align: left;
+  }
   .mobex-hero .hero-text .hero-promo-line {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 0 12px;
+    max-width: 100%;
+    font-size: max(12px, min(3.2vw, 15px));
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: left;
+  }
+  [dir=rtl] .mobex-hero .hero-text h2,
+  [dir=rtl] .mobex-hero .hero-tagline,
+  [dir=rtl] .mobex-hero .hero-text .hero-promo-line {
+    text-align: right;
   }
   .hero-section.mobex-hero .shop-now-btn {
+    margin: 0;
+    padding: 11px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+  .mobex-rs-root {
+    align-self: stretch;
+    width: 100%;
+    max-width: 100%;
+    margin: 4px 0 0;
+    padding: 0;
+  }
+  .mobex-hero .mobex-rs-stage {
+    max-width: min(72vw, 216px);
     margin-left: auto;
     margin-right: auto;
   }
-  .mobex-rs-root {
-    align-self: center;
-    width: 100%;
-    max-width: min(100%, 420px);
-    margin: 8px auto 0;
-    padding: 0 10px;
-    box-sizing: border-box;
-  }
-  .mobex-rs-stage {
+  [dir=rtl] .mobex-hero .mobex-rs-stage {
     margin-left: auto;
     margin-right: auto;
   }
   .mobex-hero-controls {
-    bottom: 10px;
-    gap: 14px;
-    padding: 0 8px;
+    bottom: 17px;
+    padding: 0 4px;
+    box-sizing: border-box;
+    gap: 0;
+  }
+  .hero-section.mobex-hero .mobex-hero-controls .slider-dots.mobex-hero-dots {
+    margin: 0 6px;
+    gap: 12px;
   }
   .mobex-hero-nav {
-    width: 32px;
-    height: 32px;
-    font-size: 13px;
+    width: 50px;
+    height: 16px;
+    min-width: 50px;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    font-size: 16px;
+    line-height: 16px;
   }
-  .slider-dots.mobex-hero-dots {
-    gap: 10px;
+  .mobex-hero-nav:hover,
+  .mobex-hero-nav:focus-visible {
+    background: transparent;
+    opacity: 0.75;
   }
   .slider-dots.mobex-hero-dots .dot {
     width: 8px;
     height: 8px;
+    min-width: 8px;
+    min-height: 8px;
+    background-color: #e5e5e5;
+  }
+  .slider-dots.mobex-hero-dots .dot.active,
+  .slider-dots.mobex-hero-dots .dot:hover,
+  .slider-dots.mobex-hero-dots .dot:focus-visible {
+    background-color: #fff;
   }
   section.hero-section.mobex-hero .hero-vehicle-filter {
     display: none !important;
@@ -47090,11 +47161,10 @@ section.hero-section:not(.mobex-hero) .hero-vehicle-filter {
 /* --- Featured brand logos --- */
 .mobex-featured-brands {
   padding: 40px 0 48px;
-  background: #fff;
+  background-color: #f5f5f5;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  overflow-x: clip;
 }
 .mobex-featured-brands .container {
   width: 100%;
@@ -47104,6 +47174,78 @@ section.hero-section:not(.mobex-hero) .hero-vehicle-filter {
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
+}
+/* Mobex et_clients-style row: arrows + horizontal scroll (JS scrollBy) */
+.mobex-fb-carousel {
+  position: relative;
+  padding: 0 44px;
+  box-sizing: border-box;
+}
+.mobex-fb-viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.mobex-fb-viewport::-webkit-scrollbar {
+  display: none;
+}
+.mobex-fb-track {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 16px 24px;
+  padding: 8px 4px 12px;
+  width: -moz-max-content;
+  width: max-content;
+  min-height: 88px;
+}
+.mobex-fb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background: #fff;
+  color: #111;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+.mobex-fb-nav:hover {
+  background: #f0f0f0;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+.mobex-fb-nav:focus-visible {
+  outline: 2px solid #034c8c;
+  outline-offset: 2px;
+}
+.mobex-fb-nav i {
+  font-size: 14px;
+  pointer-events: none;
+}
+.mobex-fb-prev {
+  left: 0;
+}
+.mobex-fb-next {
+  right: 0;
+}
+[dir=rtl] .mobex-fb-prev {
+  left: auto;
+  right: 0;
+}
+[dir=rtl] .mobex-fb-next {
+  right: auto;
+  left: 0;
 }
 /* Mobex-style caps only for LTR — uppercase + letter-spacing breaks Arabic joining on desktop */
 .mobex-fb-heading {
@@ -47126,36 +47268,34 @@ section.hero-section:not(.mobex-hero) .hero-vehicle-filter {
   letter-spacing: normal;
   font-family: inherit;
 }
-.mobex-fb-track {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 20px 28px;
-}
 .mobex-fb-item {
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 16px;
-  min-height: 56px;
+  min-width: 128px;
+  width: 128px;
+  min-height: 72px;
+  padding: 12px 14px;
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  background: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+  box-sizing: border-box;
   transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 .mobex-fb-item:hover {
-  background: #fff;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
-.mobex-fb-item img {
+/* Explicit box so SVGs always paint (some flex layouts collapse intrinsic SVG size) */
+.mobex-fb-item .mobex-fb-logo {
   display: block;
-  max-width: 120px;
-  max-height: 40px;
-  width: auto;
-  height: auto;
+  width: 100px;
+  height: 40px;
+  max-width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
 }
 @media (max-width: 767px) {
   .mobex-promo-triple .mobex-promo-cell {
@@ -47265,25 +47405,29 @@ section.hero-section:not(.mobex-hero) .hero-vehicle-filter {
   .mobex-featured-brands {
     padding: 24px 0 32px;
   }
-  .mobex-fb-track {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 12px;
-    padding: 8px 0;
-    margin: 0 -12px;
-    padding-left: 12px;
-    padding-right: 12px;
-    scrollbar-width: none;
+  .mobex-fb-carousel {
+    padding: 0 40px;
   }
-  .mobex-fb-track::-webkit-scrollbar {
-    display: none;
+  .mobex-fb-nav {
+    width: 36px;
+    height: 36px;
   }
   .mobex-fb-item {
-    flex: 0 0 auto;
+    min-width: 118px;
+    width: 118px;
+    min-height: 68px;
+  }
+  .mobex-fb-item .mobex-fb-logo {
+    width: 92px;
+    height: 36px;
+  }
+  .mobex-fb-track {
+    min-height: 80px;
+    gap: 12px;
+    scroll-snap-type: x proximity;
+  }
+  .mobex-fb-item {
     scroll-snap-align: start;
-    min-width: 132px;
   }
 }
 [dir=rtl] .mobex-promo-inner {
