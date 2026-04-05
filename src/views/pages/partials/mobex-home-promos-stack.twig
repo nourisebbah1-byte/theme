@@ -104,26 +104,39 @@
 <section class="featured-brands mobex-featured-brands" id="featured-brands" aria-labelledby="mobex-fb-heading">
     <div class="container">
         <h4 class="mobex-fb-heading" id="mobex-fb-heading">{{ trans('blocks.home.featured_brands_logos') }}</h4>
-        <div class="mobex-fb-track">
-            {% set brand_svgs = [
-                { file: 'vicma_color.svg', label: 'Vicma' },
-                { file: 'castrol.svg', label: 'Castrol' },
-                { file: 'ravenol-color.svg', label: 'Ravenol' },
-                { file: 'alanko.svg', label: 'Alanko' },
-                { file: 'tricsan.svg', label: 'Tricsan' },
-                { file: 'abakus_color.svg', label: 'Abakus' },
-                { file: 'blic-color.svg', label: 'Blic' },
-                { file: 'bosch-color.svg', label: 'Bosch' },
-                { file: 'dayco-color.svg', label: 'Dayco' },
-                { file: 'leoplast.svg', label: 'Leoplast' },
-                { file: 'stark.svg', label: 'Stark' },
-                { file: 'dt.svg', label: 'DT' },
-                { file: 'ridex-color.svg', label: 'Ridex' },
-                { file: 'petek.svg', label: 'Petec' }
-            ] %}
-            {% for b in brand_svgs %}
-                <a href="{{ brands_url }}" class="mobex-fb-item" title="{{ b.label }}"><img src="{{ ('images/brands/' ~ b.file)|asset }}" width="120" height="48" alt="{{ b.label }}" loading="lazy" decoding="async"></a>
-            {% endfor %}
+        <div class="mobex-fb-carousel" data-mobex-fb-carousel>
+            <button type="button" class="mobex-fb-nav mobex-fb-prev" aria-label="{{ trans('blocks.home.fb_prev') }}" data-mobex-fb-prev>
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <div class="mobex-fb-viewport" data-mobex-fb-viewport>
+                <div class="mobex-fb-track" data-mobex-fb-track>
+                    {% set brand_svgs = [
+                        { file: 'vicma_color.svg', label: 'Vicma' },
+                        { file: 'castrol.svg', label: 'Castrol' },
+                        { file: 'ravenol-color.svg', label: 'Ravenol' },
+                        { file: 'alanko.svg', label: 'Alanko' },
+                        { file: 'tricsan.svg', label: 'Tricsan' },
+                        { file: 'abakus_color.svg', label: 'Abakus' },
+                        { file: 'blic-color.svg', label: 'Blic' },
+                        { file: 'bosch-color.svg', label: 'Bosch' },
+                        { file: 'dayco-color.svg', label: 'Dayco' },
+                        { file: 'leoplast.svg', label: 'Leoplast' },
+                        { file: 'stark.svg', label: 'Stark' },
+                        { file: 'dt.svg', label: 'DT' },
+                        { file: 'ridex-color.svg', label: 'Ridex' },
+                        { file: 'petek.svg', label: 'Petec' }
+                    ] %}
+                    {% set ph = 'images/placeholder.png'|asset %}
+                    {% for b in brand_svgs %}
+                        <a href="{{ brands_url }}" class="mobex-fb-item" title="{{ b.label }}">
+                            <img class="mobex-fb-logo" src="{{ ('images/brands/' ~ b.file)|asset }}" width="120" height="48" alt="{{ b.label }}" loading="eager" decoding="async" onerror="this.onerror=null;this.src='{{ ph }}';">
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <button type="button" class="mobex-fb-nav mobex-fb-next" aria-label="{{ trans('blocks.home.fb_next') }}" data-mobex-fb-next>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </button>
         </div>
     </div>
 </section>

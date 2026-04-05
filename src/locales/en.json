@@ -105,7 +105,9 @@
       "promo_offroad_title": "READY FOR<br>OFF ROAD",
       "promo_engine_kicker": "Top Brands",
       "promo_engine_title": "ENGINE<br>ESSENTIALS",
-      "promo_offroad_engine": "Off-road and engine promotions"
+      "promo_offroad_engine": "Off-road and engine promotions",
+      "fb_prev": "Previous brands",
+      "fb_next": "Next brands"
     },
     "footer": {
       "demo_store": "Demo Store"

@@ -426,11 +426,10 @@ $mobex-b: 'images/mobex-banners';
 /* --- Featured brand logos --- */
 .mobex-featured-brands {
   padding: 40px 0 48px;
-  background: #fff;
+  background-color: #f5f5f5;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  overflow-x: clip;
 
   .container {
     width: 100%;
@@ -439,6 +438,89 @@ $mobex-b: 'images/mobex-banners';
     padding-inline: 20px;
     box-sizing: border-box;
   }
+}
+
+/* Mobex et_clients-style row: arrows + horizontal scroll (JS scrollBy) */
+.mobex-fb-carousel {
+  position: relative;
+  padding: 0 44px;
+  box-sizing: border-box;
+}
+
+.mobex-fb-viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.mobex-fb-track {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 16px 24px;
+  padding: 8px 4px 12px;
+  width: max-content;
+  min-height: 88px;
+}
+
+.mobex-fb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background: #fff;
+  color: #111;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    background: #f0f0f0;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #034c8c;
+    outline-offset: 2px;
+  }
+
+  i {
+    font-size: 14px;
+    pointer-events: none;
+  }
+}
+
+.mobex-fb-prev {
+  left: 0;
+}
+
+.mobex-fb-next {
+  right: 0;
+}
+
+[dir='rtl'] .mobex-fb-prev {
+  left: auto;
+  right: 0;
+}
+
+[dir='rtl'] .mobex-fb-next {
+  right: auto;
+  left: 0;
 }
 
 /* Mobex-style caps only for LTR — uppercase + letter-spacing breaks Arabic joining on desktop */
@@ -465,38 +547,34 @@ $mobex-b: 'images/mobex-banners';
   font-family: inherit;
 }
 
-.mobex-fb-track {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 20px 28px;
-}
-
 .mobex-fb-item {
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 16px;
-  min-height: 56px;
+  min-width: 128px;
+  width: 128px;
+  min-height: 72px;
+  padding: 12px 14px;
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  background: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+  box-sizing: border-box;
   transition: background 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
-    background: #fff;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   }
+}
 
-  img {
-    display: block;
-    max-width: 120px;
-    max-height: 40px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-  }
+/* Explicit box so SVGs always paint (some flex layouts collapse intrinsic SVG size) */
+.mobex-fb-item .mobex-fb-logo {
+  display: block;
+  width: 100px;
+  height: 40px;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 @media (max-width: 767px) {
@@ -632,27 +710,34 @@ $mobex-b: 'images/mobex-banners';
     padding: 24px 0 32px;
   }
 
-  .mobex-fb-track {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 12px;
-    padding: 8px 0;
-    margin: 0 -12px;
-    padding-left: 12px;
-    padding-right: 12px;
-    scrollbar-width: none;
+  .mobex-fb-carousel {
+    padding: 0 40px;
+  }
 
-    &::-webkit-scrollbar {
-      display: none;
-    }
+  .mobex-fb-nav {
+    width: 36px;
+    height: 36px;
   }
 
   .mobex-fb-item {
-    flex: 0 0 auto;
+    min-width: 118px;
+    width: 118px;
+    min-height: 68px;
+  }
+
+  .mobex-fb-item .mobex-fb-logo {
+    width: 92px;
+    height: 36px;
+  }
+
+  .mobex-fb-track {
+    min-height: 80px;
+    gap: 12px;
+    scroll-snap-type: x proximity;
+  }
+
+  .mobex-fb-item {
     scroll-snap-align: start;
-    min-width: 132px;
   }
 }
 

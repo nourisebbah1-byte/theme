@@ -13,6 +13,7 @@ class Home extends BasePage {
         this.initVehicleSearch();
         this.initMobexHeroSlider();
         this.initMobexRsParallax();
+        this.initMobexFeaturedBrandsCarousel();
 
         // Initialize product image gallery
         new ProductImageGallery();
@@ -129,6 +130,36 @@ class Home extends BasePage {
 
         show(0);
         resetAuto();
+    }
+
+    /**
+     * Featured brand logos: horizontal strip + prev/next (Mobex et_clients parity).
+     */
+    initMobexFeaturedBrandsCarousel() {
+        const root = document.querySelector('[data-mobex-fb-carousel]');
+        const viewport = document.querySelector('[data-mobex-fb-viewport]');
+        const prev = document.querySelector('[data-mobex-fb-prev]');
+        const next = document.querySelector('[data-mobex-fb-next]');
+        if (!root || !viewport || !prev || !next || root.dataset.mobexFbBound === '1') {
+            return;
+        }
+        root.dataset.mobexFbBound = '1';
+
+        const step = () => Math.max(220, Math.floor(viewport.clientWidth * 0.72));
+
+        const scrollByDir = (dir) => {
+            const delta = step() * dir;
+            viewport.scrollBy({ left: delta, behavior: 'smooth' });
+        };
+
+        prev.addEventListener('click', () => {
+            const rtl = document.documentElement.getAttribute('dir') === 'rtl';
+            scrollByDir(rtl ? 1 : -1);
+        });
+        next.addEventListener('click', () => {
+            const rtl = document.documentElement.getAttribute('dir') === 'rtl';
+            scrollByDir(rtl ? -1 : 1);
+        });
     }
 
     initMobexRsParallax() {
