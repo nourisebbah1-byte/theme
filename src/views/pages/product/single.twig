@@ -258,6 +258,7 @@
                                                 {{ product.add_to_cart_label }}
                                             </salla-add-product-button>
 
+                                            {# quick-buy: no slotted text — component renders its own label (slot + default caused duplicate "Buy now") #}
                                             {% if product.can_quick_buy %}
                                                 <salla-add-product-button
                                                     quick-buy
@@ -276,9 +277,7 @@
                                                         channels="{{ product.notify_availability.channels|join(',') }}"
                                                         subscribed-options="{{ product.notify_availability.subscribed_options|json_encode }}"
                                                         {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
-                                                    {% endif %}>
-                                                    {{ trans('pages.products.buy_now') }}
-                                                </salla-add-product-button>
+                                                    {% endif %}></salla-add-product-button>
                                             {% endif %}
                                         </div>
                                     </section>

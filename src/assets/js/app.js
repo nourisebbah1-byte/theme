@@ -138,7 +138,10 @@ isElementLoaded(selector){
       const customAddToastOn =
         !!window.enable_add_product_toast &&
         !!document.querySelector('salla-add-product-toast');
-      if (customAddToastOn && data?.data?.googleTags?.event === "addToCart") {
+      const looksLikeAddToCart =
+        data?.data?.googleTags?.event === 'addToCart' ||
+        data?.googleTags?.event === 'addToCart';
+      if (customAddToastOn && looksLikeAddToCart) {
         return;
       }
       if (typeof message == 'object') {

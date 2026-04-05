@@ -337,6 +337,18 @@ $mob-pdp: '.mobex-pdp-page-root';
   }
 
   /* Add to cart / Buy now — full width, Mobex colors + FA icons on inner control */
+  /* quick-buy host: avoid stray light-DOM text nodes showing under the real button */
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy {
+    font-size: 0;
+    line-height: 0;
+  }
+
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-quick-buy,
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy salla-button {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
   .mobex-pdp-cart salla-add-product-button {
     display: block !important;
     width: 100% !important;

@@ -7,6 +7,9 @@ class AddToCartToast extends HTMLElement {
     this.remainingTime = 0;
     this.isPaused = false;
     this.duration = 5000;
+    /** Dedupe when both analytics "Product Added" and cart.onItemAdded fire */
+    this._lastToastCartItemId = null;
+    this._lastToastAt = 0;
   }
 
   connectedCallback() {
@@ -36,8 +39,47 @@ class AddToCartToast extends HTMLElement {
     this.cartUrl = salla.url.get("cart");
     this.checkIconUrl = salla.url.asset("images/check.svg");
 
-    salla.event.on("Product Added", (data) => this.handleProductAdded(data));
+    salla.event.on("Product Added", (data) => {
+      let normalized = [];
+      if (Array.isArray(data)) {
+        normalized = data;
+      } else if (data?.items?.length) {
+        normalized = data.items;
+      } else if (data) {
+        normalized = [data];
+      }
+      void this.handleProductAdded(normalized);
+    });
+
+    if (typeof salla.cart?.event?.onItemAdded === "function") {
+      salla.cart.event.onItemAdded((response, productId) => {
+        const cartItemId = this.extractCartItemIdFromCartResponse(response, productId);
+        if (cartItemId) {
+          void this.handleProductAdded([{ cart_item_id: cartItemId }]);
+        }
+      });
+    }
+
     this.render();
+  }
+
+  extractCartItemIdFromCartResponse(response, productId) {
+    if (!response) return null;
+    const d = response.data !== undefined ? response.data : response;
+
+    if (d?.cart_item_id) return d.cart_item_id;
+    if (d?.id && (d.product_id != null || d.product?.id != null)) return d.id;
+
+    const cart = d?.cart || d;
+    const items = cart?.items;
+    if (!Array.isArray(items) || !items.length) return null;
+
+    if (productId != null && productId !== "") {
+      const match = items.find((i) => String(i.product_id) === String(productId));
+      if (match?.id) return match.id;
+    }
+    const last = items[items.length - 1];
+    return last?.id ?? null;
   }
 
   async handleProductAdded(analyticsData) {
@@ -45,8 +87,16 @@ class AddToCartToast extends HTMLElement {
       const items = analyticsData || [];
       if (!items.length) return;
 
-      const cartItemId = items[0].cart_item_id;
+      const first = items[0];
+      const cartItemId = first?.cart_item_id ?? first?.cartItemId ?? first?.item_id;
       if (!cartItemId) return;
+
+      const now = Date.now();
+      if (this._lastToastCartItemId === cartItemId && now - this._lastToastAt < 2000) {
+        return;
+      }
+      this._lastToastCartItemId = cartItemId;
+      this._lastToastAt = now;
 
       const cartResponse = await salla.cart.api.details(null, ["options"]);
       if (!cartResponse?.data?.cart?.items) return;

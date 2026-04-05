@@ -274,6 +274,7 @@ class ProductCard extends HTMLElement {
           ${!this.hideAddBtn ?
             `<div class="s-product-card-content-footer gap-2">
               <salla-add-product-button fill="outline" width="wide"
+                amount="${this.product.base_currency_price ?? this.product.price ?? ''}"
                 product-id="${this.product.id}"
                 product-status="${this.product.status}"
                 product-type="${this.product.type}">

@@ -328,10 +328,7 @@
   }
 }
 
-/*
- * Wishlist: Salla draws ONE circle on the inner button — do not paint the host or you get a double white disc.
- * Host = positioning + pointer events only; icon sized via i (slotted / light DOM).
- */
+
 .s-block--latest-products .s-product-card-wishlist-btn {
   position: absolute !important;
   top: 8px !important;
@@ -373,7 +370,7 @@
     position: absolute !important;
   }
 
-  /* Single circle: Salla’s actual clickable surface */
+  
   button,
   .s-button {
     margin: 0 !important;
@@ -415,7 +412,7 @@
     transform: scale(0.96) !important;
   }
 
-  /* Smaller heart; sicon sits high — nudge down inside the circle */
+ 
   i.sicon-heart,
   i {
     font-size: 13px !important;
