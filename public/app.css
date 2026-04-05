@@ -3746,6 +3746,15 @@ textarea.s-input{
   flex-wrap: nowrap;
   overflow: visible;
 }
+.mobex-featured-brands .s-advertisement-content {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
 .promo-banners .s-advertisement-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -47082,15 +47091,40 @@ section.hero-section:not(.mobex-hero) .hero-vehicle-filter {
 .mobex-featured-brands {
   padding: 40px 0 48px;
   background: #fff;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: clip;
 }
+.mobex-featured-brands .container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+/* Mobex-style caps only for LTR — uppercase + letter-spacing breaks Arabic joining on desktop */
 .mobex-fb-heading {
-  margin: 0 0 24px;
-  font-size: max(18px, min(2.5vw, 22px));
+  margin: 0 auto 24px;
+  font-size: max(18px, min(2.5vw, 24px));
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
   color: #111;
   text-align: center;
+  line-height: 1.35;
+  max-width: 100%;
+  word-wrap: break-word;
+  word-wrap: break-word;
+}
+[dir=ltr] .mobex-fb-heading {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+[dir=rtl] .mobex-fb-heading {
+  text-transform: none;
+  letter-spacing: normal;
+  font-family: inherit;
 }
 .mobex-fb-track {
   display: flex;
@@ -51660,6 +51694,15 @@ model-viewer[style*=width]:before{
 .main-nav-row-2 .s-comments-product .s-comments-container {
   overflow: visible;
   max-width: 100%;
+}
+.mobex-featured-brands .s-comments-product .s-comments-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
 }
 .promo-banners .s-comments-product .s-comments-container {
   max-width: 1200px;
