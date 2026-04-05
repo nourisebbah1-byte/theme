@@ -77,7 +77,7 @@
       "transmission_fluid": "Transmission Fluid",
       "save_25_all_one": "Save 25%. All in One!",
       "care_care_kit": "CARE CARE KIT",
-      "keep_clean_shine": "Keep things clean and shinela",
+      "keep_clean_shine": "Keep things clean and shine!",
       "fifteen_percent_off": "15% off",
       "hero_slide1_title": "Premium engine oils",
       "hero_slide1_tagline": "Full synthetic protection",
@@ -90,7 +90,18 @@
       "hero_slide3_promo": "Portable power when you need it — no more dead-battery stress.",
       "hero_slide4_title": "Car batteries",
       "hero_slide4_tagline": "Stay charged up",
-      "hero_slide4_promo": "Trusted brands — ready when you are."
+      "hero_slide4_promo": "Trusted brands — ready when you are.",
+      "promo_highlights": "Featured promotions",
+      "promo_big_sale": "Big sale",
+      "promo_lamps_filters": "Lamps and filters promotions",
+      "promo_fluids_care": "Fluids and care promotions",
+      "promo_big_sales_filters": "Big Sales!",
+      "transmission_fluids_title": "Transmission<br>Fluids",
+      "care_kit_title": "Care kit",
+      "free_shipping_banner": "Free shipping promotion",
+      "free_shipping_word": "FREE",
+      "shipping_word": "SHIPPING",
+      "featured_brands_logos": "Featured brands"
     },
     "footer": {
       "demo_store": "Demo Store"

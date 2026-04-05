@@ -1,0 +1,643 @@
+/* Mobex reference homepage promos (triple row, pairs, shipping, featured brand logos) — paths vs public/app.css */
+$mobex-b: 'images/mobex-banners';
+
+.mobile-overflow-hidden {
+  overflow: hidden;
+}
+
+.mobex-promo-triple,
+.mobex-promo-pair {
+  padding: 48px 0;
+  background: #fff;
+}
+
+.mobex-promo-triple-outer {
+  position: relative;
+}
+
+/* Desktop: 3 columns; mobile: horizontal snap strip (reference carousel width per card) */
+.mobex-promo-triple-track {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+@media (max-width: 767px) {
+  .mobex-promo-triple {
+    padding: 16px 0 8px;
+  }
+
+  .mobex-promo-triple-track {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 4px 0 12px;
+    margin: 0 -12px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .mobex-promo-triple-item {
+    flex: 0 0 min(300px, calc(100vw - 56px));
+    width: min(300px, calc(100vw - 56px));
+    max-width: min(300px, calc(100vw - 56px));
+    scroll-snap-align: start;
+  }
+}
+
+.mobex-promo-row {
+  display: grid;
+  gap: 20px;
+}
+
+.mobex-promo-row--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 767px) {
+  .mobex-promo-pair {
+    padding: 16px 0 8px;
+  }
+
+  .mobex-promo-row--2 {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .transmission-banners.mobex-promo-pair {
+    padding-top: 0;
+    padding-bottom: 16px;
+  }
+}
+
+.mobex-promo-cell {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: transparent;
+  min-height: 300px;
+  padding: 36px 28px 132px;
+  box-sizing: border-box;
+}
+
+.mobex-promo-cell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background-repeat: no-repeat;
+}
+
+.mobex-promo-cell--bat::before {
+  background-color: #111111;
+  background-image: url('#{$mobex-b}/highlight.png');
+  background-position: 59px -133px;
+  background-size: cover;
+}
+
+.mobex-promo-cell--tires::before {
+  background-color: #e9f3fb;
+  background-image: url('#{$mobex-b}/banner6-img.webp');
+  background-position: center right;
+  background-size: auto 96%;
+}
+
+.mobex-promo-cell--damp::before {
+  background-color: #bf3617;
+  background-image: url('#{$mobex-b}/highlight.png');
+  background-position: 84px -75px;
+  background-size: cover;
+}
+
+.mobex-promo-cell--offroad::before {
+  background-color: #bf3617;
+  background-image: url('#{$mobex-b}/banner5-back.webp');
+  background-position: center center;
+  background-size: cover;
+}
+
+.mobex-promo-cell--engine::before {
+  background-color: #034c8c;
+  background-image: url('#{$mobex-b}/highlight.png');
+  background-position: 243px 0;
+  background-size: auto;
+}
+
+.mobex-promo-cell--lamps::before {
+  background-color: #111111;
+  background-image: url('#{$mobex-b}/banner6-back.webp');
+  background-position: center center;
+  background-size: cover;
+}
+
+.mobex-promo-cell--filters::before {
+  background-color: #111111;
+  background-image: url('#{$mobex-b}/banner7-back.webp');
+  background-position: center center;
+  background-size: cover;
+}
+
+.mobex-promo-cell--trans::before {
+  background-color: #bf3617;
+  background-image: url('#{$mobex-b}/banner8-back.webp');
+  background-position: center center;
+  background-size: cover;
+}
+
+.mobex-promo-cell--care::before {
+  background-color: #034c8c;
+  background-image: url('#{$mobex-b}/banner9-back.webp');
+  background-position: center center;
+  background-size: cover;
+}
+
+.mobex-promo-cell.gold-shine .mobex-et-heading,
+.mobex-promo-cell.gold-shine .mobex-et-heading .text {
+  color: #fff !important;
+}
+
+.mobex-promo-cell--damp .mobex-et-heading,
+.mobex-promo-cell--damp .mobex-et-heading .text,
+.mobex-promo-cell--engine .mobex-et-heading,
+.mobex-promo-cell--engine .mobex-et-heading .text,
+.mobex-promo-cell--filters .mobex-et-heading,
+.mobex-promo-cell--filters .mobex-et-heading .text,
+.mobex-promo-cell--trans .mobex-et-heading,
+.mobex-promo-cell--trans .mobex-et-heading .text,
+.mobex-promo-cell--care .mobex-et-heading,
+.mobex-promo-cell--care .mobex-et-heading .text {
+  color: #fff !important;
+}
+
+.mobex-promo-cell--tires .mobex-et-heading,
+.mobex-promo-cell--tires .mobex-et-heading .text {
+  color: #111 !important;
+}
+
+.mobex-promo-inner {
+  position: relative;
+  z-index: 3;
+  max-width: 58%;
+}
+
+.mobex-promo-cell--lamps .mobex-promo-inner {
+  max-width: 100%;
+  padding-right: 8px;
+}
+
+.mobex-et-heading {
+  margin: 0 0 10px;
+  line-height: 1.15;
+  font-family: inherit;
+}
+
+.mobex-et-kicker {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.mobex-et-title {
+  font-size: clamp(22px, 3.2vw, 32px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.mobex-et-title--accent {
+  margin-top: 4px;
+}
+
+.mobex-et-title--multiline .text {
+  display: block;
+}
+
+.mobex-et-sub {
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+.mobex-promo-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 10px 14px;
+  text-decoration: none !important;
+  color: #111 !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  line-height: 1.25;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  z-index: 4;
+
+  &:hover {
+    background: #f3f3f3;
+  }
+}
+
+.mobex-promo-cta-arrow {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #111;
+  border-bottom: 2px solid #111;
+  transform: rotate(-45deg);
+  margin-left: 2px;
+}
+
+.mobex-promo-media {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  line-height: 0;
+}
+
+.mobex-promo-media .et-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mobex-promo-media--b5 {
+  right: -14px;
+  bottom: -32px;
+  width: 58%;
+  max-width: 280px;
+}
+
+.mobex-promo-media--b7 {
+  right: -8px;
+  bottom: -24px;
+  width: 72%;
+  max-width: 360px;
+}
+
+.mobex-promo-media--b8 {
+  right: 0;
+  bottom: -28px;
+  width: 46%;
+  max-width: 200px;
+}
+
+.mobex-promo-media--b10 {
+  right: -6px;
+  bottom: -20px;
+  width: 52%;
+  max-width: 280px;
+}
+
+.mobex-promo-media--b11 {
+  right: -4px;
+  bottom: -18px;
+  width: 54%;
+  max-width: 280px;
+}
+
+.mobex-promo-media--b12 {
+  right: 0;
+  bottom: -8px;
+  width: 62%;
+  max-width: 300px;
+}
+
+.mobex-promo-media--b13 {
+  right: 4px;
+  bottom: -12px;
+  width: 58%;
+  max-width: 320px;
+}
+
+.mobex-promo-media--b14 {
+  right: -24px;
+  bottom: -20px;
+  width: 88%;
+  max-width: 640px;
+}
+
+.mobex-parallax-img--sm img {
+  transform: translate3d(0, 8px, 0);
+}
+
+/* --- Free shipping --- */
+.shipping-banner.mobex-shipping-banner {
+  position: relative;
+  overflow: hidden;
+  padding: 36px 0 32px;
+  background: #111;
+}
+
+.shipping-banner.mobex-shipping-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-color: #111111;
+  background-image: url('#{$mobex-b}/banner10-back.webp');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mobex-shipping-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 28px;
+  position: relative;
+  z-index: 1;
+  min-height: 140px;
+}
+
+.mobex-shipping-lede {
+  flex: 0 0 auto;
+  max-width: 42%;
+  padding-right: 8px;
+  box-sizing: border-box;
+}
+
+.mobex-shipping-line--free {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.mobex-shipping-inner .mobex-et-heading,
+.mobex-shipping-inner .mobex-et-heading .text {
+  color: #fff !important;
+}
+
+.mobex-shipping-free {
+  font-size: clamp(28px, 4.2vw, 38px);
+  line-height: 1;
+  margin: 0 0 4px !important;
+  font-weight: 800;
+}
+
+.mobex-shipping-sub {
+  font-size: clamp(14px, 2vw, 18px);
+  line-height: 1;
+  margin: 0 !important;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.mobex-shipping-visual {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 0;
+  max-width: min(520px, 58%);
+}
+
+.mobex-shipping-visual .et-image {
+  max-width: 100%;
+}
+
+.mobex-shipping-visual .et-image img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Featured brand logos --- */
+.mobex-featured-brands {
+  padding: 40px 0 48px;
+  background: #fff;
+}
+
+.mobex-fb-heading {
+  margin: 0 0 24px;
+  font-size: clamp(18px, 2.5vw, 22px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #111;
+  text-align: center;
+}
+
+.mobex-fb-track {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px 28px;
+}
+
+.mobex-fb-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  min-height: 56px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #fafafa;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  }
+
+  img {
+    display: block;
+    max-width: 120px;
+    max-height: 40px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 767px) {
+  .mobex-promo-triple .mobex-promo-cell {
+    min-height: 260px;
+    padding: 10px 10px 20px;
+  }
+
+  .mobex-promo-triple .mobex-promo-inner {
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .mobex-promo-triple .mobex-et-kicker {
+    font-size: 10px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .mobex-promo-triple .mobex-et-title {
+    font-size: 17px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 6px !important;
+  }
+
+  .mobex-promo-triple .mobex-et-sub {
+    font-size: 13px !important;
+    line-height: 1.25 !important;
+  }
+
+  .mobex-promo-triple .mobex-promo-cta {
+    margin-top: 20px;
+    margin-bottom: 100px;
+    font-size: 12px !important;
+  }
+
+  .mobex-promo-triple .mobex-promo-cell--bat::before {
+    background-position: -74px 101px;
+  }
+
+  .mobex-promo-triple .mobex-promo-cell--damp::before {
+    background-position: -54px 125px;
+  }
+
+  .mobex-promo-triple .mobex-promo-media--b5 {
+    transform: translate(-5px, -80px);
+  }
+
+  .mobex-promo-triple .mobex-promo-media--b7 {
+    transform: translate(-8px, -63px);
+  }
+
+  .mobex-promo-triple .mobex-promo-media--b8 {
+    transform: translate(-8px, -115px) scale(0.7);
+    transform-origin: right bottom;
+  }
+
+  .mobex-promo-pair .mobex-promo-cell {
+    min-height: 280px;
+    padding: 22px 20px 132px;
+  }
+
+  .mobex-promo-pair .mobex-promo-cell--lamps {
+    min-height: 0;
+    padding: 22px 20px 28px;
+  }
+
+  .more-promo-banners-2 .mobex-promo-cell--offroad,
+  .more-promo-banners-2 .mobex-promo-cell--engine {
+    min-height: 224px;
+    padding: 12px 12px 78px;
+  }
+
+  .more-promo-banners-2 .mobex-promo-inner {
+    max-width: 56%;
+  }
+
+  .mobex-promo-pair .mobex-promo-inner {
+    max-width: 100%;
+  }
+
+  .mobex-promo-pair .mobex-promo-cell--filters .mobex-promo-inner,
+  .mobex-promo-pair .mobex-promo-cell--trans .mobex-promo-inner,
+  .mobex-promo-pair .mobex-promo-cell--care .mobex-promo-inner {
+    max-width: 58%;
+    padding-right: 6px;
+  }
+
+  .mobex-promo-pair .mobex-promo-cell--filters,
+  .mobex-promo-pair .mobex-promo-cell--trans,
+  .mobex-promo-pair .mobex-promo-cell--care {
+    min-height: 300px;
+  }
+
+  .mobex-promo-pair .mobex-promo-cell--filters .mobex-promo-cta {
+    margin-top: 48px;
+  }
+
+  .mobex-parallax-img--sm img {
+    transform: none !important;
+  }
+
+  .mobex-promo-cell--engine::before {
+    background-position: -54px 125px;
+  }
+
+  .mobex-promo-cell--tires::before {
+    background-size: 74% auto;
+    background-position: 108% 58%;
+  }
+
+  .shipping-banner.mobex-shipping-banner {
+    padding: 14px 0 10px;
+  }
+
+  .shipping-banner.mobex-shipping-banner::before {
+    background-position: 0 33px;
+    background-size: auto;
+  }
+
+  .mobex-shipping-inner {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    min-height: 96px;
+    padding: 4vw;
+    gap: 10px;
+  }
+
+  .mobex-shipping-lede {
+    max-width: 46%;
+  }
+
+  .mobex-featured-brands {
+    padding: 24px 0 32px;
+  }
+
+  .mobex-fb-track {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    padding: 8px 0;
+    margin: 0 -12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .mobex-fb-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    min-width: 132px;
+  }
+}
+
+[dir='rtl'] .mobex-promo-inner {
+  text-align: right;
+}
+
+[dir='rtl'] .mobex-shipping-line--free {
+  align-items: flex-end;
+}
+
+[dir='rtl'] .mobex-shipping-visual {
+  justify-content: flex-start;
+}

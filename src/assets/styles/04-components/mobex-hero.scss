@@ -8,6 +8,9 @@
   padding: 0;
   overflow: hidden;
   min-height: 0;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
 }
 
 /* Slider + controls share positioning context (dots stay on the slide, not below vehicle form) */
@@ -166,7 +169,8 @@
 
 @media only screen and (max-width: 777px) {
   .mobex-rs-stage {
-    aspect-ratio: 360 / 260;
+    /* Slightly taller frame on phones so product art + copy feel closer to Mobex reference */
+    aspect-ratio: 360 / 292;
   }
 }
 
@@ -484,18 +488,20 @@
   .hero-section.mobex-hero {
     padding: 0;
     min-height: 0;
+    overflow-x: clip;
   }
 
   .mobex-hero-slider,
   .mobex-hero-slide {
-    min-height: 260px;
+    min-height: clamp(300px, 92vw, 460px);
   }
 
   .mobex-hero .hero-content {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 22px 14px 72px;
+    padding: 18px 14px clamp(64px, 18vw, 88px);
+    max-width: 100%;
   }
 
   .mobex-hero .hero-text .hero-promo-line {
@@ -510,8 +516,10 @@
   .mobex-rs-root {
     align-self: center;
     width: 100%;
-    max-width: min(92vw, 400px);
-    margin: 10px auto 0;
+    max-width: min(100%, 420px);
+    margin: 8px auto 0;
+    padding: 0 10px;
+    box-sizing: border-box;
   }
 
   .mobex-rs-stage {

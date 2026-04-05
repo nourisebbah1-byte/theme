@@ -1,0 +1,46 @@
+{% set shop = link('/') %}
+<section class="promo-banners mobex-promo-triple" aria-label="{{ trans('blocks.home.promo_highlights') }}">
+    <div class="container mobex-promo-triple-outer">
+        <div class="mobex-promo-triple-track">
+            <div class="mobex-promo-triple-item">
+                <div class="gold-shine mobex-promo-cell mobex-promo-cell--bat">
+                    <div class="mobex-promo-inner">
+                        <p class="mobex-et-heading mobex-et-kicker"><span class="text">{{ trans('blocks.home.best_brands') }}</span></p>
+                        <h3 class="mobex-et-heading mobex-et-title"><span class="text">{{ trans('blocks.home.batteries') }}</span></h3>
+                        <p class="mobex-et-heading mobex-et-sub"><span class="text">{{ trans('blocks.home.stay_charged') }}</span></p>
+                        <a href="{{ shop }}" class="mobex-promo-cta"><span class="text">{{ trans('blocks.home.shop_now') }}</span><span class="mobex-promo-cta-arrow" aria-hidden="true"></span></a>
+                    </div>
+                    <div class="mobex-promo-media mobex-promo-media--b5">
+                        <div class="et-image"><img src="{{ 'images/mobex-banners/banner5-img.webp'|asset }}" width="266" height="221" alt="" loading="lazy" decoding="async"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobex-promo-triple-item">
+                <div class="mobex-promo-cell mobex-promo-cell--tires">
+                    <div class="mobex-promo-inner">
+                        <p class="mobex-et-heading mobex-et-kicker"><span class="text">{{ trans('blocks.home.buy_3_get_1_free') }}</span></p>
+                        <h3 class="mobex-et-heading mobex-et-title"><span class="text">{{ trans('blocks.home.tires_wheels') }}</span></h3>
+                        <p class="mobex-et-heading mobex-et-sub"><span class="text">{{ trans('blocks.home.stay_safe_road') }}</span></p>
+                        <a href="{{ shop }}" class="mobex-promo-cta"><span class="text">{{ trans('blocks.home.shop_now') }}</span><span class="mobex-promo-cta-arrow" aria-hidden="true"></span></a>
+                    </div>
+                    <div class="mobex-promo-media mobex-promo-media--b7">
+                        <div class="et-image"><img src="{{ 'images/mobex-banners/banner7-img.webp'|asset }}" width="381" height="205" alt="" loading="lazy" decoding="async"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobex-promo-triple-item">
+                <div class="mobex-promo-cell mobex-promo-cell--damp">
+                    <div class="mobex-promo-inner">
+                        <p class="mobex-et-heading mobex-et-kicker"><span class="text">{{ trans('blocks.home.promo_big_sale') }}</span></p>
+                        <h3 class="mobex-et-heading mobex-et-title"><span class="text">{{ trans('blocks.home.buy_1_get_1') }}</span></h3>
+                        <p class="mobex-et-heading mobex-et-sub"><span class="text">{{ trans('blocks.home.free') }}</span></p>
+                        <a href="{{ shop }}" class="mobex-promo-cta"><span class="text">{{ trans('blocks.home.shop_now') }}</span><span class="mobex-promo-cta-arrow" aria-hidden="true"></span></a>
+                    </div>
+                    <div class="mobex-promo-media mobex-promo-media--b8">
+                        <div class="et-image"><img src="{{ 'images/mobex-banners/banner8-img.webp'|asset }}" width="159" height="221" alt="" loading="lazy" decoding="async"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
