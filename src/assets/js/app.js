@@ -199,6 +199,20 @@ isElementLoaded(selector){
         app.toggleElementClassIf(btn, 's-product-card-wishlist-added', 'not-added', () => isAdded);
         app.toggleElementClassIf(btn, 'pulse-anime', 'un-favorited', () => isAdded);
       });
+      document.querySelectorAll('.mobex-pdp-wishlist-btn[data-id="' + id + '"]').forEach((btn) => {
+        btn.classList.toggle('is-in-wishlist', isAdded);
+        const icon = btn.querySelector('i.fa-heart');
+        if (icon) {
+          icon.classList.toggle('far', !isAdded);
+          icon.classList.toggle('fas', isAdded);
+        }
+        const lab = btn.querySelector('.mobex-pdp-wishlist-label');
+        if (lab && typeof salla !== 'undefined' && salla.lang) {
+          lab.textContent = isAdded
+            ? salla.lang.get('pages.products.remove_from_wishlist')
+            : salla.lang.get('pages.products.add_to_wishlist');
+        }
+      });
     }
   
     if (!isListenerAttached) {

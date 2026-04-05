@@ -534,6 +534,32 @@ $mob-pdp: '.mobex-pdp-page-root';
     transform: scaleX(-1);
   }
 
+  /* Tabby / "Buy with …" outline fast-checkout — Salla quick-buy still uses main blue button */
+  .mobex-pdp-cart salla-quick-buy .s-fast-checkout-button,
+  .mobex-pdp-cart salla-quick-buy button.s-fast-checkout-button,
+  .mobex-pdp-cart salla-add-product-button salla-quick-buy .s-fast-checkout-button,
+  .mobex-pdp-cart salla-add-product-button salla-quick-buy button.s-fast-checkout-button {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0) !important;
+  }
+
+  .mobex-pdp-cart salla-quick-buy .s-add-product-button-mini-checkout,
+  .mobex-pdp-cart salla-add-product-button salla-quick-buy .s-add-product-button-mini-checkout {
+    display: none !important;
+  }
+
   @media (max-width: 767px) {
     .summary form.mobex-pdp-cart .mobex-pdp-sticky-product-bar {
       padding: 20px 16px;
@@ -595,6 +621,15 @@ $mob-pdp: '.mobex-pdp-page-root';
   .mobex-pdp-actions .mobex-pdp-action--link {
     text-decoration: none;
     color: inherit;
+  }
+
+  .mobex-pdp-wishlist-btn.is-in-wishlist {
+    color: #8f8174;
+  }
+
+  .mobex-pdp-wishlist-btn.is-in-wishlist i.fa-heart {
+    color: #c62828;
+    font-weight: 900;
   }
 
   .mobex-pdp-share-row {
@@ -852,19 +887,34 @@ $mob-pdp: '.mobex-pdp-page-root';
       display: none;
     }
 
-    /* Main slide: stable height + centered image on small screens */
-    .mobex-pdp-gallery salla-slider.details-slider .swiper-slide.magnify-wrapper,
-    .mobex-pdp-gallery salla-slider.details-slider .swiper-slide.model-entry {
-      min-height: min(58vw, 340px);
-      padding: 8px 4px;
+    /* Main slide: full-width image area, no tiny centered strip */
+    .mobex-pdp-gallery salla-slider.details-slider .swiper {
+      width: 100% !important;
+      max-width: 100%;
     }
 
-    .mobex-pdp-gallery salla-slider.details-slider .swiper-slide img {
-      max-height: min(72vw, 400px);
-      width: auto;
+    .mobex-pdp-gallery salla-slider.details-slider .swiper-wrapper {
+      align-items: center !important;
+    }
+
+    .mobex-pdp-gallery salla-slider.details-slider .swiper-slide.magnify-wrapper,
+    .mobex-pdp-gallery salla-slider.details-slider .swiper-slide.model-entry {
+      min-height: min(62vw, 360px);
+      width: 100% !important;
       max-width: 100%;
+      padding: 10px 8px;
+      box-sizing: border-box;
+    }
+
+    .mobex-pdp-gallery salla-slider.details-slider .swiper-slide.magnify-wrapper img,
+    .mobex-pdp-gallery salla-slider.details-slider .swiper-slide.model-entry img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      max-height: none !important;
       margin-inline: auto;
-      object-fit: contain;
+      object-fit: contain !important;
+      display: block;
     }
 
     .mobex-pdp-gallery {

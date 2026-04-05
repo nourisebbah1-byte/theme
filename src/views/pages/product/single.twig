@@ -1,4 +1,5 @@
 {% extends "layouts.master" %}
+{% set mobex_in_wishlist = attribute(product, 'is_in_wishlist')|default(false) %}
 {% block content %}
     <div class="mobex-pdp-page-root">
     <div class="container mobex-pdp-inner">
@@ -38,16 +39,6 @@
                                     {% if product.promotion_title %}
                                         <div class="promotion-title">{{ product.promotion_title }}</div>
                                     {% endif %}
-
-                                    <salla-button
-                                        class="btn--wishlist animated sws"
-                                        data-id="{{ product.id }}"
-                                        onclick="salla.wishlist.toggle('{{ product.id }}')"
-                                        shape="icon"
-                                        fill="outline"
-                                        color="light">
-                                        <i class="sicon-heart"></i>
-                                    </salla-button>
 
                                     {% if product.calories %}
                                         <div class="absolute z-[2] top-4 rtl:left-4 ltr:right-4 bg-white shadow-sm flex flex-col justify-center items-center rounded-full w-20 h-20 md:w-24 md:h-24">
@@ -237,28 +228,7 @@
                                                 </div>
                                             {% endif %}
 
-                                            <salla-add-product-button
-                                                {{ theme.settings.get('sticky_add_to_cart') ? ' support-sticky-bar' : '' }}
-                                                {{ product.is_require_shipping ? 'required-shipping' : '' }}
-                                                {{ product.has_preorder_campaign ? 'has-pre-order' : '' }}
-                                                amount="{{ product.base_currency_price }}"
-                                                class="mobex-pdp-btn-add single_add_to_cart_button w-full sticky-product-bar__btn"
-                                                product-status="{{ product.status }}"
-                                                product-type="{{ product.type }}"
-                                                product-id="{{ product.id }}"
-                                                loader-position="end"
-                                                type="submit"
-                                                width="wide"
-                                                {% if product.notify_availability %}
-                                                    {{ product.notify_availability.subscribed ? 'is-subscribed' : '' }}
-                                                    channels="{{ product.notify_availability.channels|join(',') }}"
-                                                    subscribed-options="{{ product.notify_availability.subscribed_options|json_encode }}"
-                                                    {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
-                                                {% endif %}>
-                                                {{ product.add_to_cart_label }}
-                                            </salla-add-product-button>
-
-                                            {# quick-buy: no slotted text — component renders its own label (slot + default caused duplicate "Buy now") #}
+                                            {# Blue Buy now (Salla quick-buy) first; orange Add to cart second #}
                                             {% if product.can_quick_buy %}
                                                 <salla-add-product-button
                                                     quick-buy
@@ -279,6 +249,27 @@
                                                         {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
                                                     {% endif %}></salla-add-product-button>
                                             {% endif %}
+
+                                            <salla-add-product-button
+                                                {{ theme.settings.get('sticky_add_to_cart') ? ' support-sticky-bar' : '' }}
+                                                {{ product.is_require_shipping ? 'required-shipping' : '' }}
+                                                {{ product.has_preorder_campaign ? 'has-pre-order' : '' }}
+                                                amount="{{ product.base_currency_price }}"
+                                                class="mobex-pdp-btn-add single_add_to_cart_button w-full sticky-product-bar__btn"
+                                                product-status="{{ product.status }}"
+                                                product-type="{{ product.type }}"
+                                                product-id="{{ product.id }}"
+                                                loader-position="end"
+                                                type="submit"
+                                                width="wide"
+                                                {% if product.notify_availability %}
+                                                    {{ product.notify_availability.subscribed ? 'is-subscribed' : '' }}
+                                                    channels="{{ product.notify_availability.channels|join(',') }}"
+                                                    subscribed-options="{{ product.notify_availability.subscribed_options|json_encode }}"
+                                                    {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
+                                                {% endif %}>
+                                                {{ product.add_to_cart_label }}
+                                            </salla-add-product-button>
                                         </div>
                                     </section>
                                 </form>
@@ -288,9 +279,13 @@
                                 {% endif %}
 
                                 <div class="mobex-pdp-actions" role="group" aria-label="{{ trans('pages.products.pdp_actions_label') }}">
-                                    <button type="button" class="mobex-pdp-action" data-mobex-pdp-wishlist data-product-id="{{ product.id }}" onclick="salla.wishlist.toggle('{{ product.id }}')">
-                                        <i class="far fa-heart" aria-hidden="true"></i>
-                                        <span class="mobex-pdp-action-txt">{{ trans('pages.products.add_to_wishlist') }}</span>
+                                    <button type="button"
+                                            class="mobex-pdp-action mobex-pdp-wishlist-btn {{ mobex_in_wishlist ? 'is-in-wishlist' : '' }}"
+                                            data-id="{{ product.id }}"
+                                            data-mobex-pdp-wishlist
+                                            onclick="salla.wishlist.toggle('{{ product.id }}')">
+                                        <i class="{{ mobex_in_wishlist ? 'fas' : 'far' }} fa-heart" aria-hidden="true"></i>
+                                        <span class="mobex-pdp-action-txt mobex-pdp-wishlist-label">{{ mobex_in_wishlist ? trans('pages.products.remove_from_wishlist') : trans('pages.products.add_to_wishlist') }}</span>
                                     </button>
                                     {% if store.settings.rating.show_on_product %}
                                         <a href="#mobex-pdp-panel-reviews" class="mobex-pdp-action mobex-pdp-action--link write-review" data-mobex-pdp-goto-reviews>
