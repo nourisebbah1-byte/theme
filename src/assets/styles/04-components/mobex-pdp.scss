@@ -1,0 +1,780 @@
+/**
+ * Mobex product detail page — layout/visual parity with static mob/product.html.
+ * Scoped to theme product pages; Salla web components keep functionality.
+ */
+
+/* Scope to page wrapper so we do not depend on body.product-single from the platform. */
+$mob-pdp: '.mobex-pdp-page-root';
+
+#{$mob-pdp} {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+
+  @media (max-width: 1023px) {
+    overflow-x: hidden;
+  }
+
+  .mobex-pdp-inner.container {
+    box-sizing: border-box;
+  }
+
+  /* Breadcrumbs (Mobex row) */
+  .et-breadcrumbs.mobex-pdp-breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+    padding: 16px 0 12px;
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+
+    a {
+      color: #034c8c;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .arrow {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 4px 0 4px 5px;
+      border-color: transparent transparent transparent #bbb;
+      margin: 0 2px;
+      vertical-align: middle;
+    }
+
+    [dir='rtl'] & .arrow {
+      border-width: 4px 5px 4px 0;
+      border-color: transparent #bbb transparent transparent;
+    }
+  }
+
+  .single-product-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 8px;
+  }
+
+  .mobex-pdp-panel-host .summary.entry-summary #mobex-pdp-panel-info > .summary-details {
+    min-width: 0;
+  }
+
+  @media (max-width: 1279px) {
+    .summary.entry-summary #mobex-pdp-panel-info {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      width: 100% !important;
+    }
+
+    .summary.entry-summary #mobex-pdp-panel-info > .summary-details:first-child,
+    .summary.entry-summary #mobex-pdp-panel-info > .summary-details:last-child {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-inline-start: 0 !important;
+      flex: none !important;
+    }
+
+    .summary.entry-summary #mobex-pdp-panel-info > .summary-details:last-child {
+      margin-top: 24px !important;
+    }
+  }
+
+  /* Gallery shell + Salla slider */
+  .mobex-pdp-gallery {
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid #e8e8e8;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .mobex-pdp-gallery .flex-viewport {
+    position: relative;
+  }
+
+  .mobex-pdp-gallery .flex-viewport::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 48px;
+    pointer-events: none;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
+    z-index: 2;
+  }
+
+  .mobex-pdp-gallery salla-slider.details-slider {
+    display: block;
+    width: 100%;
+
+    .s-slider-container {
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+
+    .swiper-slide {
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+  }
+
+  /* Thumbnail strip (Salla s-slider-thumbs) */
+  .mobex-pdp-gallery salla-slider.details-slider .s-slider-thumbs {
+    margin-top: 12px !important;
+  }
+
+  .mobex-pdp-gallery salla-slider.details-slider .s-slider-thumbs-container .swiper-slide,
+  .mobex-pdp-gallery salla-slider.details-slider .slide--one-fourth {
+    width: 76px !important;
+    max-width: 76px !important;
+    height: auto !important;
+    cursor: pointer;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    opacity: 0.75;
+    transition: border-color 0.2s, opacity 0.2s;
+  }
+
+  .mobex-pdp-gallery salla-slider.details-slider .swiper-slide-thumb-active,
+  .mobex-pdp-gallery salla-slider.details-slider .slide--one-fourth.swiper-slide-thumb-active {
+    opacity: 1;
+    border-color: #ffa800;
+  }
+
+  .mobex-pdp-gallery salla-slider.details-slider .s-slider-thumbs-container .swiper-slide img,
+  .mobex-pdp-gallery salla-slider.details-slider .slide--one-fourth img {
+    width: 76px;
+    height: 76px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .mobex-pdp-zoom-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 6;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+    font-size: 18px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .mobex-pdp-zoom-btn:hover,
+  .mobex-pdp-zoom-btn:focus-visible {
+    background: rgba(0, 0, 0, 0.5);
+    transform: scale(1.04);
+    outline: none;
+  }
+
+  [dir='rtl'] .mobex-pdp-zoom-btn {
+    right: auto;
+    left: 12px;
+  }
+
+  .summary .product_meta .sku_wrapper {
+    display: block !important;
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: #333;
+  }
+
+  .summary .price {
+    margin: 0 0 20px;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .summary .price ins {
+    text-decoration: none;
+    color: #d33;
+  }
+
+  .summary .price del {
+    color: #888;
+    font-size: 0.65em;
+    font-weight: 600;
+    margin-inline-end: 10px;
+  }
+
+  /* Cart form */
+  .summary form.cart.mobex-pdp-cart {
+    margin-top: 8px;
+    padding: 0;
+    border: none;
+  }
+
+  .mobex-pdp-qty-label {
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #111;
+  }
+
+  .mobex-pdp-cart .sticky-product-bar__quantity {
+    margin-bottom: 16px !important;
+  }
+
+  .mobex-pdp-cart salla-add-product-button {
+    display: flex !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 56px !important;
+    border-radius: 9px !important;
+    font-weight: 700 !important;
+    margin-top: 10px !important;
+  }
+
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-add {
+    --color-primary: #ffa800;
+  }
+
+  .mobex-pdp-cart salla-add-product-button.mobex-pdp-btn-buy {
+    background: #004d99 !important;
+    color: #fff !important;
+    border-color: #004d99 !important;
+  }
+
+  @media (min-width: 1280px) {
+    .summary.entry-summary form.cart.mobex-pdp-cart {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+
+  .summary-details .posted_in {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 24px;
+    margin-bottom: 0;
+    color: #333;
+  }
+
+  .summary-details .posted_in a {
+    font-weight: 400;
+    color: #034c8c;
+  }
+
+  .mobex-pdp-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 22px;
+    margin-top: 16px;
+    padding-top: 4px;
+  }
+
+  .mobex-pdp-actions .mobex-pdp-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+    color: #8f8174;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .mobex-pdp-actions .mobex-pdp-action--link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .mobex-pdp-share-row {
+    margin-top: 16px;
+  }
+
+  .mobex-pdp-share-row salla-social-share {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* Accordions */
+  .et-accordion.mobex-pdp-summary-accordion .accordion-title {
+    position: relative;
+    padding: 14px 40px 14px 16px;
+    margin-bottom: 8px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .et-accordion.mobex-pdp-summary-accordion .accordion-title::after {
+    content: '';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    margin-top: -6px;
+    border-right: 2px solid #ffa800;
+    border-bottom: 2px solid #ffa800;
+    transform: rotate(45deg);
+    transition: transform 0.2s;
+  }
+
+  [dir='rtl'] .et-accordion.mobex-pdp-summary-accordion .accordion-title::after {
+    right: auto;
+    left: 16px;
+  }
+
+  .et-accordion.mobex-pdp-summary-accordion .accordion-title.active::after {
+    transform: rotate(-135deg);
+    margin-top: -2px;
+  }
+
+  .et-accordion.mobex-pdp-summary-accordion .accordion-content {
+    display: none;
+    padding: 0 0 16px;
+  }
+
+  .et-accordion.mobex-pdp-summary-accordion .accordion-title.active + .accordion-content {
+    display: block;
+  }
+
+  .mobex-pdp-summary-accordion salla-metadata {
+    display: block;
+  }
+
+  /* Tabs */
+  .mobex-pdp-head {
+    width: 100%;
+    flex: 0 0 100%;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .mobex-pdp-nav-tabs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .mobex-pdp-nav-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobex-pdp-nav-tabs li {
+    flex: 0 0 auto;
+  }
+
+  .mobex-pdp-nav-tab {
+    display: block;
+    margin: 0;
+    padding: 12px 14px 10px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 500;
+    color: #9a9a9a;
+    cursor: pointer;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .mobex-pdp-nav-tab.is-active {
+    color: #111;
+    font-weight: 700;
+  }
+
+  .mobex-pdp-nav-tab.is-active::after {
+    content: '';
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: 0;
+    height: 2px;
+    background: #111;
+    border-radius: 1px;
+  }
+
+  .mobex-pdp-panel-host {
+    position: relative;
+    width: 100%;
+    display: contents;
+  }
+
+  .mobex-pdp-title-below-gallery {
+    margin-top: 0;
+    padding: 18px 4px 12px;
+    border: none;
+    border-top: 1px solid #e8e8e8;
+    background: #fff;
+  }
+
+  .mobex-pdp-title-below-gallery .product-brand {
+    margin-bottom: 10px;
+  }
+
+  .mobex-pdp-title-below-gallery .product-brand img {
+    display: block;
+    max-height: 28px;
+    width: auto;
+  }
+
+  .mobex-pdp-title-below-gallery .product_title {
+    font-size: 17px;
+    line-height: 1.4;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+  }
+
+  #mobex-pdp-panel-image {
+    background: #fff;
+  }
+
+  .mobex-pdp-panel--rich {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+    width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .mobex-pdp-description-inner {
+    max-width: 900px;
+  }
+
+  .mobex-pdp-description-inner h2 {
+    font-size: 20px;
+    margin: 0 0 12px;
+    font-weight: 700;
+  }
+
+  .mobex-pdp-faq {
+    margin: 32px 0;
+    padding: 24px;
+    background: #f7f7f7;
+    border-radius: 8px;
+    border: 1px solid #e8e8e8;
+  }
+
+  .mobex-pdp-faq h4 {
+    margin: 0 0 16px;
+    font-size: 18px;
+  }
+
+  .mobex-pdp-faq p {
+    margin: 0 0 12px;
+    line-height: 1.55;
+    color: #444;
+  }
+
+  .single-product-vehicles {
+    max-width: 900px;
+  }
+
+  .single-product-vehicles h2 {
+    font-size: 20px;
+    margin: 0 0 8px;
+  }
+
+  .single-product-vehicles .shop_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    font-size: 14px;
+  }
+
+  .single-product-vehicles .shop_table th,
+  .single-product-vehicles .shop_table td {
+    border: 1px solid #e0e0e0;
+    padding: 10px 12px;
+    text-align: start;
+  }
+
+  .single-product-vehicles .shop_table thead th {
+    background: #f5f5f5;
+    font-weight: 700;
+  }
+
+  /* Mobile: stacked panels, tab scroll */
+  @media (max-width: 1023px) {
+    .mobex-pdp-panel-host .mobex-pdp-panel {
+      display: block !important;
+      opacity: 1 !important;
+    }
+
+    .mobex-pdp-panel[data-mobex-pdp-panel] {
+      scroll-margin-top: 12px;
+    }
+
+    .mobex-pdp-gallery salla-slider.details-slider .s-slider-thumbs-container {
+      flex-wrap: nowrap !important;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 8px;
+    }
+
+    .mobex-pdp-gallery salla-slider.details-slider .s-slider-thumbs-container .swiper-slide,
+    .mobex-pdp-gallery salla-slider.details-slider .slide--one-fourth {
+      width: 72px !important;
+      max-width: 72px !important;
+    }
+
+    .mobex-pdp-gallery salla-slider.details-slider .s-slider-thumbs-container .swiper-slide img,
+    .mobex-pdp-gallery salla-slider.details-slider .slide--one-fourth img {
+      width: 72px !important;
+      height: 72px !important;
+    }
+
+    .mobex-pdp-gallery .flex-viewport::after {
+      display: none;
+    }
+  }
+
+  /* Desktop layout */
+  @media (min-width: 1024px) {
+    .mobex-pdp-head {
+      display: none;
+    }
+
+    .mobex-pdp-title-below-gallery {
+      border-top: none;
+      padding-top: 12px;
+      margin-top: 8px;
+    }
+
+    .mobex-pdp-title-below-gallery .product_title {
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .mobex-pdp-panel-host .mobex-pdp-panel,
+    .mobex-pdp-panel-host .mobex-pdp-panel.is-active,
+    .mobex-pdp-panel-host .mobex-pdp-panel:not(.is-active) {
+      display: block !important;
+      opacity: 1 !important;
+    }
+
+    #mobex-pdp-panel-image {
+      flex: 0 0 50%;
+      width: 50%;
+      max-width: 50%;
+      min-width: 0;
+      box-sizing: border-box;
+      padding-inline-end: 16px;
+    }
+
+    .single-product-wrapper .summary.entry-summary {
+      flex: 0 0 50%;
+      width: 50%;
+      max-width: 50%;
+      min-width: 0;
+      box-sizing: border-box;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    .summary.entry-summary #mobex-pdp-panel-info {
+      flex: 1 1 auto;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .mobex-pdp-panel--rich {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    #mobex-pdp-panel-image {
+      flex: 0 0 40%;
+      width: 40%;
+      max-width: 40%;
+    }
+
+    .single-product-wrapper .summary.entry-summary {
+      flex: 1 1 0;
+      width: 60%;
+      max-width: 60%;
+      flex-direction: row !important;
+      align-items: flex-start !important;
+    }
+
+    .summary.entry-summary #mobex-pdp-panel-info {
+      display: flex !important;
+      flex-direction: row !important;
+      width: 100% !important;
+      flex: 1 1 100% !important;
+    }
+
+    .summary.entry-summary #mobex-pdp-panel-info > .summary-details:first-child {
+      flex: 0 0 40% !important;
+      width: 40% !important;
+      max-width: 40% !important;
+    }
+
+    .summary.entry-summary #mobex-pdp-panel-info > .summary-details:last-child {
+      flex: 1 1 0 !important;
+      min-width: 0 !important;
+      margin-inline-start: 48px !important;
+      margin-top: 0 !important;
+    }
+
+    .summary.entry-summary #mobex-pdp-panel-info > .summary-details:last-child > .summary-details-wrapp {
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      background: #f5f5f5;
+    }
+  }
+}
+
+/* Lightbox (portal to body) */
+.mobex-pdp-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+
+.mobex-pdp-lightbox.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.mobex-pdp-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.88);
+  cursor: pointer;
+}
+
+.mobex-pdp-lightbox-inner {
+  position: relative;
+  z-index: 1;
+  max-width: min(96vw, 920px);
+  max-height: 88vh;
+}
+
+.mobex-pdp-lightbox-img {
+  display: block;
+  max-width: 100%;
+  max-height: 82vh;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.mobex-pdp-lightbox-close {
+  position: absolute;
+  top: -12px;
+  right: -8px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  color: #111;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.mobex-pdp-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.mobex-pdp-lightbox-prev {
+  left: -8px;
+}
+
+.mobex-pdp-lightbox-next {
+  right: -8px;
+}
+
+@media (max-width: 600px) {
+  .mobex-pdp-lightbox-prev {
+    left: 4px;
+  }
+
+  .mobex-pdp-lightbox-next {
+    right: 4px;
+  }
+
+  .mobex-pdp-lightbox-close {
+    top: 8px;
+    right: 8px;
+  }
+}
