@@ -24,7 +24,7 @@ class Product extends BasePage {
     }
 
     /**
-     * Mobex PDP: mobile section tabs, metadata accordion, image lightbox, vehicles filter.
+     * Mobex PDP: mobile section tabs, accordions, image lightbox.
      */
     initMobexPdp() {
         const host = document.querySelector('.mobex-pdp-panel-host');

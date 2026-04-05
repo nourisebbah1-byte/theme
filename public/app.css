@@ -1423,6 +1423,13 @@ input:where([type='file']):focus{
 .gap-8{
     gap: 2rem;
 }
+.gap-x-3{
+    -moz-column-gap: 0.75rem;
+         column-gap: 0.75rem;
+}
+.gap-y-1{
+    row-gap: 0.25rem;
+}
 .space-x-1 > :not([hidden]) ~ :not([hidden]){
     --tw-space-x-reverse: 0;
     margin-right: calc(0.25rem * 0);
@@ -53173,9 +53180,21 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
   border-radius: 0 !important;
   box-shadow: none !important;
 }
+.mobex-pdp-page-root .mobex-pdp-gallery salla-slider.details-slider .swiper-slide.magnify-wrapper,
+.mobex-pdp-page-root .mobex-pdp-gallery salla-slider.details-slider .swiper-slide.model-entry {
+  display: flex !important;
+}
+.mobex-pdp-page-root .mobex-pdp-gallery salla-slider.details-slider .swiper-slide.magnify-wrapper,
+.mobex-pdp-page-root .mobex-pdp-gallery salla-slider.details-slider .swiper-slide.model-entry {
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  box-sizing: border-box;
+}
 .mobex-pdp-page-root .mobex-pdp-gallery salla-slider.details-slider .swiper-slide img {
   width: 100%;
   height: auto;
+  max-height: 520px;
   display: block;
   -o-object-fit: contain;
      object-fit: contain;
@@ -53251,22 +53270,34 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
   margin-bottom: 12px;
   color: #333;
 }
-.mobex-pdp-page-root .summary .price {
+.mobex-pdp-page-root .summary .price.mobex-pdp-woo-price {
   margin: 0 0 20px;
   font-size: 28px;
   font-weight: 800;
   line-height: 1.2;
 }
-.mobex-pdp-page-root .summary .price ins {
+.mobex-pdp-page-root .summary .price.mobex-pdp-woo-price .price-wrapper {
+  min-width: 0;
+}
+.mobex-pdp-page-root .summary .price.mobex-pdp-woo-price ins {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #d33;
+  background: transparent;
 }
-.mobex-pdp-page-root .summary .price del {
+.mobex-pdp-page-root .summary .price.mobex-pdp-woo-price del {
   color: #888;
   font-size: 0.65em;
   font-weight: 600;
   margin-right: 10px;
+}
+.mobex-pdp-page-root .summary .price.mobex-pdp-woo-price .total-price {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1.15;
+}
+.mobex-pdp-page-root .summary .price.mobex-pdp-woo-price .mobex-pdp-price-ins .total-price {
+  color: #d33;
 }
 .mobex-pdp-page-root {
   /* Cart form — Mobex PDP (reference product.html) */
@@ -53631,8 +53662,36 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
 .mobex-pdp-page-root .et-accordion.mobex-pdp-summary-accordion .accordion-title.active + .accordion-content {
   display: block;
 }
-.mobex-pdp-page-root .mobex-pdp-summary-accordion salla-metadata {
-  display: block;
+.mobex-pdp-page-root {
+  /* Woo-style product attributes table (Twig-built; replaces salla-metadata UI) */
+}
+.mobex-pdp-page-root .mobex-pdp-attributes-table {
+  width: 100%;
+  border: none;
+  border-collapse: collapse;
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+.mobex-pdp-page-root .mobex-pdp-attributes-table th,
+.mobex-pdp-page-root .mobex-pdp-attributes-table td {
+  padding: 10px 12px 10px 0;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+  text-align: left;
+}
+.mobex-pdp-page-root .mobex-pdp-attributes-table th {
+  width: 42%;
+  max-width: 200px;
+  font-weight: 700;
+  color: #111;
+}
+.mobex-pdp-page-root .mobex-pdp-attributes-table td p {
+  margin: 0;
+  line-height: 1.45;
+}
+.mobex-pdp-page-root .mobex-pdp-product-information-wrap {
+  width: 100%;
 }
 .mobex-pdp-page-root {
   /* Tabs */
@@ -53778,6 +53837,33 @@ salla-quantity-input[max="1"] .s-quantity-input-button{
   }
   .mobex-pdp-page-root .mobex-pdp-gallery .flex-viewport::after {
     display: none;
+  }
+  .mobex-pdp-page-root {
+    /* Main slide: stable height + centered image on small screens */
+  }
+  .mobex-pdp-page-root .mobex-pdp-gallery salla-slider.details-slider .swiper-slide.magnify-wrapper,
+  .mobex-pdp-page-root .mobex-pdp-gallery salla-slider.details-slider .swiper-slide.model-entry {
+    min-height: min(58vw, 340px);
+    padding: 8px 4px;
+  }
+  .mobex-pdp-page-root .mobex-pdp-gallery salla-slider.details-slider .swiper-slide img {
+    max-height: min(72vw, 400px);
+    width: auto;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .mobex-pdp-page-root .mobex-pdp-gallery {
+    border-radius: 8px;
+  }
+  .mobex-pdp-page-root .mobex-pdp-attributes-table th {
+    width: 38%;
+    font-size: 13px;
+  }
+  .mobex-pdp-page-root .mobex-pdp-attributes-table td {
+    font-size: 13px;
   }
 }
 .mobex-pdp-page-root {

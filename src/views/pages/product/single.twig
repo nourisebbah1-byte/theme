@@ -159,20 +159,24 @@
                                     <small class="color-grey block mb-2">{{ trans('pages.products.tax_included') }}</small>
                                 {% endif %}
 
-                                <div class="price">
-                                    <div class="price-wrapper flex whitespace-nowrap gap-4 items-center">
-                                        <div class="{{ product.is_on_sale ? '' : 'hidden' }} price_is_on_sale space-x-2 rtl:space-x-reverse whitespace-nowrap">
-                                            <h2 class="total-price text-red-800 font-bold text-xl inline-block">{{ product.sale_price|money }}</h2>
-                                            <span class="before-price text-gray-500 line-through">{{ product.regular_price|money }}</span>
-                                        </div>
-                                        <div class="starting-or-normal-price gap-4 {{ product.is_on_sale ? 'hidden' : 'flex' }}">
+                                <p class="price mobex-pdp-woo-price">
+                                    <span class="price-wrapper flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                                        <span class="price_is_on_sale flex flex-wrap items-baseline gap-2 {{ product.is_on_sale ? '' : 'hidden' }}">
+                                            <del class="mobex-pdp-price-del">
+                                                <span class="woocommerce-Price-amount amount"><bdi class="before-price">{{ product.regular_price|money }}</bdi></span>
+                                            </del>
+                                            <ins class="mobex-pdp-price-ins">
+                                                <span class="woocommerce-Price-amount amount"><bdi><span class="total-price text-red-800 font-bold text-xl">{{ product.sale_price|money }}</span></bdi></span>
+                                            </ins>
+                                        </span>
+                                        <span class="starting-or-normal-price flex flex-wrap items-baseline gap-4 {{ product.is_on_sale ? 'hidden' : '' }}">
                                             {% if product.starting_price %}
                                                 <span class="starting-price-title">{{ trans('pages.products.starting_price') }}</span>
                                             {% endif %}
-                                            <h2 class="total-price font-bold text-xl inline-block">{{ product.starting_price ? product.starting_price|money : product.price|money }}</h2>
-                                        </div>
-                                    </div>
-                                </div>
+                                            <span class="woocommerce-Price-amount amount"><bdi><span class="total-price font-bold text-xl">{{ product.starting_price ? product.starting_price|money : product.price|money }}</span></bdi></span>
+                                        </span>
+                                    </span>
+                                </p>
                                 <div class="out-of-stock min-h-7 leading-7 hidden text-base text-red-600 !opacity-50 font-bold">{{ trans('pages.products.out_of_stock') }}</div>
 
                                 <salla-installment price="{{ product.price }}"></salla-installment>
@@ -323,18 +327,9 @@
                                 {% endif %}
                             </div>
 
-                            {% if product.has_metadata %}
-                            <div class="summary-details">
-                                <div class="summary-details-wrapp">
-                                    <div class="et-accordion mobex-pdp-summary-accordion">
-                                        <div class="accordion-title active" role="button" tabindex="0" aria-expanded="true">{{ trans('pages.products.pdp_product_information') }}</div>
-                                        <div class="accordion-content">
-                                            <salla-metadata></salla-metadata>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="summary-details mobex-pdp-product-information-wrap">
+                                {% include 'pages.partials.product.mobex-product-information' %}
                             </div>
-                            {% endif %}
                         </section>
                     </div>
 

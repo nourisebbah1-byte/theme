@@ -1,0 +1,50 @@
+{# Mobex / Woo-style product attributes (plain HTML). Weight cell uses .product-weight so variant price/weight JS keeps it in sync. #}
+{% set mobex_dims = attribute(product, 'dimensions')|default('') %}
+{% set mobex_gtin = attribute(product, 'gtin')|default(attribute(product, 'ean')|default(attribute(product, 'barcode')|default(''))) %}
+{% set mobex_mpn = attribute(product, 'mpn')|default(product.sku|default('')) %}
+{% set mobex_condition = attribute(product, 'condition')|default('') %}
+<div class="summary-details-wrapp">
+    <div class="et-accordion mobex-pdp-summary-accordion">
+        <div class="accordion-title active" role="button" tabindex="0" aria-expanded="true">{{ trans('pages.products.pdp_product_information') }}</div>
+        <div class="accordion-content">
+            <table class="woocommerce-product-attributes shop_attributes mobex-pdp-attributes-table">
+                <tbody>
+                    {% if product.weight %}
+                    <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_weight">
+                        <th class="woocommerce-product-attributes-item__label" scope="row">{{ trans('pages.products.attr_weight') }}</th>
+                        <td class="woocommerce-product-attributes-item__value"><p><span class="product-weight">{{ product.weight }}</span></p></td>
+                    </tr>
+                    {% endif %}
+                    {% if mobex_dims %}
+                    <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_dimensions">
+                        <th class="woocommerce-product-attributes-item__label" scope="row">{{ trans('pages.products.attr_dimensions') }}</th>
+                        <td class="woocommerce-product-attributes-item__value"><p>{{ mobex_dims }}</p></td>
+                    </tr>
+                    {% endif %}
+                    {% if product.brand and product.brand.name %}
+                    <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_brand">
+                        <th class="woocommerce-product-attributes-item__label" scope="row">{{ trans('pages.products.attr_brand') }}</th>
+                        <td class="woocommerce-product-attributes-item__value"><p>{{ product.brand.name }}</p></td>
+                    </tr>
+                    {% endif %}
+                    <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_condition">
+                        <th class="woocommerce-product-attributes-item__label" scope="row">{{ trans('pages.products.attr_condition') }}</th>
+                        <td class="woocommerce-product-attributes-item__value"><p>{% if mobex_condition %}{{ mobex_condition }}{% else %}{{ trans('pages.products.condition_new') }}{% endif %}</p></td>
+                    </tr>
+                    {% if mobex_mpn %}
+                    <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_mpn">
+                        <th class="woocommerce-product-attributes-item__label" scope="row">{{ trans('pages.products.attr_mpn') }}</th>
+                        <td class="woocommerce-product-attributes-item__value"><p>{{ mobex_mpn }}</p></td>
+                    </tr>
+                    {% endif %}
+                    {% if mobex_gtin %}
+                    <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_ean">
+                        <th class="woocommerce-product-attributes-item__label" scope="row">{{ trans('pages.products.attr_ean') }}</th>
+                        <td class="woocommerce-product-attributes-item__value"><p>{{ mobex_gtin }}</p></td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
