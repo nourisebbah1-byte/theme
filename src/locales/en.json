@@ -101,7 +101,11 @@
       "free_shipping_banner": "Free shipping promotion",
       "free_shipping_word": "FREE",
       "shipping_word": "SHIPPING",
-      "featured_brands_logos": "Featured brands"
+      "featured_brands_logos": "Featured brands",
+      "promo_offroad_title": "READY FOR<br>OFF ROAD",
+      "promo_engine_kicker": "Top Brands",
+      "promo_engine_title": "ENGINE<br>ESSENTIALS",
+      "promo_offroad_engine": "Off-road and engine promotions"
     },
     "footer": {
       "demo_store": "Demo Store"

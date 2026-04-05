@@ -1,14 +1,14 @@
 {% set shop = link('/') %}
 {% set brands_url = link('brands') %}
-<section class="more-promo-banners-2 mobex-promo-pair" aria-label="Promotions">
+<section class="more-promo-banners-2 mobex-promo-pair" aria-label="{{ trans('blocks.home.promo_offroad_engine') }}">
     <div class="container">
         <div class="mobex-promo-row mobex-promo-row--2">
             <div class="gold-shine mobex-promo-cell mobex-promo-cell--offroad">
                 <div class="mobex-promo-inner">
-                    <p class="mobex-et-heading mobex-et-kicker"><span class="text">Up to 40% Off</span></p>
-                    <h3 class="mobex-et-heading mobex-et-title mobex-et-title--multiline"><span class="text">READY FOR<br>OFF ROAD</span></h3>
-                    <p class="mobex-et-heading mobex-et-sub"><span class="text">Confidence on any road!</span></p>
-                    <a href="{{ shop }}" class="mobex-promo-cta"><span class="text">Shop now</span><span class="mobex-promo-cta-arrow" aria-hidden="true"></span></a>
+                    <p class="mobex-et-heading mobex-et-kicker"><span class="text">{{ trans('blocks.home.up_to_40_off') }}</span></p>
+                    <h3 class="mobex-et-heading mobex-et-title mobex-et-title--multiline"><span class="text">{{ trans('blocks.home.promo_offroad_title')|raw }}</span></h3>
+                    <p class="mobex-et-heading mobex-et-sub"><span class="text">{{ trans('blocks.home.confidence_any_road') }}</span></p>
+                    <a href="{{ shop }}" class="mobex-promo-cta"><span class="text">{{ trans('blocks.home.shop_now') }}</span><span class="mobex-promo-cta-arrow" aria-hidden="true"></span></a>
                 </div>
                 <div class="mobex-promo-media mobex-promo-media--b10">
                     <div class="et-image mobex-parallax-img mobex-parallax-img--sm"><img src="{{ 'images/mobex-banners/banner10-img.webp'|asset }}" width="259" height="316" alt="" loading="lazy" decoding="async"></div>
@@ -16,10 +16,10 @@
             </div>
             <div class="mobex-promo-cell mobex-promo-cell--engine">
                 <div class="mobex-promo-inner">
-                    <p class="mobex-et-heading mobex-et-kicker"><span class="text">Top Brands</span></p>
-                    <h3 class="mobex-et-heading mobex-et-title mobex-et-title--multiline"><span class="text">ENGINE<br>ESSENTIALS</span></h3>
-                    <p class="mobex-et-heading mobex-et-sub"><span class="text">Maximize &amp; Maintain</span></p>
-                    <a href="{{ shop }}" class="mobex-promo-cta"><span class="text">Shop now</span><span class="mobex-promo-cta-arrow" aria-hidden="true"></span></a>
+                    <p class="mobex-et-heading mobex-et-kicker"><span class="text">{{ trans('blocks.home.promo_engine_kicker') }}</span></p>
+                    <h3 class="mobex-et-heading mobex-et-title mobex-et-title--multiline"><span class="text">{{ trans('blocks.home.promo_engine_title')|raw }}</span></h3>
+                    <p class="mobex-et-heading mobex-et-sub"><span class="text">{{ trans('blocks.home.maximize_maintain') }}</span></p>
+                    <a href="{{ shop }}" class="mobex-promo-cta"><span class="text">{{ trans('blocks.home.shop_now') }}</span><span class="mobex-promo-cta-arrow" aria-hidden="true"></span></a>
                 </div>
                 <div class="mobex-promo-media mobex-promo-media--b11">
                     <div class="et-image mobex-parallax-img mobex-parallax-img--sm"><img src="{{ 'images/mobex-banners/banner11-img.webp'|asset }}" width="261" height="294" alt="" loading="lazy" decoding="async"></div>

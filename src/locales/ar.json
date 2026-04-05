@@ -70,7 +70,7 @@
       "confidence_any_road": "ثقة على أي طريق!",
       "off_road_tire": "إطار الطرق الوعرة",
       "engine_essentials": "أساسيات المحرك",
-      "maximize_maintain": "تعظيم والصيانة",
+      "maximize_maintain": "عزّز الأداء وحافظ على أداء المحرك",
       "engine": "المحرك",
       "transmission_fluids": "سوائل ناقل الحركة",
       "superior_quality_atf": "جودة فائقة ATF",
@@ -101,7 +101,11 @@
       "free_shipping_banner": "شحن مجاني",
       "free_shipping_word": "FREE",
       "shipping_word": "SHIPPING",
-      "featured_brands_logos": "العلامات التجارية المميزة"
+      "featured_brands_logos": "العلامات التجارية المميزة",
+      "promo_offroad_title": "جاهز<br>للطرق الوعرة",
+      "promo_engine_kicker": "أفضل العلامات التجارية",
+      "promo_engine_title": "أساسيات<br>المحرك",
+      "promo_offroad_engine": "عروض الطرق الوعرة والمحرك"
     },
     "footer": {
       "demo_store": "متجر تجريبي"
