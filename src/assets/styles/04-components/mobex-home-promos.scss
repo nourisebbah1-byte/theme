@@ -454,6 +454,9 @@ $mobex-b: 'images/mobex-banners';
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  /* RTL documents use inverted scroll coordinates; LTR strip keeps scrollBy/scrollLeft reliable on all browsers. */
+  direction: ltr;
+  unicode-bidi: isolate;
 
   &::-webkit-scrollbar {
     display: none;
@@ -469,6 +472,7 @@ $mobex-b: 'images/mobex-banners';
   padding: 8px 4px 12px;
   width: max-content;
   min-height: 88px;
+  direction: ltr;
 }
 
 .mobex-fb-nav {
@@ -513,15 +517,7 @@ $mobex-b: 'images/mobex-banners';
   right: 0;
 }
 
-[dir='rtl'] .mobex-fb-prev {
-  left: auto;
-  right: 0;
-}
-
-[dir='rtl'] .mobex-fb-next {
-  right: auto;
-  left: 0;
-}
+/* Viewport/track stay LTR; prev stays physical left, next physical right (same as English). */
 
 /* Mobex-style caps only for LTR — uppercase + letter-spacing breaks Arabic joining on desktop */
 .mobex-fb-heading {

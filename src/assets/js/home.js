@@ -153,14 +153,9 @@ class Home extends BasePage {
             viewport.scrollBy({ left: delta, behavior: 'smooth' });
         };
 
-        prev.addEventListener('click', () => {
-            const rtl = document.documentElement.getAttribute('dir') === 'rtl';
-            scrollByDir(rtl ? 1 : -1);
-        });
-        next.addEventListener('click', () => {
-            const rtl = document.documentElement.getAttribute('dir') === 'rtl';
-            scrollByDir(rtl ? -1 : 1);
-        });
+        // Viewport uses direction:ltr in CSS so scrollLeft/scrollBy match LTR semantics on Arabic pages.
+        prev.addEventListener('click', () => scrollByDir(-1));
+        next.addEventListener('click', () => scrollByDir(1));
     }
 
     initMobexRsParallax() {

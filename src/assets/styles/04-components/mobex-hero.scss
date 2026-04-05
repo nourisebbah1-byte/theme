@@ -16,6 +16,9 @@
 /* Slider + controls share positioning context (dots stay on the slide, not below vehicle form) */
 .mobex-hero-stage-wrap {
   position: relative;
+  /* Document RTL reverses flex order and hit-testing; keep stage + slider chrome LTR (copy still RTL via .hero-text rules). */
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .mobex-hero-slider {
@@ -421,6 +424,8 @@
   justify-content: center;
   gap: 18px;
   pointer-events: none;
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .mobex-hero-controls .mobex-hero-nav,
@@ -462,6 +467,7 @@
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.45);
   cursor: pointer;
+  pointer-events: auto;
   transition: transform 0.15s ease, background 0.15s ease;
 }
 

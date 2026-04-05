@@ -46077,6 +46077,9 @@ section.hero-section:not(.mobex-hero) .hero-vehicle-filter {
 /* Slider + controls share positioning context (dots stay on the slide, not below vehicle form) */
 .mobex-hero-stage-wrap {
   position: relative;
+  /* Document RTL reverses flex order and hit-testing; keep stage + slider chrome LTR (copy still RTL via .hero-text rules). */
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 .mobex-hero-slider {
   position: relative;
@@ -46590,6 +46593,8 @@ section.hero-section:not(.mobex-hero) .hero-vehicle-filter {
   justify-content: center;
   gap: 18px;
   pointer-events: none;
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 .mobex-hero-controls .mobex-hero-nav,
 .mobex-hero-controls .mobex-hero-dots {
@@ -46626,6 +46631,7 @@ section.hero-section:not(.mobex-hero) .hero-vehicle-filter {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.45);
   cursor: pointer;
+  pointer-events: auto;
   transition: transform 0.15s ease, background 0.15s ease;
 }
 .slider-dots.mobex-hero-dots .dot.active {
@@ -47188,6 +47194,9 @@ section.hero-section:not(.mobex-hero) .hero-vehicle-filter {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  /* RTL documents use inverted scroll coordinates; LTR strip keeps scrollBy/scrollLeft reliable on all browsers. */
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 .mobex-fb-viewport::-webkit-scrollbar {
   display: none;
@@ -47202,6 +47211,7 @@ section.hero-section:not(.mobex-hero) .hero-vehicle-filter {
   width: -moz-max-content;
   width: max-content;
   min-height: 88px;
+  direction: ltr;
 }
 .mobex-fb-nav {
   position: absolute;
@@ -47239,14 +47249,7 @@ section.hero-section:not(.mobex-hero) .hero-vehicle-filter {
 .mobex-fb-next {
   right: 0;
 }
-[dir=rtl] .mobex-fb-prev {
-  left: auto;
-  right: 0;
-}
-[dir=rtl] .mobex-fb-next {
-  right: auto;
-  left: 0;
-}
+/* Viewport/track stay LTR; prev stays physical left, next physical right (same as English). */
 /* Mobex-style caps only for LTR — uppercase + letter-spacing breaks Arabic joining on desktop */
 .mobex-fb-heading {
   margin: 0 auto 24px;
